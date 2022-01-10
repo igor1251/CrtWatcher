@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2AtvnfT44PSNdm3a/R7/Ngts4xGnHDn4hPzIQyIH2BksBVJKDh4cT5AZhQQvqaXsU0/CoZpOZc+TohTnK1USlg==",
+  "dgSpecHash": "a7dlW1NADnBJ/LyuUWjgaUQyiFEgu3XWLQCik4Qks/crxiW+qnCQgJS4ja4VZhwkeaARPBdUVp3ECyWp8YuNEg==",
   "success": true,
-  "projectFilePath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\CrtAdminPanel\\CrtAdminPanel.csproj",
+  "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\CrtAdminPanel\\CrtAdminPanel.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

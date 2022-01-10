@@ -8,37 +8,37 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CrtAdminPanel
 build_property.RootNamespace = CrtAdminPanel
-build_property.ProjectDir = D:\Lib\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\
+build_property.ProjectDir = D:\Libraries\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Lib\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel
+build_property.MSBuildProjectDirectory = D:\Libraries\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Lib/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[D:/Libraries/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Lib/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[D:/Libraries/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Lib/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[D:/Libraries/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Lib/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[D:/Libraries/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Lib/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[D:/Libraries/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Lib/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[D:/Libraries/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Lib/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-msejhfbsog
+[D:/Libraries/Documents/GitHub/CrtWatcher/Server/CrtAdminPanel/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-k1mt2hbxop
