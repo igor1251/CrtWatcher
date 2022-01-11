@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrtAdminPanel", "CrtAdminPanel.csproj", "{CF86F46F-2BE3-4E6C-A1F5-8EF7020AE329}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrtAdminPanel", "CrtAdminPanel.csproj", "{EE2EBD69-9E6F-4E1A-87E6-E848CF3E20C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CF86F46F-2BE3-4E6C-A1F5-8EF7020AE329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF86F46F-2BE3-4E6C-A1F5-8EF7020AE329}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF86F46F-2BE3-4E6C-A1F5-8EF7020AE329}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF86F46F-2BE3-4E6C-A1F5-8EF7020AE329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE2EBD69-9E6F-4E1A-87E6-E848CF3E20C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE2EBD69-9E6F-4E1A-87E6-E848CF3E20C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE2EBD69-9E6F-4E1A-87E6-E848CF3E20C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE2EBD69-9E6F-4E1A-87E6-E848CF3E20C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BA4A274B-A1DC-4D0E-8274-694B26D50BD0}
+		SolutionGuid = {659C4AFA-0242-4D55-B73A-96DF883E88BF}
 	EndGlobalSection
 EndGlobal
