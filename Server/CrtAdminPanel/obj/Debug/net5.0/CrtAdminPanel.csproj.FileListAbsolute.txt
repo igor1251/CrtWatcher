@@ -56,3 +56,4 @@ D:\Libraries\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\C
 D:\Libraries\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\ref\CrtAdminPanel.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\CrtAdminPanel.pdb
 D:\Libraries\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\CrtAdminPanel.genruntimeconfig.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\bin\Debug\net5.0\Config\settings.json

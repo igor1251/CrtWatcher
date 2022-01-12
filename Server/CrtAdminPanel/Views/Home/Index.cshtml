@@ -6,7 +6,20 @@
     <table class="table">
         <thead>List of available certificates</thead>
         <tr>
-            <td>Name</td><td>Phone number</td><td>Start date</td><td>End date</td>
+            <td>Name</td>
+            <td>Phone number</td>
+            <td>Start date</td>
+            <td>End date</td>
         </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td align="left">@item.HolderFIO</td>
+                <td>@item.HolderPhone</td>
+                <td>@item.CertStartDateTime</td>
+                <td>@item.CertEndDateTime</td>
+            </tr>
+        }
     </table>
 </div>

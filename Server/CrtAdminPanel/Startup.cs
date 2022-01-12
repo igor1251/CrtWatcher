@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using CrtAdminPanel.Models.Classes;
+using CrtAdminPanel.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,12 @@ namespace CrtAdminPanel
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<ICertificateLoader, SQLiteCertificateLoader>();
+            services.AddSingleton<ICertificateTool, SQLiteCertificateTool>();
+            services.AddSingleton<ICertificateFasade, CertificateFasade>();
+            services.AddSingleton<ISQLiteDbContext, SQLiteDbContext>();
+            services.AddSingleton<ISettingsLoader, SettingsLoader>();
+            services.AddSingleton<IQueryList, SQLiteQueryList>();
             services.AddControllersWithViews();
         }
 
