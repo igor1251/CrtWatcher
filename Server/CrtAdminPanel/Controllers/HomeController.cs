@@ -17,7 +17,8 @@ namespace CrtAdminPanel.Controllers
         private readonly ILogger<HomeController> _logger;
         private ICertificateLoader _loader;
 
-        public HomeController(ILogger<HomeController> logger, ICertificateLoader loader)
+        public HomeController(ILogger<HomeController> logger, 
+                              ICertificateLoader loader)
         {
             _logger = logger;
             _loader = loader;
@@ -29,6 +30,11 @@ namespace CrtAdminPanel.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult EditSettings()
         {
             return View();
         }
