@@ -15,18 +15,24 @@ namespace CrtAdminPanel.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private ICertificateLoader _loader;
+        private ICertificateLoader _certificateLoader;
+        private ICertificateTool _certificateTool;
+        private ISettingsLoader _settingsLoader;
 
         public HomeController(ILogger<HomeController> logger, 
-                              ICertificateLoader loader)
+                              ICertificateLoader certificateLoader,
+                              ICertificateTool certificateTool,
+                              ISettingsLoader settingsLoader)
         {
             _logger = logger;
-            _loader = loader;
+            _certificateLoader = certificateLoader;
+            _certificateTool = certificateTool;
+            _settingsLoader = settingsLoader;
         }
 
         public IActionResult Index()
         {
-            return View(_loader.ExtractCertificatesListAsync().GetAwaiter().GetResult());
+            return View(_certificateLoader.ExtractCertificatesListAsync().GetAwaiter().GetResult());
         }
 
         public IActionResult Privacy()
@@ -36,7 +42,7 @@ namespace CrtAdminPanel.Controllers
 
         public IActionResult EditSettings()
         {
-            return View();
+            return View(_settingsLoader.LoadSettingsAsync().GetAwaiter().GetResult());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
