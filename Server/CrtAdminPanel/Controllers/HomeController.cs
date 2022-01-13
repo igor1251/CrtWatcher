@@ -30,9 +30,9 @@ namespace CrtAdminPanel.Controllers
             _settingsLoader = settingsLoader;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(_certificateLoader.ExtractCertificatesListAsync().GetAwaiter().GetResult());
+            return View(await _certificateLoader.ExtractCertificatesListAsync());
         }
 
         public IActionResult Privacy()
@@ -40,9 +40,17 @@ namespace CrtAdminPanel.Controllers
             return View();
         }
 
-        public IActionResult EditSettings()
+        public async Task<IActionResult> EditSettings()
         {
-            return View(_settingsLoader.LoadSettingsAsync().GetAwaiter().GetResult());
+            ISettings settings = await _settingsLoader.LoadSettingsAsync();
+            return View(settings);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditSettings(Settings settings)
+        {
+            await _settingsLoader.SaveSettingsAsync(settings);
+            return RedirectToAction("EditSettings");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

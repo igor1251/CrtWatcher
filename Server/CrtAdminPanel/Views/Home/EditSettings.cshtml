@@ -1,19 +1,15 @@
-﻿@{
+﻿@model CrtAdminPanel.Models.Classes.Settings
+@{
     ViewData["Title"] = "Settings";
 }
+<form asp-action="EditSettings" asp-controller="Home">
+    <div class="form-group">
+        <label>WarnDaysCount</label>
+        <input asp-for="WarnDaysCount" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-outline-secondary" />
+    </div>
+</form>
 
-<div class="text-center">
-    <table class="table">
-        <thead>Available settings</thead>
-        <tr>
-            <td>Parameter</td>
-            <td>Value</td>
-            <td>Edit</td>
-        </tr>
 
-        <tr>
-            <td>WarnDaysCount</td>
-            <td>@Model.WarnDaysCount</td>
-        </tr>
-    </table>
-</div>

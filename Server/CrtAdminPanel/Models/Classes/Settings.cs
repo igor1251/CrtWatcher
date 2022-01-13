@@ -5,7 +5,7 @@ namespace CrtAdminPanel.Models.Classes
 {
     public class Settings : ISettings
     {
-        private bool _personalKeyStore;
+        private bool _personalKeyStore = false;
 
         private uint _warnDaysCount;
         private string _dbFileName = "keys.sqlite";

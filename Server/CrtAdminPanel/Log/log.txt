@@ -4,3 +4,34 @@
 10.01.2022 15:43:04: Extracting certificates....
 10.01.2022 15:43:04: Use system key store : False
 10.01.2022 15:43:04: Certificates have been extracted successfully.
+13.01.2022 13:06:35: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:16:20: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:16:26: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:18:36: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:21:27: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:21:58: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:22:36: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:23:05: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:23:09: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:24:46: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:25:52: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:25:55: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:26:08: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:26:17: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:27:08: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:27:57: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 13:28:02: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 14:05:19: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 14:05:30: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 14:06:43: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 14:14:28: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 14:15:03: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 14:16:24: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 14:30:31: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 14:44:28: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 14:44:33: Error: Can't load settings. '}' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 259.
+13.01.2022 14:45:18: Error: Can't load settings. '}' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 259.
+13.01.2022 14:45:22: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 14:48:20: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 14:58:28: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
+13.01.2022 14:58:34: Error: Can't load settings. '\' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 260.
