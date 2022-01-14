@@ -42,8 +42,7 @@ namespace CrtAdminPanel.Controllers
 
         public async Task<IActionResult> EditSettings()
         {
-            ISettings settings = await _settingsLoader.LoadSettingsAsync();
-            return View(settings);
+            return View(await _settingsLoader.LoadSettingsAsync());
         }
 
         [HttpPost]
@@ -51,6 +50,18 @@ namespace CrtAdminPanel.Controllers
         {
             await _settingsLoader.SaveSettingsAsync(settings);
             return RedirectToAction("EditSettings");
+        }
+
+        public async Task<IActionResult> EditCertificate(uint id)
+        {
+            return View(await _certificateTool.GetCertificateByIDAsync(id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditCertificate(Certificate certificate)
+        {
+            await _certificateTool.UpdateCertificateInDatabaseAsync(certificate);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]

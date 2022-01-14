@@ -1,13 +1,13 @@
 ﻿@model CrtAdminPanel.Models.Classes.Certificate
 @{
-    ViewData["Title"] = "Delete certificate";
+    ViewData["Title"] = "Edit certificate";
 }
 
 <div class="text-center">
-    <h2>Certificate information</h2>
+    <h2>Edit certificate</h2>
 </div>
 
-<form asp-action="DeleteCertificate"> asp-controller="Home"
+<form asp-action="EditCertificate" asp-controller="Home">
     <dl class="dl-horizontal">
         <dt>Subject name</dt>
         <dd>
@@ -16,7 +16,9 @@
  
         <dt>Phone number</dt>
         <dd>
-            @Model.HolderPhone
+            <div class="form-group">
+                <input asp-for="HolderPhone" class="form-control" />
+            </div>
         </dd>
 
         <dt>Certificate start date</dt>
@@ -31,6 +33,8 @@
     </dl>
     
     <div class="form-group">
-        <input type="submit" value="Confirm delete" class="btn btn-primary" />
+        <input type="submit" value="Confirm" class="btn btn-primary" />
     </div>
 </form>
+
+
