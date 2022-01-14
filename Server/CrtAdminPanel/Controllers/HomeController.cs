@@ -53,6 +53,20 @@ namespace CrtAdminPanel.Controllers
             return RedirectToAction("EditSettings");
         }
 
+        [HttpGet]
+        [ActionName("DeleteCertificate")]
+        public async Task<ActionResult> ConfirmDelete(uint id)
+        {
+            return View(await _certificateTool.GetCertificateByIDAsync(id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteCertificate(Certificate certificate)
+        {
+            await _certificateTool.DeleteCertificateFromDatabaseAsync(certificate);
+            return RedirectToAction("Index");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

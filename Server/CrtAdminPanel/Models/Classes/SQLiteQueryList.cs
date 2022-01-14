@@ -7,9 +7,9 @@ namespace CrtAdminPanel.Models.Classes
         public readonly string        _deleteCertificateQuery =          @"DELETE FROM Certificates 
                                                                            WHERE Certificates.ID=@ID;",
 
-                                      _getCertificateByIDQuery =         @"SELECT ID, HolderFIO, HolderPhone, HolderEmail, CertStartDateTime, CertEndDateTime 
+                                      _getCertificateByIDQuery =         @"SELECT *
                                                                            FROM Certificates 
-                                                                           WHERE ID=@id",
+                                                                           WHERE Certificates.ID=@ID;",
 
                                       _getCertificatesQuery =            @"SELECT* FROM Certificates;",
 

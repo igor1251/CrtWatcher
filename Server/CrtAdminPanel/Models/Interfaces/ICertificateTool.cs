@@ -11,5 +11,6 @@ namespace CrtAdminPanel.Models.Interfaces
         Task<bool> SaveCertificateToDatabaseAsync(ObservableCollection<ICertificate> certificates);
         Task UpdateCertificateInDatabaseAsync(ICertificate certificate);
         Task DeleteCertificateFromDatabaseAsync(ICertificate certificate);
+        Task<Certificate> GetCertificateByIDAsync(uint id);
     }
 }

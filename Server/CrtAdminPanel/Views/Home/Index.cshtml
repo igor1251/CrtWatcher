@@ -1,15 +1,17 @@
-﻿@{
+﻿@model IEnumerable<CrtAdminPanel.Models.Classes.Certificate>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
+    <h2>List of available certificates</h2>
     <table class="table">
-        <thead>List of available certificates</thead>
         <tr>
             <td>Name</td>
             <td>Phone number</td>
             <td>Start date</td>
             <td>End date</td>
+            <td></td>
         </tr>
 
         @foreach (var item in Model)
@@ -19,6 +21,7 @@
                 <td>@item.HolderPhone</td>
                 <td>@item.CertStartDateTime</td>
                 <td>@item.CertEndDateTime</td>
+                <td><a asp-controller="Home" asp-action="DeleteCertificate" asp-route-id="@item.ID">Delete</a></td>
             </tr>
         }
     </table>

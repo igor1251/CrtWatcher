@@ -118,3 +118,4 @@ D:\Lib\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\ref\Crt
 D:\Lib\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\CrtAdminPanel.pdb
 D:\Lib\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\CrtAdminPanel.genruntimeconfig.cache
 D:\Libraries\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\Razor\Views\Home\EditSettings.cshtml.g.cs
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\Razor\Views\Home\DeleteCertificate.cshtml.g.cs

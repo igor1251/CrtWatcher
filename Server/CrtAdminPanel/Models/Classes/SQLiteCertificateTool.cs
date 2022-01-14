@@ -190,5 +190,18 @@ namespace CrtAdminPanel.Models.Classes
                                             "Succesfully created.",
                                             "Error: Can't create database.");
         }
+
+        public async Task<Certificate> GetCertificateByIDAsync(uint id)
+        {
+            try
+            {
+                return await _dbContext.Connection.QueryFirstOrDefaultAsync<Certificate>(_queryList.GetCertificateByIDQuery, new { id });
+            }
+            catch (Exception ex)
+            {
+                await Logger.WriteAsync("Failed to search certificate" + " " + ex.Message);
+                return new Certificate();
+            }
+        }
     }
 }
