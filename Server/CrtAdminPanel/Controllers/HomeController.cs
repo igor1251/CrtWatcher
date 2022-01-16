@@ -42,7 +42,8 @@ namespace CrtAdminPanel.Controllers
 
         public async Task<IActionResult> EditSettings()
         {
-            return View(await _settingsLoader.LoadSettingsAsync());
+            var settings = await _settingsLoader.LoadSettingsAsync();
+            return View(settings);
         }
 
         [HttpPost]
@@ -71,7 +72,7 @@ namespace CrtAdminPanel.Controllers
             return View(await _certificateTool.GetCertificateByIDAsync(id));
         }
 
-        [HttpPost]
+        [HttpDelete]
         public async Task<IActionResult> DeleteCertificate(Certificate certificate)
         {
             await _certificateTool.DeleteCertificateFromDatabaseAsync(certificate);

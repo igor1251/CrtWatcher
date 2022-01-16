@@ -25,6 +25,8 @@ namespace CrtAdminPanel
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //scoped в течение одного запроса
+            //transient при обращении новый объект
             services.AddSingleton<ICertificateLoader, SQLiteCertificateLoader>();
             services.AddSingleton<ICertificateTool, SQLiteCertificateTool>();
             services.AddSingleton<ICertificateFasade, CertificateFasade>();
