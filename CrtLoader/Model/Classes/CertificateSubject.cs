@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using CrtLoader.Model.Interfaces;
 
 namespace CrtLoader.Model.Classes
@@ -7,6 +8,7 @@ namespace CrtLoader.Model.Classes
     {
         int _id;
         string _subjectName, _subjectPhone = "---", _subjectComment = "---";
+        List<ICertificateData> _certificates = new List<ICertificateData>();
 
         public int ID 
         { 
@@ -41,6 +43,11 @@ namespace CrtLoader.Model.Classes
         { 
             get => _subjectComment;
             set => _subjectComment = value;
+        }
+        public List<ICertificateData> CertificateList 
+        { 
+            get => _certificates; 
+            set => _certificates = value;
         }
     }
 }

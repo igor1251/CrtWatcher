@@ -6,7 +6,6 @@ namespace CrtLoader.Model.Classes
     public class CertificateData : ICertificateData
     {
         int _id;
-        ICertificateSubject _subject;
         string _certificateHash, _algorithm;
         DateTime _startDate, _endDate;
 
@@ -18,11 +17,6 @@ namespace CrtLoader.Model.Classes
                 if (value < 0) throw new ArgumentException("ID must be above or equal '0'");
                 else _id = value;
             }
-        }
-        public ICertificateSubject Subject 
-        { 
-            get => _subject;
-            set => _subject = value;
         }
         public string CertificateHash 
         { 

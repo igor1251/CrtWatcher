@@ -6,7 +6,7 @@ namespace CrtLoader.Model.Interfaces
 {
     public interface ILocalStore
     {
-        Task<List<CertificateData>> LoadCertificates();
+        Task<List<CertificateSubject>> LoadCertificateSubjectsAndCertificates();
         Task InsertCertificate(ICertificateData certificate);
     }
 }

@@ -32,14 +32,16 @@ namespace CrtLoader
             PrepareServices(_container);
             ResolveServices(_container);
 
-            List<CertificateData> certificates = _localStore.LoadCertificates().GetAwaiter().GetResult();
+            List<CertificateSubject> subjects = _localStore.LoadCertificateSubjectsAndCertificates().GetAwaiter().GetResult();
             Console.WriteLine("{0, -40}{1, -10}{2, -20}{3, -45}{4, -25}{5, -25}{6, -25}", "Subject name", "Phone", "Comment", "Cert hash", "Algorithm", "Start date", "End date");
-            foreach (var item in certificates)
+            foreach (var item in subjects)
             {
-                Console.WriteLine("{0, -40}{1, -10}{2, -20}{3, -45}{4, -25}{5, -25}{6, -25}", item.Subject.SubjectName, item.Subject.SubjectPhone, item.Subject.SubjectComment, item.CertificateHash, item.Algorithm, item.StartDate.ToString(), item.EndDate.ToString());
+                Console.WriteLine("{0, -40}{1, -10}{2, -20}{3, -45}{4, -25}{5, -25}{6, -25}", item.SubjectName, item.SubjectPhone, item.SubjectComment, "", "", "", "");
+                foreach (var certificate in item.CertificateList)
+                {
+                    Console.WriteLine("{0, -40}{1, -10}{2, -20}{3, -45}{4, -25}{5, -25}{6, -25}", "", "", "", certificate.CertificateHash, certificate.Algorithm, certificate.StartDate, certificate.EndDate);
+                }
             }
-
-            
         }
     }
 }
