@@ -19,6 +19,7 @@ namespace CrtLoader.Model.Classes
 
         public async Task<List<CertificateData>> GetCertificateData()
         {
+            /*
             if (!File.Exists(_dbContext.DbPath)) throw new FileNotFoundException("Database file not found.");
             var certificates = (await _dbContext.DbConnection.QueryAsync<CertificateData, CertificateSubject, CertificateData>(_queryStore.GetCertificates, (cert, subj) =>
             {
@@ -26,6 +27,8 @@ namespace CrtLoader.Model.Classes
                 return cert;
             })).AsList();
             return certificates;
+            */
+            return null;
         }
 
         public async Task<List<CertificateSubject>> GetCertificateSubjects()
