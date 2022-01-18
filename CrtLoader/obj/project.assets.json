@@ -1285,24 +1285,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Инсегрим\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Insegrim\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\CrtLoader\\CrtLoader.csproj",
+      "projectUniqueName": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\CrtLoader\\CrtLoader.csproj",
       "projectName": "CrtLoader",
-      "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\CrtLoader\\CrtLoader.csproj",
-      "packagesPath": "C:\\Users\\Инсегрим\\.nuget\\packages\\",
-      "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\CrtLoader\\obj\\",
+      "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\CrtLoader\\CrtLoader.csproj",
+      "packagesPath": "C:\\Users\\Insegrim\\.nuget\\packages\\",
+      "outputPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\CrtLoader\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Инсегрим\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Insegrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
