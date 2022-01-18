@@ -5,7 +5,7 @@ namespace CrtLoader.Model.Classes
     public class QueryStore : IQueryStore
     {
         string
-            _getCertificates = "select * from[certificates] left join [subjects] on [certificates].subjectID = [subjects].id;",
+            _getCertificates = "select * from [certificates] left join [subjects] on [certificates].subjectID = [subjects].id;",
             _getSubjects = "select * from [subjects];",
             _deleteCertificate = "delete from [certificates] where [certificates].id = @ID",
             _deleteCertificateSubject = "delete from [certificates] where [certificates].subjectID = @ID; delete from [subjects] where [subjects].id = @ID;",
