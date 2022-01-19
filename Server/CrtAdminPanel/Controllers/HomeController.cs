@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-
+using WA4D0G.MaintenanceTools;
 
 namespace CrtAdminPanel.Controllers
 {
@@ -49,18 +49,34 @@ namespace CrtAdminPanel.Controllers
         [HttpPost]
         public async Task<IActionResult> EditSettings(Settings settings)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(settings);
+            }
+
             await _settingsLoader.SaveSettingsAsync(settings);
             return RedirectToAction("EditSettings");
         }
 
         public async Task<IActionResult> EditCertificate(uint id)
         {
-            return View(await _certificateTool.GetCertificateByIDAsync(id));
+            var certificate = await _certificateTool.GetCertificateByIDAsync(id);
+            return View(certificate);
         }
 
         [HttpPost]
         public async Task<IActionResult> EditCertificate(Certificate certificate)
         {
+            //if (string.IsNullOrEmpty(certificate.HolderPhone))
+            //{
+            //    ModelState.AddModelError("HolderPhone", "Holder phone cannot be a 'null'");
+            //}
+
+            if (!ModelState.IsValid)
+            {
+                return View(certificate);
+            }
+
             await _certificateTool.UpdateCertificateInDatabaseAsync(certificate);
             return RedirectToAction("Index");
         }

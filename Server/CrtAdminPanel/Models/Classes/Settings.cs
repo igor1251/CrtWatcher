@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using CrtAdminPanel.Models.Interfaces;
 
 namespace CrtAdminPanel.Models.Classes
@@ -10,12 +11,15 @@ namespace CrtAdminPanel.Models.Classes
         private uint _warnDaysCount;
         private string _dbFileName = "keys.sqlite";
 
+        [Required]
         public bool PersonalKeyStore 
         { 
             get => _personalKeyStore; 
             set => _personalKeyStore = value; 
         }
 
+        [Required]
+        [Range(0, 365, ErrorMessage = "The number of days should be in the range from 0 to 365")]
         public uint WarnDaysCount
         {
             get => _warnDaysCount;
@@ -30,6 +34,7 @@ namespace CrtAdminPanel.Models.Classes
             }
         }
 
+        [Required]
         public string DbFileName 
         { 
             get => _dbFileName; 
@@ -43,12 +48,14 @@ namespace CrtAdminPanel.Models.Classes
                 _dbFileName = value;
             }
         }
-        
+
+        [Required]
         public string BaseDirectory 
         { 
             get => Environment.CurrentDirectory + "\\Db\\"; 
         }
-        
+
+        [Required]
         public string DbPath 
         { 
             get => BaseDirectory + DbFileName; 

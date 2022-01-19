@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using CrtAdminPanel.Models.Interfaces;
 
 namespace CrtAdminPanel.Models.Classes
@@ -38,7 +39,9 @@ namespace CrtAdminPanel.Models.Classes
                 OnPropertyChanged("HolderFIO");
             }
         }
-
+        
+        [Required(ErrorMessage = "Phone number required")]
+        [Phone]
         public string HolderPhone
         {
             get => string.IsNullOrEmpty(_holderPhone) ? "---" : _holderPhone;

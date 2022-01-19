@@ -7,30 +7,30 @@
     <h2>Certificate information</h2>
 </div>
 
-<form asp-action="DeleteCertificate"> asp-controller="Home"
-    <dl class="dl-horizontal">
-        <dt>Subject name</dt>
-        <dd>
-            @Model.HolderFIO
-        </dd>
- 
-        <dt>Phone number</dt>
-        <dd>
-            @Model.HolderPhone
-        </dd>
-
-        <dt>Certificate start date</dt>
-        <dd>
-            @Model.CertStartDateTime
-        </dd>
-
-        <dt>Certificate end date</dt>
-        <dd>
-            @Model.CertEndDateTime
-        </dd>
-    </dl>
-    
+<form asp-action="DeleteCertificate" asp-controller="Home">
     <div class="form-group">
+        <dl class="dl-horizontal">
+            <dt>Subject name</dt>
+            <dd>
+                @Model.HolderFIO
+            </dd>
+ 
+            <dt>Phone number</dt>
+            <dd>
+                @Model.HolderPhone
+            </dd>
+
+            <dt>Certificate start date</dt>
+            <dd>
+                @Model.CertStartDateTime
+            </dd>
+
+            <dt>Certificate end date</dt>
+            <dd>
+                @Model.CertEndDateTime
+            </dd>
+        </dl>
+    
         <input type="submit" value="Confirm delete" class="btn btn-primary" />
     </div>
 </form>

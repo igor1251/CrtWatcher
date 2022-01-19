@@ -1,1 +1,1 @@
-{"PersonalKeyStore":false,"WarnDaysCount":13,"DbFileName":"keys.sqlite","BaseDirectory":"D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\CrtAdminPanel\\Db\\","DbPath":"D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\CrtAdminPanel\\Db\\keys.sqlite"}
+{"PersonalKeyStore":true,"WarnDaysCount":15,"DbFileName":"keys.sqlite","BaseDirectory":"D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\CrtAdminPanel\\Db\\","DbPath":"D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\CrtAdminPanel\\Db\\keys.sqlite"}
