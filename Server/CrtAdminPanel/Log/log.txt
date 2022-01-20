@@ -30,3 +30,9 @@
 1/19/2022 8:46:48 PM: Connection closed.
 1/19/2022 8:52:09 PM: Error: Can't load settings. '}' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 247.
 1/19/2022 8:52:24 PM: Error: Can't load settings. '}' is invalid after a single JSON value. Expected end of data. Path: $ | LineNumber: 0 | BytePositionInLine: 247.
+20.01.2022 15:22:15: Trying to applying changes....
+20.01.2022 15:22:15: Connection closed. Opening....
+20.01.2022 15:22:15: Connection opened.
+20.01.2022 15:22:15: Succesfully updated.
+20.01.2022 15:22:15: Closing connection....
+20.01.2022 15:22:15: Connection closed.

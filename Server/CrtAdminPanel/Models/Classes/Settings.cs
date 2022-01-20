@@ -11,7 +11,6 @@ namespace CrtAdminPanel.Models.Classes
         private uint _warnDaysCount;
         private string _dbFileName = "keys.sqlite";
 
-        [Required]
         public bool PersonalKeyStore 
         { 
             get => _personalKeyStore; 
@@ -34,7 +33,6 @@ namespace CrtAdminPanel.Models.Classes
             }
         }
 
-        [Required]
         public string DbFileName 
         { 
             get => _dbFileName; 
@@ -49,13 +47,11 @@ namespace CrtAdminPanel.Models.Classes
             }
         }
 
-        [Required]
         public string BaseDirectory 
         { 
             get => Environment.CurrentDirectory + "\\Db\\"; 
         }
 
-        [Required]
         public string DbPath 
         { 
             get => BaseDirectory + DbFileName; 

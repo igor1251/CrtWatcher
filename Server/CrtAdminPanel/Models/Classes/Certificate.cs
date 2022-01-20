@@ -1,11 +1,10 @@
 ﻿using System;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using CrtAdminPanel.Models.Interfaces;
 
 namespace CrtAdminPanel.Models.Classes
 {
-    public class Certificate : ICertificate, INotifyPropertyChanged
+    public class Certificate : ICertificate
     {
         private uint _id;
 
@@ -20,7 +19,6 @@ namespace CrtAdminPanel.Models.Classes
             set
             {
                 _id = value;
-                OnPropertyChanged("ID");
             }
         }
 
@@ -30,17 +28,11 @@ namespace CrtAdminPanel.Models.Classes
 
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Invalid parameter was send for initialization _holderFio field");
-                }
-
                 _holderFio = value;
-                OnPropertyChanged("HolderFIO");
             }
         }
         
-        [Required(ErrorMessage = "Phone number required")]
+        [Required]
         [Phone]
         public string HolderPhone
         {
@@ -48,13 +40,7 @@ namespace CrtAdminPanel.Models.Classes
 
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Invalid parameter was send for initialization _holderPhone field");
-                }
-
                 _holderPhone = value;
-                OnPropertyChanged("HolderPhone");
             }
         }
 
@@ -65,7 +51,6 @@ namespace CrtAdminPanel.Models.Classes
             set
             {
                 _certStartDateTime = value;
-                OnPropertyChanged("CertStartDateTime");
             }
         }
 
@@ -76,16 +61,7 @@ namespace CrtAdminPanel.Models.Classes
             set
             {
                 _certEndDateTime = value;
-                OnPropertyChanged("CertEndDateTime");
             }
-        }
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -121,3 +121,4 @@ D:\Libraries\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\R
 D:\Libraries\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\Razor\Views\Home\DeleteCertificate.cshtml.g.cs
 D:\Lib\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\Razor\Views\Home\DeleteCertificate.cshtml.g.cs
 D:\Lib\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\Razor\Views\Home\EditCertificate.cshtml.g.cs
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\CrtAdminPanel\obj\Debug\net5.0\Razor\Views\Home\EditCertificate.cshtml.g.cs
