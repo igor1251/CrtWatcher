@@ -11,7 +11,7 @@
     <div>
         <div class="validation" asp-validation-summary="ModelOnly" class="text-danger" ></div>
         <div class="form-group">
-            <input type="hidden" asp-for="ID: value=@Model.ID />
+            <input type="hidden" asp-for="ID" value=@Model.ID />
             <dl class="dl-horizontal">
                 <dt>Subject name</dt>
                 <dd>
@@ -27,13 +27,13 @@
 
                 <dt>Certificate start date</dt>
                 <dd>
-                    <input asp-for="CertStartDateTime" type="hidden" value=@Model.CertStartDateTime readonly=true class="form-control" />
+                    <input asp-for="CertStartDateTime" type="hidden" value=@Model.CertStartDateTime class="form-control" />
                     <label>@Model.CertStartDateTime</label>
                 </dd>
 
                 <dt>Certificate end date</dt>
                 <dd>
-                    <input asp-for="CertEndDateTime" type="hidden" value=@Model.CertEndDateTime readonly=true class="form-control" />
+                    <input asp-for="CertEndDateTime" type="hidden" value=@Model.CertEndDateTime class="form-control" />
                     <label>@Model.CertEndDateTime</label>
                 </dd>
             </dl>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using CrtAdminPanel.Models.Interfaces;
 
@@ -12,6 +13,7 @@ namespace CrtAdminPanel.Models.Classes
 
         private DateTime _certStartDateTime, _certEndDateTime;
 
+        [ReadOnly(true)]
         public uint ID
         {
             get => _id;
@@ -22,6 +24,7 @@ namespace CrtAdminPanel.Models.Classes
             }
         }
 
+        [ReadOnly(true)]
         public string HolderFIO
         {
             get => string.IsNullOrEmpty(_holderFio) ? "---" : _holderFio;
@@ -44,6 +47,7 @@ namespace CrtAdminPanel.Models.Classes
             }
         }
 
+        [ReadOnly(true)]
         public DateTime CertStartDateTime
         {
             get => _certStartDateTime;
@@ -54,6 +58,7 @@ namespace CrtAdminPanel.Models.Classes
             }
         }
 
+        [ReadOnly(true)]
         public DateTime CertEndDateTime
         {
             get => _certEndDateTime;
