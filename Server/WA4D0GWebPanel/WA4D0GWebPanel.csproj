@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WA4D0GWebPanel.Services\WA4D0GWebPanel.Services.csproj" />
+    <ProjectReference Include="..\WA4D0GWepPanel.Models\WA4D0GWebPanel.Models.csproj" />
+  </ItemGroup>
+
+</Project>

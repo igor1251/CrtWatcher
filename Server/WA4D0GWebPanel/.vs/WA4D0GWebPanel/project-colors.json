@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7d613d54-daee-4ff3-b7e0-d20f124a2809": {
+      "ProjectGuid": "7d613d54-daee-4ff3-b7e0-d20f124a2809",
+      "DisplayName": "WA4D0GWebPanel",
+      "ColorIndex": 0
+    },
+    "b3d73e82-6080-4c17-88f0-94565d8fb0d1": {
+      "ProjectGuid": "b3d73e82-6080-4c17-88f0-94565d8fb0d1",
+      "DisplayName": "WA4D0GWebPanel.Models",
+      "ColorIndex": 1
+    },
+    "357a0efc-de77-46b7-b024-8ba077dc9321": {
+      "ProjectGuid": "357a0efc-de77-46b7-b024-8ba077dc9321",
+      "DisplayName": "WA4D0GWebPanel.Services",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

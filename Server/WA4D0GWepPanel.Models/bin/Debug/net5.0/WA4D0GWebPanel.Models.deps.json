@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "WA4D0GWebPanel.Models/1.0.0": {
+        "runtime": {
+          "WA4D0GWebPanel.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WA4D0GWebPanel.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
