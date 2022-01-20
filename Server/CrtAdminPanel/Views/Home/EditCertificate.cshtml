@@ -11,26 +11,30 @@
     <div>
         <div class="validation" asp-validation-summary="ModelOnly" class="text-danger" ></div>
         <div class="form-group">
+            <input type="hidden" asp-for="ID: value=@Model.ID />
             <dl class="dl-horizontal">
                 <dt>Subject name</dt>
                 <dd>
-                    @Model.HolderFIO
+                    <input asp-for="HolderFIO" type="hidden" value=@Model.HolderFIO readonly=true class="form-control" />
+                    <label>@Model.HolderFIO</label>
                 </dd>
  
                 <dt><label>Phone number</label></dt>
                 <dd>
-                    <input asp-for="HolderPhone"/>
+                    <input asp-for="HolderPhone" class="form-control" />
                     <span asp-validation-for="HolderPhone" class="text-danger" ></span>
                 </dd>
 
                 <dt>Certificate start date</dt>
                 <dd>
-                    @Model.CertStartDateTime
+                    <input asp-for="CertStartDateTime" type="hidden" value=@Model.CertStartDateTime readonly=true class="form-control" />
+                    <label>@Model.CertStartDateTime</label>
                 </dd>
 
                 <dt>Certificate end date</dt>
                 <dd>
-                    @Model.CertEndDateTime
+                    <input asp-for="CertEndDateTime" type="hidden" value=@Model.CertEndDateTime readonly=true class="form-control" />
+                    <label>@Model.CertEndDateTime</label>
                 </dd>
             </dl>
 
@@ -39,6 +43,7 @@
     </div>
 </form>
 
+@*Нужно для валидации на уровне клиента. Если скрипты в браузере отключены, переходим к валидации на сервере*@
 @section scripts{
  
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>

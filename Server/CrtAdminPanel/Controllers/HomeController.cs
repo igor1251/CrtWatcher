@@ -67,10 +67,10 @@ namespace CrtAdminPanel.Controllers
         [HttpPost]
         public async Task<IActionResult> EditCertificate(Certificate certificate)
         {
-            if (string.IsNullOrEmpty(certificate.HolderPhone))
-            {
-                ModelState.AddModelError("HolderPhone", "Holder phone cannot be a 'null'");
-            }
+            //if (string.IsNullOrEmpty(certificate.HolderPhone))
+            //{
+            //    ModelState.AddModelError("HolderPhone", "Holder phone cannot be a 'null'");
+            //}
 
             if (!ModelState.IsValid)
             {
