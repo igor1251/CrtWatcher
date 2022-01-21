@@ -1,0 +1,53 @@
+﻿@page
+@model WA4D0GWebPanel.Pages.Subjects.SubjectDetailsModel
+@{
+    ViewData["Title"] = "Subject details";
+}
+
+<div class="text-center">
+    <hd>Subject information</hd>
+</div>
+
+<div>
+    <table class="table">
+        <thead>Personal information</thead>
+        <tr>
+            <td>Subject full name</td>
+            <td>Phone number</td>
+            <td>Email</td>
+        </tr>
+        
+        <tr>
+            <td>@Model.Subject.FullName</td>
+            <td>@Model.Subject.PhoneNumber</td>
+            <td>@Model.Subject.Email</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table class="table">
+        <thead>Certificates list</thead>
+        <tr>
+            <td>Hash</td>
+            <td>Algorithm</td>
+            <td>StartDate</td>
+            <td>EndDate</td>
+            <td></td>
+        </tr>
+
+        @if (@Model.Subject.Certificates != null)
+        {
+            @foreach (var item in @Model.Subject.Certificates)
+            {
+                <tr>
+                    <td>@item.Hash</td>
+                    <td>@item.Algorithm</td>
+                    <td>@item.StartDate</td>
+                    <td>@item.EndDate</td>
+                    <td><a asp-action="DeleteCertificate" asp-route-subjectID=@Model.Subject.ID asp-route-certificateID=@item.ID>Delete</a></td>
+                </tr>
+            }
+        }
+    </table>
+</div>

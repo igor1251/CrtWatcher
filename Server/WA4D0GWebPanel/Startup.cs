@@ -24,7 +24,8 @@ namespace WA4D0GWebPanel
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<ICertificateRepository, MockCertificateRepository>();
+            services.AddSingleton<ICertificateRepository, SystemStoreCertificateRepository>();
+            //services.AddSingleton<ICertificateRepository, MockCertificateRepository>();
             services.AddRazorPages();
         }
 

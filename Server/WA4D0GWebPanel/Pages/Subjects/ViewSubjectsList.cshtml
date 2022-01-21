@@ -1,0 +1,27 @@
+﻿@page
+@model WA4D0GWebPanel.Pages.Subjects.ViewSubjectsListModel
+@{
+    ViewData["Title"] = "View subjects";
+}
+
+<div class="text-center">
+    <h4>Certificates list</h4>
+    <table class="table">
+        <tr>
+            <td>Subject full name</td>
+            <td>Email</td>
+            <td>Phone number</td>
+            <td></td>
+        </tr>
+
+        @foreach (var item in @Model.Subjects)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+                <td><a asp-page="/Subjects/SubjectDetails" asp-route-json=@Json.Serialize(item)>Details</a></td>                
+            </tr>
+        }   
+    </table>
+</div>

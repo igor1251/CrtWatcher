@@ -9,6 +9,8 @@ namespace WA4D0GWebPanel.Services
 {
     public interface ICertificateRepository
     {
-        IEnumerable<Certificate> GetCertificatesList();
+        Task<IEnumerable<Subject>> GetSubjectsList();
+        Task DeleteSubject(int subjectID);
+        Task EditSubject(Subject subject);
     }
 }

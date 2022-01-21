@@ -9,3 +9,15 @@ D:\Lib\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0
 D:\Lib\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.dll
 D:\Lib\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\ref\WA4D0GWebPanel.Models.dll
 D:\Lib\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\bin\Debug\net5.0\WA4D0GWebPanel.Models.deps.json
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\bin\Debug\net5.0\WA4D0GWebPanel.Models.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\bin\Debug\net5.0\ref\WA4D0GWebPanel.Models.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\bin\Debug\net5.0\WA4D0GWebPanel.Models.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.AssemblyInfoInputs.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.AssemblyInfo.cs
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.csproj.CoreCompileInputs.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\ref\WA4D0GWebPanel.Models.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.csproj.AssemblyReference.cache
