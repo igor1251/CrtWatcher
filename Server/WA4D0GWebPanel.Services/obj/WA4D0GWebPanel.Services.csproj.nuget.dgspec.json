@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel.Services\\WA4D0GWebPanel.Services.csproj": {}
+    "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel.Services\\WA4D0GWebPanel.Services.csproj": {}
   },
   "projects": {
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel.Services\\WA4D0GWebPanel.Services.csproj": {
+    "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel.Services\\WA4D0GWebPanel.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel.Services\\WA4D0GWebPanel.Services.csproj",
+        "projectUniqueName": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel.Services\\WA4D0GWebPanel.Services.csproj",
         "projectName": "WA4D0GWebPanel.Services",
-        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel.Services\\WA4D0GWebPanel.Services.csproj",
-        "packagesPath": "C:\\Users\\Инсегрим\\.nuget\\packages\\",
-        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel.Services\\obj\\",
+        "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel.Services\\WA4D0GWebPanel.Services.csproj",
+        "packagesPath": "C:\\Users\\Insegrim\\.nuget\\packages\\",
+        "outputPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel.Services\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Инсегрим\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Insegrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWepPanel.Models\\WA4D0GWebPanel.Models.csproj": {
-                "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWepPanel.Models\\WA4D0GWebPanel.Models.csproj"
+              "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWepPanel.Models\\WA4D0GWebPanel.Models.csproj": {
+                "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWepPanel.Models\\WA4D0GWebPanel.Models.csproj"
               }
             }
           }
@@ -66,21 +62,17 @@
         }
       }
     },
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWepPanel.Models\\WA4D0GWebPanel.Models.csproj": {
+    "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWepPanel.Models\\WA4D0GWebPanel.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWepPanel.Models\\WA4D0GWebPanel.Models.csproj",
+        "projectUniqueName": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWepPanel.Models\\WA4D0GWebPanel.Models.csproj",
         "projectName": "WA4D0GWebPanel.Models",
-        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWepPanel.Models\\WA4D0GWebPanel.Models.csproj",
-        "packagesPath": "C:\\Users\\Инсегрим\\.nuget\\packages\\",
-        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWepPanel.Models\\obj\\",
+        "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWepPanel.Models\\WA4D0GWebPanel.Models.csproj",
+        "packagesPath": "C:\\Users\\Insegrim\\.nuget\\packages\\",
+        "outputPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWepPanel.Models\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Инсегрим\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Insegrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -105,6 +97,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.115.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

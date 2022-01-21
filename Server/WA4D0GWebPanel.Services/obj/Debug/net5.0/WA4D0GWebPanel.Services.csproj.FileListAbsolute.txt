@@ -28,3 +28,6 @@ D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWebPanel.Services\obj\Debu
 D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWebPanel.Services\obj\Debug\net5.0\WA4D0GWebPanel.Services.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWebPanel.Services\obj\Debug\net5.0\ref\WA4D0GWebPanel.Services.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWebPanel.Services\obj\Debug\net5.0\WA4D0GWebPanel.Services.pdb
+D:\Lib\Documents\GitHub\CrtWatcher\Server\WA4D0GWebPanel.Services\bin\Debug\net5.0\WA4D0GWebPanel.Services.runtimeconfig.json
+D:\Lib\Documents\GitHub\CrtWatcher\Server\WA4D0GWebPanel.Services\bin\Debug\net5.0\WA4D0GWebPanel.Services.runtimeconfig.dev.json
+D:\Lib\Documents\GitHub\CrtWatcher\Server\WA4D0GWebPanel.Services\obj\Debug\net5.0\WA4D0GWebPanel.Services.genruntimeconfig.cache

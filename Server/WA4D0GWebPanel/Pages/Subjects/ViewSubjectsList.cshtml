@@ -7,21 +7,33 @@
 <div class="text-center">
     <h4>Certificates list</h4>
     <table class="table">
-        <tr>
-            <td>Subject full name</td>
-            <td>Email</td>
-            <td>Phone number</td>
-            <td></td>
-        </tr>
-
-        @foreach (var item in @Model.Subjects)
-        {
+        <tbody>
             <tr>
-                <td>@item.FullName</td>
-                <td>@item.Email</td>
-                <td>@item.PhoneNumber</td>
-                <td><a asp-page="/Subjects/SubjectDetails" asp-route-json=@Json.Serialize(item)>Details</a></td>                
+                <td>Subject full name</td>
+                <td>Phone number</td>
+                <td>Comment</td>
+                <td></td>
             </tr>
-        }   
+
+            @foreach (var item in @Model.Subjects)
+            {
+                <tr>
+                    <td>@item.SubjectName</td>
+                    <td>@item.SubjectPhone</td>
+                    <td>@item.SubjectComment</td>
+                    <td>
+                        <a asp-page="/Subjects/SubjectDetails" asp-route-json=@Json.Serialize(item)>
+                            <img class="img-thumbnail" src=~/icons/32/details.png width=25 height=25/>
+                        </a>
+                        <a asp-page="/Index">
+                            <img class="img-thumbnail" src=~/icons/32/edit.png width=25 height=25/>
+                        </a>
+                        <a asp-page="/Index">
+                            <img class="img-thumbnail" src=~/icons/32/delete.png width=25 height=25 />
+                        </a>
+                    </td>                
+                </tr>
+            }   
+        </tbody>
     </table>
 </div>

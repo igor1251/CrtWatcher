@@ -1,25 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
-using WA4D0GWebPanel.Models;
-using WA4D0GWebPanel.Services;
+using WA4D0GWebPanel.Models.Classes;
+using WA4D0GWebPanel.Services.Interfaces;
 
 namespace WA4D0GWebPanel.Pages.Subjects
 {
     public class ViewSubjectsListModel : PageModel
     {
-        private readonly ICertificateRepository _repository;
+        private readonly ILocalStore _dbStore;
 
-        public IEnumerable<Subject> Subjects { get; set; }
+        public List<CertificateSubject> Subjects { get; set; }
 
-        public ViewSubjectsListModel(ICertificateRepository repository)
+        public ViewSubjectsListModel(ILocalStore dbStore)
         {
-            _repository = repository;
+            _dbStore = dbStore;
         }
 
         public async void OnGetAsync()
         {
-            Subjects = await _repository.GetSubjectsList();
+            Subjects = await _dbStore.LoadCertificateSubjectsAndCertificates();
         }
     }
 }

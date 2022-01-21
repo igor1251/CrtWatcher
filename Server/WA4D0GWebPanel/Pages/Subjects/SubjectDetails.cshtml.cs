@@ -1,26 +1,45 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
-using WA4D0GWebPanel.Models;
-using WA4D0GWebPanel.Services;
+using System.Threading.Tasks;
+using WA4D0GWebPanel.Models.Classes;
+using WA4D0GWebPanel.Services.Interfaces;
 
 namespace WA4D0GWebPanel.Pages.Subjects
 {
     public class SubjectDetailsModel : PageModel
     {
-        private readonly ICertificateRepository _repository;
+        private readonly ILocalStore _dbStore;
 
         [BindProperty]
-        public Subject Subject { get; set; }
+        public CertificateSubject Subject { get; private set; }
 
-        public SubjectDetailsModel(ICertificateRepository repository)
+        public SubjectDetailsModel(ILocalStore dbStore)
         {
-            _repository = repository;
+            _dbStore = dbStore;
         }
 
-        public void OnGet(string json)
+        public IActionResult OnGet(string json)
         {
-            this.Subject = JsonSerializer.Deserialize<Subject>(json);
+            if (string.IsNullOrEmpty(json))
+            {
+                return NotFound();
+            }
+
+            this.Subject = JsonSerializer.Deserialize<CertificateSubject>(json);
+
+            if (this.Subject == null)
+            {
+                return NotFound();
+            }
+
+            return Page();
         }
+
+        //public IActionResult OnPostDelete(int subjectID, int certificateID)
+        //{
+        //    this.Subject = new CertificateSubject();
+        //    return Page();
+        //}
     }
 }

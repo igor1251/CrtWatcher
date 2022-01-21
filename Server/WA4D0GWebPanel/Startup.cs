@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WA4D0GWebPanel.Services;
+using WA4D0GWebPanel.Services.Interfaces;
+using WA4D0GWebPanel.Services.Classes;
 
 namespace WA4D0GWebPanel
 {
@@ -24,8 +26,10 @@ namespace WA4D0GWebPanel
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<ICertificateRepository, SystemStoreCertificateRepository>();
-            //services.AddSingleton<ICertificateRepository, MockCertificateRepository>();
+            services.AddSingleton<IDbContext, DbContext>();
+            services.AddSingleton<IQueryStore, QueryStore>();
+            services.AddSingleton<IDbStore, DbStore>();
+            services.AddSingleton<ILocalStore, LocalStore>();
             services.AddRazorPages();
         }
 

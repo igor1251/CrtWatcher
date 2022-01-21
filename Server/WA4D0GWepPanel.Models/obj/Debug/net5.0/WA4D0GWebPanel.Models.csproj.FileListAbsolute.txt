@@ -21,3 +21,7 @@ D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\
 D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\ref\WA4D0GWebPanel.Models.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.pdb
 D:\Libraries\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.csproj.AssemblyReference.cache
+D:\Lib\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.csproj.AssemblyReference.cache
+D:\Lib\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\bin\Debug\net5.0\WA4D0GWebPanel.Models.runtimeconfig.json
+D:\Lib\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\bin\Debug\net5.0\WA4D0GWebPanel.Models.runtimeconfig.dev.json
+D:\Lib\Documents\GitHub\CrtWatcher\Server\WA4D0GWepPanel.Models\obj\Debug\net5.0\WA4D0GWebPanel.Models.genruntimeconfig.cache
