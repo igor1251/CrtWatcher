@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "em+YSKHV5UoabD3tDMpwi1hKzGgLIJT/EauB/Fq44Ph1TP2jZjPon7cJre9cCVRMfx7g4zoRSa5tjychuSgOxA==",
+  "dgSpecHash": "SLIQm6J3Ez7UQnQvrVtjS+0rxzNUoy/AbC9EonKnoLBUnVoy71hY6wlPNypbGx7lg2j2PZbaiwIPqrlO1NPiaA==",
   "success": true,
-  "projectFilePath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\CrtAdminPanel\\CrtAdminPanel.csproj",
+  "projectFilePath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\CrtAdminPanel.old\\CrtAdminPanel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Insegrim\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Insegrim\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

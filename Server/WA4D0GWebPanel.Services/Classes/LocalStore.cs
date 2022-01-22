@@ -47,12 +47,15 @@ namespace WA4D0GWebPanel.Services.Classes
                     int subjectIndex = await FindSubject(subjects, subjectName);
                     if (subjectIndex > -1)
                     {
+                        certificateData.ID = subjects[subjectIndex].CertificateList.Count + 1;
                         subjects[subjectIndex].CertificateList.Add(certificateData);
                     }
                     else
                     {
                         CertificateSubject subject = new CertificateSubject();
+                        subject.ID = subjects.Count + 1;
                         subject.SubjectName = subjectName;
+                        certificateData.ID = 1;
                         subject.CertificateList.Add(certificateData);
                         subjects.Add(subject);
                     }

@@ -1,61 +1,60 @@
 ﻿@page
 @model WA4D0GWebPanel.Pages.Subjects.SubjectDetailsModel
 @{
-    ViewData["Title"] = "Subject details";
+    ViewData["Title"] = "Details";
 }
 
-<div class="text-center">
-    <h4>Subject information</h4>
-</div>
-
 <div>
-    <table class="table">
-        <thead>Personal information</thead>
-        <tbody>
-            <tr>
-                <td>Subject full name</td>
-                <td>Phone number</td>
-                <td>Comment</td>
-            </tr>
+    <fieldset>
+        <legend>Personal information</legend>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Subject full name</td>
+                    <td>Phone number</td>
+                    <td>Comment</td>
+                </tr>
         
-            <tr>
-                <td>@Model.Subject.SubjectName</td>
-                <td>@Model.Subject.SubjectPhone</td>
-                <td>@Model.Subject.SubjectComment</td>
-            </tr>
-        </tbody>
-    </table>
-
+                <tr>
+                    <td>@Model.Subject.SubjectName</td>
+                    <td>@Model.Subject.SubjectPhone</td>
+                    <td>@Model.Subject.SubjectComment</td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
     <br>
 
-    <table class="table">
-        <thead>Certificates list</thead>
-        <tr>
-            <td>Hash</td>
-            <td>Algorithm</td>
-            <td>StartDate</td>
-            <td>EndDate</td>
-            <td></td>
-        </tr>
+    <fieldset>
+        <legend>Certificates list</legend>
+        <table class="table">
+            <tr>
+                <td>Hash</td>
+                <td>Algorithm</td>
+                <td>StartDate</td>
+                <td>EndDate</td>
+                <td></td>
+            </tr>
 
-        @if (@Model.Subject.CertificateList != null)
-        {
-            @foreach (var item in @Model.Subject.CertificateList)
+            @if (@Model.Subject.CertificateList != null)
             {
-                <tr>
-                    <td>@item.CertificateHash</td>
-                    <td>@item.Algorithm</td>
-                    <td>@item.StartDate</td>
-                    <td>@item.EndDate</td>
-                    <td>
-                        <form method="post">
-                            <a asp-route-subjectID=@Model.Subject.ID asp-route-certificateID=@item.ID>
-                                <img src="~/icons/32/delete.png" width=22 height=22 />
-                            </a>
-                        </form>
-                    </td>
-                </tr>
+                @foreach (var item in @Model.Subject.CertificateList)
+                {
+                    <tr>
+                        <td>@item.CertificateHash</td>
+                        <td>@item.Algorithm</td>
+                        <td>@item.StartDate</td>
+                        <td>@item.EndDate</td>
+                        <td>
+                            <form method="post">
+                                <a asp-route-subjectID=@Model.Subject.ID asp-route-certificateID=@item.ID>
+                                    <img src="~/icons/32/delete.png" width=23 height=23 />
+                                </a>
+                            </form>
+                        </td>
+                    </tr>
+                }
             }
-        }
-    </table>
+        </table>
+    </fieldset>
 </div>

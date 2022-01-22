@@ -1,39 +1,41 @@
 ﻿@page
 @model WA4D0GWebPanel.Pages.Subjects.ViewSubjectsListModel
 @{
-    ViewData["Title"] = "View subjects";
+    ViewData["Title"] = "Subjects";
 }
 
-<div class="text-center">
-    <h4>Certificates list</h4>
-    <table class="table">
-        <tbody>
-            <tr>
-                <td>Subject full name</td>
-                <td>Phone number</td>
-                <td>Comment</td>
-                <td></td>
-            </tr>
-
-            @foreach (var item in @Model.Subjects)
-            {
+<div>
+    <fieldset>
+        <legend>Registered subjects</legend>
+        <table class="table">
+            <tbody>
                 <tr>
-                    <td>@item.SubjectName</td>
-                    <td>@item.SubjectPhone</td>
-                    <td>@item.SubjectComment</td>
-                    <td>
-                        <a asp-page="/Subjects/SubjectDetails" asp-route-json=@Json.Serialize(item)>
-                            <img class="img-thumbnail" src=~/icons/32/details.png width=25 height=25/>
-                        </a>
-                        <a asp-page="/Index">
-                            <img class="img-thumbnail" src=~/icons/32/edit.png width=25 height=25/>
-                        </a>
-                        <a asp-page="/Index">
-                            <img class="img-thumbnail" src=~/icons/32/delete.png width=25 height=25 />
-                        </a>
-                    </td>                
+                    <td>Subject full name</td>
+                    <td>Phone number</td>
+                    <td>Comment</td>
+                    <td></td>
                 </tr>
-            }   
-        </tbody>
-    </table>
+
+                @foreach (var item in @Model.Subjects)
+                {
+                    <tr>
+                        <td>@item.SubjectName</td>
+                        <td>@item.SubjectPhone</td>
+                        <td>@item.SubjectComment</td>
+                        <td>
+                            <a asp-page="/Subjects/SubjectDetails" asp-route-json=@Json.Serialize(item)>
+                                <img src=~/icons/32/details.png width=23 height=23/>
+                            </a>
+                            <a asp-page="/Index">
+                                <img src=~/icons/32/edit.png width=23 height=23/>
+                            </a>
+                            <a asp-page="/Index">
+                                <img src=~/icons/32/delete.png width=23 height=23 />
+                            </a>
+                        </td>                
+                    </tr>
+                }   
+            </tbody>
+        </table>
+    </fieldset>
 </div>
