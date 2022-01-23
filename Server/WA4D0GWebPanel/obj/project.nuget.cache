@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "zidUSR0AxT4bcxDT9PODPSyAbhOS5OllyEY59fVUXKgpkjE4hLSLZ08bwmPsMgtY5+1cXnC5hg4nlnWK1dKeog==",
+  "dgSpecHash": "AXVdtqTMzxFbaNmS4jz6yY/dvQxkVt5POd/LRYy24CZ2mLLkyl0LAkou55s9KHLJPX0kuxCZTF1/IQOiGoGebQ==",
   "success": true,
   "projectFilePath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel\\WA4D0GWebPanel.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Insegrim\\.nuget\\packages\\bootstrap\\5.1.3\\bootstrap.5.1.3.nupkg.sha512",
     "C:\\Users\\Insegrim\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Insegrim\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Insegrim\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.13\\microsoft.aspnetcore.mvc.razor.extensions.5.0.13.nupkg.sha512",

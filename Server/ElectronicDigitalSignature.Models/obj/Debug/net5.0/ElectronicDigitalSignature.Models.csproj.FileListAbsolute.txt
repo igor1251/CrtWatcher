@@ -1,0 +1,11 @@
+D:\Lib\Documents\GitHub\CrtWatcher\Server\ElectronicDigitalSignature.Models\bin\Debug\net5.0\ElectronicDigitalSignature.Models.deps.json
+D:\Lib\Documents\GitHub\CrtWatcher\Server\ElectronicDigitalSignature.Models\bin\Debug\net5.0\ElectronicDigitalSignature.Models.dll
+D:\Lib\Documents\GitHub\CrtWatcher\Server\ElectronicDigitalSignature.Models\bin\Debug\net5.0\ref\ElectronicDigitalSignature.Models.dll
+D:\Lib\Documents\GitHub\CrtWatcher\Server\ElectronicDigitalSignature.Models\bin\Debug\net5.0\ElectronicDigitalSignature.Models.pdb
+D:\Lib\Documents\GitHub\CrtWatcher\Server\ElectronicDigitalSignature.Models\obj\Debug\net5.0\ElectronicDigitalSignature.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Lib\Documents\GitHub\CrtWatcher\Server\ElectronicDigitalSignature.Models\obj\Debug\net5.0\ElectronicDigitalSignature.Models.AssemblyInfoInputs.cache
+D:\Lib\Documents\GitHub\CrtWatcher\Server\ElectronicDigitalSignature.Models\obj\Debug\net5.0\ElectronicDigitalSignature.Models.AssemblyInfo.cs
+D:\Lib\Documents\GitHub\CrtWatcher\Server\ElectronicDigitalSignature.Models\obj\Debug\net5.0\ElectronicDigitalSignature.Models.csproj.CoreCompileInputs.cache
+D:\Lib\Documents\GitHub\CrtWatcher\Server\ElectronicDigitalSignature.Models\obj\Debug\net5.0\ElectronicDigitalSignature.Models.dll
+D:\Lib\Documents\GitHub\CrtWatcher\Server\ElectronicDigitalSignature.Models\obj\Debug\net5.0\ref\ElectronicDigitalSignature.Models.dll
+D:\Lib\Documents\GitHub\CrtWatcher\Server\ElectronicDigitalSignature.Models\obj\Debug\net5.0\ElectronicDigitalSignature.Models.pdb

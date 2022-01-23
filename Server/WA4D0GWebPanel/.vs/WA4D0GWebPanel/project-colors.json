@@ -1,21 +1,31 @@
 {
   "Version": 1,
   "ProjectMap": {
-    "7d613d54-daee-4ff3-b7e0-d20f124a2809": {
-      "ProjectGuid": "7d613d54-daee-4ff3-b7e0-d20f124a2809",
+    "5f9f15d0-ebef-4258-a903-f89f230e745a": {
+      "ProjectGuid": "5f9f15d0-ebef-4258-a903-f89f230e745a",
       "DisplayName": "WA4D0GWebPanel",
       "ColorIndex": 0
     },
-    "b3d73e82-6080-4c17-88f0-94565d8fb0d1": {
-      "ProjectGuid": "b3d73e82-6080-4c17-88f0-94565d8fb0d1",
+    "985f3f04-8e0f-46a9-bbd9-d89a7201ccad": {
+      "ProjectGuid": "985f3f04-8e0f-46a9-bbd9-d89a7201ccad",
       "DisplayName": "WA4D0GWebPanel.Models",
       "ColorIndex": 1
     },
-    "357a0efc-de77-46b7-b024-8ba077dc9321": {
-      "ProjectGuid": "357a0efc-de77-46b7-b024-8ba077dc9321",
-      "DisplayName": "WA4D0GWebPanel.Services",
+    "86ba173f-67c8-4b27-8670-e7014a753b03": {
+      "ProjectGuid": "86ba173f-67c8-4b27-8670-e7014a753b03",
+      "DisplayName": "CertificateStore.Models",
       "ColorIndex": 2
+    },
+    "471ee491-5e48-4fdf-ba37-d15fbad44929": {
+      "ProjectGuid": "471ee491-5e48-4fdf-ba37-d15fbad44929",
+      "DisplayName": "ElectronicDigitalSignature.Models",
+      "ColorIndex": 3
+    },
+    "72da6f8e-e7d2-41ad-abed-51c99e4aa092": {
+      "ProjectGuid": "72da6f8e-e7d2-41ad-abed-51c99e4aa092",
+      "DisplayName": "ElectronicDigitalSignature.Services",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 5
 }

@@ -1,0 +1,130 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj": {}
+  },
+  "projects": {
+    "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj",
+        "projectName": "ElectronicDigitalSignature.Models",
+        "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj",
+        "packagesPath": "C:\\Users\\Insegrim\\.nuget\\packages\\",
+        "outputPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Insegrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj",
+        "projectName": "ElectronicDigitalSignature.Services",
+        "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj",
+        "packagesPath": "C:\\Users\\Insegrim\\.nuget\\packages\\",
+        "outputPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Insegrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj": {
+                "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.115.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

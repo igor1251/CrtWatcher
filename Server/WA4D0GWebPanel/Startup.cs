@@ -8,9 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WA4D0GWebPanel.Services;
-using WA4D0GWebPanel.Services.Interfaces;
-using WA4D0GWebPanel.Services.Classes;
 
 namespace WA4D0GWebPanel
 {
@@ -26,11 +23,7 @@ namespace WA4D0GWebPanel
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IDbContext, DbContext>();
-            services.AddSingleton<IQueryStore, QueryStore>();
-            services.AddSingleton<IDbStore, DbStore>();
-            services.AddSingleton<ILocalStore, LocalStore>();
-            services.AddRazorPages();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,11 +35,10 @@ namespace WA4D0GWebPanel
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -56,7 +48,9 @@ namespace WA4D0GWebPanel
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
