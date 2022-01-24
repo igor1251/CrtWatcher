@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel\\WA4D0GWebPanel.csproj": {}
+    "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel\\WA4D0GWebPanel.csproj": {}
   },
   "projects": {
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj": {
+    "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj",
+        "projectUniqueName": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj",
         "projectName": "ElectronicDigitalSignature.Models",
-        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj",
-        "packagesPath": "C:\\Users\\Инсегрим\\.nuget\\packages\\",
-        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\obj\\",
+        "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj",
+        "packagesPath": "C:\\Users\\Insegrim\\.nuget\\packages\\",
+        "outputPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Инсегрим\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Insegrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -62,21 +58,17 @@
         }
       }
     },
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj": {
+    "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj",
+        "projectUniqueName": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj",
         "projectName": "ElectronicDigitalSignature.Services",
-        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj",
-        "packagesPath": "C:\\Users\\Инсегрим\\.nuget\\packages\\",
-        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\obj\\",
+        "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj",
+        "packagesPath": "C:\\Users\\Insegrim\\.nuget\\packages\\",
+        "outputPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Инсегрим\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Insegrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,8 +82,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj": {
-                "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj"
+              "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj": {
+                "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj"
               }
             }
           }
@@ -134,21 +126,17 @@
         }
       }
     },
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel\\WA4D0GWebPanel.csproj": {
+    "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel\\WA4D0GWebPanel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel\\WA4D0GWebPanel.csproj",
+        "projectUniqueName": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel\\WA4D0GWebPanel.csproj",
         "projectName": "WA4D0GWebPanel",
-        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel\\WA4D0GWebPanel.csproj",
-        "packagesPath": "C:\\Users\\Инсегрим\\.nuget\\packages\\",
-        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel\\obj\\",
+        "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel\\WA4D0GWebPanel.csproj",
+        "packagesPath": "C:\\Users\\Insegrim\\.nuget\\packages\\",
+        "outputPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GWebPanel\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Инсегрим\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Insegrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -162,11 +150,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj": {
-                "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj"
+              "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj": {
+                "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj"
               },
-              "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj": {
-                "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj"
+              "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj": {
+                "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj"
               }
             }
           }
