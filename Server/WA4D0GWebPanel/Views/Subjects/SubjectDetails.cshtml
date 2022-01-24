@@ -3,6 +3,50 @@
     ViewData["Title"] = "Details";
 }
 
-<div class="text-center">
-    <p>Use this page for edit subject info.</p>
+<div>
+    <fieldset>
+        <legend>Subject information</legend>
+        <table class="table">
+            <tr>
+                <td>Name</td>
+                <td>Phone</td>
+                <td>Comment</td>
+            </tr>
+
+            <tr>
+                <td>@Model.Subject.SubjectName</td>
+                <td>@Model.Subject.SubjectPhone</td>
+                <td>@Model.Subject.SubjectComment</td>
+            </tr>
+        </table>
+    </fieldset>
+</div>
+
+<div>
+    <fieldset>
+        <legend>Subject certificates</legend>
+        <table class="table">
+            <tr>
+                <td>Hash</td>
+                <td>Algorithm</td>
+                <td>Start date</td>
+                <td>End date</td>
+                <td></td>
+            </tr>
+
+            @foreach (var item in @Model.Subject.CertificateList)
+            {
+                <tr>
+                    <td>@item.CertificateHash</td>
+                    <td>@item.Algorithm</td>
+                    <td>@item.StartDate</td>
+                    <td>@item.EndDate</td>
+                    <td>
+                        <a method="delete" asp-controller="Subjects" asp-action="CertificateDelete" asp-route-subjectId=@Model.Subject.ID asp-route-certificateId=@item.ID ><img src="/icons/32/delete.png" width=23 height=23 /></a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </fieldset>
 </div>

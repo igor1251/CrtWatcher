@@ -5,6 +5,10 @@
 }
 
 <div>
+    <a asp-controller="Subjects" asp-action="LoadFromSystemStore"><img src="/icons/32/system-store.png" /></a>
+</div>
+
+<div>
     <fieldset>
         <legend>Registered subjects</legend>
         <table class="table">
@@ -12,6 +16,7 @@
                 <td>Name</td>
                 <td>Phone</td>
                 <td>Comment</td>
+                <td></td>
             </tr>
 
             @foreach (var item in @Model.CertificateSubjects)
@@ -20,15 +25,13 @@
                     <td>@item.SubjectName</td>
                     <td>@item.SubjectPhone</td>
                     <td>@item.SubjectComment</td>
+                    <td>
+                        <a asp-controller="Subjects" asp-action="SubjectDetails" asp-route-id=@item.ID ><img src="/icons/32/details.png" width=23 height=23 /></a>
+                        <a method="delete" asp-controller="Subjects" asp-action="SubjectDelete" asp-route-id=@item.ID ><img src="/icons/32/delete.png" width=23 height=23 /></a>
+                    </td>
                 </tr>
             }
 
         </table>
     </fieldset>
-</div>
-
-
-
-<div class="text-center"
-    <p><a class="nav-link text-dark" asp-controller="Subjects" asp-action="SubjectDetails">Watch for subjects via this page</a></p>
 </div>

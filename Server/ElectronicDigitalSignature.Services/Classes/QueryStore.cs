@@ -5,35 +5,35 @@ namespace ElectrnicDigitalSignatire.Services.Classes
     public class QueryStore : IQueryStore
     {
         string
-            _getCertificates = "select * from [certificates] left join [subjects] on [certificates].subjectID = [subjects].id;",
-            _getSubjects = "select * from [subjects];",
-            _deleteCertificate = "delete from [certificates] where [certificates].id = @ID",
-            _deleteCertificateSubject = "delete from [certificates] where [certificates].subjectID = @ID; delete from [subjects] where [subjects].id = @ID;",
-            _updateCertificateSubject = "update [subjects]  set subjectPhone = @SubjectPhone, subjectComment = @SubjectComment where [subjects].id = @ID",
-            _insertCertificate = "insert into [certificates] (subjectID, certificateHash, algorithm, startDate, endDate) values(@Subject.ID, @CertificateHash, @Algorithm, @StartDate, @EndDate);",
-            _insertCertificateSubject = "insert into [subjects] (subjectName, subjectPhone, subjectComment) values(@SubjectName, @SubjectPhone, @SubjectComment);",
-            _createTables =
-            "CREATE TABLE subjects (" +
-            "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-            "subjectName VARCHAR(120) NOT NULL, " +
-            "subjectPhone VARCHAR(20), " +
-            "subjectComment VARCHAR(200));" +
-            "" +
-            "CREATE TABLE certificates (" +
-            "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-            "subjectID INTEGER NOT NULL, " +
-            "certificateHash VARCHAR(512) NOT NULL, " +
-            "algorithm VARCHAR(512) NOT NULL, " +
-            "startDate DATETIME NOT NULL, " +
-            "endDate DATETIME NOT NULL );";
+            _getSubjects = "SELECT * FROM Subjects",
+            _getCertificates = "SELECT ID, CertificateHash, Algorithm, StartDate, EndDate FROM Certificates WHERE SubjectID=@ID",
+            _deleteCertificate = "DELETE FROM Certificates WHERE ID=@ID",
+            _deleteSubject = "DELETE FROM Subjects WHERE ID=@ID",
+            _updateSubject = "UPDATE Subjects SET SubjectName=@SubjectName, SubjectPhone=@SubjectPhone, SubjectComment=@SubjectComment WHERE ID=@ID",
+            _insertCertificate = "INSERT INTO Certificates (SubjectID, CertificateHash, Algorithm, StartDate, EndDate) VALUES (@SubjectID, @CertificateHash, @Algorithm, @StartDate, @EndDate)",
+            _insertSubject = "INSERT INTO Subjects (SubjectName, SubjectPhone, SubjectComment) VALUES (@SubjectName, @SubjectPhone, @SubjectComment)",
+
+            _createTables = "CREATE TABLE Certificates (" +
+                            "ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                            "SubjectID INTEGER NOT NULL, " +
+                            "CertificateHash VARCHAR(512) NOT NULL, " +
+                            "Algorithm VARCHAR(512) NOT NULL, " +
+                            "StartDate DATETIME NOT NULL, " +
+                            "EndDate DATETIME NOT NULL);" +
+                            "" +
+                            "CREATE TABLE Subjects (" +
+                            "ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                            "SubjectName VARCHAR(120) NOT NULL, " +
+                            "SubjectPhone VARCHAR(20), " +
+                            "SubjectComment VARCHAR(200));";
 
         public string GetCertificates => _getCertificates;
         public string GetSubjects => _getSubjects;
         public string DeleteCertificate => _deleteCertificate;
-        public string DeleteCertificateSubject => _deleteCertificateSubject;
-        public string UpdateCertificateSubject => _updateCertificateSubject;
+        public string DeleteSubject => _deleteSubject;
+        public string UpdateSubject => _updateSubject;
         public string InsertCertificate => _insertCertificate;
-        public string InsertCertificateSubject => _insertCertificateSubject;
+        public string InsertSubject => _insertSubject;
         public string CreateTables => _createTables;
     }
 }

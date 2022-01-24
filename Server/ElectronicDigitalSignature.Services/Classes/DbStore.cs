@@ -19,68 +19,86 @@ namespace ElectrnicDigitalSignatire.Services.Classes
             _dbContext = dbContext;
         }
 
-        public async Task<List<CertificateData>> GetCertificateData()
+        private async Task CheckDatabase()
         {
-            /*
-            if (!File.Exists(_dbContext.DbPath)) throw new FileNotFoundException("Database file not found.");
-            var certificates = (await _dbContext.DbConnection.QueryAsync<CertificateData, CertificateSubject, CertificateData>(_queryStore.GetCertificates, (cert, subj) =>
+            if (!File.Exists(_dbContext.DbPath))
             {
-                cert.Subject = subj;
-                return cert;
-            })).AsList();
-            return certificates;
-            */
-            return null;
+                await _dbContext.DbConnection.QueryAsync(_queryStore.CreateTables);
+            }
         }
 
-        public async Task<List<CertificateSubject>> GetCertificateSubjects()
+        public async Task DeleteCertificate(int certificateID)
         {
-            if (!File.Exists(_dbContext.DbPath)) throw new FileNotFoundException("Database file not found.");
+            await CheckDatabase();
+            await _dbContext.DbConnection.QueryAsync(_queryStore.DeleteCertificate, new { ID = certificateID });
+        }
+
+        public async Task DeleteSubject(int subjectID)
+        {
+            await CheckDatabase();
+            await _dbContext.DbConnection.QueryAsync(_queryStore.DeleteSubject, new { ID = subjectID });
+        }
+
+        public async Task<List<CertificateData>> GetCertificates(int subjectID)
+        {
+            await CheckDatabase();
+            var certificates = (await _dbContext.DbConnection.QueryAsync<CertificateData>(_queryStore.GetCertificates, new { ID = subjectID })).AsList();
+            return certificates;
+        }
+
+        public async Task<List<CertificateSubject>> GetSubjects()
+        {
+            await CheckDatabase();
             var subjects = (await _dbContext.DbConnection.QueryAsync<CertificateSubject>(_queryStore.GetSubjects)).AsList();
             return subjects;
         }
 
-        public async Task Delete(ICertificateData certificate)
+        public async Task<CertificateSubject> GetSubjectByID(int id)
         {
-            if (!File.Exists(_dbContext.DbPath)) throw new FileNotFoundException("Database file not found.");
-            await _dbContext.DbConnection.QueryAsync(_queryStore.DeleteCertificate, certificate);
+            await CheckDatabase();
+            var subject = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<CertificateSubject>("SELECT * FROM Subjects WHERE ID=@ID", new { ID = id });
+            subject.CertificateList = await GetCertificates(subject.ID);
+            return subject;
         }
 
-        public async Task Delete(ICertificateSubject subject)
+        public async Task InsertCertificate(CertificateData certificate, int subjectID)
         {
-            if (!File.Exists(_dbContext.DbPath)) throw new FileNotFoundException("Database file not found.");
-            await _dbContext.DbConnection.QueryAsync(_queryStore.DeleteCertificateSubject, subject);
+            await CheckDatabase();
+            await _dbContext.DbConnection.QueryAsync(_queryStore.InsertCertificate, new 
+            { 
+                SubjectID = subjectID, 
+                CertificateHash = certificate.CertificateHash, 
+                Algorithm = certificate.Algorithm, 
+                StartDate = certificate.StartDate, 
+                EndDate = certificate.EndDate
+            });
         }
 
-        public async Task Insert(ICertificateData certificate)
+        public async Task InsertSubject(CertificateSubject subject)
         {
-            //нормально не заработает, обработать случаи добавления субъекта, если его нет и добавления ID, если есть
-            if (!File.Exists(_dbContext.DbPath)) throw new FileNotFoundException("Database file not found.");
-            await _dbContext.DbConnection.QueryAsync(_queryStore.InsertCertificate, certificate);
-        }
-
-        public async Task Insert(List<ICertificateData> certificates)
-        {
-            //нормально не заработает, обработать случаи добавления субъекта, если его нет и добавления ID, если есть
-            if (!File.Exists(_dbContext.DbPath)) throw new FileNotFoundException("Database file not found.");
-            await _dbContext.DbConnection.OpenAsync();
-            foreach (var item in certificates)
+            await CheckDatabase();
+            await _dbContext.DbConnection.ExecuteAsync(_queryStore.InsertSubject, subject);
+            int subjectID = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<int>("SELECT ID FROM Subjects WHERE SubjectName=@Name", new { Name = subject.SubjectName });
+            foreach (var item in subject.CertificateList)
             {
-                await _dbContext.DbConnection.QueryAsync(_queryStore.InsertCertificate, item);
+                await InsertCertificate(item, subjectID);
+            }
+        }
+
+        public async Task InsertSubject(List<CertificateSubject> subjects)
+        {
+            await _dbContext.DbConnection.OpenAsync();
+            foreach (var item in subjects)
+            {
+                await InsertSubject(item);
             }
             await _dbContext.DbConnection.CloseAsync();
         }
 
-        public async Task Insert(ICertificateSubject subject)
+        public async Task UpdateSubject(CertificateSubject subject)
         {
-            if (!File.Exists(_dbContext.DbPath)) throw new FileNotFoundException("Database file not found.");
-            await _dbContext.DbConnection.QueryAsync(_queryStore.InsertCertificateSubject, subject);
-        }
-
-        public async Task Update(ICertificateSubject subject)
-        {
-            if (!File.Exists(_dbContext.DbPath)) throw new FileNotFoundException("Database file not found.");
-            await _dbContext.DbConnection.QueryAsync(_queryStore.UpdateCertificateSubject, subject);
+            await CheckDatabase();
+            await _dbContext.DbConnection.QueryAsync(_queryStore.UpdateSubject, subject);
         }
     }
 }
