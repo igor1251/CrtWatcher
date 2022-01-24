@@ -6,21 +6,34 @@
 <div>
     <fieldset>
         <legend>Subject information</legend>
-        <table class="table">
-            <tr>
-                <td>Name</td>
-                <td>Phone</td>
-                <td>Comment</td>
-            </tr>
+        <form method="post" asp-controller="Subjects" asp-action="SubjectEdit">
+            <table class="table">
+                <tr>
+                    <td>Name</td>
+                    <td>Phone</td>
+                    <td>Comment</td>
+                    <td></td>
+                </tr>
 
-            <tr>
-                <td>@Model.Subject.SubjectName</td>
-                <td>@Model.Subject.SubjectPhone</td>
-                <td>@Model.Subject.SubjectComment</td>
-            </tr>
-        </table>
+                <tr>
+                    <input type="hidden" asp-for="Subject.ID" />
+                    <td>
+                        <input class="form-control" readonly="readonly" asp-for="Subject.SubjectName" />
+                    </td>
+                    <td>
+                        <input class="form-control" asp-for="Subject.SubjectPhone" />
+                    </td>
+                    <td>
+                        <input class="form-control" asp-for="Subject.SubjectComment" />
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" class="btn btn-primary" value="Save" />
+        </form>
     </fieldset>
 </div>
+
+<br>
 
 <div>
     <fieldset>
@@ -42,7 +55,7 @@
                     <td>@item.StartDate</td>
                     <td>@item.EndDate</td>
                     <td>
-                        <a method="delete" asp-controller="Subjects" asp-action="CertificateDelete" asp-route-subjectId=@Model.Subject.ID asp-route-certificateId=@item.ID ><img src="/icons/32/delete.png" width=23 height=23 /></a>
+                        <a asp-controller="Subjects" asp-action="CertificateDelete" asp-route-subjectId=@Model.Subject.ID asp-route-certificateId=@item.ID ><img src="/icons/32/delete.png" width=23 height=23 /></a>
                     </td>
                 </tr>
             }

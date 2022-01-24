@@ -27,7 +27,7 @@
                     <td>@item.SubjectComment</td>
                     <td>
                         <a asp-controller="Subjects" asp-action="SubjectDetails" asp-route-id=@item.ID ><img src="/icons/32/details.png" width=23 height=23 /></a>
-                        <a method="delete" asp-controller="Subjects" asp-action="SubjectDelete" asp-route-id=@item.ID ><img src="/icons/32/delete.png" width=23 height=23 /></a>
+                        <a asp-controller="Subjects" asp-action="SubjectDelete" asp-route-id=@item.ID ><img src="/icons/32/delete.png" width=23 height=23 /></a>
                     </td>
                 </tr>
             }

@@ -39,18 +39,27 @@ namespace WA4D0GWebPanel.Controllers
             return View(new SubjectDetailsViewModel(subject));
         }
 
-        [HttpDelete]
         public async Task<IActionResult> SubjectDelete(int id)
         {
             await _store.DeleteSubject(id);
             return RedirectToAction("SubjectsList");
         }
 
-        [HttpDelete]
+        public async Task<IActionResult> SubjectEdit(CertificateSubject subject)
+        {
+            if (subject == null)
+            {
+                return NotFound();
+            }
+
+            await _store.UpdateSubject(subject);
+            return RedirectToAction("SubjectDetails", new { id = subject.ID });
+        }
+
         public async Task<IActionResult> CertificateDelete(int subjectID, int certificateID)
         {
             await _store.DeleteCertificate(certificateID);
-            return RedirectToAction("SubjectDetails", subjectID);
+            return RedirectToAction("SubjectDetails", new { id = subjectID });
         }
     }
 }
