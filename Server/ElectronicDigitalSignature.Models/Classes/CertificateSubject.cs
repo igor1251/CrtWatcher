@@ -13,7 +13,6 @@ namespace ElectrnicDigitalSignatire.Models.Classes
         List<CertificateData> _certificates = new List<CertificateData>();
 
         [Required]
-        [JsonPropertyName("id")]
         public int ID 
         { 
             get => _id; 
@@ -25,7 +24,6 @@ namespace ElectrnicDigitalSignatire.Models.Classes
         }
 
         [Required]
-        [JsonPropertyName("subjectName")]
         public string SubjectName 
         { 
             get => _subjectName; 
@@ -35,8 +33,7 @@ namespace ElectrnicDigitalSignatire.Models.Classes
             }
         }
 
-        [Required]
-        [JsonPropertyName("subjectPhone")]
+        [Phone(ErrorMessage = "Not a valid phone number")]
         public string SubjectPhone 
         { 
             get => _subjectPhone; 
@@ -46,8 +43,6 @@ namespace ElectrnicDigitalSignatire.Models.Classes
             }
         }
 
-        [Required]
-        [JsonPropertyName("subjectComment")]
         public string SubjectComment 
         { 
             get => _subjectComment;
@@ -55,7 +50,6 @@ namespace ElectrnicDigitalSignatire.Models.Classes
         }
 
         [Required]
-        [JsonPropertyName("certificateList")]
         public List<CertificateData> CertificateList 
         { 
             get => _certificates; 

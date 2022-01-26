@@ -12,7 +12,6 @@ namespace ElectrnicDigitalSignatire.Models.Classes
         DateTime _startDate, _endDate;
 
         [Required]
-        [JsonPropertyName("id")]
         public int ID 
         {
             get => _id;
@@ -24,7 +23,6 @@ namespace ElectrnicDigitalSignatire.Models.Classes
         }
 
         [Required]
-        [JsonPropertyName("certificateHash")]
         public string CertificateHash 
         { 
             get => _certificateHash; 
@@ -37,7 +35,6 @@ namespace ElectrnicDigitalSignatire.Models.Classes
         }
 
         [Required]
-        [JsonPropertyName("algorithm")]
         public string Algorithm 
         { 
             get => _algorithm; 
@@ -50,7 +47,6 @@ namespace ElectrnicDigitalSignatire.Models.Classes
         }
 
         [Required]
-        [JsonPropertyName("startDate")]
         public DateTime StartDate 
         { 
             get => _startDate; 
@@ -58,7 +54,6 @@ namespace ElectrnicDigitalSignatire.Models.Classes
         }
 
         [Required]
-        [JsonPropertyName("endDate")]
         public DateTime EndDate 
         { 
             get => _endDate; 

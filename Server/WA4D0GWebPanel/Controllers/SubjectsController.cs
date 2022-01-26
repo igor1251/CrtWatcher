@@ -39,12 +39,14 @@ namespace WA4D0GWebPanel.Controllers
             return View(new SubjectDetailsViewModel(subject));
         }
 
+        [HttpPost]
         public async Task<IActionResult> SubjectDelete(int id)
         {
             await _store.DeleteSubject(id);
             return RedirectToAction("SubjectsList");
         }
 
+        [HttpPost]
         public async Task<IActionResult> SubjectEdit(CertificateSubject subject)
         {
             if (subject == null)
@@ -52,10 +54,16 @@ namespace WA4D0GWebPanel.Controllers
                 return NotFound();
             }
 
+            if (!ModelState.IsValid)
+            {
+                return View("SubjectDetails", new SubjectDetailsViewModel(await _store.GetSubjectByID(subject.ID)));
+            }
+            
             await _store.UpdateSubject(subject);
             return RedirectToAction("SubjectDetails", new { id = subject.ID });
         }
 
+        [HttpPost]
         public async Task<IActionResult> CertificateDelete(int subjectID, int certificateID)
         {
             await _store.DeleteCertificate(certificateID);

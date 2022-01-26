@@ -4,6 +4,7 @@
 }
 
 <div>
+    <div class="validation" asp-validation-summary="All"></div>
     <fieldset>
         <legend>Subject information</legend>
         <form method="post" asp-controller="Subjects" asp-action="SubjectEdit">
@@ -55,7 +56,9 @@
                     <td>@item.StartDate</td>
                     <td>@item.EndDate</td>
                     <td>
-                        <a asp-controller="Subjects" asp-action="CertificateDelete" asp-route-subjectId=@Model.Subject.ID asp-route-certificateId=@item.ID ><img src="/icons/32/delete.png" width=23 height=23 /></a>
+                        <form method="post" asp-controller="Subjects" asp-action="CertificateDelete" asp-route-subjectId=@Model.Subject.ID asp-route-certificateId=@item.ID>
+                            <input type="submit" class="btn btn-delete"/>
+                        </form>
                     </td>
                 </tr>
             }
