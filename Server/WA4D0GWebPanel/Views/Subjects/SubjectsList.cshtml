@@ -13,33 +13,36 @@
 <div>
     <fieldset>
         <legend>Registered subjects</legend>
-        <table class="table">
-            <tr>
-                <td>Name</td>
-                <td>Phone</td>
-                <td>Comment</td>
-                <td></td>
-            </tr>
+        <div class="table-scrollable table-subjects">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Comment</th>
+                        <th></th>
+                    </tr>
+                </thead>
 
-            @foreach (var item in @Model.CertificateSubjects)
-            {
-                <tr>
-                    <td>@item.SubjectName</td>
-                    <td>@item.SubjectPhone</td>
-                    <td>@item.SubjectComment</td>
-                    <td>
-                        <div class="btn-block">
-                            <form method="get" asp-controller="Subjects" asp-action="SubjectDetails" asp-route-id=@item.ID>
-                                <input type="submit" class="btn btn-details" />
-                            </form>
-                            <form method="post" asp-controller="Subjects" asp-action="SubjectDelete" asp-route-id=@item.ID>
-                                <input type="submit" class="btn btn-delete" />
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-            }
-
-        </table>
+                @foreach (var item in @Model.CertificateSubjects)
+                {
+                    <tr>
+                        <td>@item.SubjectName</td>
+                        <td>@item.SubjectPhone</td>
+                        <td>@item.SubjectComment</td>
+                        <td>
+                            <div class="btn-block">
+                                <form method="get" asp-controller="Subjects" asp-action="SubjectDetails" asp-route-id=@item.ID>
+                                    <input type="submit" class="btn btn-details" />
+                                </form>
+                                <form method="post" asp-controller="Subjects" asp-action="SubjectDelete" asp-route-id=@item.ID>
+                                    <input type="submit" class="btn btn-delete" />
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
     </fieldset>
 </div>

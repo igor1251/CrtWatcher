@@ -1,7 +1,6 @@
 ﻿using ElectrnicDigitalSignatire.Models.Classes;
 using ElectrnicDigitalSignatire.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using WA4D0GWebPanel.Models;
 
@@ -18,6 +17,8 @@ namespace WA4D0GWebPanel.Controllers
             _localStore = localStore;
         }
 
+        #region Load methods
+
         [HttpGet]
         public async Task<IActionResult> SubjectsList()
         {
@@ -28,16 +29,40 @@ namespace WA4D0GWebPanel.Controllers
         [HttpGet]
         public async Task<IActionResult> LoadFromSystemStore()
         {
-            await _store.InsertSubject(await _localStore.LoadCertificateSubjectsAndCertificates());
+            var localStoreCertificates = await _localStore.LoadCertificateSubjectsAndCertificates();
+            await _store.InsertSubject(localStoreCertificates);
             return RedirectToAction("SubjectsList");
         }
 
         [HttpGet]
         public async Task<IActionResult> SubjectDetails(int id)
         {
-            var subject = await _store.GetSubjectByID(id);
-            return View(new SubjectDetailsViewModel(subject));
+            var subjectDetailsViewModel = new SubjectDetailsViewModel();
+            subjectDetailsViewModel.Subject = await _store.GetSubjectByID(id); ;
+            return View(subjectDetailsViewModel);
         }
+
+        #endregion
+
+        #region Edit methods
+
+        [HttpPost]
+        public async Task<IActionResult> SubjectEdit(CertificateSubject subject)
+        {
+            if (!ModelState.IsValid)
+            {
+                var subjectDetailsViewModel = new SubjectDetailsViewModel();
+                subjectDetailsViewModel.Subject = await _store.GetSubjectByID(subject.ID); ;
+                return View("SubjectDetails", subjectDetailsViewModel);
+            }
+
+            await _store.UpdateSubject(subject);
+            return RedirectToAction("SubjectDetails", new { id = subject.ID });
+        }
+
+        #endregion
+
+        #region Delete methods
 
         [HttpPost]
         public async Task<IActionResult> SubjectDelete(int id)
@@ -47,27 +72,12 @@ namespace WA4D0GWebPanel.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SubjectEdit(CertificateSubject subject)
-        {
-            if (subject == null)
-            {
-                return NotFound();
-            }
-
-            if (!ModelState.IsValid)
-            {
-                return View("SubjectDetails", new SubjectDetailsViewModel(await _store.GetSubjectByID(subject.ID)));
-            }
-            
-            await _store.UpdateSubject(subject);
-            return RedirectToAction("SubjectDetails", new { id = subject.ID });
-        }
-
-        [HttpPost]
         public async Task<IActionResult> CertificateDelete(int subjectID, int certificateID)
         {
             await _store.DeleteCertificate(certificateID);
             return RedirectToAction("SubjectDetails", new { id = subjectID });
         }
+
+        #endregion
     }
 }

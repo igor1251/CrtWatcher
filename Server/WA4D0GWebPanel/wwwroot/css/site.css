@@ -100,3 +100,25 @@ body {
 .btn-block form {
     display: inline-block;
 }
+
+.table thead tr th {
+    background-color: rgb(230, 230, 255);
+    position: sticky;
+    top: 0;
+}
+
+.table-scrollable {
+    scroll-behavior: auto;
+    overflow-y: scroll;
+    overflow-x: hidden
+}
+
+.table-certificates {
+    width: 100%;
+    height: 350px;
+}
+
+.table-subjects {
+    width: 100%;
+    height: 700px;
+}

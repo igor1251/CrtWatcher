@@ -6,6 +6,11 @@ namespace WA4D0GWebPanel.Models
     {
         private CertificateSubject _subject;
 
+        public SubjectDetailsViewModel()
+        {
+            _subject = new CertificateSubject();
+        }
+
         public SubjectDetailsViewModel(CertificateSubject subject)
         {
             _subject = subject;
