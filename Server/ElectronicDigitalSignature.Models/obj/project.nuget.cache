@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "USQgiBIoqb9BphdPFy4KO4kNYds4WrrahvGTgd+WQqM0LuXe0c+JXNjkTgP3m6p6zo+pZbdWdtqN1IvWRG0s1w==",
+  "dgSpecHash": "z0dfkOWSHZP8R8TvNctf1dUIlGUH1bvhMAdXukkiQePGJUexAdtRQzF1lC2TM7iKhRkJJuJOyjGCgLw/L4vKlg==",
   "success": true,
-  "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj",
+  "projectFilePath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
