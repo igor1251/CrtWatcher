@@ -10,7 +10,22 @@
       "ProjectGuid": "f9a7912c-fa3f-40b1-bf7b-706f0ef13ecb",
       "DisplayName": "ElectronicDigitalSignature.Services",
       "ColorIndex": 1
+    },
+    "1701f277-ff96-4327-85ff-bf888915b127": {
+      "ProjectGuid": "1701f277-ff96-4327-85ff-bf888915b127",
+      "DisplayName": "ElectronicDigitalSignature.Models",
+      "ColorIndex": 2
+    },
+    "e03b7e00-b145-4442-83cf-c1a1a582a54b": {
+      "ProjectGuid": "e03b7e00-b145-4442-83cf-c1a1a582a54b",
+      "DisplayName": "ElectronicDigitalSignature.Models",
+      "ColorIndex": 3
+    },
+    "334292f4-4bdc-4980-8bfc-0cbf51482609": {
+      "ProjectGuid": "334292f4-4bdc-4980-8bfc-0cbf51482609",
+      "DisplayName": "ElectronicDigitalSignature.Services",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 5
 }

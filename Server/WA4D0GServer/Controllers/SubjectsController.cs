@@ -55,23 +55,37 @@ namespace WA4D0GServer.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateSubjectAsync(CertificateSubject subject)
         {
-            //логика проверки на наличие
+            _logger.LogInformation("Creating new subject. Subject info:\n" + subject.SubjectName + "\n" + subject.SubjectPhone + "\n" + subject.SubjectComment);
             await _dbStore.InsertSubject(subject);
+            _logger.LogInformation("Done");
             return Ok();
         }
 
-        [HttpPut]
-        public async Task<ActionResult> UpdateSubjectsAsync(CertificateSubject subject)
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateSubjectsAsync(int id, CertificateSubject subject)
         {
+            if (id != subject.ID)
+            {
+                return BadRequest();
+            }
+
             await _dbStore.UpdateSubject(subject);
-            return Ok();
+            return NoContent();
         }
 
-        [HttpDelete]
-        public async Task<ActionResult> DeleteSubjectAsync(int subjectID)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteSubjectAsync(int id)
         {
-            await _dbStore.DeleteSubject(subjectID);
-            return Ok();
+            _logger.LogInformation("Deliting subject under id=" + id.ToString());
+            var subject = _dbStore.GetSubjectByID(id);
+            if (subject == null)
+            {
+                _logger.LogInformation("Requested subject not found");
+                return NotFound();
+            }
+            await _dbStore.DeleteSubject(id);
+            _logger.LogInformation("Successfully deleted");
+            return NoContent();
         }
     }
 }

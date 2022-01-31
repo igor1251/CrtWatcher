@@ -10,8 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ElectronicDigitalSignature.Models\ElectronicDigitalSignature.Models.csproj" />
-    <ProjectReference Include="..\ElectronicDigitalSignature.Services\ElectronicDigitalSignature.Services.csproj" />
+    <ProjectReference Include="..\..\ClassLibs\ElectronicDigitalSignature.Models\ElectronicDigitalSignature.Models.csproj" />
   </ItemGroup>
 
 </Project>

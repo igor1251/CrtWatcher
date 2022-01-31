@@ -1,5 +1,4 @@
 ﻿using ElectrnicDigitalSignatire.Models.Classes;
-using ElectrnicDigitalSignatire.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -11,15 +10,6 @@ namespace WA4D0GWebPanel.Controllers
 {
     public class SubjectsController : Controller
     {
-        IDbStore _store;
-        ILocalStore _localStore;
-
-        public SubjectsController(IDbStore store, ILocalStore localStore)
-        {
-            _store = store;
-            _localStore = localStore;
-        }
-
         #region Load methods
 
         [HttpGet]
@@ -44,8 +34,8 @@ namespace WA4D0GWebPanel.Controllers
         [HttpGet]
         public async Task<IActionResult> LoadFromSystemStore()
         {
-            var localStoreCertificates = await _localStore.LoadCertificateSubjectsAndCertificates();
-            await _store.InsertSubject(localStoreCertificates);
+            //var localStoreCertificates = await _localStore.LoadCertificateSubjectsAndCertificates();
+            //await _store.InsertSubject(localStoreCertificates);
             return RedirectToAction("SubjectsList");
         }
 
@@ -53,7 +43,7 @@ namespace WA4D0GWebPanel.Controllers
         public async Task<IActionResult> SubjectDetails(int id)
         {
             var subjectDetailsViewModel = new SubjectDetailsViewModel();
-            subjectDetailsViewModel.Subject = await _store.GetSubjectByID(id); ;
+            //subjectDetailsViewModel.Subject = await _store.GetSubjectByID(id);
             return View(subjectDetailsViewModel);
         }
 
@@ -67,11 +57,11 @@ namespace WA4D0GWebPanel.Controllers
             if (!ModelState.IsValid)
             {
                 var subjectDetailsViewModel = new SubjectDetailsViewModel();
-                subjectDetailsViewModel.Subject = await _store.GetSubjectByID(subject.ID); ;
+                //subjectDetailsViewModel.Subject = await _store.GetSubjectByID(subject.ID); ;
                 return View("SubjectDetails", subjectDetailsViewModel);
             }
 
-            await _store.UpdateSubject(subject);
+            //await _store.UpdateSubject(subject);
             return RedirectToAction("SubjectDetails", new { id = subject.ID });
         }
 
@@ -82,14 +72,14 @@ namespace WA4D0GWebPanel.Controllers
         [HttpPost]
         public async Task<IActionResult> SubjectDelete(int id)
         {
-            await _store.DeleteSubject(id);
+            //await _store.DeleteSubject(id);
             return RedirectToAction("SubjectsList");
         }
 
         [HttpPost]
         public async Task<IActionResult> CertificateDelete(int subjectID, int certificateID)
         {
-            await _store.DeleteCertificate(certificateID);
+            //await _store.DeleteCertificate(certificateID);
             return RedirectToAction("SubjectDetails", new { id = subjectID });
         }
 
