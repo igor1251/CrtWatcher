@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ab3114ec-c790-43ce-948a-01be031e5612": {
+      "ProjectGuid": "ab3114ec-c790-43ce-948a-01be031e5612",
+      "DisplayName": "WA4D0GServer",
+      "ColorIndex": 0
+    },
+    "f9a7912c-fa3f-40b1-bf7b-706f0ef13ecb": {
+      "ProjectGuid": "f9a7912c-fa3f-40b1-bf7b-706f0ef13ecb",
+      "DisplayName": "ElectronicDigitalSignature.Services",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

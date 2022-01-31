@@ -57,6 +57,7 @@ namespace ElectrnicDigitalSignatire.Services.Classes
         {
             await CheckDatabase();
             var subject = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<CertificateSubject>("SELECT * FROM Subjects WHERE ID=@ID", new { ID = id });
+            if (subject == null) return subject;
             subject.CertificateList = await GetCertificates(subject.ID);
             return subject;
         }
