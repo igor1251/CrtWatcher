@@ -24,6 +24,8 @@ namespace WA4D0GServer.Controllers
             _localStore = localStore;
         }
 
+        #region GET methods
+
         [HttpGet]
         [Route("db")]
         public async Task<ActionResult<IEnumerable<CertificateSubject>>> GetSubjectsFromDbAsync()
@@ -75,6 +77,10 @@ namespace WA4D0GServer.Controllers
             return subject;
         }
 
+        #endregion
+
+        #region POST methods
+
         [HttpPost]
         public async Task<ActionResult> CreateSubjectAsync(CertificateSubject subject)
         {
@@ -83,6 +89,10 @@ namespace WA4D0GServer.Controllers
             _logger.LogInformation("Done");
             return Ok();
         }
+
+        #endregion
+
+        #region PUT methods
 
         [HttpPut]
         public async Task<ActionResult> UpdateSubjectsAsync(CertificateSubject subject)
@@ -93,6 +103,10 @@ namespace WA4D0GServer.Controllers
             _logger.LogInformation("Done");
             return NoContent();
         }
+
+        #endregion
+
+        #region DELETE methods
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteSubjectAsync(int id)
@@ -108,5 +122,7 @@ namespace WA4D0GServer.Controllers
             _logger.LogInformation("Successfully deleted");
             return NoContent();
         }
+
+        #endregion
     }
 }
