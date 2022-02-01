@@ -1,4 +1,4 @@
-﻿@model SubjectsListViewModel
+﻿@model WA4D0GWebPanel.ViewModels.SubjectsListViewModel
 
 @{
     ViewData["Title"] = "Subjects list";
@@ -6,7 +6,7 @@
 
 <div>
     <form method="get" asp-controller="Subjects" asp-action="LoadFromSystemStore">
-        <input type="submit" class="btn btn-storesearch" />
+        <input type="submit" class="btn btn-primary" value="Load from system" />
     </form>
 </div>
 

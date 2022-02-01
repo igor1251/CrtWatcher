@@ -1,5 +1,3 @@
-using ElectrnicDigitalSignatire.Services.Classes;
-using ElectrnicDigitalSignatire.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,10 +23,6 @@ namespace WA4D0GWebPanel
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IDbContext, DbContext>();
-            services.AddSingleton<IQueryStore, QueryStore>();
-            services.AddSingleton<IDbStore, DbStore>();
-            services.AddSingleton<ILocalStore, LocalStore>();
             services.AddControllersWithViews();
         }
 

@@ -1,49 +1,74 @@
 ﻿using ElectrnicDigitalSignatire.Models.Classes;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using WA4D0GWebPanel.ViewModels;
 using WA4D0GWebPanel.Models;
+using System.Text;
 
 namespace WA4D0GWebPanel.Controllers
 {
     public class SubjectsController : Controller
     {
+        private readonly ILogger<SubjectsController> _logger;
+        private HttpClient _httpClient;
+
+        public SubjectsController(ILogger<SubjectsController> logger)
+        {
+            _logger = logger;
+            _httpClient = new HttpClient();
+        }
+
         #region Load methods
+
+        private async Task<CertificateSubject> LoadSubjectInfo(int id)
+        {
+            var subject = new CertificateSubject();
+
+            using (var response = await _httpClient.GetAsync(RequestLinks.SubjectsResponseLink + id))
+            {
+                subject = JsonSerializer.Deserialize<CertificateSubject>(await response.Content.ReadAsStringAsync());
+            }
+
+            return subject;
+        }
 
         [HttpGet]
         public async Task<IActionResult> SubjectsList()
         {
             var subjects = new List<CertificateSubject>();
-            using (var httpClient = new HttpClient())
+
+            using (var response = await _httpClient.GetAsync(RequestLinks.GetSubjectsFromDbLink))
             {
-                using (var response = await httpClient.GetAsync("https://localhost:5001/subjects"))
-                {
-                    string apiResource = await response.Content.ReadAsStringAsync();
-                    subjects = JsonSerializer.Deserialize<List<CertificateSubject>>(apiResource);
-                }
+                subjects = JsonSerializer.Deserialize<List<CertificateSubject>>(await response.Content.ReadAsStringAsync());
             }
+        
             return View(new SubjectsListViewModel(subjects));
-            /*
-            var subjects = await _store.GetSubjects();
-            return View(new SubjectsListViewModel(subjects));
-            */
         }
 
         [HttpGet]
         public async Task<IActionResult> LoadFromSystemStore()
         {
-            //var localStoreCertificates = await _localStore.LoadCertificateSubjectsAndCertificates();
-            //await _store.InsertSubject(localStoreCertificates);
-            return RedirectToAction("SubjectsList");
+            var subjects = new List<CertificateSubject>();
+
+            using (var response = await _httpClient.GetAsync(RequestLinks.GetSubjectsFromSystemStoreLink))
+            {
+                subjects = JsonSerializer.Deserialize<List<CertificateSubject>>(await response.Content.ReadAsStringAsync());
+            }
+
+            return RedirectToAction("SubjectList");
         }
 
         [HttpGet]
         public async Task<IActionResult> SubjectDetails(int id)
         {
             var subjectDetailsViewModel = new SubjectDetailsViewModel();
-            //subjectDetailsViewModel.Subject = await _store.GetSubjectByID(id);
+            subjectDetailsViewModel.Subject = await LoadSubjectInfo(id);
+
             return View(subjectDetailsViewModel);
         }
 
@@ -57,11 +82,20 @@ namespace WA4D0GWebPanel.Controllers
             if (!ModelState.IsValid)
             {
                 var subjectDetailsViewModel = new SubjectDetailsViewModel();
-                //subjectDetailsViewModel.Subject = await _store.GetSubjectByID(subject.ID); ;
+                subjectDetailsViewModel.Subject = await LoadSubjectInfo(subject.ID);
                 return View("SubjectDetails", subjectDetailsViewModel);
             }
 
-            //await _store.UpdateSubject(subject);
+            var updatedSubject = JsonSerializer.Serialize<CertificateSubject>(subject);
+
+            using (var requestContent = new StringContent(updatedSubject, Encoding.UTF8, "application/json"))
+            {
+                using (var response = await _httpClient.PutAsync(RequestLinks.SubjectsResponseLink, requestContent))
+                {
+                    response.EnsureSuccessStatusCode();
+                }
+            }
+
             return RedirectToAction("SubjectDetails", new { id = subject.ID });
         }
 
@@ -72,14 +106,22 @@ namespace WA4D0GWebPanel.Controllers
         [HttpPost]
         public async Task<IActionResult> SubjectDelete(int id)
         {
-            //await _store.DeleteSubject(id);
+            using (var response = await _httpClient.DeleteAsync(RequestLinks.SubjectsResponseLink + id))
+            {
+                response.EnsureSuccessStatusCode();
+            }
+
             return RedirectToAction("SubjectsList");
         }
 
         [HttpPost]
         public async Task<IActionResult> CertificateDelete(int subjectID, int certificateID)
         {
-            //await _store.DeleteCertificate(certificateID);
+            using (var response = await _httpClient.DeleteAsync(RequestLinks.CertificatesResponseLink + certificateID))
+            {
+                response.EnsureSuccessStatusCode();
+            }
+
             return RedirectToAction("SubjectDetails", new { id = subjectID });
         }
 

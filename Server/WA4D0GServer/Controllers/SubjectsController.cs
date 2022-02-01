@@ -2,40 +2,61 @@
 using ElectrnicDigitalSignatire.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace WA4D0GServer.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class SubjectsController : ControllerBase
     {
-        private IDbStore _dbStore;
-
         private readonly ILogger<SubjectsController> _logger;
+        private IDbStore _dbStore;
+        private ILocalStore _localStore;
 
         public SubjectsController(ILogger<SubjectsController> logger,
-                                  IDbStore dbStore)
+                                  IDbStore dbStore,
+                                  ILocalStore localStore)
         {
             _logger = logger;
             _dbStore = dbStore;
+            _localStore = localStore;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CertificateSubject>>> GetSubjectsAsync()
+        [Route("db")]
+        public async Task<ActionResult<IEnumerable<CertificateSubject>>> GetSubjectsFromDbAsync()
         {
-            _logger.LogInformation("Loading subjects list");
+            _logger.LogInformation("Loading subjects list from database");
             var subjectsList = await _dbStore.GetSubjects();
 
             if (subjectsList == null)
             {
+                _logger.LogInformation("Subjects list is empty");
                 return NotFound();
             }
 
+            _logger.LogInformation("Loaded");
             return subjectsList;
+        }
+
+        [HttpGet]
+        [Route("system")]
+        public async Task<ActionResult> LoadSubjectsFromLocalStoreAsync()
+        {
+            _logger.LogInformation("Loading subjects list from local store");
+            var subjectsList = await _localStore.LoadCertificateSubjectsAndCertificates();
+            await _dbStore.InsertSubject(subjectsList);
+
+            if (subjectsList == null)
+            {
+                _logger.LogInformation("Subjects list is empty");
+                return NotFound();
+            }
+
+            _logger.LogInformation("Loaded");
+            return Ok();
         }
 
         [HttpGet("{id}")]
@@ -46,9 +67,11 @@ namespace WA4D0GServer.Controllers
 
             if (subject == null)
             {
+                _logger.LogWarning("Subject not found");
                 return NotFound();
             }
 
+            _logger.LogInformation("Loaded");
             return subject;
         }
 
@@ -61,15 +84,13 @@ namespace WA4D0GServer.Controllers
             return Ok();
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateSubjectsAsync(int id, CertificateSubject subject)
+        [HttpPut]
+        public async Task<ActionResult> UpdateSubjectsAsync(CertificateSubject subject)
         {
-            if (id != subject.ID)
-            {
-                return BadRequest();
-            }
+            _logger.LogInformation("Updating subject under id=" + subject.ID.ToString());
 
             await _dbStore.UpdateSubject(subject);
+            _logger.LogInformation("Done");
             return NoContent();
         }
 
@@ -80,7 +101,7 @@ namespace WA4D0GServer.Controllers
             var subject = _dbStore.GetSubjectByID(id);
             if (subject == null)
             {
-                _logger.LogInformation("Requested subject not found");
+                _logger.LogWarning("Requested subject not found");
                 return NotFound();
             }
             await _dbStore.DeleteSubject(id);

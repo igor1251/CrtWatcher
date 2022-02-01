@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using WA4D0GWebPanel.Models;
+using WA4D0GWebPanel.ViewModels;
 
 namespace WA4D0GWebPanel.Controllers
 {

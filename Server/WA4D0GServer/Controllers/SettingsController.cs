@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WA4D0GServer.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class SettingsController : ControllerBase
     {
 
