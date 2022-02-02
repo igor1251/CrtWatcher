@@ -2,9 +2,12 @@
 {
     public class RequestLinks
     {
-        public readonly static string SubjectsResponseLink = "https://localhost:5001/api/subjects/";
-        public readonly static string GetSubjectsFromDbLink = "https://localhost:5001/api/subjects/db";
-        public readonly static string GetSubjectsFromSystemStoreLink = "https://localhost:5001/api/subjects/system";
-        public readonly static string CertificatesResponseLink = "https://localhost:5001/api/certificates/";
+        private static string IPAddr = "localhost",
+                              Port = "5001";
+
+        public readonly static string SubjectsResponseLink = "https://" + IPAddr + ":" + Port + "/api/subjects/",
+                                      GetSubjectsFromDbLink = "https://" + IPAddr + ":" + Port + "/api/subjects/db",
+                                      GetSubjectsFromSystemStoreLink = "https://" + IPAddr + ":" + Port + "/api/subjects/system",
+                                      CertificatesResponseLink = "https://" + IPAddr + ":" + Port + "/api/certificates/";
     }
 }
