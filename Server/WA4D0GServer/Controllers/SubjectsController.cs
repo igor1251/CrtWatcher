@@ -2,6 +2,7 @@
 using ElectrnicDigitalSignatire.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -40,7 +41,7 @@ namespace WA4D0GServer.Controllers
             }
 
             _logger.LogInformation("Loaded");
-            return subjectsList;
+            return Ok(subjectsList);
         }
 
         [HttpGet]
@@ -74,7 +75,7 @@ namespace WA4D0GServer.Controllers
             }
 
             _logger.LogInformation("Loaded");
-            return subject;
+            return Ok(subject);
         }
 
         #endregion
@@ -87,7 +88,8 @@ namespace WA4D0GServer.Controllers
             _logger.LogInformation("Creating new subject. Subject info:\n" + subject.SubjectName + "\n" + subject.SubjectPhone + "\n" + subject.SubjectComment);
             await _dbStore.InsertSubject(subject);
             _logger.LogInformation("Done");
-            return Ok();
+            //returns 201-code
+            return new CreatedResult(new Uri("api/subjects"), new { message = "New subject successfully created" });
         }
 
         #endregion
@@ -101,7 +103,7 @@ namespace WA4D0GServer.Controllers
 
             await _dbStore.UpdateSubject(subject);
             _logger.LogInformation("Done");
-            return NoContent();
+            return Ok();
         }
 
         #endregion
@@ -120,7 +122,7 @@ namespace WA4D0GServer.Controllers
             }
             await _dbStore.DeleteSubject(id);
             _logger.LogInformation("Successfully deleted");
-            return NoContent();
+            return Ok();
         }
 
         #endregion
