@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using WA4D0GWebPanel.ViewModels;
 using WA4D0GWebPanel.Models;
 using System.Text;
+using System;
 
 namespace WA4D0GWebPanel.Controllers
 {
@@ -37,7 +38,6 @@ namespace WA4D0GWebPanel.Controllers
             return subject;
         }
 
-        [HttpGet]
         public async Task<IActionResult> SubjectsList()
         {
             var subjects = new List<CertificateSubject>();
@@ -50,20 +50,16 @@ namespace WA4D0GWebPanel.Controllers
             return View(new SubjectsListViewModel(subjects));
         }
 
-        [HttpGet]
         public async Task<IActionResult> LoadFromSystemStore()
         {
-            var subjects = new List<CertificateSubject>();
+            var message = new HttpRequestMessage();
+            message.RequestUri = new Uri(RequestLinks.GetSubjectsFromSystemStoreLink);
+            message.Method = HttpMethod.Put;
+            await _httpClient.SendAsync(message);
 
-            using (var response = await _httpClient.GetAsync(RequestLinks.GetSubjectsFromSystemStoreLink))
-            {
-                subjects = JsonSerializer.Deserialize<List<CertificateSubject>>(await response.Content.ReadAsStringAsync());
-            }
-
-            return RedirectToAction("SubjectList");
+            return RedirectToAction("SubjectsList");
         }
 
-        [HttpGet]
         public async Task<IActionResult> SubjectDetails(int id)
         {
             var subjectDetailsViewModel = new SubjectDetailsViewModel();

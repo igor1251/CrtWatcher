@@ -44,7 +44,7 @@ namespace WA4D0GServer.Controllers
             return Ok(subjectsList);
         }
 
-        [HttpGet]
+        [HttpPut]
         [Route("system")]
         public async Task<ActionResult> LoadSubjectsFromLocalStoreAsync()
         {
@@ -65,7 +65,7 @@ namespace WA4D0GServer.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<CertificateSubject>> GetSubjectsAsync(int id)
         {
-            _logger.LogInformation("Loading subject by id");
+            _logger.LogInformation("Loading subject by id=" + id);
             var subject = await _dbStore.GetSubjectByID(id);
 
             if (subject == null)

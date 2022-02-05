@@ -35,7 +35,7 @@ namespace ElectrnicDigitalSignatire.Models.Classes
             }
         }
 
-        [Phone(ErrorMessage = "Not a valid phone number")]
+        [RegularExpression(@"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$", ErrorMessage = "Not a valid phone number")]
         [JsonPropertyName("subjectPhone")]
         public string SubjectPhone 
         { 
