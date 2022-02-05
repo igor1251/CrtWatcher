@@ -1222,24 +1222,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Инсегрим\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Insegrim\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GServer\\WA4D0GServer.csproj",
+      "projectUniqueName": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GServer\\WA4D0GServer.csproj",
       "projectName": "WA4D0GServer",
-      "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GServer\\WA4D0GServer.csproj",
-      "packagesPath": "C:\\Users\\Инсегрим\\.nuget\\packages\\",
-      "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GServer\\obj\\",
+      "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GServer\\WA4D0GServer.csproj",
+      "packagesPath": "C:\\Users\\Insegrim\\.nuget\\packages\\",
+      "outputPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Server\\WA4D0GServer\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Инсегрим\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Insegrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1253,11 +1248,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\ClassLibs\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj": {
-              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\ClassLibs\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj"
+            "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\ClassLibs\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj": {
+              "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\ClassLibs\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj"
             },
-            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\ClassLibs\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj": {
-              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\ClassLibs\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj"
+            "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\ClassLibs\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj": {
+              "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\ClassLibs\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj"
             }
           }
         }

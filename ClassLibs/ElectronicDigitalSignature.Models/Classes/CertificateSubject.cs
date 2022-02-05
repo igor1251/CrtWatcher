@@ -9,7 +9,7 @@ namespace ElectrnicDigitalSignatire.Models.Classes
     public class CertificateSubject : ICertificateSubject
     {
         int _id;
-        string _subjectName, _subjectPhone = "---", _subjectComment = "---";
+        string _subjectName, _subjectPhone, _subjectComment;
         List<CertificateData> _certificates = new List<CertificateData>();
 
         [Required]
