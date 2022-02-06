@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ElectrnicDigitalSignatire.Models.Interfaces
+namespace ElectronicDigitalSignatire.Models.Interfaces
 {
     public interface ICertificateData
     {

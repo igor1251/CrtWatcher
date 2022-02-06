@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using ElectrnicDigitalSignatire.Models.Classes;
-using ElectrnicDigitalSignatire.Models.Interfaces;
+using ElectronicDigitalSignatire.Models.Classes;
+using ElectronicDigitalSignatire.Models.Interfaces;
 
-namespace ElectrnicDigitalSignatire.Services.Interfaces
+namespace ElectronicDigitalSignatire.Services.Interfaces
 {
     public interface ILocalStore
     {

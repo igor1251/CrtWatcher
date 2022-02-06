@@ -2,11 +2,11 @@
 using System.Threading.Tasks;
 using Dapper;
 using System.IO;
-using ElectrnicDigitalSignatire.Services.Interfaces;
-using ElectrnicDigitalSignatire.Models.Classes;
-using ElectrnicDigitalSignatire.Models.Interfaces;
+using ElectronicDigitalSignatire.Services.Interfaces;
+using ElectronicDigitalSignatire.Models.Classes;
+using ElectronicDigitalSignatire.Models.Interfaces;
 
-namespace ElectrnicDigitalSignatire.Services.Classes
+namespace ElectronicDigitalSignatire.Services.Classes
 {
     public class DbStore : IDbStore
     {

@@ -1,9 +1,9 @@
-﻿using ElectrnicDigitalSignatire.Models.Interfaces;
+﻿using ElectronicDigitalSignatire.Models.Interfaces;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace ElectrnicDigitalSignatire.Models.Classes
+namespace ElectronicDigitalSignatire.Models.Classes
 {
     public class CertificateData : ICertificateData
     {

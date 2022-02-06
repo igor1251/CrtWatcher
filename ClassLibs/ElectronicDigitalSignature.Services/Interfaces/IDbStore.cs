@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using ElectrnicDigitalSignatire.Models.Classes;
+using ElectronicDigitalSignatire.Models.Classes;
 
-namespace ElectrnicDigitalSignatire.Services.Interfaces
+namespace ElectronicDigitalSignatire.Services.Interfaces
 {
     public interface IDbStore
     {

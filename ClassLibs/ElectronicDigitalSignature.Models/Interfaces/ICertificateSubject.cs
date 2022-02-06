@@ -1,7 +1,7 @@
-﻿using ElectrnicDigitalSignatire.Models.Classes;
+﻿using ElectronicDigitalSignatire.Models.Classes;
 using System.Collections.Generic;
 
-namespace ElectrnicDigitalSignatire.Models.Interfaces
+namespace ElectronicDigitalSignatire.Models.Interfaces
 {
     public interface ICertificateSubject
     {

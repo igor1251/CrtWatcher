@@ -37,7 +37,6 @@ D:\Lib\Documents\GitHub\CrtWatcher\ClassLibs\ElectronicDigitalSignature.Models\b
 D:\Lib\Documents\GitHub\CrtWatcher\ClassLibs\ElectronicDigitalSignature.Models\bin\Debug\net5.0\ElectronicDigitalSignature.Models.dll
 D:\Lib\Documents\GitHub\CrtWatcher\ClassLibs\ElectronicDigitalSignature.Models\bin\Debug\net5.0\ref\ElectronicDigitalSignature.Models.dll
 D:\Lib\Documents\GitHub\CrtWatcher\ClassLibs\ElectronicDigitalSignature.Models\bin\Debug\net5.0\ElectronicDigitalSignature.Models.pdb
-D:\Lib\Documents\GitHub\CrtWatcher\ClassLibs\ElectronicDigitalSignature.Models\obj\Debug\net5.0\ElectronicDigitalSignature.Models.csproj.AssemblyReference.cache
 D:\Lib\Documents\GitHub\CrtWatcher\ClassLibs\ElectronicDigitalSignature.Models\obj\Debug\net5.0\ElectronicDigitalSignature.Models.GeneratedMSBuildEditorConfig.editorconfig
 D:\Lib\Documents\GitHub\CrtWatcher\ClassLibs\ElectronicDigitalSignature.Models\obj\Debug\net5.0\ElectronicDigitalSignature.Models.AssemblyInfoInputs.cache
 D:\Lib\Documents\GitHub\CrtWatcher\ClassLibs\ElectronicDigitalSignature.Models\obj\Debug\net5.0\ElectronicDigitalSignature.Models.AssemblyInfo.cs

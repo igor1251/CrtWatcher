@@ -1,4 +1,4 @@
-﻿namespace ElectrnicDigitalSignatire.Services.Interfaces
+﻿namespace ElectronicDigitalSignatire.Services.Interfaces
 {
     public interface IQueryStore
     {

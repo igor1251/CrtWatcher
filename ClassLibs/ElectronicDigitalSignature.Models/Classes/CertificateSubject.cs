@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
-using ElectrnicDigitalSignatire.Models.Interfaces;
+using ElectronicDigitalSignatire.Models.Interfaces;
 
-namespace ElectrnicDigitalSignatire.Models.Classes
+namespace ElectronicDigitalSignatire.Models.Classes
 {
     public class CertificateSubject : ICertificateSubject
     {

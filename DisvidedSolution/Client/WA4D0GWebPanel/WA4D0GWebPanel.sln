@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WA4D0GWebPanel", "WA4D0GWebPanel.csproj", "{5F9F15D0-EBEF-4258-A903-F89F230E745A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectronicDigitalSignature.Models", "..\..\..\ClassLibs\ElectronicDigitalSignature.Models\ElectronicDigitalSignature.Models.csproj", "{66324EC5-C1F1-4865-A43B-D03877B785E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectronicDigitalSignature.Services", "..\..\..\ClassLibs\ElectronicDigitalSignature.Services\ElectronicDigitalSignature.Services.csproj", "{9C126E5D-EECD-4278-819A-A75F903C7B7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F9F15D0-EBEF-4258-A903-F89F230E745A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9F15D0-EBEF-4258-A903-F89F230E745A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9F15D0-EBEF-4258-A903-F89F230E745A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9F15D0-EBEF-4258-A903-F89F230E745A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66324EC5-C1F1-4865-A43B-D03877B785E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66324EC5-C1F1-4865-A43B-D03877B785E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66324EC5-C1F1-4865-A43B-D03877B785E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66324EC5-C1F1-4865-A43B-D03877B785E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C126E5D-EECD-4278-819A-A75F903C7B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C126E5D-EECD-4278-819A-A75F903C7B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C126E5D-EECD-4278-819A-A75F903C7B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C126E5D-EECD-4278-819A-A75F903C7B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8376F5A7-7AB6-43BA-9202-444734C3340E}
+	EndGlobalSection
+EndGlobal

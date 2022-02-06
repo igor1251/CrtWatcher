@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Data.SQLite;
-using ElectrnicDigitalSignatire.Services.Interfaces;
+using ElectronicDigitalSignatire.Services.Interfaces;
 
-namespace ElectrnicDigitalSignatire.Services.Classes
+namespace ElectronicDigitalSignatire.Services.Classes
 {
     public class DbContext : IDbContext
     {

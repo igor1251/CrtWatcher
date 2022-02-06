@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Security.Cryptography.X509Certificates;
-using ElectrnicDigitalSignatire.Services.Interfaces;
-using ElectrnicDigitalSignatire.Models.Interfaces;
-using ElectrnicDigitalSignatire.Models.Classes;
+using ElectronicDigitalSignatire.Services.Interfaces;
+using ElectronicDigitalSignatire.Models.Interfaces;
+using ElectronicDigitalSignatire.Models.Classes;
 
-namespace ElectrnicDigitalSignatire.Services.Classes
+namespace ElectronicDigitalSignatire.Services.Classes
 {
     public class LocalStore : ILocalStore
     {
