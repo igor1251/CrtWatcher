@@ -43,7 +43,7 @@ html {
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 .35rem .75rem rgba(0, 0, 0, .20);
 }
 
 button.accept-policy {
@@ -88,13 +88,22 @@ body {
     background-size: 25px;
 }
 
-.btn-storesearch {
-    background-image: url("../icons/32/system-store.png");
+.btn-report {
+    background-image: url("../icons/32/genreport.png");
     background-repeat: no-repeat;
     font-size: 0;
-    width: 25px;
-    height: 25px;
-    background-size: 25px;
+    width: 32px;
+    height: 32px;
+    background-size: 30px;
+}
+
+.btn-reload {
+    background-image: url("../icons/32/reloading.png");
+    background-repeat: no-repeat;
+    font-size: 0;
+    width: 32px;
+    height: 32px;
+    background-size: 30px;
 }
 
 .btn-block form {
@@ -121,5 +130,5 @@ body {
 
 .table-subjects {
     width: 100%;
-    height: 700px;
+    height: 625px;
 }
