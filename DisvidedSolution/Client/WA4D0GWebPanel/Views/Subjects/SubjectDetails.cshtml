@@ -3,69 +3,72 @@
     ViewData["Title"] = "Details";
 }
 
-<div>
-    <div class="validation" asp-validation-summary="All"></div>
-    <fieldset>
-        <legend>Subject information</legend>
-        <form method="post" asp-controller="Subjects" asp-action="SubjectEdit">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Phone</th>
-                        <th>Comment</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tr>
-                    <input type="hidden" asp-for="Subject.ID" />
-                    <td>
-                        <input class="form-control" readonly="readonly" asp-for="Subject.SubjectName" />
-                    </td>
-                    <td>
-                        <input class="form-control" asp-for="Subject.SubjectPhone" />
-                    </td>
-                    <td>
-                        <input class="form-control" asp-for="Subject.SubjectComment" />
-                    </td>
-                </tr>
-            </table>
-            <input type="submit" class="btn btn-primary" value="Save" />
-        </form>
-    </fieldset>
-</div>
-
-<br>
-
-<div>
-    <fieldset>
-        <legend>Subject certificates</legend>
-        <div class="table-scrollable table-certificates">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Hash</th>
-                        <th>Algorithm</th>
-                        <th>Start date</th>
-                        <th>End date</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                @foreach (var item in @Model.Subject.CertificateList)
-                {
-                    <tr>
-                        <td>@item.CertificateHash</td>
-                        <td>@item.Algorithm</td>
-                        <td>@item.StartDate</td>
-                        <td>@item.EndDate</td>
-                        <td>
-                            <form method="post" asp-controller="Subjects" asp-action="CertificateDelete" asp-route-subjectId=@Model.Subject.ID asp-route-certificateId=@item.ID>
-                                <input type="submit" class="btn btn-delete"/>
-                            </form>
-                        </td>
-                    </tr>
-                }
-            </table>
+<div class="container">
+    <div class="row">
+        <div class="col-lg box-shadow" style="margin: 10px; padding: 10px; border-radius: 5px">
+            <div class="validation" asp-validation-summary="All"></div>
+            <fieldset>
+                <legend>Subject information</legend>
+                <form method="post" asp-controller="Subjects" asp-action="SubjectEdit">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Comment</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <input type="hidden" asp-for="Subject.ID" />
+                            <td>
+                                <input class="form-control" readonly="readonly" asp-for="Subject.SubjectName" />
+                            </td>
+                            <td>
+                                <input class="form-control" asp-for="Subject.SubjectPhone" />
+                            </td>
+                            <td>
+                                <input class="form-control" asp-for="Subject.SubjectComment" />
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="submit" class="btn btn-primary" value="Save" />
+                </form>
+            </fieldset>
         </div>
-    </fieldset>
+    </div>
+    <div class="row">
+        <div class="col-lg box-shadow" style="margin: 10px; padding: 10px; border-radius: 5px">
+            <fieldset style="border-radius=10px box-shadow">
+                <legend>Subject certificates</legend>
+                <div class="table-scrollable table-certificates">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Hash</th>
+                                <th>Algorithm</th>
+                                <th>Start date</th>
+                                <th>End date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in @Model.Subject.CertificateList)
+                        {
+                            <tr>
+                                <td>@item.CertificateHash</td>
+                                <td>@item.Algorithm</td>
+                                <td>@item.StartDate</td>
+                                <td>@item.EndDate</td>
+                                <td>
+                                    <form method="post" asp-controller="Subjects" asp-action="CertificateDelete" asp-route-subjectId=@Model.Subject.ID asp-route-certificateId=@item.ID>
+                                        <input type="submit" class="btn btn-delete"/>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+    </div>
 </div>
