@@ -18,10 +18,11 @@ namespace WA4D0GWebPanel.Controllers
         private readonly ILogger<SubjectsController> _logger;
         private HttpClient _httpClient;
 
-        public SubjectsController(ILogger<SubjectsController> logger)
+        public SubjectsController(ILogger<SubjectsController> logger,
+                                  IHttpClientFactory httpClientFactory)
         {
             _logger = logger;
-            _httpClient = new HttpClient();
+            _httpClient = httpClientFactory.CreateClient();
         }
 
         #region Load methods

@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Polly;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace WA4D0GWebPanel
@@ -23,6 +25,11 @@ namespace WA4D0GWebPanel
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //var shortTimeoutPolicy = Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromSeconds(10));
+            //var longTimeoutPolicy = Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromSeconds(30));
+
+            //services.AddHttpClient("DynamicPolicy").AddPolicyHandler(httpRequestMessage => httpRequestMessage.Method == HttpMethod.Get ? shortTimeoutPolicy : longTimeoutPolicy);
+            services.AddHttpClient("DynamicPolicy").AddTransientHttpErrorPolicy(policyBuilder => policyBuilder.WaitAndRetryAsync(retryCount: 3, duration => TimeSpan.FromSeconds(5)));
             services.AddControllersWithViews();
         }
 
