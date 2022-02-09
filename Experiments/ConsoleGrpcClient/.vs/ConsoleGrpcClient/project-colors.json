@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "019cb9b1-af00-4434-bf90-2757b9ca2d88": {
+      "ProjectGuid": "019cb9b1-af00-4434-bf90-2757b9ca2d88",
+      "DisplayName": "ConsoleGrpcClient",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

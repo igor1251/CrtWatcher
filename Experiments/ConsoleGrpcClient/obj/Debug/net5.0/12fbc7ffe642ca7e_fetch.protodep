@@ -1,0 +1,2 @@
+obj\Debug\net5.0\Protos/Fetch.cs \
+obj\Debug\net5.0\Protos/FetchGrpc.cs: Protos/fetch.proto

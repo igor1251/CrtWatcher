@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcGreeterClient";
+
+package fetch;
+
+service Fetcher {
+	rpc FetchCertificateSubjects (CertificateSubjectRequest) returns (CertificateSubjectReply);
+}
+
+message CertificateSubjectRequest {
+	string storageName = 1;
+}
+
+message CertificateSubjectReply {
+	string subjects = 1;
+}
