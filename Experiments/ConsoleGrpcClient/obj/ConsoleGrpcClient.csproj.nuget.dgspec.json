@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Insegrim\\source\\repos\\ConsoleGrpcClient\\ConsoleGrpcClient.csproj": {}
+    "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Experiments\\ConsoleGrpcClient\\ConsoleGrpcClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Insegrim\\source\\repos\\ConsoleGrpcClient\\ConsoleGrpcClient.csproj": {
+    "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Experiments\\ConsoleGrpcClient\\ConsoleGrpcClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Insegrim\\source\\repos\\ConsoleGrpcClient\\ConsoleGrpcClient.csproj",
+        "projectUniqueName": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Experiments\\ConsoleGrpcClient\\ConsoleGrpcClient.csproj",
         "projectName": "ConsoleGrpcClient",
-        "projectPath": "C:\\Users\\Insegrim\\source\\repos\\ConsoleGrpcClient\\ConsoleGrpcClient.csproj",
+        "projectPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Experiments\\ConsoleGrpcClient\\ConsoleGrpcClient.csproj",
         "packagesPath": "C:\\Users\\Insegrim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Insegrim\\source\\repos\\ConsoleGrpcClient\\obj\\",
+        "outputPath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Experiments\\ConsoleGrpcClient\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\Insegrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -69,12 +65,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.12, 5.0.12]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

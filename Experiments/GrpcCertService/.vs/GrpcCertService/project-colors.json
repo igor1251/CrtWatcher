@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b45c514b-ff8e-454b-94b2-9d9e28823e53": {
+      "ProjectGuid": "b45c514b-ff8e-454b-94b2-9d9e28823e53",
+      "DisplayName": "GrpcCertService",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
