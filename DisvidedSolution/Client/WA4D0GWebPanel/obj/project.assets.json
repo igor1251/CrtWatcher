@@ -2377,7 +2377,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Инсегрим\\.nuget\\packages\\": {},
+    "C:\\Users\\Insegrim\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -2386,14 +2386,14 @@
       "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\DisvidedSolution\\Client\\WA4D0GWebPanel\\WA4D0GWebPanel.csproj",
       "projectName": "WA4D0GWebPanel",
       "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\DisvidedSolution\\Client\\WA4D0GWebPanel\\WA4D0GWebPanel.csproj",
-      "packagesPath": "C:\\Users\\Инсегрим\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Insegrim\\.nuget\\packages\\",
       "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\DisvidedSolution\\Client\\WA4D0GWebPanel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Инсегрим\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Insegrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

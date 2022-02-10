@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Polly;
+using Polly.Extensions.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,14 +23,20 @@ namespace WA4D0GWebPanel
 
         public IConfiguration Configuration { get; }
 
+        private static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
+        {
+            return HttpPolicyExtensions
+                .HandleTransientHttpError() // указываем, какие типы ошибок Polly будет обрабатывать (5**, 408 и ошибдки соединения в данном случае)
+                .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.NotFound) // также указали, что Polly должен обрабатывать и 404 ошибку
+                .WaitAndRetryAsync(6, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))); // указали, что Polly должен делать, если увидит все вышеперечисленное
+                                                                                                        // стоит отметить также, что тут мы имеем дело с экспоненциальным
+                                                                                                        // увеличением времени ожидания между запросами. Рекомендовано сайтом MS
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //var shortTimeoutPolicy = Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromSeconds(10));
-            //var longTimeoutPolicy = Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromSeconds(30));
-
-            //services.AddHttpClient("DynamicPolicy").AddPolicyHandler(httpRequestMessage => httpRequestMessage.Method == HttpMethod.Get ? shortTimeoutPolicy : longTimeoutPolicy);
-            services.AddHttpClient("DynamicPolicy").AddTransientHttpErrorPolicy(policyBuilder => policyBuilder.WaitAndRetryAsync(retryCount: 3, duration => TimeSpan.FromSeconds(5)));
+            services.AddHttpClient("SubjectsHttpClient").AddPolicyHandler(GetRetryPolicy()); // добавили именованный HttpClient в фабрику и применили к нему политики выше
             services.AddControllersWithViews();
         }
 

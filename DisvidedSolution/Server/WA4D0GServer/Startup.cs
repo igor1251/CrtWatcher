@@ -32,7 +32,7 @@ namespace WA4D0GServer
             services.AddSingleton<IDbStore, DbStore>();
             services.AddSingleton<ILocalStore, LocalStore>();
             services.AddControllers();
-            services.AddGrpc();
+            //services.AddGrpc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

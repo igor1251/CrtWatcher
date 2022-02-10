@@ -10,7 +10,7 @@ namespace ElectronicDigitalSignatire.Models.Classes
     {
         int _id;
         string _subjectName, _subjectPhone, _subjectComment;
-        List<CertificateData> _certificates = new List<CertificateData>();
+        List<CertificateData> _certificates;
 
         [Required]
         [JsonPropertyName("id")]
@@ -57,7 +57,14 @@ namespace ElectronicDigitalSignatire.Models.Classes
         [JsonPropertyName("certificateList")]
         public List<CertificateData> CertificateList 
         { 
-            get => _certificates; 
+            get
+            {
+                if (_certificates == null)
+                {
+                    _certificates = new List<CertificateData>();
+                }
+                return _certificates;
+            }
             set => _certificates = value;
         }
     }

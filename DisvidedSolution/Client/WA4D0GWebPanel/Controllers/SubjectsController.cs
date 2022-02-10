@@ -10,6 +10,7 @@ using WA4D0GWebPanel.Models;
 using System.Text;
 using System;
 using ElectronicDigitalSignatire.Models.Classes;
+using ElectronicDigitalSignatire.Models.Interfaces;
 
 namespace WA4D0GWebPanel.Controllers
 {
@@ -22,32 +23,45 @@ namespace WA4D0GWebPanel.Controllers
                                   IHttpClientFactory httpClientFactory)
         {
             _logger = logger;
-            _httpClient = httpClientFactory.CreateClient();
+            _httpClient = httpClientFactory.CreateClient("SubjectsHttpClient");
         }
 
         #region Load methods
 
-        private async Task<CertificateSubject> LoadSubjectInfo(int id)
+        private async Task<T> LoadInfo<T>(string request) where T : new()
         {
-            var subject = new CertificateSubject();
+            var result = new T();
 
-            using (var response = await _httpClient.GetAsync(RequestLinks.SubjectsResponseLink + id))
+            using (var response = await _httpClient.GetAsync(request))
             {
-                subject = JsonSerializer.Deserialize<CertificateSubject>(await response.Content.ReadAsStringAsync());
+                if (!response.IsSuccessStatusCode)
+                {
+                    _logger.LogWarning(response.StatusCode.ToString() + " " + response.ReasonPhrase);
+                    return result;
+                }
+
+                try
+                {
+                    var contentJsonString = await response.Content.ReadAsStringAsync();
+                    result = JsonSerializer.Deserialize<T>(contentJsonString);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex.Message);
+                }
             }
 
-            return subject;
+            return result;
+        }
+
+        private async Task<CertificateSubject> LoadSubjectInfo(int id)
+        {
+            return await LoadInfo<CertificateSubject>(RequestLinks.SubjectsResponseLink + id); ;
         }
 
         public async Task<IActionResult> SubjectsList()
         {
-            var subjects = new List<CertificateSubject>();
-
-            using (var response = await _httpClient.GetAsync(RequestLinks.GetSubjectsFromDbLink))
-            {
-                subjects = JsonSerializer.Deserialize<List<CertificateSubject>>(await response.Content.ReadAsStringAsync());
-            }
-        
+            var subjects = await LoadInfo<List<CertificateSubject>>(RequestLinks.GetSubjectsFromDbLink);
             return View(new SubjectsListViewModel(subjects));
         }
 
@@ -89,7 +103,10 @@ namespace WA4D0GWebPanel.Controllers
             {
                 using (var response = await _httpClient.PutAsync(RequestLinks.SubjectsResponseLink, requestContent))
                 {
-                    response.EnsureSuccessStatusCode();
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        _logger.LogWarning(response.StatusCode.ToString() + " " + response.ReasonPhrase);
+                    }
                 }
             }
 
@@ -100,25 +117,28 @@ namespace WA4D0GWebPanel.Controllers
 
         #region Delete methods
 
+        private async Task DeleteItem(string request)
+        {
+            using (var response = await _httpClient.DeleteAsync(request))
+            {
+                if (!response.IsSuccessStatusCode)
+                {
+                    _logger.LogWarning(response.StatusCode.ToString() + " " + response.ReasonPhrase);
+                }
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> SubjectDelete(int id)
         {
-            using (var response = await _httpClient.DeleteAsync(RequestLinks.SubjectsResponseLink + id))
-            {
-                response.EnsureSuccessStatusCode();
-            }
-
+            await DeleteItem(RequestLinks.SubjectsResponseLink + id);
             return RedirectToAction("SubjectsList");
         }
 
         [HttpPost]
         public async Task<IActionResult> CertificateDelete(int subjectID, int certificateID)
         {
-            using (var response = await _httpClient.DeleteAsync(RequestLinks.CertificatesResponseLink + certificateID))
-            {
-                response.EnsureSuccessStatusCode();
-            }
-
+            await DeleteItem(RequestLinks.CertificatesResponseLink + certificateID);
             return RedirectToAction("SubjectDetails", new { id = subjectID });
         }
 
