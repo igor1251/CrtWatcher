@@ -1,11 +1,25 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+
 option csharp_namespace = "GrpcCertService";
 
 package fetch;
 
-service Fetcher {
-	rpc FetchCertificateSubjects (CertificateSubjectRequest) returns (CertificateSubjectReply);
+message CertificateData {
+	int32 id = 1;
+	string certificateHash = 2;
+	string certificateAlgorithm = 3;
+	google.protobuf.Timestamp startDate = 4;
+	google.protobuf.Timestamp endDate = 5;
+}
+
+message CertificateSubject {
+	int32 id = 1;
+	string subjectName = 2;
+	string subjectPhone = 3;
+	string subjectComment = 4;
+	repeated CertificateData certificates = 5;
 }
 
 message CertificateSubjectRequest {
@@ -13,5 +27,9 @@ message CertificateSubjectRequest {
 }
 
 message CertificateSubjectReply {
-	string subjects = 1;
+	repeated CertificateSubject subjects = 1;
+}
+
+service Fetcher {
+	rpc FetchCertificateSubjects (CertificateSubjectRequest) returns (CertificateSubjectReply);
 }

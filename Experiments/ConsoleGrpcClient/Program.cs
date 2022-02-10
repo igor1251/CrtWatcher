@@ -17,7 +17,8 @@ namespace GrpcGreeterClient
             var client = new Fetcher.FetcherClient(channel);
             var reply = await client.FetchCertificateSubjectsAsync(
                               new CertificateSubjectRequest { StorageName = "local" });
-            var subjects = JsonSerializer.Deserialize<List<CertificateSubject>>(reply.Subjects);
+            var subjects = new List<CertificateSubject>();
+            subjects.AddRange(reply.Subjects);
 
             foreach (var item in subjects)
             {

@@ -22,10 +22,9 @@ namespace GrpcCertService
             var localStore = new LocalStore();
             var subjects = await localStore.LoadCertificateSubjectsAndCertificates();
 
-            return new CertificateSubjectReply
-            {
-                Subjects = JsonSerializer.Serialize(subjects)
-            };
+            var certificateSubjectReply = new CertificateSubjectReply();
+            certificateSubjectReply.Subjects.AddRange((IEnumerable<CertificateSubject>)subjects);
+            return certificateSubjectReply;
         }
     }
 }

@@ -24,15 +24,26 @@ namespace GrpcCertService {
     static FetchReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJQcm90b3MvZmV0Y2gucHJvdG8SBWZldGNoIjAKGUNlcnRpZmljYXRlU3Vi",
-            "amVjdFJlcXVlc3QSEwoLc3RvcmFnZU5hbWUYASABKAkiKwoXQ2VydGlmaWNh",
-            "dGVTdWJqZWN0UmVwbHkSEAoIc3ViamVjdHMYASABKAkyZwoHRmV0Y2hlchJc",
-            "ChhGZXRjaENlcnRpZmljYXRlU3ViamVjdHMSIC5mZXRjaC5DZXJ0aWZpY2F0",
-            "ZVN1YmplY3RSZXF1ZXN0Gh4uZmV0Y2guQ2VydGlmaWNhdGVTdWJqZWN0UmVw",
-            "bHlCEqoCD0dycGNDZXJ0U2VydmljZWIGcHJvdG8z"));
+            "ChJQcm90b3MvZmV0Y2gucHJvdG8SBWZldGNoGh9nb29nbGUvcHJvdG9idWYv",
+            "dGltZXN0YW1wLnByb3RvIrABCg9DZXJ0aWZpY2F0ZURhdGESCgoCaWQYASAB",
+            "KAUSFwoPY2VydGlmaWNhdGVIYXNoGAIgASgJEhwKFGNlcnRpZmljYXRlQWxn",
+            "b3JpdGhtGAMgASgJEi0KCXN0YXJ0RGF0ZRgEIAEoCzIaLmdvb2dsZS5wcm90",
+            "b2J1Zi5UaW1lc3RhbXASKwoHZW5kRGF0ZRgFIAEoCzIaLmdvb2dsZS5wcm90",
+            "b2J1Zi5UaW1lc3RhbXAikQEKEkNlcnRpZmljYXRlU3ViamVjdBIKCgJpZBgB",
+            "IAEoBRITCgtzdWJqZWN0TmFtZRgCIAEoCRIUCgxzdWJqZWN0UGhvbmUYAyAB",
+            "KAkSFgoOc3ViamVjdENvbW1lbnQYBCABKAkSLAoMY2VydGlmaWNhdGVzGAUg",
+            "AygLMhYuZmV0Y2guQ2VydGlmaWNhdGVEYXRhIjAKGUNlcnRpZmljYXRlU3Vi",
+            "amVjdFJlcXVlc3QSEwoLc3RvcmFnZU5hbWUYASABKAkiRgoXQ2VydGlmaWNh",
+            "dGVTdWJqZWN0UmVwbHkSKwoIc3ViamVjdHMYASADKAsyGS5mZXRjaC5DZXJ0",
+            "aWZpY2F0ZVN1YmplY3QyZwoHRmV0Y2hlchJcChhGZXRjaENlcnRpZmljYXRl",
+            "U3ViamVjdHMSIC5mZXRjaC5DZXJ0aWZpY2F0ZVN1YmplY3RSZXF1ZXN0Gh4u",
+            "ZmV0Y2guQ2VydGlmaWNhdGVTdWJqZWN0UmVwbHlCEqoCD0dycGNDZXJ0U2Vy",
+            "dmljZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcCertService.CertificateData), global::GrpcCertService.CertificateData.Parser, new[]{ "Id", "CertificateHash", "CertificateAlgorithm", "StartDate", "EndDate" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcCertService.CertificateSubject), global::GrpcCertService.CertificateSubject.Parser, new[]{ "Id", "SubjectName", "SubjectPhone", "SubjectComment", "Certificates" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcCertService.CertificateSubjectRequest), global::GrpcCertService.CertificateSubjectRequest.Parser, new[]{ "StorageName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcCertService.CertificateSubjectReply), global::GrpcCertService.CertificateSubjectReply.Parser, new[]{ "Subjects" }, null, null, null, null)
           }));
@@ -41,6 +52,645 @@ namespace GrpcCertService {
 
   }
   #region Messages
+  public sealed partial class CertificateData : pb::IMessage<CertificateData>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CertificateData> _parser = new pb::MessageParser<CertificateData>(() => new CertificateData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CertificateData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcCertService.FetchReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CertificateData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CertificateData(CertificateData other) : this() {
+      id_ = other.id_;
+      certificateHash_ = other.certificateHash_;
+      certificateAlgorithm_ = other.certificateAlgorithm_;
+      startDate_ = other.startDate_ != null ? other.startDate_.Clone() : null;
+      endDate_ = other.endDate_ != null ? other.endDate_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CertificateData Clone() {
+      return new CertificateData(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "certificateHash" field.</summary>
+    public const int CertificateHashFieldNumber = 2;
+    private string certificateHash_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string CertificateHash {
+      get { return certificateHash_; }
+      set {
+        certificateHash_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "certificateAlgorithm" field.</summary>
+    public const int CertificateAlgorithmFieldNumber = 3;
+    private string certificateAlgorithm_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string CertificateAlgorithm {
+      get { return certificateAlgorithm_; }
+      set {
+        certificateAlgorithm_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "startDate" field.</summary>
+    public const int StartDateFieldNumber = 4;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp startDate_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp StartDate {
+      get { return startDate_; }
+      set {
+        startDate_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "endDate" field.</summary>
+    public const int EndDateFieldNumber = 5;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp endDate_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp EndDate {
+      get { return endDate_; }
+      set {
+        endDate_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CertificateData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CertificateData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (CertificateHash != other.CertificateHash) return false;
+      if (CertificateAlgorithm != other.CertificateAlgorithm) return false;
+      if (!object.Equals(StartDate, other.StartDate)) return false;
+      if (!object.Equals(EndDate, other.EndDate)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (CertificateHash.Length != 0) hash ^= CertificateHash.GetHashCode();
+      if (CertificateAlgorithm.Length != 0) hash ^= CertificateAlgorithm.GetHashCode();
+      if (startDate_ != null) hash ^= StartDate.GetHashCode();
+      if (endDate_ != null) hash ^= EndDate.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (CertificateHash.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(CertificateHash);
+      }
+      if (CertificateAlgorithm.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(CertificateAlgorithm);
+      }
+      if (startDate_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(StartDate);
+      }
+      if (endDate_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(EndDate);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (CertificateHash.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(CertificateHash);
+      }
+      if (CertificateAlgorithm.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(CertificateAlgorithm);
+      }
+      if (startDate_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(StartDate);
+      }
+      if (endDate_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(EndDate);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (CertificateHash.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CertificateHash);
+      }
+      if (CertificateAlgorithm.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CertificateAlgorithm);
+      }
+      if (startDate_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(StartDate);
+      }
+      if (endDate_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EndDate);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CertificateData other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.CertificateHash.Length != 0) {
+        CertificateHash = other.CertificateHash;
+      }
+      if (other.CertificateAlgorithm.Length != 0) {
+        CertificateAlgorithm = other.CertificateAlgorithm;
+      }
+      if (other.startDate_ != null) {
+        if (startDate_ == null) {
+          StartDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        StartDate.MergeFrom(other.StartDate);
+      }
+      if (other.endDate_ != null) {
+        if (endDate_ == null) {
+          EndDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        EndDate.MergeFrom(other.EndDate);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            CertificateHash = input.ReadString();
+            break;
+          }
+          case 26: {
+            CertificateAlgorithm = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (startDate_ == null) {
+              StartDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(StartDate);
+            break;
+          }
+          case 42: {
+            if (endDate_ == null) {
+              EndDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(EndDate);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            CertificateHash = input.ReadString();
+            break;
+          }
+          case 26: {
+            CertificateAlgorithm = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (startDate_ == null) {
+              StartDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(StartDate);
+            break;
+          }
+          case 42: {
+            if (endDate_ == null) {
+              EndDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(EndDate);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class CertificateSubject : pb::IMessage<CertificateSubject>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CertificateSubject> _parser = new pb::MessageParser<CertificateSubject>(() => new CertificateSubject());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CertificateSubject> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcCertService.FetchReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CertificateSubject() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CertificateSubject(CertificateSubject other) : this() {
+      id_ = other.id_;
+      subjectName_ = other.subjectName_;
+      subjectPhone_ = other.subjectPhone_;
+      subjectComment_ = other.subjectComment_;
+      certificates_ = other.certificates_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CertificateSubject Clone() {
+      return new CertificateSubject(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "subjectName" field.</summary>
+    public const int SubjectNameFieldNumber = 2;
+    private string subjectName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SubjectName {
+      get { return subjectName_; }
+      set {
+        subjectName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "subjectPhone" field.</summary>
+    public const int SubjectPhoneFieldNumber = 3;
+    private string subjectPhone_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SubjectPhone {
+      get { return subjectPhone_; }
+      set {
+        subjectPhone_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "subjectComment" field.</summary>
+    public const int SubjectCommentFieldNumber = 4;
+    private string subjectComment_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SubjectComment {
+      get { return subjectComment_; }
+      set {
+        subjectComment_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "certificates" field.</summary>
+    public const int CertificatesFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::GrpcCertService.CertificateData> _repeated_certificates_codec
+        = pb::FieldCodec.ForMessage(42, global::GrpcCertService.CertificateData.Parser);
+    private readonly pbc::RepeatedField<global::GrpcCertService.CertificateData> certificates_ = new pbc::RepeatedField<global::GrpcCertService.CertificateData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::GrpcCertService.CertificateData> Certificates {
+      get { return certificates_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CertificateSubject);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CertificateSubject other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (SubjectName != other.SubjectName) return false;
+      if (SubjectPhone != other.SubjectPhone) return false;
+      if (SubjectComment != other.SubjectComment) return false;
+      if(!certificates_.Equals(other.certificates_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (SubjectName.Length != 0) hash ^= SubjectName.GetHashCode();
+      if (SubjectPhone.Length != 0) hash ^= SubjectPhone.GetHashCode();
+      if (SubjectComment.Length != 0) hash ^= SubjectComment.GetHashCode();
+      hash ^= certificates_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (SubjectName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(SubjectName);
+      }
+      if (SubjectPhone.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(SubjectPhone);
+      }
+      if (SubjectComment.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(SubjectComment);
+      }
+      certificates_.WriteTo(output, _repeated_certificates_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (SubjectName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(SubjectName);
+      }
+      if (SubjectPhone.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(SubjectPhone);
+      }
+      if (SubjectComment.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(SubjectComment);
+      }
+      certificates_.WriteTo(ref output, _repeated_certificates_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (SubjectName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SubjectName);
+      }
+      if (SubjectPhone.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SubjectPhone);
+      }
+      if (SubjectComment.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SubjectComment);
+      }
+      size += certificates_.CalculateSize(_repeated_certificates_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CertificateSubject other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.SubjectName.Length != 0) {
+        SubjectName = other.SubjectName;
+      }
+      if (other.SubjectPhone.Length != 0) {
+        SubjectPhone = other.SubjectPhone;
+      }
+      if (other.SubjectComment.Length != 0) {
+        SubjectComment = other.SubjectComment;
+      }
+      certificates_.Add(other.certificates_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            SubjectName = input.ReadString();
+            break;
+          }
+          case 26: {
+            SubjectPhone = input.ReadString();
+            break;
+          }
+          case 34: {
+            SubjectComment = input.ReadString();
+            break;
+          }
+          case 42: {
+            certificates_.AddEntriesFrom(input, _repeated_certificates_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            SubjectName = input.ReadString();
+            break;
+          }
+          case 26: {
+            SubjectPhone = input.ReadString();
+            break;
+          }
+          case 34: {
+            SubjectComment = input.ReadString();
+            break;
+          }
+          case 42: {
+            certificates_.AddEntriesFrom(ref input, _repeated_certificates_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class CertificateSubjectRequest : pb::IMessage<CertificateSubjectRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -53,7 +703,7 @@ namespace GrpcCertService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GrpcCertService.FetchReflection.Descriptor.MessageTypes[0]; }
+      get { return global::GrpcCertService.FetchReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -225,7 +875,7 @@ namespace GrpcCertService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GrpcCertService.FetchReflection.Descriptor.MessageTypes[1]; }
+      get { return global::GrpcCertService.FetchReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -242,7 +892,7 @@ namespace GrpcCertService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CertificateSubjectReply(CertificateSubjectReply other) : this() {
-      subjects_ = other.subjects_;
+      subjects_ = other.subjects_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -253,13 +903,12 @@ namespace GrpcCertService {
 
     /// <summary>Field number for the "subjects" field.</summary>
     public const int SubjectsFieldNumber = 1;
-    private string subjects_ = "";
+    private static readonly pb::FieldCodec<global::GrpcCertService.CertificateSubject> _repeated_subjects_codec
+        = pb::FieldCodec.ForMessage(10, global::GrpcCertService.CertificateSubject.Parser);
+    private readonly pbc::RepeatedField<global::GrpcCertService.CertificateSubject> subjects_ = new pbc::RepeatedField<global::GrpcCertService.CertificateSubject>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Subjects {
+    public pbc::RepeatedField<global::GrpcCertService.CertificateSubject> Subjects {
       get { return subjects_; }
-      set {
-        subjects_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -275,14 +924,14 @@ namespace GrpcCertService {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Subjects != other.Subjects) return false;
+      if(!subjects_.Equals(other.subjects_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Subjects.Length != 0) hash ^= Subjects.GetHashCode();
+      hash ^= subjects_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -299,10 +948,7 @@ namespace GrpcCertService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Subjects.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Subjects);
-      }
+      subjects_.WriteTo(output, _repeated_subjects_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -312,10 +958,7 @@ namespace GrpcCertService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Subjects.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Subjects);
-      }
+      subjects_.WriteTo(ref output, _repeated_subjects_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -325,9 +968,7 @@ namespace GrpcCertService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Subjects.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Subjects);
-      }
+      size += subjects_.CalculateSize(_repeated_subjects_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -339,9 +980,7 @@ namespace GrpcCertService {
       if (other == null) {
         return;
       }
-      if (other.Subjects.Length != 0) {
-        Subjects = other.Subjects;
-      }
+      subjects_.Add(other.subjects_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -357,7 +996,7 @@ namespace GrpcCertService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Subjects = input.ReadString();
+            subjects_.AddEntriesFrom(input, _repeated_subjects_codec);
             break;
           }
         }
@@ -375,7 +1014,7 @@ namespace GrpcCertService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Subjects = input.ReadString();
+            subjects_.AddEntriesFrom(ref input, _repeated_subjects_codec);
             break;
           }
         }

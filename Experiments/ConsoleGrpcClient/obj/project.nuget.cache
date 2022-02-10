@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IS35eErF6Ou1lg+4JaQGrVmZtHD58fHl6C7Ep3llK9fDNNPfQRayH+Gc53h8f/9/zBmrmxMYceJm/Xdz6J1Iew==",
+  "dgSpecHash": "4LjmAkZHhfJn4HrAfRVJJa6tAU48botaW9Uu1tnzKH8rgAdUHhEZDN7cPMCwamvTJcKpu3QOSZkgM0nhJbE42g==",
   "success": true,
-  "projectFilePath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\Experiments\\ConsoleGrpcClient\\ConsoleGrpcClient.csproj",
+  "projectFilePath": "C:\\Users\\Insegrim\\source\\repos\\ConsoleGrpcClient\\ConsoleGrpcClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Insegrim\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
     "C:\\Users\\Insegrim\\.nuget\\packages\\grpc.core.api\\2.42.0\\grpc.core.api.2.42.0.nupkg.sha512",
@@ -10,8 +10,7 @@
     "C:\\Users\\Insegrim\\.nuget\\packages\\grpc.net.common\\2.42.0\\grpc.net.common.2.42.0.nupkg.sha512",
     "C:\\Users\\Insegrim\\.nuget\\packages\\grpc.tools\\2.43.0\\grpc.tools.2.43.0.nupkg.sha512",
     "C:\\Users\\Insegrim\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
-    "C:\\Users\\Insegrim\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
-    "C:\\Users\\Insegrim\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+    "C:\\Users\\Insegrim\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
   "logs": []
 }
