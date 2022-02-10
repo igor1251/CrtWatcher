@@ -8,7 +8,7 @@ namespace CrtLoader.Model.Classes
     {
         int _id;
         string _subjectName, _subjectPhone = "---", _subjectComment = "---";
-        List<ICertificateData> _certificates = new List<ICertificateData>();
+        List<CertificateData> _certificates = new List<CertificateData>();
 
         public int ID 
         { 
@@ -44,7 +44,7 @@ namespace CrtLoader.Model.Classes
             get => _subjectComment;
             set => _subjectComment = value;
         }
-        public List<ICertificateData> CertificateList 
+        public List<CertificateData> CertificateList 
         { 
             get => _certificates; 
             set => _certificates = value;

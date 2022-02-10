@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CrtLoader.Model.Classes;
+using System.Collections.Generic;
 
 namespace CrtLoader.Model.Interfaces
 {
@@ -8,6 +9,6 @@ namespace CrtLoader.Model.Interfaces
         string SubjectName { get; set; }
         string SubjectPhone { get; set; }
         string SubjectComment { get; set; }
-        List<ICertificateData> CertificateList { get; set; }
+        List<CertificateData> CertificateList { get; set; }
     }
 }

@@ -25,25 +25,25 @@ namespace GrpcGreeterClient {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChJQcm90b3MvZmV0Y2gucHJvdG8SBWZldGNoGh9nb29nbGUvcHJvdG9idWYv",
-            "dGltZXN0YW1wLnByb3RvIrABCg9DZXJ0aWZpY2F0ZURhdGESCgoCaWQYASAB",
-            "KAUSFwoPY2VydGlmaWNhdGVIYXNoGAIgASgJEhwKFGNlcnRpZmljYXRlQWxn",
-            "b3JpdGhtGAMgASgJEi0KCXN0YXJ0RGF0ZRgEIAEoCzIaLmdvb2dsZS5wcm90",
-            "b2J1Zi5UaW1lc3RhbXASKwoHZW5kRGF0ZRgFIAEoCzIaLmdvb2dsZS5wcm90",
-            "b2J1Zi5UaW1lc3RhbXAikQEKEkNlcnRpZmljYXRlU3ViamVjdBIKCgJpZBgB",
-            "IAEoBRITCgtzdWJqZWN0TmFtZRgCIAEoCRIUCgxzdWJqZWN0UGhvbmUYAyAB",
-            "KAkSFgoOc3ViamVjdENvbW1lbnQYBCABKAkSLAoMY2VydGlmaWNhdGVzGAUg",
-            "AygLMhYuZmV0Y2guQ2VydGlmaWNhdGVEYXRhIjAKGUNlcnRpZmljYXRlU3Vi",
-            "amVjdFJlcXVlc3QSEwoLc3RvcmFnZU5hbWUYASABKAkiRgoXQ2VydGlmaWNh",
-            "dGVTdWJqZWN0UmVwbHkSKwoIc3ViamVjdHMYASADKAsyGS5mZXRjaC5DZXJ0",
-            "aWZpY2F0ZVN1YmplY3QyZwoHRmV0Y2hlchJcChhGZXRjaENlcnRpZmljYXRl",
-            "U3ViamVjdHMSIC5mZXRjaC5DZXJ0aWZpY2F0ZVN1YmplY3RSZXF1ZXN0Gh4u",
-            "ZmV0Y2guQ2VydGlmaWNhdGVTdWJqZWN0UmVwbHlCFKoCEUdycGNHcmVldGVy",
-            "Q2xpZW50YgZwcm90bzM="));
+            "dGltZXN0YW1wLnByb3RvIqgBChJDZXJ0aWZpY2F0ZURhdGFEVE8SCgoCaWQY",
+            "ASABKAUSFwoPY2VydGlmaWNhdGVIYXNoGAIgASgJEhEKCWFsZ29yaXRobRgD",
+            "IAEoCRItCglzdGFydERhdGUYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt",
+            "ZXN0YW1wEisKB2VuZERhdGUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt",
+            "ZXN0YW1wIpcBChVDZXJ0aWZpY2F0ZVN1YmplY3REVE8SCgoCaWQYASABKAUS",
+            "EwoLc3ViamVjdE5hbWUYAiABKAkSFAoMc3ViamVjdFBob25lGAMgASgJEhYK",
+            "DnN1YmplY3RDb21tZW50GAQgASgJEi8KDGNlcnRpZmljYXRlcxgFIAMoCzIZ",
+            "LmZldGNoLkNlcnRpZmljYXRlRGF0YURUTyIwChlDZXJ0aWZpY2F0ZVN1Ympl",
+            "Y3RSZXF1ZXN0EhMKC3N0b3JhZ2VOYW1lGAEgASgJIkkKF0NlcnRpZmljYXRl",
+            "U3ViamVjdFJlcGx5Ei4KCHN1YmplY3RzGAEgAygLMhwuZmV0Y2guQ2VydGlm",
+            "aWNhdGVTdWJqZWN0RFRPMmcKB0ZldGNoZXISXAoYRmV0Y2hDZXJ0aWZpY2F0",
+            "ZVN1YmplY3RzEiAuZmV0Y2guQ2VydGlmaWNhdGVTdWJqZWN0UmVxdWVzdBoe",
+            "LmZldGNoLkNlcnRpZmljYXRlU3ViamVjdFJlcGx5QhSqAhFHcnBjR3JlZXRl",
+            "ckNsaWVudGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeterClient.CertificateData), global::GrpcGreeterClient.CertificateData.Parser, new[]{ "Id", "CertificateHash", "CertificateAlgorithm", "StartDate", "EndDate" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeterClient.CertificateSubject), global::GrpcGreeterClient.CertificateSubject.Parser, new[]{ "Id", "SubjectName", "SubjectPhone", "SubjectComment", "Certificates" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeterClient.CertificateDataDTO), global::GrpcGreeterClient.CertificateDataDTO.Parser, new[]{ "Id", "CertificateHash", "Algorithm", "StartDate", "EndDate" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeterClient.CertificateSubjectDTO), global::GrpcGreeterClient.CertificateSubjectDTO.Parser, new[]{ "Id", "SubjectName", "SubjectPhone", "SubjectComment", "Certificates" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeterClient.CertificateSubjectRequest), global::GrpcGreeterClient.CertificateSubjectRequest.Parser, new[]{ "StorageName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeterClient.CertificateSubjectReply), global::GrpcGreeterClient.CertificateSubjectReply.Parser, new[]{ "Subjects" }, null, null, null, null)
           }));
@@ -52,16 +52,16 @@ namespace GrpcGreeterClient {
 
   }
   #region Messages
-  public sealed partial class CertificateData : pb::IMessage<CertificateData>
+  public sealed partial class CertificateDataDTO : pb::IMessage<CertificateDataDTO>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<CertificateData> _parser = new pb::MessageParser<CertificateData>(() => new CertificateData());
+    private static readonly pb::MessageParser<CertificateDataDTO> _parser = new pb::MessageParser<CertificateDataDTO>(() => new CertificateDataDTO());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<CertificateData> Parser { get { return _parser; } }
+    public static pb::MessageParser<CertificateDataDTO> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -77,7 +77,7 @@ namespace GrpcGreeterClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CertificateData() {
+    public CertificateDataDTO() {
       OnConstruction();
     }
 
@@ -85,10 +85,10 @@ namespace GrpcGreeterClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CertificateData(CertificateData other) : this() {
+    public CertificateDataDTO(CertificateDataDTO other) : this() {
       id_ = other.id_;
       certificateHash_ = other.certificateHash_;
-      certificateAlgorithm_ = other.certificateAlgorithm_;
+      algorithm_ = other.algorithm_;
       startDate_ = other.startDate_ != null ? other.startDate_.Clone() : null;
       endDate_ = other.endDate_ != null ? other.endDate_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -96,8 +96,8 @@ namespace GrpcGreeterClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CertificateData Clone() {
-      return new CertificateData(this);
+    public CertificateDataDTO Clone() {
+      return new CertificateDataDTO(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -124,15 +124,15 @@ namespace GrpcGreeterClient {
       }
     }
 
-    /// <summary>Field number for the "certificateAlgorithm" field.</summary>
-    public const int CertificateAlgorithmFieldNumber = 3;
-    private string certificateAlgorithm_ = "";
+    /// <summary>Field number for the "algorithm" field.</summary>
+    public const int AlgorithmFieldNumber = 3;
+    private string algorithm_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string CertificateAlgorithm {
-      get { return certificateAlgorithm_; }
+    public string Algorithm {
+      get { return algorithm_; }
       set {
-        certificateAlgorithm_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        algorithm_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -163,12 +163,12 @@ namespace GrpcGreeterClient {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as CertificateData);
+      return Equals(other as CertificateDataDTO);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(CertificateData other) {
+    public bool Equals(CertificateDataDTO other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -177,7 +177,7 @@ namespace GrpcGreeterClient {
       }
       if (Id != other.Id) return false;
       if (CertificateHash != other.CertificateHash) return false;
-      if (CertificateAlgorithm != other.CertificateAlgorithm) return false;
+      if (Algorithm != other.Algorithm) return false;
       if (!object.Equals(StartDate, other.StartDate)) return false;
       if (!object.Equals(EndDate, other.EndDate)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -189,7 +189,7 @@ namespace GrpcGreeterClient {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
       if (CertificateHash.Length != 0) hash ^= CertificateHash.GetHashCode();
-      if (CertificateAlgorithm.Length != 0) hash ^= CertificateAlgorithm.GetHashCode();
+      if (Algorithm.Length != 0) hash ^= Algorithm.GetHashCode();
       if (startDate_ != null) hash ^= StartDate.GetHashCode();
       if (endDate_ != null) hash ^= EndDate.GetHashCode();
       if (_unknownFields != null) {
@@ -218,9 +218,9 @@ namespace GrpcGreeterClient {
         output.WriteRawTag(18);
         output.WriteString(CertificateHash);
       }
-      if (CertificateAlgorithm.Length != 0) {
+      if (Algorithm.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(CertificateAlgorithm);
+        output.WriteString(Algorithm);
       }
       if (startDate_ != null) {
         output.WriteRawTag(34);
@@ -248,9 +248,9 @@ namespace GrpcGreeterClient {
         output.WriteRawTag(18);
         output.WriteString(CertificateHash);
       }
-      if (CertificateAlgorithm.Length != 0) {
+      if (Algorithm.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(CertificateAlgorithm);
+        output.WriteString(Algorithm);
       }
       if (startDate_ != null) {
         output.WriteRawTag(34);
@@ -276,8 +276,8 @@ namespace GrpcGreeterClient {
       if (CertificateHash.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CertificateHash);
       }
-      if (CertificateAlgorithm.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(CertificateAlgorithm);
+      if (Algorithm.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Algorithm);
       }
       if (startDate_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(StartDate);
@@ -293,7 +293,7 @@ namespace GrpcGreeterClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(CertificateData other) {
+    public void MergeFrom(CertificateDataDTO other) {
       if (other == null) {
         return;
       }
@@ -303,8 +303,8 @@ namespace GrpcGreeterClient {
       if (other.CertificateHash.Length != 0) {
         CertificateHash = other.CertificateHash;
       }
-      if (other.CertificateAlgorithm.Length != 0) {
-        CertificateAlgorithm = other.CertificateAlgorithm;
+      if (other.Algorithm.Length != 0) {
+        Algorithm = other.Algorithm;
       }
       if (other.startDate_ != null) {
         if (startDate_ == null) {
@@ -342,7 +342,7 @@ namespace GrpcGreeterClient {
             break;
           }
           case 26: {
-            CertificateAlgorithm = input.ReadString();
+            Algorithm = input.ReadString();
             break;
           }
           case 34: {
@@ -383,7 +383,7 @@ namespace GrpcGreeterClient {
             break;
           }
           case 26: {
-            CertificateAlgorithm = input.ReadString();
+            Algorithm = input.ReadString();
             break;
           }
           case 34: {
@@ -407,16 +407,16 @@ namespace GrpcGreeterClient {
 
   }
 
-  public sealed partial class CertificateSubject : pb::IMessage<CertificateSubject>
+  public sealed partial class CertificateSubjectDTO : pb::IMessage<CertificateSubjectDTO>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<CertificateSubject> _parser = new pb::MessageParser<CertificateSubject>(() => new CertificateSubject());
+    private static readonly pb::MessageParser<CertificateSubjectDTO> _parser = new pb::MessageParser<CertificateSubjectDTO>(() => new CertificateSubjectDTO());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<CertificateSubject> Parser { get { return _parser; } }
+    public static pb::MessageParser<CertificateSubjectDTO> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -432,7 +432,7 @@ namespace GrpcGreeterClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CertificateSubject() {
+    public CertificateSubjectDTO() {
       OnConstruction();
     }
 
@@ -440,7 +440,7 @@ namespace GrpcGreeterClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CertificateSubject(CertificateSubject other) : this() {
+    public CertificateSubjectDTO(CertificateSubjectDTO other) : this() {
       id_ = other.id_;
       subjectName_ = other.subjectName_;
       subjectPhone_ = other.subjectPhone_;
@@ -451,8 +451,8 @@ namespace GrpcGreeterClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CertificateSubject Clone() {
-      return new CertificateSubject(this);
+    public CertificateSubjectDTO Clone() {
+      return new CertificateSubjectDTO(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -505,24 +505,24 @@ namespace GrpcGreeterClient {
 
     /// <summary>Field number for the "certificates" field.</summary>
     public const int CertificatesFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::GrpcGreeterClient.CertificateData> _repeated_certificates_codec
-        = pb::FieldCodec.ForMessage(42, global::GrpcGreeterClient.CertificateData.Parser);
-    private readonly pbc::RepeatedField<global::GrpcGreeterClient.CertificateData> certificates_ = new pbc::RepeatedField<global::GrpcGreeterClient.CertificateData>();
+    private static readonly pb::FieldCodec<global::GrpcGreeterClient.CertificateDataDTO> _repeated_certificates_codec
+        = pb::FieldCodec.ForMessage(42, global::GrpcGreeterClient.CertificateDataDTO.Parser);
+    private readonly pbc::RepeatedField<global::GrpcGreeterClient.CertificateDataDTO> certificates_ = new pbc::RepeatedField<global::GrpcGreeterClient.CertificateDataDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::GrpcGreeterClient.CertificateData> Certificates {
+    public pbc::RepeatedField<global::GrpcGreeterClient.CertificateDataDTO> Certificates {
       get { return certificates_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as CertificateSubject);
+      return Equals(other as CertificateSubjectDTO);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(CertificateSubject other) {
+    public bool Equals(CertificateSubjectDTO other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -639,7 +639,7 @@ namespace GrpcGreeterClient {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(CertificateSubject other) {
+    public void MergeFrom(CertificateSubjectDTO other) {
       if (other == null) {
         return;
       }
@@ -968,12 +968,12 @@ namespace GrpcGreeterClient {
 
     /// <summary>Field number for the "subjects" field.</summary>
     public const int SubjectsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::GrpcGreeterClient.CertificateSubject> _repeated_subjects_codec
-        = pb::FieldCodec.ForMessage(10, global::GrpcGreeterClient.CertificateSubject.Parser);
-    private readonly pbc::RepeatedField<global::GrpcGreeterClient.CertificateSubject> subjects_ = new pbc::RepeatedField<global::GrpcGreeterClient.CertificateSubject>();
+    private static readonly pb::FieldCodec<global::GrpcGreeterClient.CertificateSubjectDTO> _repeated_subjects_codec
+        = pb::FieldCodec.ForMessage(10, global::GrpcGreeterClient.CertificateSubjectDTO.Parser);
+    private readonly pbc::RepeatedField<global::GrpcGreeterClient.CertificateSubjectDTO> subjects_ = new pbc::RepeatedField<global::GrpcGreeterClient.CertificateSubjectDTO>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::GrpcGreeterClient.CertificateSubject> Subjects {
+    public pbc::RepeatedField<global::GrpcGreeterClient.CertificateSubjectDTO> Subjects {
       get { return subjects_; }
     }
 
