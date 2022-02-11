@@ -12,6 +12,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using ElectronicDigitalSignatire.Services.Classes;
 using ElectronicDigitalSignatire.Services.Interfaces;
+using WA4D0GServer.Services.Interfaces;
+using WA4D0GServer.Services.Classes;
 
 namespace WA4D0GServer
 {
@@ -31,6 +33,7 @@ namespace WA4D0GServer
             services.AddSingleton<IQueryStore, QueryStore>();
             services.AddSingleton<IDbStore, DbStore>();
             services.AddSingleton<ILocalStore, LocalStore>();
+            services.AddSingleton<IWorkerCommunicationService, GrpcWorkerCommunicationService>();
             services.AddControllers();
             services.AddGrpc();
         }

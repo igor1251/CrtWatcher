@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Grpc.Net.Client;
+using WA4D0GServer.Services.Interfaces;
 
 namespace WA4D0GServer.Controllers
 {
@@ -15,15 +15,15 @@ namespace WA4D0GServer.Controllers
     {
         private readonly ILogger<SubjectsController> _logger;
         private IDbStore _dbStore;
-        private ILocalStore _localStore;
+        private IWorkerCommunicationService _workerCommunicationService;
 
         public SubjectsController(ILogger<SubjectsController> logger,
                                   IDbStore dbStore,
-                                  ILocalStore localStore)
+                                  IWorkerCommunicationService workerCommunicationService)
         {
             _logger = logger;
             _dbStore = dbStore;
-            _localStore = localStore;
+            _workerCommunicationService = workerCommunicationService;
         }
 
         #region GET methods
@@ -73,37 +73,13 @@ namespace WA4D0GServer.Controllers
         [Route("system")]
         public async Task<ActionResult> LoadSubjectsFromLocalStoreAsync()
         {
-            /*
-            _logger.LogInformation("Loading subjects list from local store");
-            var subjectsList = await _localStore.LoadCertificateSubjectsAndCertificates();
-            await _dbStore.InsertSubject(subjectsList);
-
-            if (subjectsList == null)
-            {
-                _logger.LogInformation("Subjects list is empty");
-                return NotFound();
-            }
-
-            _logger.LogInformation("Loaded");
-            return Ok();
-            */
             _logger.LogInformation("Loading subjects list from m-o-r-d-o-r");
 
             try
             {
-                using var channel = GrpcChannel.ForAddress("https://localhost:5001");
-                var client = new X509Comm.X509CommClient(channel);
-                var reply = await client.FetchCertificateSubjectsAsync(
-                                  new CertificateSubjectRequest { StorageName = "local" });
-                var subjects = new List<CertificateSubject>();
-
-                foreach (var item in reply.Subjects)
-                {
-                    subjects.Add(CertificateSubjectFromDTOConverter(item));
-                }
-
+                var subjects = await _workerCommunicationService.FetchAllCertificateSubjects("https://localhost:5001");
                 _logger.LogInformation("Success. Saving information to DBSTORE");
-                await _dbStore.InsertSubject(subjects);
+                await _dbStore.InsertSubject((List<CertificateSubject>)subjects);
             }
             catch (Exception ex)
             {

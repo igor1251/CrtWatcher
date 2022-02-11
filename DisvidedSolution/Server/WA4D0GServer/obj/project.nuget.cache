@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PI39eTIHKVaQzXpxOBo9eZJIS+LUVeCETtsk/lgmmlfcmQjUwaVK53mXCfsIYQw1EO7d64uBH5ZhmfXA9RAo/Q==",
+  "dgSpecHash": "sSkEZl952kqP190BI12S0wDuOcW49AdXmMTVRgq8/wfZFw5XwjcgkXWiYGcw5olXslFNLIwr5TOMqgoC331mrA==",
   "success": true,
-  "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\DisvidedSolution\\Server\\WA4D0GServer\\WA4D0GServer.csproj",
+  "projectFilePath": "D:\\Lib\\Documents\\GitHub\\CrtWatcher\\DisvidedSolution\\Server\\WA4D0GServer\\WA4D0GServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Insegrim\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Insegrim\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
@@ -47,7 +47,8 @@
     "C:\\Users\\Insegrim\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.7.0\\system.security.cryptography.protecteddata.4.7.0.nupkg.sha512",
     "C:\\Users\\Insegrim\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\Insegrim\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\Insegrim\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+    "C:\\Users\\Insegrim\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\Insegrim\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
   ],
   "logs": []
 }

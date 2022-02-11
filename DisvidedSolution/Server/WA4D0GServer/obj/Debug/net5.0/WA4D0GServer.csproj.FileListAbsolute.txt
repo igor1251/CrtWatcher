@@ -189,3 +189,10 @@ D:\Libraries\Documents\GitHub\CrtWatcher\DisvidedSolution\Server\WA4D0GServer\bi
 D:\Libraries\Documents\GitHub\CrtWatcher\DisvidedSolution\Server\WA4D0GServer\bin\Debug\net5.0\Grpc.Net.Client.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\DisvidedSolution\Server\WA4D0GServer\bin\Debug\net5.0\Grpc.Net.ClientFactory.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\DisvidedSolution\Server\WA4D0GServer\bin\Debug\net5.0\Grpc.Net.Common.dll
+D:\Lib\Documents\GitHub\CrtWatcher\DisvidedSolution\Server\WA4D0GServer\bin\Debug\net5.0\Google.Protobuf.dll
+D:\Lib\Documents\GitHub\CrtWatcher\DisvidedSolution\Server\WA4D0GServer\bin\Debug\net5.0\Grpc.AspNetCore.Server.dll
+D:\Lib\Documents\GitHub\CrtWatcher\DisvidedSolution\Server\WA4D0GServer\bin\Debug\net5.0\Grpc.AspNetCore.Server.ClientFactory.dll
+D:\Lib\Documents\GitHub\CrtWatcher\DisvidedSolution\Server\WA4D0GServer\bin\Debug\net5.0\Grpc.Core.Api.dll
+D:\Lib\Documents\GitHub\CrtWatcher\DisvidedSolution\Server\WA4D0GServer\bin\Debug\net5.0\Grpc.Net.Client.dll
+D:\Lib\Documents\GitHub\CrtWatcher\DisvidedSolution\Server\WA4D0GServer\bin\Debug\net5.0\Grpc.Net.ClientFactory.dll
+D:\Lib\Documents\GitHub\CrtWatcher\DisvidedSolution\Server\WA4D0GServer\bin\Debug\net5.0\Grpc.Net.Common.dll
