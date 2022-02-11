@@ -15,4 +15,8 @@
     <ProjectReference Include="..\..\..\ClassLibs\ElectronicDigitalSignature.Services\ElectronicDigitalSignature.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+	<Protobuf Include="Protos\x509comm.proto" GrpcServices="Client" />
+  </ItemGroup>
+
 </Project>

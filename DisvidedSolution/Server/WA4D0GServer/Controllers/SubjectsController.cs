@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Grpc.Net.Client;
 
 namespace WA4D0GServer.Controllers
 {
@@ -44,10 +45,35 @@ namespace WA4D0GServer.Controllers
             return Ok(subjectsList);
         }
 
+        private CertificateData CertificateDataFromDTOConverter(CertificateDataDTO certificateDataDTO)
+        {
+            var certificateData = new CertificateData();
+            certificateData.ID = certificateDataDTO.Id;
+            certificateData.Algorithm = certificateDataDTO.Algorithm;
+            certificateData.CertificateHash = certificateDataDTO.CertificateHash;
+            certificateData.StartDate = certificateDataDTO.StartDate.ToDateTime();
+            certificateData.EndDate = certificateDataDTO.EndDate.ToDateTime();
+            return certificateData;
+        }
+
+        private CertificateSubject CertificateSubjectFromDTOConverter(CertificateSubjectDTO certificateSubjectDTO)
+        {
+            var certificateSubject = new CertificateSubject();
+            certificateSubject.ID = certificateSubjectDTO.Id;
+            certificateSubject.SubjectName = certificateSubjectDTO.SubjectName;
+            certificateSubject.SubjectComment = certificateSubjectDTO.SubjectComment;
+            foreach (var item in certificateSubjectDTO.Certificates)
+            {
+                certificateSubject.CertificateList.Add(CertificateDataFromDTOConverter(item));
+            }
+            return certificateSubject;
+        }
+
         [HttpPut]
         [Route("system")]
         public async Task<ActionResult> LoadSubjectsFromLocalStoreAsync()
         {
+            /*
             _logger.LogInformation("Loading subjects list from local store");
             var subjectsList = await _localStore.LoadCertificateSubjectsAndCertificates();
             await _dbStore.InsertSubject(subjectsList);
@@ -59,6 +85,32 @@ namespace WA4D0GServer.Controllers
             }
 
             _logger.LogInformation("Loaded");
+            return Ok();
+            */
+            _logger.LogInformation("Loading subjects list from m-o-r-d-o-r");
+
+            try
+            {
+                using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+                var client = new X509Comm.X509CommClient(channel);
+                var reply = await client.FetchCertificateSubjectsAsync(
+                                  new CertificateSubjectRequest { StorageName = "local" });
+                var subjects = new List<CertificateSubject>();
+
+                foreach (var item in reply.Subjects)
+                {
+                    subjects.Add(CertificateSubjectFromDTOConverter(item));
+                }
+
+                _logger.LogInformation("Success. Saving information to DBSTORE");
+                await _dbStore.InsertSubject(subjects);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
+            }
+
             return Ok();
         }
 

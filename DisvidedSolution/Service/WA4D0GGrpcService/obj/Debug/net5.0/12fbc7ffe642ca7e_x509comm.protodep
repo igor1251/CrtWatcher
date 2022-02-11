@@ -1,0 +1,3 @@
+obj\Debug\net5.0\Protos/X509Comm.cs \
+obj\Debug\net5.0\Protos/X509commGrpc.cs: C:/Users/Insegrim/.nuget/packages/grpc.tools/2.34.0/build/native/include/google/protobuf/timestamp.proto\
+ Protos/x509comm.proto

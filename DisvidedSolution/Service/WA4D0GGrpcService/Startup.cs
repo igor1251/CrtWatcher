@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ElectronicDigitalSignatire.Services.Classes;
+using ElectronicDigitalSignatire.Services.Interfaces;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +18,7 @@ namespace WA4D0GGrpcService
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<ILocalStore, LocalStore>();
             services.AddGrpc();
         }
 
@@ -31,7 +34,7 @@ namespace WA4D0GGrpcService
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<GreeterService>();
+                endpoints.MapGrpcService<X509CommService>();
 
                 endpoints.MapGet("/", async context =>
                 {
