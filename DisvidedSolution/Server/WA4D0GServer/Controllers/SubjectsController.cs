@@ -5,7 +5,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WA4D0GServer.Services.Interfaces;
 
 namespace WA4D0GServer.Controllers
 {
@@ -15,15 +14,12 @@ namespace WA4D0GServer.Controllers
     {
         private readonly ILogger<SubjectsController> _logger;
         private IDbStore _dbStore;
-        private IWorkerCommunicationService _workerCommunicationService;
 
         public SubjectsController(ILogger<SubjectsController> logger,
-                                  IDbStore dbStore,
-                                  IWorkerCommunicationService workerCommunicationService)
+                                  IDbStore dbStore)
         {
             _logger = logger;
             _dbStore = dbStore;
-            _workerCommunicationService = workerCommunicationService;
         }
 
         #region GET methods
@@ -75,17 +71,17 @@ namespace WA4D0GServer.Controllers
         {
             _logger.LogInformation("Loading subjects list from m-o-r-d-o-r");
 
-            try
-            {
-                var subjects = await _workerCommunicationService.FetchAllCertificateSubjects("https://localhost:5001");
-                _logger.LogInformation("Success. Saving information to DBSTORE");
-                await _dbStore.InsertSubject((List<CertificateSubject>)subjects);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message);
-                return BadRequest(ex.Message);
-            }
+            //try
+            //{
+            //    var subjects = await _workerCommunicationService.FetchAllCertificateSubjects("https://localhost:5001");
+            //    _logger.LogInformation("Success. Saving information to DBSTORE");
+            //    await _dbStore.InsertSubject((List<CertificateSubject>)subjects);
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.LogError(ex.Message);
+            //    return BadRequest(ex.Message);
+            //}
 
             return Ok();
         }

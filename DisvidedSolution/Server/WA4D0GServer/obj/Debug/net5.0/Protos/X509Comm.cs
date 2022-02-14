@@ -32,20 +32,25 @@ namespace WA4D0GServer {
             "VGltZXN0YW1wIpcBChVDZXJ0aWZpY2F0ZVN1YmplY3REVE8SCgoCaWQYASAB",
             "KAUSEwoLc3ViamVjdE5hbWUYAiABKAkSFAoMc3ViamVjdFBob25lGAMgASgJ",
             "EhYKDnN1YmplY3RDb21tZW50GAQgASgJEi8KDGNlcnRpZmljYXRlcxgFIAMo",
-            "CzIZLmZldGNoLkNlcnRpZmljYXRlRGF0YURUTyIwChlDZXJ0aWZpY2F0ZVN1",
-            "YmplY3RSZXF1ZXN0EhMKC3N0b3JhZ2VOYW1lGAEgASgJIkkKF0NlcnRpZmlj",
-            "YXRlU3ViamVjdFJlcGx5Ei4KCHN1YmplY3RzGAEgAygLMhwuZmV0Y2guQ2Vy",
-            "dGlmaWNhdGVTdWJqZWN0RFRPMmgKCFg1MDlDb21tElwKGEZldGNoQ2VydGlm",
-            "aWNhdGVTdWJqZWN0cxIgLmZldGNoLkNlcnRpZmljYXRlU3ViamVjdFJlcXVl",
-            "c3QaHi5mZXRjaC5DZXJ0aWZpY2F0ZVN1YmplY3RSZXBseUIPqgIMV0E0RDBH",
-            "U2VydmVyYgZwcm90bzM="));
+            "CzIZLmZldGNoLkNlcnRpZmljYXRlRGF0YURUTyKJAQoXQ2VydGlmaWNhdGVT",
+            "dWJqZWN0UmVwbHkSOwoJcmVwbHlUeXBlGAEgASgOMiguZmV0Y2guQ2VydGlm",
+            "aWNhdGVTdWJqZWN0UmVwbHkuUmVwbHlUeXBlIjEKCVJlcGx5VHlwZRIICgRO",
+            "T05FEAASDAoIQUNDRVBURUQQARIMCghERUNMSU5FRBACIskBChlDZXJ0aWZp",
+            "Y2F0ZVN1YmplY3RSZXF1ZXN0EkEKC3JlcXVlc3RUeXBlGAEgASgOMiwuZmV0",
+            "Y2guQ2VydGlmaWNhdGVTdWJqZWN0UmVxdWVzdC5SZXF1ZXN0VHlwZRIuCghz",
+            "dWJqZWN0cxgCIAMoCzIcLmZldGNoLkNlcnRpZmljYXRlU3ViamVjdERUTyI5",
+            "CgtSZXF1ZXN0VHlwZRIICgROT05FEAASCAoESU5JVBABEgoKBlVQREFURRAC",
+            "EgoKBkFQUEVORBADMmgKCFg1MDlDb21tElwKGEZldGNoQ2VydGlmaWNhdGVT",
+            "dWJqZWN0cxIgLmZldGNoLkNlcnRpZmljYXRlU3ViamVjdFJlcXVlc3QaHi5m",
+            "ZXRjaC5DZXJ0aWZpY2F0ZVN1YmplY3RSZXBseUIPqgIMV0E0RDBHU2VydmVy",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::WA4D0GServer.CertificateDataDTO), global::WA4D0GServer.CertificateDataDTO.Parser, new[]{ "Id", "CertificateHash", "Algorithm", "StartDate", "EndDate" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::WA4D0GServer.CertificateSubjectDTO), global::WA4D0GServer.CertificateSubjectDTO.Parser, new[]{ "Id", "SubjectName", "SubjectPhone", "SubjectComment", "Certificates" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::WA4D0GServer.CertificateSubjectRequest), global::WA4D0GServer.CertificateSubjectRequest.Parser, new[]{ "StorageName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::WA4D0GServer.CertificateSubjectReply), global::WA4D0GServer.CertificateSubjectReply.Parser, new[]{ "Subjects" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::WA4D0GServer.CertificateSubjectReply), global::WA4D0GServer.CertificateSubjectReply.Parser, new[]{ "ReplyType" }, null, new[]{ typeof(global::WA4D0GServer.CertificateSubjectReply.Types.ReplyType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::WA4D0GServer.CertificateSubjectRequest), global::WA4D0GServer.CertificateSubjectRequest.Parser, new[]{ "RequestType", "Subjects" }, null, new[]{ typeof(global::WA4D0GServer.CertificateSubjectRequest.Types.RequestType) }, null, null)
           }));
     }
     #endregion
@@ -733,195 +738,6 @@ namespace WA4D0GServer {
 
   }
 
-  public sealed partial class CertificateSubjectRequest : pb::IMessage<CertificateSubjectRequest>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<CertificateSubjectRequest> _parser = new pb::MessageParser<CertificateSubjectRequest>(() => new CertificateSubjectRequest());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<CertificateSubjectRequest> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::WA4D0GServer.X509CommReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CertificateSubjectRequest() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CertificateSubjectRequest(CertificateSubjectRequest other) : this() {
-      storageName_ = other.storageName_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CertificateSubjectRequest Clone() {
-      return new CertificateSubjectRequest(this);
-    }
-
-    /// <summary>Field number for the "storageName" field.</summary>
-    public const int StorageNameFieldNumber = 1;
-    private string storageName_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string StorageName {
-      get { return storageName_; }
-      set {
-        storageName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as CertificateSubjectRequest);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(CertificateSubjectRequest other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (StorageName != other.StorageName) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (StorageName.Length != 0) hash ^= StorageName.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (StorageName.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(StorageName);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (StorageName.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(StorageName);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (StorageName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(StorageName);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(CertificateSubjectRequest other) {
-      if (other == null) {
-        return;
-      }
-      if (other.StorageName.Length != 0) {
-        StorageName = other.StorageName;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            StorageName = input.ReadString();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            StorageName = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
   public sealed partial class CertificateSubjectReply : pb::IMessage<CertificateSubjectReply>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -936,7 +752,7 @@ namespace WA4D0GServer {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::WA4D0GServer.X509CommReflection.Descriptor.MessageTypes[3]; }
+      get { return global::WA4D0GServer.X509CommReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -956,7 +772,7 @@ namespace WA4D0GServer {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CertificateSubjectReply(CertificateSubjectReply other) : this() {
-      subjects_ = other.subjects_.Clone();
+      replyType_ = other.replyType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -966,15 +782,16 @@ namespace WA4D0GServer {
       return new CertificateSubjectReply(this);
     }
 
-    /// <summary>Field number for the "subjects" field.</summary>
-    public const int SubjectsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::WA4D0GServer.CertificateSubjectDTO> _repeated_subjects_codec
-        = pb::FieldCodec.ForMessage(10, global::WA4D0GServer.CertificateSubjectDTO.Parser);
-    private readonly pbc::RepeatedField<global::WA4D0GServer.CertificateSubjectDTO> subjects_ = new pbc::RepeatedField<global::WA4D0GServer.CertificateSubjectDTO>();
+    /// <summary>Field number for the "replyType" field.</summary>
+    public const int ReplyTypeFieldNumber = 1;
+    private global::WA4D0GServer.CertificateSubjectReply.Types.ReplyType replyType_ = global::WA4D0GServer.CertificateSubjectReply.Types.ReplyType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::WA4D0GServer.CertificateSubjectDTO> Subjects {
-      get { return subjects_; }
+    public global::WA4D0GServer.CertificateSubjectReply.Types.ReplyType ReplyType {
+      get { return replyType_; }
+      set {
+        replyType_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -992,6 +809,222 @@ namespace WA4D0GServer {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ReplyType != other.ReplyType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ReplyType != global::WA4D0GServer.CertificateSubjectReply.Types.ReplyType.None) hash ^= ReplyType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ReplyType != global::WA4D0GServer.CertificateSubjectReply.Types.ReplyType.None) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) ReplyType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ReplyType != global::WA4D0GServer.CertificateSubjectReply.Types.ReplyType.None) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) ReplyType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ReplyType != global::WA4D0GServer.CertificateSubjectReply.Types.ReplyType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ReplyType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CertificateSubjectReply other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ReplyType != global::WA4D0GServer.CertificateSubjectReply.Types.ReplyType.None) {
+        ReplyType = other.ReplyType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            ReplyType = (global::WA4D0GServer.CertificateSubjectReply.Types.ReplyType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            ReplyType = (global::WA4D0GServer.CertificateSubjectReply.Types.ReplyType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the CertificateSubjectReply message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum ReplyType {
+        [pbr::OriginalName("NONE")] None = 0,
+        [pbr::OriginalName("ACCEPTED")] Accepted = 1,
+        [pbr::OriginalName("DECLINED")] Declined = 2,
+      }
+
+    }
+    #endregion
+
+  }
+
+  public sealed partial class CertificateSubjectRequest : pb::IMessage<CertificateSubjectRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CertificateSubjectRequest> _parser = new pb::MessageParser<CertificateSubjectRequest>(() => new CertificateSubjectRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CertificateSubjectRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::WA4D0GServer.X509CommReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CertificateSubjectRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CertificateSubjectRequest(CertificateSubjectRequest other) : this() {
+      requestType_ = other.requestType_;
+      subjects_ = other.subjects_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CertificateSubjectRequest Clone() {
+      return new CertificateSubjectRequest(this);
+    }
+
+    /// <summary>Field number for the "requestType" field.</summary>
+    public const int RequestTypeFieldNumber = 1;
+    private global::WA4D0GServer.CertificateSubjectRequest.Types.RequestType requestType_ = global::WA4D0GServer.CertificateSubjectRequest.Types.RequestType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::WA4D0GServer.CertificateSubjectRequest.Types.RequestType RequestType {
+      get { return requestType_; }
+      set {
+        requestType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "subjects" field.</summary>
+    public const int SubjectsFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::WA4D0GServer.CertificateSubjectDTO> _repeated_subjects_codec
+        = pb::FieldCodec.ForMessage(18, global::WA4D0GServer.CertificateSubjectDTO.Parser);
+    private readonly pbc::RepeatedField<global::WA4D0GServer.CertificateSubjectDTO> subjects_ = new pbc::RepeatedField<global::WA4D0GServer.CertificateSubjectDTO>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::WA4D0GServer.CertificateSubjectDTO> Subjects {
+      get { return subjects_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CertificateSubjectRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CertificateSubjectRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RequestType != other.RequestType) return false;
       if(!subjects_.Equals(other.subjects_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1000,6 +1033,7 @@ namespace WA4D0GServer {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (RequestType != global::WA4D0GServer.CertificateSubjectRequest.Types.RequestType.None) hash ^= RequestType.GetHashCode();
       hash ^= subjects_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1019,6 +1053,10 @@ namespace WA4D0GServer {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (RequestType != global::WA4D0GServer.CertificateSubjectRequest.Types.RequestType.None) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) RequestType);
+      }
       subjects_.WriteTo(output, _repeated_subjects_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1030,6 +1068,10 @@ namespace WA4D0GServer {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RequestType != global::WA4D0GServer.CertificateSubjectRequest.Types.RequestType.None) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) RequestType);
+      }
       subjects_.WriteTo(ref output, _repeated_subjects_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1041,6 +1083,9 @@ namespace WA4D0GServer {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (RequestType != global::WA4D0GServer.CertificateSubjectRequest.Types.RequestType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RequestType);
+      }
       size += subjects_.CalculateSize(_repeated_subjects_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1050,9 +1095,12 @@ namespace WA4D0GServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(CertificateSubjectReply other) {
+    public void MergeFrom(CertificateSubjectRequest other) {
       if (other == null) {
         return;
+      }
+      if (other.RequestType != global::WA4D0GServer.CertificateSubjectRequest.Types.RequestType.None) {
+        RequestType = other.RequestType;
       }
       subjects_.Add(other.subjects_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1070,7 +1118,11 @@ namespace WA4D0GServer {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 8: {
+            RequestType = (global::WA4D0GServer.CertificateSubjectRequest.Types.RequestType) input.ReadEnum();
+            break;
+          }
+          case 18: {
             subjects_.AddEntriesFrom(input, _repeated_subjects_codec);
             break;
           }
@@ -1089,7 +1141,11 @@ namespace WA4D0GServer {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 8: {
+            RequestType = (global::WA4D0GServer.CertificateSubjectRequest.Types.RequestType) input.ReadEnum();
+            break;
+          }
+          case 18: {
             subjects_.AddEntriesFrom(ref input, _repeated_subjects_codec);
             break;
           }
@@ -1097,6 +1153,21 @@ namespace WA4D0GServer {
       }
     }
     #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the CertificateSubjectRequest message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum RequestType {
+        [pbr::OriginalName("NONE")] None = 0,
+        [pbr::OriginalName("INIT")] Init = 1,
+        [pbr::OriginalName("UPDATE")] Update = 2,
+        [pbr::OriginalName("APPEND")] Append = 3,
+      }
+
+    }
+    #endregion
 
   }
 

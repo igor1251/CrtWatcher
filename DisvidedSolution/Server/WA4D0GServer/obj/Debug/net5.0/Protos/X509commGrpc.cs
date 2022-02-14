@@ -64,59 +64,35 @@ namespace WA4D0GServer {
       get { return global::WA4D0GServer.X509CommReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Client for X509Comm</summary>
-    public partial class X509CommClient : grpc::ClientBase<X509CommClient>
+    /// <summary>Base class for server-side implementations of X509Comm</summary>
+    [grpc::BindServiceMethod(typeof(X509Comm), "BindService")]
+    public abstract partial class X509CommBase
     {
-      /// <summary>Creates a new client for X509Comm</summary>
-      /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public X509CommClient(grpc::ChannelBase channel) : base(channel)
+      public virtual global::System.Threading.Tasks.Task<global::WA4D0GServer.CertificateSubjectReply> FetchCertificateSubjects(global::WA4D0GServer.CertificateSubjectRequest request, grpc::ServerCallContext context)
       {
-      }
-      /// <summary>Creates a new client for X509Comm that uses a custom <c>CallInvoker</c>.</summary>
-      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public X509CommClient(grpc::CallInvoker callInvoker) : base(callInvoker)
-      {
-      }
-      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected X509CommClient() : base()
-      {
-      }
-      /// <summary>Protected constructor to allow creation of configured clients.</summary>
-      /// <param name="configuration">The client configuration.</param>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected X509CommClient(ClientBaseConfiguration configuration) : base(configuration)
-      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::WA4D0GServer.CertificateSubjectReply FetchCertificateSubjects(global::WA4D0GServer.CertificateSubjectRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return FetchCertificateSubjects(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::WA4D0GServer.CertificateSubjectReply FetchCertificateSubjects(global::WA4D0GServer.CertificateSubjectRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.BlockingUnaryCall(__Method_FetchCertificateSubjects, null, options, request);
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::WA4D0GServer.CertificateSubjectReply> FetchCertificateSubjectsAsync(global::WA4D0GServer.CertificateSubjectRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return FetchCertificateSubjectsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::WA4D0GServer.CertificateSubjectReply> FetchCertificateSubjectsAsync(global::WA4D0GServer.CertificateSubjectRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_FetchCertificateSubjects, null, options, request);
-      }
-      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override X509CommClient NewInstance(ClientBaseConfiguration configuration)
-      {
-        return new X509CommClient(configuration);
-      }
+    }
+
+    /// <summary>Creates service definition that can be registered with a server</summary>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static grpc::ServerServiceDefinition BindService(X509CommBase serviceImpl)
+    {
+      return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_FetchCertificateSubjects, serviceImpl.FetchCertificateSubjects).Build();
+    }
+
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
+    /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
+    /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, X509CommBase serviceImpl)
+    {
+      serviceBinder.AddMethod(__Method_FetchCertificateSubjects, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::WA4D0GServer.CertificateSubjectRequest, global::WA4D0GServer.CertificateSubjectReply>(serviceImpl.FetchCertificateSubjects));
     }
 
   }
