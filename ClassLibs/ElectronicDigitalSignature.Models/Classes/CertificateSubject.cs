@@ -10,6 +10,9 @@ namespace ElectronicDigitalSignatire.Models.Classes
     {
         int _id;
         string _subjectName, _subjectPhone = string.Empty, _subjectComment = string.Empty;
+
+        const string PHONE_TEMPLATE_REGULAR_EXPRESSION = @"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$";
+
         List<CertificateData> _certificates;
 
         [Required]
@@ -35,7 +38,7 @@ namespace ElectronicDigitalSignatire.Models.Classes
             }
         }
 
-        [RegularExpression(@"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$", ErrorMessage = "Not a valid phone number")]
+        [RegularExpression(PHONE_TEMPLATE_REGULAR_EXPRESSION, ErrorMessage = "Not a valid phone number")]
         [JsonPropertyName("subjectPhone")]
         public string SubjectPhone 
         { 

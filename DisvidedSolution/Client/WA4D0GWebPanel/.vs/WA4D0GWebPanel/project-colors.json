@@ -40,7 +40,12 @@
       "ProjectGuid": "66324ec5-c1f1-4865-a43b-d03877b785e1",
       "DisplayName": "ElectronicDigitalSignature.Models",
       "ColorIndex": 6
+    },
+    "9c126e5d-eecd-4278-819a-a75f903c7b7d": {
+      "ProjectGuid": "9c126e5d-eecd-4278-819a-a75f903c7b7d",
+      "DisplayName": "ElectronicDigitalSignature.Services",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 7
+  "NextColorIndex": 8
 }

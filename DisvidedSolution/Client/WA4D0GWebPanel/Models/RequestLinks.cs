@@ -2,8 +2,8 @@
 {
     public class RequestLinks
     {
-        private static string IPAddr = "localhost",
-                              Port = "5003";
+        private readonly static string IPAddr = "localhost",
+                                       Port = "5003";
 
         public readonly static string SubjectsResponseLink = "https://" + IPAddr + ":" + Port + "/api/subjects/",
                                       GetSubjectsFromDbLink = "https://" + IPAddr + ":" + Port + "/api/subjects/db",
