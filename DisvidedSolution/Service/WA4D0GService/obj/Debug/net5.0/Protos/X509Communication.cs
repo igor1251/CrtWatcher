@@ -41,14 +41,14 @@ namespace WA4D0GService {
             "AygLMhwuZmV0Y2guQ2VydGlmaWNhdGVTdWJqZWN0RFRPIkcKGkNsaWVudFRv",
             "U2VydmVyU3luY1Jlc3BvbnNlEikKDHJlc3BvbnNlVHlwZRgBIAEoDjITLmZl",
             "dGNoLlJlc3BvbnNlVHlwZSovCgtSZXF1ZXN0VHlwZRIICgRJTklUEAASCgoG",
-            "VVBEQVRFEAESCgoGQVBQRU5EEAIqKgoMUmVzcG9uc2VUeXBlEgwKCEFDQ0VQ",
-            "VEVEEAASDAoIREVDTElORUQQATL0AQoRWDUwOUNvbW11bmljYXRpb24SbAol",
-            "R2V0Q2VydGlmaWNhdGVTdWJqZWN0c0xpc3RGcm9tQ2xpZW50cxIgLmZldGNo",
-            "LlNlcnZlclRvQ2xpZW50U3luY1JlcXVlc3QaIS5mZXRjaC5TZXJ2ZXJUb0Ns",
-            "aWVudFN5bmNSZXNwb25zZRJxCipBcHBlbmRDZXJ0aWZpY2F0ZXNTdWJqZWN0",
-            "c1RvU2VydmVyRGF0YWJhc2USIC5mZXRjaC5DbGllbnRUb1NlcnZlclN5bmNS",
-            "ZXF1ZXN0GiEuZmV0Y2guQ2xpZW50VG9TZXJ2ZXJTeW5jUmVzcG9uc2VCEKoC",
-            "DVdBNEQwR1NlcnZpY2ViBnByb3RvMw=="));
+            "VVBEQVRFEAESCgoGQVBQRU5EEAIqNwoMUmVzcG9uc2VUeXBlEgwKCEFDQ0VQ",
+            "VEVEEAASDAoIREVDTElORUQQARILCgdJR05PUkVEEAIy9AEKEVg1MDlDb21t",
+            "dW5pY2F0aW9uEmwKJUdldENlcnRpZmljYXRlU3ViamVjdHNMaXN0RnJvbUNs",
+            "aWVudHMSIC5mZXRjaC5TZXJ2ZXJUb0NsaWVudFN5bmNSZXF1ZXN0GiEuZmV0",
+            "Y2guU2VydmVyVG9DbGllbnRTeW5jUmVzcG9uc2UScQoqQXBwZW5kQ2VydGlm",
+            "aWNhdGVzU3ViamVjdHNUb1NlcnZlckRhdGFiYXNlEiAuZmV0Y2guQ2xpZW50",
+            "VG9TZXJ2ZXJTeW5jUmVxdWVzdBohLmZldGNoLkNsaWVudFRvU2VydmVyU3lu",
+            "Y1Jlc3BvbnNlQhCqAg1XQTREMEdTZXJ2aWNlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::WA4D0GService.RequestType), typeof(global::WA4D0GService.ResponseType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -73,6 +73,7 @@ namespace WA4D0GService {
   public enum ResponseType {
     [pbr::OriginalName("ACCEPTED")] Accepted = 0,
     [pbr::OriginalName("DECLINED")] Declined = 1,
+    [pbr::OriginalName("IGNORED")] Ignored = 2,
   }
 
   #endregion

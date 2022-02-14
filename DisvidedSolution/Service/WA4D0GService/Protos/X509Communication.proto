@@ -14,6 +14,7 @@ enum RequestType {
 enum ResponseType {
 	ACCEPTED = 0;
 	DECLINED = 1;
+	IGNORED = 2;
 }
 
 message CertificateDataDTO {

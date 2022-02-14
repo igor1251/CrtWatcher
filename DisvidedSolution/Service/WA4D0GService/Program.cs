@@ -1,3 +1,5 @@
+using ElectronicDigitalSignatire.Services.Classes;
+using ElectronicDigitalSignatire.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -19,6 +21,7 @@ namespace WA4D0GService
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHostedService<Worker>();
+                    services.AddSingleton<ILocalStore, LocalStore>();
                 });
     }
 }
