@@ -1,0 +1,33 @@
+﻿syntax = "proto3";
+package HostsRegistration;
+
+option csharp_namespace = "HostsRegistrationService";
+
+enum ClientHostOperation {
+	ADD = 0;
+	DELETE = 1;
+}
+
+enum ClientHostOperationResult {
+	ACCEPTED = 0;
+	DECLINED = 1;
+}
+
+message ClientHostDTO {
+	string HostName = 1;
+	string IP = 2;
+	int32 ConnectionPort = 3; 
+}
+
+message ClientHostRegistrationRequest {
+	ClientHostDTO clientHostDTO = 1;
+	ClientHostOperation clientHostOperation = 2;
+}
+
+message ClientHostRegistrationResponse {
+	ClientHostOperationResult result = 1;
+}
+
+service ClientHostsRegistrationService {
+	rpc ProceedRequest (ClientHostRegistrationRequest) returns (ClientHostRegistrationResponse);
+}

@@ -1,6 +1,0 @@
-10.01.2022 15:42:43: Extracting certificates....
-10.01.2022 15:42:43: Use system key store : True
-10.01.2022 15:42:43: Certificates have been extracted successfully.
-10.01.2022 15:43:04: Extracting certificates....
-10.01.2022 15:43:04: Use system key store : False
-10.01.2022 15:43:04: Certificates have been extracted successfully.

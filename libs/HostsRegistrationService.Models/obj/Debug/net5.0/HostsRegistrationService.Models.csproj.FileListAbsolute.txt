@@ -1,0 +1,12 @@
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\HostsRegistrationService.Models\bin\Debug\net5.0\HostsRegistrationService.Models.deps.json
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\HostsRegistrationService.Models\bin\Debug\net5.0\HostsRegistrationService.Models.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\HostsRegistrationService.Models\bin\Debug\net5.0\HostsRegistrationService.Models.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\HostsRegistrationService.Models\obj\Debug\net5.0\HostsRegistrationService.Models.csproj.AssemblyReference.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\HostsRegistrationService.Models\obj\Debug\net5.0\HostsRegistrationService.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\HostsRegistrationService.Models\obj\Debug\net5.0\HostsRegistrationService.Models.AssemblyInfoInputs.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\HostsRegistrationService.Models\obj\Debug\net5.0\HostsRegistrationService.Models.AssemblyInfo.cs
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\HostsRegistrationService.Models\obj\Debug\net5.0\HostsRegistrationService.Models.csproj.CoreCompileInputs.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\HostsRegistrationService.Models\obj\Debug\net5.0\HostsRegistrationService.Models.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\HostsRegistrationService.Models\obj\Debug\net5.0\refint\HostsRegistrationService.Models.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\HostsRegistrationService.Models\obj\Debug\net5.0\HostsRegistrationService.Models.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\HostsRegistrationService.Models\obj\Debug\net5.0\ref\HostsRegistrationService.Models.dll
