@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "AutoMapper/11.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        }
+      },
       "Dapper/2.0.123": {
         "type": "package",
         "compile": {
@@ -817,6 +829,21 @@
     }
   },
   "libraries": {
+    "AutoMapper/11.0.1": {
+      "sha512": "WIadGC1pIwbnyTubvI577p3F++Bsj9q2Q3OaAc1I0QS+JhupN1xkdrPBhI9bPIeg63zM81tZplUNYkqU1HE5jQ==",
+      "type": "package",
+      "path": "automapper/11.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.11.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
     "Dapper/2.0.123": {
       "sha512": "RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
       "type": "package",
@@ -2353,6 +2380,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "AutoMapper >= 11.0.1",
       "Google.Protobuf >= 3.19.4",
       "Grpc.Core >= 2.44.0",
       "Grpc.Tools >= 2.44.0",
@@ -2408,6 +2436,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[11.0.1, )"
+          },
           "Google.Protobuf": {
             "target": "Package",
             "version": "[3.19.4, )"

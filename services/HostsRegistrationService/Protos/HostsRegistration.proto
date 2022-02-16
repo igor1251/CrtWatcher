@@ -1,12 +1,9 @@
 ﻿syntax = "proto3";
 package HostsRegistration;
 
-option csharp_namespace = "HostsRegistrationService";
+import "google/protobuf/empty.proto";
 
-enum ClientHostOperation {
-	ADD = 0;
-	DELETE = 1;
-}
+option csharp_namespace = "HostsRegistrationService";
 
 enum ClientHostOperationResult {
 	ACCEPTED = 0;
@@ -19,15 +16,24 @@ message ClientHostDTO {
 	int32 ConnectionPort = 3; 
 }
 
-message ClientHostRegistrationRequest {
-	ClientHostDTO clientHostDTO = 1;
-	ClientHostOperation clientHostOperation = 2;
+message HostClientRequest {
+	ClientHostDTO client = 1;
 }
 
-message ClientHostRegistrationResponse {
+message HostClientResponse {
 	ClientHostOperationResult result = 1;
 }
 
+message RegisteredClientHostsResponse {
+	repeated ClientHostDTO clients = 1;
+}
+
+message Nothing {
+
+}
+
 service ClientHostsRegistrationService {
-	rpc ProceedRequest (ClientHostRegistrationRequest) returns (ClientHostRegistrationResponse);
+	rpc RegisterClientHost (HostClientRequest) returns (HostClientResponse);
+	rpc UnregisterClientHost (HostClientRequest) returns (HostClientResponse);
+	rpc GetRegisteredClientHosts (google.protobuf.Empty) returns (RegisteredClientHostsResponse);
 }

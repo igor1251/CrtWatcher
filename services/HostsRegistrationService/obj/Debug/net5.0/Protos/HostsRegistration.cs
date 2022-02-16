@@ -25,37 +25,38 @@ namespace HostsRegistrationService {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5Qcm90b3MvSG9zdHNSZWdpc3RyYXRpb24ucHJvdG8SEUhvc3RzUmVnaXN0",
-            "cmF0aW9uIkUKDUNsaWVudEhvc3REVE8SEAoISG9zdE5hbWUYASABKAkSCgoC",
-            "SVAYAiABKAkSFgoOQ29ubmVjdGlvblBvcnQYAyABKAUinQEKHUNsaWVudEhv",
-            "c3RSZWdpc3RyYXRpb25SZXF1ZXN0EjcKDWNsaWVudEhvc3REVE8YASABKAsy",
-            "IC5Ib3N0c1JlZ2lzdHJhdGlvbi5DbGllbnRIb3N0RFRPEkMKE2NsaWVudEhv",
-            "c3RPcGVyYXRpb24YAiABKA4yJi5Ib3N0c1JlZ2lzdHJhdGlvbi5DbGllbnRI",
-            "b3N0T3BlcmF0aW9uIl4KHkNsaWVudEhvc3RSZWdpc3RyYXRpb25SZXNwb25z",
-            "ZRI8CgZyZXN1bHQYASABKA4yLC5Ib3N0c1JlZ2lzdHJhdGlvbi5DbGllbnRI",
-            "b3N0T3BlcmF0aW9uUmVzdWx0KioKE0NsaWVudEhvc3RPcGVyYXRpb24SBwoD",
-            "QUREEAASCgoGREVMRVRFEAEqNwoZQ2xpZW50SG9zdE9wZXJhdGlvblJlc3Vs",
-            "dBIMCghBQ0NFUFRFRBAAEgwKCERFQ0xJTkVEEAEylwEKHkNsaWVudEhvc3Rz",
-            "UmVnaXN0cmF0aW9uU2VydmljZRJ1Cg5Qcm9jZWVkUmVxdWVzdBIwLkhvc3Rz",
-            "UmVnaXN0cmF0aW9uLkNsaWVudEhvc3RSZWdpc3RyYXRpb25SZXF1ZXN0GjEu",
-            "SG9zdHNSZWdpc3RyYXRpb24uQ2xpZW50SG9zdFJlZ2lzdHJhdGlvblJlc3Bv",
-            "bnNlQhuqAhhIb3N0c1JlZ2lzdHJhdGlvblNlcnZpY2ViBnByb3RvMw=="));
+            "cmF0aW9uGhtnb29nbGUvcHJvdG9idWYvZW1wdHkucHJvdG8iRQoNQ2xpZW50",
+            "SG9zdERUTxIQCghIb3N0TmFtZRgBIAEoCRIKCgJJUBgCIAEoCRIWCg5Db25u",
+            "ZWN0aW9uUG9ydBgDIAEoBSJFChFIb3N0Q2xpZW50UmVxdWVzdBIwCgZjbGll",
+            "bnQYASABKAsyIC5Ib3N0c1JlZ2lzdHJhdGlvbi5DbGllbnRIb3N0RFRPIlIK",
+            "Ekhvc3RDbGllbnRSZXNwb25zZRI8CgZyZXN1bHQYASABKA4yLC5Ib3N0c1Jl",
+            "Z2lzdHJhdGlvbi5DbGllbnRIb3N0T3BlcmF0aW9uUmVzdWx0IlIKHVJlZ2lz",
+            "dGVyZWRDbGllbnRIb3N0c1Jlc3BvbnNlEjEKB2NsaWVudHMYASADKAsyIC5I",
+            "b3N0c1JlZ2lzdHJhdGlvbi5DbGllbnRIb3N0RFRPIgkKB05vdGhpbmcqNwoZ",
+            "Q2xpZW50SG9zdE9wZXJhdGlvblJlc3VsdBIMCghBQ0NFUFRFRBAAEgwKCERF",
+            "Q0xJTkVEEAEyzgIKHkNsaWVudEhvc3RzUmVnaXN0cmF0aW9uU2VydmljZRJh",
+            "ChJSZWdpc3RlckNsaWVudEhvc3QSJC5Ib3N0c1JlZ2lzdHJhdGlvbi5Ib3N0",
+            "Q2xpZW50UmVxdWVzdBolLkhvc3RzUmVnaXN0cmF0aW9uLkhvc3RDbGllbnRS",
+            "ZXNwb25zZRJjChRVbnJlZ2lzdGVyQ2xpZW50SG9zdBIkLkhvc3RzUmVnaXN0",
+            "cmF0aW9uLkhvc3RDbGllbnRSZXF1ZXN0GiUuSG9zdHNSZWdpc3RyYXRpb24u",
+            "SG9zdENsaWVudFJlc3BvbnNlEmQKGEdldFJlZ2lzdGVyZWRDbGllbnRIb3N0",
+            "cxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRowLkhvc3RzUmVnaXN0cmF0aW9u",
+            "LlJlZ2lzdGVyZWRDbGllbnRIb3N0c1Jlc3BvbnNlQhuqAhhIb3N0c1JlZ2lz",
+            "dHJhdGlvblNlcnZpY2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::HostsRegistrationService.ClientHostOperation), typeof(global::HostsRegistrationService.ClientHostOperationResult), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::HostsRegistrationService.ClientHostOperationResult), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::HostsRegistrationService.ClientHostDTO), global::HostsRegistrationService.ClientHostDTO.Parser, new[]{ "HostName", "IP", "ConnectionPort" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::HostsRegistrationService.ClientHostRegistrationRequest), global::HostsRegistrationService.ClientHostRegistrationRequest.Parser, new[]{ "ClientHostDTO", "ClientHostOperation" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::HostsRegistrationService.ClientHostRegistrationResponse), global::HostsRegistrationService.ClientHostRegistrationResponse.Parser, new[]{ "Result" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::HostsRegistrationService.HostClientRequest), global::HostsRegistrationService.HostClientRequest.Parser, new[]{ "Client" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::HostsRegistrationService.HostClientResponse), global::HostsRegistrationService.HostClientResponse.Parser, new[]{ "Result" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::HostsRegistrationService.RegisteredClientHostsResponse), global::HostsRegistrationService.RegisteredClientHostsResponse.Parser, new[]{ "Clients" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::HostsRegistrationService.Nothing), global::HostsRegistrationService.Nothing.Parser, null, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Enums
-  public enum ClientHostOperation {
-    [pbr::OriginalName("ADD")] Add = 0,
-    [pbr::OriginalName("DELETE")] Delete = 1,
-  }
-
   public enum ClientHostOperationResult {
     [pbr::OriginalName("ACCEPTED")] Accepted = 0,
     [pbr::OriginalName("DECLINED")] Declined = 1,
@@ -327,16 +328,16 @@ namespace HostsRegistrationService {
 
   }
 
-  public sealed partial class ClientHostRegistrationRequest : pb::IMessage<ClientHostRegistrationRequest>
+  public sealed partial class HostClientRequest : pb::IMessage<HostClientRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<ClientHostRegistrationRequest> _parser = new pb::MessageParser<ClientHostRegistrationRequest>(() => new ClientHostRegistrationRequest());
+    private static readonly pb::MessageParser<HostClientRequest> _parser = new pb::MessageParser<HostClientRequest>(() => new HostClientRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<ClientHostRegistrationRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<HostClientRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -352,7 +353,7 @@ namespace HostsRegistrationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ClientHostRegistrationRequest() {
+    public HostClientRequest() {
       OnConstruction();
     }
 
@@ -360,59 +361,45 @@ namespace HostsRegistrationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ClientHostRegistrationRequest(ClientHostRegistrationRequest other) : this() {
-      clientHostDTO_ = other.clientHostDTO_ != null ? other.clientHostDTO_.Clone() : null;
-      clientHostOperation_ = other.clientHostOperation_;
+    public HostClientRequest(HostClientRequest other) : this() {
+      client_ = other.client_ != null ? other.client_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ClientHostRegistrationRequest Clone() {
-      return new ClientHostRegistrationRequest(this);
+    public HostClientRequest Clone() {
+      return new HostClientRequest(this);
     }
 
-    /// <summary>Field number for the "clientHostDTO" field.</summary>
-    public const int ClientHostDTOFieldNumber = 1;
-    private global::HostsRegistrationService.ClientHostDTO clientHostDTO_;
+    /// <summary>Field number for the "client" field.</summary>
+    public const int ClientFieldNumber = 1;
+    private global::HostsRegistrationService.ClientHostDTO client_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::HostsRegistrationService.ClientHostDTO ClientHostDTO {
-      get { return clientHostDTO_; }
+    public global::HostsRegistrationService.ClientHostDTO Client {
+      get { return client_; }
       set {
-        clientHostDTO_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "clientHostOperation" field.</summary>
-    public const int ClientHostOperationFieldNumber = 2;
-    private global::HostsRegistrationService.ClientHostOperation clientHostOperation_ = global::HostsRegistrationService.ClientHostOperation.Add;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::HostsRegistrationService.ClientHostOperation ClientHostOperation {
-      get { return clientHostOperation_; }
-      set {
-        clientHostOperation_ = value;
+        client_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as ClientHostRegistrationRequest);
+      return Equals(other as HostClientRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(ClientHostRegistrationRequest other) {
+    public bool Equals(HostClientRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(ClientHostDTO, other.ClientHostDTO)) return false;
-      if (ClientHostOperation != other.ClientHostOperation) return false;
+      if (!object.Equals(Client, other.Client)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -420,8 +407,7 @@ namespace HostsRegistrationService {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (clientHostDTO_ != null) hash ^= ClientHostDTO.GetHashCode();
-      if (ClientHostOperation != global::HostsRegistrationService.ClientHostOperation.Add) hash ^= ClientHostOperation.GetHashCode();
+      if (client_ != null) hash ^= Client.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -440,13 +426,9 @@ namespace HostsRegistrationService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (clientHostDTO_ != null) {
+      if (client_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(ClientHostDTO);
-      }
-      if (ClientHostOperation != global::HostsRegistrationService.ClientHostOperation.Add) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) ClientHostOperation);
+        output.WriteMessage(Client);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -458,13 +440,9 @@ namespace HostsRegistrationService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (clientHostDTO_ != null) {
+      if (client_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(ClientHostDTO);
-      }
-      if (ClientHostOperation != global::HostsRegistrationService.ClientHostOperation.Add) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) ClientHostOperation);
+        output.WriteMessage(Client);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -476,11 +454,8 @@ namespace HostsRegistrationService {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (clientHostDTO_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ClientHostDTO);
-      }
-      if (ClientHostOperation != global::HostsRegistrationService.ClientHostOperation.Add) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ClientHostOperation);
+      if (client_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Client);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -490,18 +465,15 @@ namespace HostsRegistrationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(ClientHostRegistrationRequest other) {
+    public void MergeFrom(HostClientRequest other) {
       if (other == null) {
         return;
       }
-      if (other.clientHostDTO_ != null) {
-        if (clientHostDTO_ == null) {
-          ClientHostDTO = new global::HostsRegistrationService.ClientHostDTO();
+      if (other.client_ != null) {
+        if (client_ == null) {
+          Client = new global::HostsRegistrationService.ClientHostDTO();
         }
-        ClientHostDTO.MergeFrom(other.ClientHostDTO);
-      }
-      if (other.ClientHostOperation != global::HostsRegistrationService.ClientHostOperation.Add) {
-        ClientHostOperation = other.ClientHostOperation;
+        Client.MergeFrom(other.Client);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -519,14 +491,10 @@ namespace HostsRegistrationService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (clientHostDTO_ == null) {
-              ClientHostDTO = new global::HostsRegistrationService.ClientHostDTO();
+            if (client_ == null) {
+              Client = new global::HostsRegistrationService.ClientHostDTO();
             }
-            input.ReadMessage(ClientHostDTO);
-            break;
-          }
-          case 16: {
-            ClientHostOperation = (global::HostsRegistrationService.ClientHostOperation) input.ReadEnum();
+            input.ReadMessage(Client);
             break;
           }
         }
@@ -545,14 +513,10 @@ namespace HostsRegistrationService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (clientHostDTO_ == null) {
-              ClientHostDTO = new global::HostsRegistrationService.ClientHostDTO();
+            if (client_ == null) {
+              Client = new global::HostsRegistrationService.ClientHostDTO();
             }
-            input.ReadMessage(ClientHostDTO);
-            break;
-          }
-          case 16: {
-            ClientHostOperation = (global::HostsRegistrationService.ClientHostOperation) input.ReadEnum();
+            input.ReadMessage(Client);
             break;
           }
         }
@@ -562,16 +526,16 @@ namespace HostsRegistrationService {
 
   }
 
-  public sealed partial class ClientHostRegistrationResponse : pb::IMessage<ClientHostRegistrationResponse>
+  public sealed partial class HostClientResponse : pb::IMessage<HostClientResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<ClientHostRegistrationResponse> _parser = new pb::MessageParser<ClientHostRegistrationResponse>(() => new ClientHostRegistrationResponse());
+    private static readonly pb::MessageParser<HostClientResponse> _parser = new pb::MessageParser<HostClientResponse>(() => new HostClientResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<ClientHostRegistrationResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<HostClientResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -587,7 +551,7 @@ namespace HostsRegistrationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ClientHostRegistrationResponse() {
+    public HostClientResponse() {
       OnConstruction();
     }
 
@@ -595,15 +559,15 @@ namespace HostsRegistrationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ClientHostRegistrationResponse(ClientHostRegistrationResponse other) : this() {
+    public HostClientResponse(HostClientResponse other) : this() {
       result_ = other.result_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ClientHostRegistrationResponse Clone() {
-      return new ClientHostRegistrationResponse(this);
+    public HostClientResponse Clone() {
+      return new HostClientResponse(this);
     }
 
     /// <summary>Field number for the "result" field.</summary>
@@ -621,12 +585,12 @@ namespace HostsRegistrationService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as ClientHostRegistrationResponse);
+      return Equals(other as HostClientResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(ClientHostRegistrationResponse other) {
+    public bool Equals(HostClientResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -699,7 +663,7 @@ namespace HostsRegistrationService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(ClientHostRegistrationResponse other) {
+    public void MergeFrom(HostClientResponse other) {
       if (other == null) {
         return;
       }
@@ -744,6 +708,336 @@ namespace HostsRegistrationService {
             Result = (global::HostsRegistrationService.ClientHostOperationResult) input.ReadEnum();
             break;
           }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class RegisteredClientHostsResponse : pb::IMessage<RegisteredClientHostsResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RegisteredClientHostsResponse> _parser = new pb::MessageParser<RegisteredClientHostsResponse>(() => new RegisteredClientHostsResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RegisteredClientHostsResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::HostsRegistrationService.HostsRegistrationReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RegisteredClientHostsResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RegisteredClientHostsResponse(RegisteredClientHostsResponse other) : this() {
+      clients_ = other.clients_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RegisteredClientHostsResponse Clone() {
+      return new RegisteredClientHostsResponse(this);
+    }
+
+    /// <summary>Field number for the "clients" field.</summary>
+    public const int ClientsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::HostsRegistrationService.ClientHostDTO> _repeated_clients_codec
+        = pb::FieldCodec.ForMessage(10, global::HostsRegistrationService.ClientHostDTO.Parser);
+    private readonly pbc::RepeatedField<global::HostsRegistrationService.ClientHostDTO> clients_ = new pbc::RepeatedField<global::HostsRegistrationService.ClientHostDTO>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::HostsRegistrationService.ClientHostDTO> Clients {
+      get { return clients_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RegisteredClientHostsResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RegisteredClientHostsResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!clients_.Equals(other.clients_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= clients_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      clients_.WriteTo(output, _repeated_clients_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      clients_.WriteTo(ref output, _repeated_clients_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += clients_.CalculateSize(_repeated_clients_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RegisteredClientHostsResponse other) {
+      if (other == null) {
+        return;
+      }
+      clients_.Add(other.clients_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            clients_.AddEntriesFrom(input, _repeated_clients_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            clients_.AddEntriesFrom(ref input, _repeated_clients_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class Nothing : pb::IMessage<Nothing>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Nothing> _parser = new pb::MessageParser<Nothing>(() => new Nothing());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<Nothing> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::HostsRegistrationService.HostsRegistrationReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Nothing() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Nothing(Nothing other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Nothing Clone() {
+      return new Nothing(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as Nothing);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(Nothing other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(Nothing other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
         }
       }
     }

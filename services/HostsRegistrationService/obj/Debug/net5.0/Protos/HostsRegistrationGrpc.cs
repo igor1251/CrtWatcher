@@ -46,17 +46,37 @@ namespace HostsRegistrationService {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::HostsRegistrationService.ClientHostRegistrationRequest> __Marshaller_HostsRegistration_ClientHostRegistrationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::HostsRegistrationService.ClientHostRegistrationRequest.Parser));
+    static readonly grpc::Marshaller<global::HostsRegistrationService.HostClientRequest> __Marshaller_HostsRegistration_HostClientRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::HostsRegistrationService.HostClientRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::HostsRegistrationService.ClientHostRegistrationResponse> __Marshaller_HostsRegistration_ClientHostRegistrationResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::HostsRegistrationService.ClientHostRegistrationResponse.Parser));
+    static readonly grpc::Marshaller<global::HostsRegistrationService.HostClientResponse> __Marshaller_HostsRegistration_HostClientResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::HostsRegistrationService.HostClientResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::HostsRegistrationService.RegisteredClientHostsResponse> __Marshaller_HostsRegistration_RegisteredClientHostsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::HostsRegistrationService.RegisteredClientHostsResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::HostsRegistrationService.ClientHostRegistrationRequest, global::HostsRegistrationService.ClientHostRegistrationResponse> __Method_ProceedRequest = new grpc::Method<global::HostsRegistrationService.ClientHostRegistrationRequest, global::HostsRegistrationService.ClientHostRegistrationResponse>(
+    static readonly grpc::Method<global::HostsRegistrationService.HostClientRequest, global::HostsRegistrationService.HostClientResponse> __Method_RegisterClientHost = new grpc::Method<global::HostsRegistrationService.HostClientRequest, global::HostsRegistrationService.HostClientResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "ProceedRequest",
-        __Marshaller_HostsRegistration_ClientHostRegistrationRequest,
-        __Marshaller_HostsRegistration_ClientHostRegistrationResponse);
+        "RegisterClientHost",
+        __Marshaller_HostsRegistration_HostClientRequest,
+        __Marshaller_HostsRegistration_HostClientResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::HostsRegistrationService.HostClientRequest, global::HostsRegistrationService.HostClientResponse> __Method_UnregisterClientHost = new grpc::Method<global::HostsRegistrationService.HostClientRequest, global::HostsRegistrationService.HostClientResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UnregisterClientHost",
+        __Marshaller_HostsRegistration_HostClientRequest,
+        __Marshaller_HostsRegistration_HostClientResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::HostsRegistrationService.RegisteredClientHostsResponse> __Method_GetRegisteredClientHosts = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::HostsRegistrationService.RegisteredClientHostsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetRegisteredClientHosts",
+        __Marshaller_google_protobuf_Empty,
+        __Marshaller_HostsRegistration_RegisteredClientHostsResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -69,7 +89,19 @@ namespace HostsRegistrationService {
     public abstract partial class ClientHostsRegistrationServiceBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::HostsRegistrationService.ClientHostRegistrationResponse> ProceedRequest(global::HostsRegistrationService.ClientHostRegistrationRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::HostsRegistrationService.HostClientResponse> RegisterClientHost(global::HostsRegistrationService.HostClientRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::HostsRegistrationService.HostClientResponse> UnregisterClientHost(global::HostsRegistrationService.HostClientRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::HostsRegistrationService.RegisteredClientHostsResponse> GetRegisteredClientHosts(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -82,7 +114,9 @@ namespace HostsRegistrationService {
     public static grpc::ServerServiceDefinition BindService(ClientHostsRegistrationServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_ProceedRequest, serviceImpl.ProceedRequest).Build();
+          .AddMethod(__Method_RegisterClientHost, serviceImpl.RegisterClientHost)
+          .AddMethod(__Method_UnregisterClientHost, serviceImpl.UnregisterClientHost)
+          .AddMethod(__Method_GetRegisteredClientHosts, serviceImpl.GetRegisteredClientHosts).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -92,7 +126,9 @@ namespace HostsRegistrationService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ClientHostsRegistrationServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_ProceedRequest, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::HostsRegistrationService.ClientHostRegistrationRequest, global::HostsRegistrationService.ClientHostRegistrationResponse>(serviceImpl.ProceedRequest));
+      serviceBinder.AddMethod(__Method_RegisterClientHost, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::HostsRegistrationService.HostClientRequest, global::HostsRegistrationService.HostClientResponse>(serviceImpl.RegisterClientHost));
+      serviceBinder.AddMethod(__Method_UnregisterClientHost, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::HostsRegistrationService.HostClientRequest, global::HostsRegistrationService.HostClientResponse>(serviceImpl.UnregisterClientHost));
+      serviceBinder.AddMethod(__Method_GetRegisteredClientHosts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::HostsRegistrationService.RegisteredClientHostsResponse>(serviceImpl.GetRegisteredClientHosts));
     }
 
   }

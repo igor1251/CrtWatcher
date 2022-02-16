@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xO2bwxORSqhjr1GKa4LX9MBRdZ9ecijlb5A/1oJYKhTVnie02GLdHMCxt/gHuiHl5DTko3gUhDmSlufuHGrA0w==",
+  "dgSpecHash": "LulnhsNtYAYsXQ9CFQE8Gbw1IwOEwf8NGga2rDveN/6YQ7oWbnUVU0fYwQh1RnWDhfZ8t41+POJ2ApIvI86MKg==",
   "success": true,
   "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\services\\HostsRegistrationService\\HostsRegistrationService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Igor\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",

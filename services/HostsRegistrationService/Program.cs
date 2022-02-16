@@ -1,3 +1,6 @@
+using HostsRegistrationService.GrpcServices;
+using HostsRegistrationService.Services.Classes;
+using HostsRegistrationService.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -19,6 +22,9 @@ namespace HostsRegistrationService
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHostedService<Worker>();
+                    services.AddSingleton<IDbContext, DbContext>();
+                    services.AddSingleton<IHostStore, HostStore>();
+                    services.AddSingleton<RegistrationService>();
                 });
     }
 }

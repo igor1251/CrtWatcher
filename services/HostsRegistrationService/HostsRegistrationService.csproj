@@ -7,6 +7,7 @@
 
   <ItemGroup>
 	<Protobuf Include="Protos\HostsRegistration.proto" GrpcServices="Server" />
+	<PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="Google.Protobuf" Version="3.19.4" />
     <PackageReference Include="Grpc.Core" Version="2.44.0" />
     <PackageReference Include="Grpc.Tools" Version="2.44.0">
