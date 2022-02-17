@@ -7,7 +7,7 @@ namespace ElectronicDigitalSignatire.Services.Classes
     public class DbContext : IDbContext
     {
         SQLiteConnection _dbConnection;
-        string _dbPath = Environment.CurrentDirectory + "\\Data\\db\\keysdb.sqlite";
+        string _dbPath = Environment.CurrentDirectory + "\\keysdb.sqlite";
 
         public DbContext()
         {

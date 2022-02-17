@@ -21,6 +21,7 @@ namespace UsersRegistrationService
                       RegistrationService registrationService)
         {
             _logger = logger;
+
             _server = new Server
             {
                 Services = { CertificateUsersRegistrationService.BindService(registrationService) },

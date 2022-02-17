@@ -10,7 +10,7 @@ namespace WebApi.GrpcServices
 {
     public class UsersRegistrationServiceCommunicator
     {
-        GrpcChannel _channel;
+        Channel _channel;
         CertificateUsersRegistrationService.CertificateUsersRegistrationServiceClient _client;
         ILogger<UsersRegistrationServiceCommunicator> _logger;
         Mapper _mapper;
@@ -19,7 +19,8 @@ namespace WebApi.GrpcServices
         public UsersRegistrationServiceCommunicator(ILogger<UsersRegistrationServiceCommunicator> logger)
         {
             _logger = logger;
-            _channel = GrpcChannel.ForAddress("https://localhost:5004");
+            //_channel = GrpcChannel.ForAddress("https://localhost:5004");
+            _channel = new Channel("localhost:5004", ChannelCredentials.Insecure);
             _client = new CertificateUsersRegistrationService.CertificateUsersRegistrationServiceClient(_channel);
             _mapperConfiguration = new MapperConfiguration(cfg => cfg.CreateMap<User, UserDTO>());
             _mapper = new Mapper(_mapperConfiguration);
