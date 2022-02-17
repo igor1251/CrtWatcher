@@ -10,16 +10,16 @@ namespace ElectronicDigitalSignatire.Services.Classes
 {
     public class LocalStore : ILocalStore
     {
-        public Task InsertCertificate(ICertificateData certificate)
+        public Task InsertCertificate(ICertificate certificate)
         {
             throw new NotImplementedException();
         }
 
-        private Task<int> FindSubject(List<CertificateSubject> subjects, string subjectName)
+        private Task<int> FindSubject(List<User> subjects, string subjectName)
         {
             for (int i = 0; i < subjects.Count; i++)
             {
-                if (subjects[i].SubjectName == subjectName)
+                if (subjects[i].UserName == subjectName)
                 {
                     return Task.FromResult(i);
                 }
@@ -27,17 +27,17 @@ namespace ElectronicDigitalSignatire.Services.Classes
             return Task.FromResult(-1);
         }
 
-        public async Task<List<CertificateSubject>> LoadCertificateSubjectsAndCertificates()
+        public async Task<List<User>> LoadCertificateSubjectsAndCertificates()
         {
             X509Store store = new X509Store("MY", StoreLocation.CurrentUser);
-            List<CertificateSubject> subjects = new List<CertificateSubject>();
+            List<User> subjects = new List<User>();
             store.Open(OpenFlags.ReadOnly);
             X509Certificate2Collection certificatesCollection = store.Certificates;
             foreach (X509Certificate x509Certificate in certificatesCollection)
             {
                 using (X509Certificate2 x509 = new X509Certificate2(x509Certificate.GetRawCertData()))
                 {
-                    CertificateData certificateData = new CertificateData();
+                    Certificate certificateData = new Certificate();
                     certificateData.CertificateHash = x509.GetCertHashString();
                     certificateData.Algorithm = x509.GetKeyAlgorithm();
                     certificateData.StartDate = x509.NotBefore;
@@ -52,9 +52,9 @@ namespace ElectronicDigitalSignatire.Services.Classes
                     }
                     else
                     {
-                        CertificateSubject subject = new CertificateSubject();
+                        User subject = new User();
                         subject.ID = subjects.Count + 1;
-                        subject.SubjectName = subjectName;
+                        subject.UserName = subjectName;
                         certificateData.ID = 1;
                         subject.CertificateList.Add(certificateData);
                         subjects.Add(subject);

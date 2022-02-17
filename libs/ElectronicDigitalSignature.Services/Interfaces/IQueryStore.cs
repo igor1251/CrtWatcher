@@ -3,12 +3,12 @@
     public interface IQueryStore
     {
         string DeleteCertificate { get; }
-        string DeleteSubject { get; }
-        string UpdateSubject { get; }
+        string DeleteUser { get; }
+        string UpdateUser { get; }
         string InsertCertificate { get; }
-        string InsertSubject { get; }
+        string InsertUser { get; }
         string GetCertificates { get; }
-        string GetSubjects { get; }
+        string GetUsers { get; }
         string CreateTables { get; }
     }
 }

@@ -5,35 +5,35 @@ namespace ElectronicDigitalSignatire.Services.Classes
     public class QueryStore : IQueryStore
     {
         string
-            _getSubjects = "SELECT * FROM Subjects",
-            _getCertificates = "SELECT ID, CertificateHash, Algorithm, StartDate, EndDate FROM Certificates WHERE SubjectID=@ID",
+            _getUsers = "SELECT * FROM Users",
+            _getCertificates = "SELECT ID, CertificateHash, Algorithm, StartDate, EndDate FROM Certificates WHERE UserID=@ID",
             _deleteCertificate = "DELETE FROM Certificates WHERE ID=@ID",
-            _deleteSubject = "DELETE FROM Subjects WHERE ID=@ID",
-            _updateSubject = "UPDATE Subjects SET SubjectName=@SubjectName, SubjectPhone=@SubjectPhone, SubjectComment=@SubjectComment WHERE ID=@ID",
-            _insertCertificate = "INSERT INTO Certificates (SubjectID, CertificateHash, Algorithm, StartDate, EndDate) VALUES (@SubjectID, @CertificateHash, @Algorithm, @StartDate, @EndDate)",
-            _insertSubject = "INSERT INTO Subjects (SubjectName, SubjectPhone, SubjectComment) VALUES (@SubjectName, @SubjectPhone, @SubjectComment)",
+            _deleteUser = "DELETE FROM Users WHERE ID=@ID",
+            _updateUsers = "UPDATE Users SET UserName=@UserName, UserPhone=@UserPhone, UserComment=@UserComment WHERE ID=@ID",
+            _insertCertificate = "INSERT INTO Certificates (UserID, CertificateHash, Algorithm, StartDate, EndDate) VALUES (@UserID, @CertificateHash, @Algorithm, @StartDate, @EndDate)",
+            _insertUser = "INSERT INTO Users (UserName, UserPhone, UserComment) VALUES (@UserName, @UserPhone, @UserComment)",
 
             _createTables = "CREATE TABLE Certificates (" +
                             "ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-                            "SubjectID INTEGER NOT NULL, " +
+                            "UserID INTEGER NOT NULL, " +
                             "CertificateHash VARCHAR(512) NOT NULL, " +
                             "Algorithm VARCHAR(512) NOT NULL, " +
                             "StartDate DATETIME NOT NULL, " +
                             "EndDate DATETIME NOT NULL);" +
                             "" +
-                            "CREATE TABLE Subjects (" +
+                            "CREATE TABLE Users (" +
                             "ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-                            "SubjectName VARCHAR(120) NOT NULL, " +
-                            "SubjectPhone VARCHAR(20), " +
-                            "SubjectComment VARCHAR(200));";
+                            "UserName VARCHAR(120) NOT NULL, " +
+                            "UserPhone VARCHAR(20), " +
+                            "UserComment VARCHAR(200));";
 
         public string GetCertificates => _getCertificates;
-        public string GetSubjects => _getSubjects;
+        public string GetUsers => _getUsers;
         public string DeleteCertificate => _deleteCertificate;
-        public string DeleteSubject => _deleteSubject;
-        public string UpdateSubject => _updateSubject;
+        public string DeleteUser => _deleteUser;
+        public string UpdateUser => _updateUsers;
         public string InsertCertificate => _insertCertificate;
-        public string InsertSubject => _insertSubject;
+        public string InsertUser => _insertUser;
         public string CreateTables => _createTables;
     }
 }

@@ -15,6 +15,8 @@ namespace HostsRegistrationService
         private readonly ILogger<Worker> _logger;
 
         private const int _port = 5050;
+        private const string _host = "localhost";
+
         Server _server;
 
 
@@ -25,7 +27,7 @@ namespace HostsRegistrationService
             _server = new Server
             {
                 Services = { ClientHostsRegistrationService.BindService(registrationService) },
-                Ports = { new ServerPort("localhost", _port, ServerCredentials.Insecure) }
+                Ports = { new ServerPort(_host, _port, ServerCredentials.Insecure) }
             };
         }
 

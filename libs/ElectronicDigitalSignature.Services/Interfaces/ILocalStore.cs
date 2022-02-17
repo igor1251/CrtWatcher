@@ -7,7 +7,7 @@ namespace ElectronicDigitalSignatire.Services.Interfaces
 {
     public interface ILocalStore
     {
-        Task<List<CertificateSubject>> LoadCertificateSubjectsAndCertificates();
-        Task InsertCertificate(ICertificateData certificate);
+        Task<List<User>> LoadCertificateSubjectsAndCertificates();
+        Task InsertCertificate(ICertificate certificate);
     }
 }

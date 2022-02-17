@@ -340,6 +340,16 @@
             "rid": "win"
           }
         }
+      },
+      "ElectronicDigitalSignature.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ElectronicDigitalSignature.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ElectronicDigitalSignature.Models.dll": {}
+        }
       }
     }
   },
@@ -1176,11 +1186,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ElectronicDigitalSignature.Models/1.0.0": {
+      "type": "project",
+      "path": "../ElectronicDigitalSignature.Models/ElectronicDigitalSignature.Models.csproj",
+      "msbuildProject": "../ElectronicDigitalSignature.Models/ElectronicDigitalSignature.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Dapper >= 2.0.123",
+      "ElectronicDigitalSignature.Models >= 1.0.0",
       "System.Data.SQLite >= 1.0.115.5"
     ]
   },
@@ -1215,7 +1231,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj": {
+              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

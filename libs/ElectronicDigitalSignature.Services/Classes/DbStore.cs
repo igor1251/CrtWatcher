@@ -33,36 +33,36 @@ namespace ElectronicDigitalSignatire.Services.Classes
             await _dbContext.DbConnection.QueryAsync(_queryStore.DeleteCertificate, new { ID = certificateID });
         }
 
-        public async Task DeleteSubject(int subjectID)
+        public async Task DeleteUser(int subjectID)
         {
             await CheckDatabase();
-            await _dbContext.DbConnection.QueryAsync(_queryStore.DeleteSubject, new { ID = subjectID });
+            await _dbContext.DbConnection.QueryAsync(_queryStore.DeleteUser, new { ID = subjectID });
         }
 
-        public async Task<List<CertificateData>> GetCertificates(int subjectID)
+        public async Task<List<Certificate>> GetCertificates(int subjectID)
         {
             await CheckDatabase();
-            var certificates = (await _dbContext.DbConnection.QueryAsync<CertificateData>(_queryStore.GetCertificates, new { ID = subjectID })).AsList();
+            var certificates = (await _dbContext.DbConnection.QueryAsync<Certificate>(_queryStore.GetCertificates, new { ID = subjectID })).AsList();
             return certificates;
         }
 
-        public async Task<List<CertificateSubject>> GetSubjects()
+        public async Task<List<User>> GetUsers()
         {
             await CheckDatabase();
-            var subjects = (await _dbContext.DbConnection.QueryAsync<CertificateSubject>(_queryStore.GetSubjects)).AsList();
+            var subjects = (await _dbContext.DbConnection.QueryAsync<User>(_queryStore.GetUsers)).AsList();
             return subjects;
         }
 
-        public async Task<CertificateSubject> GetSubjectByID(int id)
+        public async Task<User> GetUserByID(int id)
         {
             await CheckDatabase();
-            var subject = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<CertificateSubject>("SELECT * FROM Subjects WHERE ID=@ID", new { ID = id });
+            var subject = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<User>("SELECT * FROM Subjects WHERE ID=@ID", new { ID = id });
             if (subject == null) return null;            
             subject.CertificateList = await GetCertificates(subject.ID);
             return subject;
         }
 
-        public async Task InsertCertificate(CertificateData certificate, int subjectID)
+        public async Task InsertCertificate(Certificate certificate, int subjectID)
         {
             await CheckDatabase();
             await _dbContext.DbConnection.QueryAsync(_queryStore.InsertCertificate, new 
@@ -75,31 +75,31 @@ namespace ElectronicDigitalSignatire.Services.Classes
             });
         }
 
-        public async Task InsertSubject(CertificateSubject subject)
+        public async Task InsertUser(User subject)
         {
             await CheckDatabase();
-            await _dbContext.DbConnection.ExecuteAsync(_queryStore.InsertSubject, subject);
-            int subjectID = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<int>("SELECT ID FROM Subjects WHERE SubjectName=@Name", new { Name = subject.SubjectName });
+            await _dbContext.DbConnection.ExecuteAsync(_queryStore.InsertUser, subject);
+            int subjectID = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<int>("SELECT ID FROM Subjects WHERE SubjectName=@Name", new { Name = subject.UserName });
             foreach (var item in subject.CertificateList)
             {
                 await InsertCertificate(item, subjectID);
             }
         }
 
-        public async Task InsertSubject(List<CertificateSubject> subjects)
+        public async Task InsertUser(List<User> subjects)
         {
             await _dbContext.DbConnection.OpenAsync();
             foreach (var item in subjects)
             {
-                await InsertSubject(item);
+                await InsertUser(item);
             }
             await _dbContext.DbConnection.CloseAsync();
         }
 
-        public async Task UpdateSubject(CertificateSubject subject)
+        public async Task UpdateUser(User subject)
         {
             await CheckDatabase();
-            await _dbContext.DbConnection.QueryAsync(_queryStore.UpdateSubject, subject);
+            await _dbContext.DbConnection.QueryAsync(_queryStore.UpdateUser, subject);
         }
     }
 }

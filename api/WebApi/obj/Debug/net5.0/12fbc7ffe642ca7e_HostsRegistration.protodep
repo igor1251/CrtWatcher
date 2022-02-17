@@ -1,0 +1,3 @@
+obj\Debug\net5.0\Protos/HostsRegistration.cs \
+obj\Debug\net5.0\Protos/HostsRegistrationGrpc.cs: C:/Users/Igor/.nuget/packages/grpc.tools/2.44.0/build/native/include/google/protobuf/empty.proto\
+ Protos/HostsRegistration.proto
