@@ -20,8 +20,8 @@ namespace UsersRegistrationService.GrpcServices
             certificateDTO.Algorithm = certificate.Algorithm;
             certificateDTO.CertificateHash = certificate.CertificateHash;
             certificateDTO.Id = certificate.ID;
-            certificateDTO.StartDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(certificate.StartDate);
-            certificateDTO.EndDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(certificate.EndDate);
+            certificateDTO.StartDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(certificate.StartDate.ToUniversalTime());
+            certificateDTO.EndDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(certificate.EndDate.ToUniversalTime());
             return certificateDTO;
         }
 
@@ -110,6 +110,16 @@ namespace UsersRegistrationService.GrpcServices
             {
                 response.Users.Add(ConvertUserToDTO(user));
             }
+            return response;
+        }
+
+        public override async Task<UserByIDResponse> GetRegisteredUserByID(UserByIDRequest request, ServerCallContext context)
+        {
+            _logger.LogInformation("Time to get wanted user .....");
+            var response = new UserByIDResponse();
+            var user = await _store.GetUserByID(request.Id);
+            _logger.LogInformation("Founded");
+            response.User = ConvertUserToDTO(user);
             return response;
         }
     }

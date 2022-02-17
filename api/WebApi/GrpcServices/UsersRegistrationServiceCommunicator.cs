@@ -21,8 +21,8 @@ namespace WebApi.GrpcServices
             certificateDTO.Algorithm = certificate.Algorithm;
             certificateDTO.CertificateHash = certificate.CertificateHash;
             certificateDTO.Id = certificate.ID;
-            certificateDTO.StartDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(certificate.StartDate);
-            certificateDTO.EndDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(certificate.EndDate);
+            certificateDTO.StartDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(certificate.StartDate.ToUniversalTime());
+            certificateDTO.EndDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(certificate.EndDate.ToUniversalTime());
             return certificateDTO;
         }
 
@@ -88,14 +88,23 @@ namespace WebApi.GrpcServices
             return users;
         }
 
-        public async Task RegisterUser(User user)
+        public async Task<User> GetUserByIDAsync(int id)
+        {
+            var request = new UserByIDRequest();
+            request.Id = id;
+            var response = await _client.GetRegisteredUserByIDAsync(request);
+            var user = ConvertUserFromDTO(response.User);
+            return user;
+        }
+
+        public async Task RegisterUserAsync(User user)
         {
             var request = new UserRequest();
             request.User = ConvertUserToDTO(user);
             var response = await _client.RegisterUserAsync(request);
         }
 
-        public async Task UnregisterUser(User user)
+        public async Task UnregisterUserAsync(User user)
         {
             var request = new UserRequest();
             request.User = ConvertUserToDTO(user);

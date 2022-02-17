@@ -53,6 +53,10 @@ namespace UsersRegistrationService {
     static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::UsersRegistrationService.RegisteredUsersResponse> __Marshaller_UsersRegistration_RegisteredUsersResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UsersRegistrationService.RegisteredUsersResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::UsersRegistrationService.UserByIDRequest> __Marshaller_UsersRegistration_UserByIDRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UsersRegistrationService.UserByIDRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::UsersRegistrationService.UserByIDResponse> __Marshaller_UsersRegistration_UserByIDResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::UsersRegistrationService.UserByIDResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::UsersRegistrationService.UserRequest, global::UsersRegistrationService.UserResponse> __Method_RegisterUser = new grpc::Method<global::UsersRegistrationService.UserRequest, global::UsersRegistrationService.UserResponse>(
@@ -85,6 +89,14 @@ namespace UsersRegistrationService {
         "GetRegisteredUsers",
         __Marshaller_google_protobuf_Empty,
         __Marshaller_UsersRegistration_RegisteredUsersResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::UsersRegistrationService.UserByIDRequest, global::UsersRegistrationService.UserByIDResponse> __Method_GetRegisteredUserByID = new grpc::Method<global::UsersRegistrationService.UserByIDRequest, global::UsersRegistrationService.UserByIDResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetRegisteredUserByID",
+        __Marshaller_UsersRegistration_UserByIDRequest,
+        __Marshaller_UsersRegistration_UserByIDResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -120,6 +132,12 @@ namespace UsersRegistrationService {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::UsersRegistrationService.UserByIDResponse> GetRegisteredUserByID(global::UsersRegistrationService.UserByIDRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -131,7 +149,8 @@ namespace UsersRegistrationService {
           .AddMethod(__Method_RegisterUser, serviceImpl.RegisterUser)
           .AddMethod(__Method_UnregisterUser, serviceImpl.UnregisterUser)
           .AddMethod(__Method_UpdateUser, serviceImpl.UpdateUser)
-          .AddMethod(__Method_GetRegisteredUsers, serviceImpl.GetRegisteredUsers).Build();
+          .AddMethod(__Method_GetRegisteredUsers, serviceImpl.GetRegisteredUsers)
+          .AddMethod(__Method_GetRegisteredUserByID, serviceImpl.GetRegisteredUserByID).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -145,6 +164,7 @@ namespace UsersRegistrationService {
       serviceBinder.AddMethod(__Method_UnregisterUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UsersRegistrationService.UserRequest, global::UsersRegistrationService.UserResponse>(serviceImpl.UnregisterUser));
       serviceBinder.AddMethod(__Method_UpdateUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UsersRegistrationService.UserRequest, global::UsersRegistrationService.UserResponse>(serviceImpl.UpdateUser));
       serviceBinder.AddMethod(__Method_GetRegisteredUsers, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::UsersRegistrationService.RegisteredUsersResponse>(serviceImpl.GetRegisteredUsers));
+      serviceBinder.AddMethod(__Method_GetRegisteredUserByID, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::UsersRegistrationService.UserByIDRequest, global::UsersRegistrationService.UserByIDResponse>(serviceImpl.GetRegisteredUserByID));
     }
 
   }

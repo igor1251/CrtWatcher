@@ -27,7 +27,7 @@ namespace WebApi.Controllers
 
         [HttpGet]
         [Route("db")]
-        public async Task<ActionResult<IEnumerable<User>>> GetSubjectsFromDbAsync()
+        public async Task<ActionResult<IEnumerable<User>>> GetUsersFromDbAsync()
         {
             _logger.LogInformation("Loading subjects list from database");
             var users = await _usersRegistrationServiceCommunicator.GetUsersAsync();
@@ -42,6 +42,17 @@ namespace WebApi.Controllers
             return Ok(users);
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<ActionResult<User>> GetUserByIDAsync(int id)
+        {
+            var user = await _usersRegistrationServiceCommunicator.GetUserByIDAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return Ok(user);
+        }
         #endregion
     }
 }

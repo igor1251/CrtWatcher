@@ -39,9 +39,18 @@ message RegisteredUsersResponse {
 	repeated UserDTO users = 1;
 }
 
+message UserByIDRequest {
+	int32 id = 1;
+}
+
+message UserByIDResponse {
+	UserDTO user = 1;
+}
+
 service CertificateUsersRegistrationService {
 	rpc RegisterUser (UserRequest) returns (UserResponse);
 	rpc UnregisterUser (UserRequest) returns (UserResponse);
 	rpc UpdateUser (UserRequest) returns (UserResponse);
 	rpc GetRegisteredUsers (google.protobuf.Empty) returns (RegisteredUsersResponse);
+	rpc GetRegisteredUserByID (UserByIDRequest) returns (UserByIDResponse);
 }

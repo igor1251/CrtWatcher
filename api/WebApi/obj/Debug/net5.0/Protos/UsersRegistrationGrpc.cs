@@ -53,6 +53,10 @@ namespace WebApi {
     static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::WebApi.RegisteredUsersResponse> __Marshaller_UsersRegistration_RegisteredUsersResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WebApi.RegisteredUsersResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::WebApi.UserByIDRequest> __Marshaller_UsersRegistration_UserByIDRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WebApi.UserByIDRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::WebApi.UserByIDResponse> __Marshaller_UsersRegistration_UserByIDResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::WebApi.UserByIDResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::WebApi.UserRequest, global::WebApi.UserResponse> __Method_RegisterUser = new grpc::Method<global::WebApi.UserRequest, global::WebApi.UserResponse>(
@@ -85,6 +89,14 @@ namespace WebApi {
         "GetRegisteredUsers",
         __Marshaller_google_protobuf_Empty,
         __Marshaller_UsersRegistration_RegisteredUsersResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::WebApi.UserByIDRequest, global::WebApi.UserByIDResponse> __Method_GetRegisteredUserByID = new grpc::Method<global::WebApi.UserByIDRequest, global::WebApi.UserByIDResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetRegisteredUserByID",
+        __Marshaller_UsersRegistration_UserByIDRequest,
+        __Marshaller_UsersRegistration_UserByIDResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -198,6 +210,26 @@ namespace WebApi {
       public virtual grpc::AsyncUnaryCall<global::WebApi.RegisteredUsersResponse> GetRegisteredUsersAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetRegisteredUsers, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::WebApi.UserByIDResponse GetRegisteredUserByID(global::WebApi.UserByIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetRegisteredUserByID(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::WebApi.UserByIDResponse GetRegisteredUserByID(global::WebApi.UserByIDRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetRegisteredUserByID, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::WebApi.UserByIDResponse> GetRegisteredUserByIDAsync(global::WebApi.UserByIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetRegisteredUserByIDAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::WebApi.UserByIDResponse> GetRegisteredUserByIDAsync(global::WebApi.UserByIDRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetRegisteredUserByID, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
