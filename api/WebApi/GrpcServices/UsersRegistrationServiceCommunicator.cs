@@ -19,7 +19,7 @@ namespace WebApi.GrpcServices
         public UsersRegistrationServiceCommunicator(ILogger<UsersRegistrationServiceCommunicator> logger)
         {
             _logger = logger;
-            _channel = GrpcChannel.ForAddress("https://localhost:5049");
+            _channel = GrpcChannel.ForAddress("https://localhost:5004");
             _client = new CertificateUsersRegistrationService.CertificateUsersRegistrationServiceClient(_channel);
             _mapperConfiguration = new MapperConfiguration(cfg => cfg.CreateMap<User, UserDTO>());
             _mapper = new Mapper(_mapperConfiguration);
@@ -27,7 +27,7 @@ namespace WebApi.GrpcServices
 
         public async Task<IEnumerable<User>> GetUsersAsync()
         {
-            _logger.LogInformation("Sending GET USERS request to localhost:5049");
+            _logger.LogInformation("Sending GET USERS request to localhost:5004");
             var response = await _client.GetRegisteredUsersAsync(new Google.Protobuf.WellKnownTypes.Empty());
             var users = _mapper.Map<List<User>>(response.Users);
             return users;

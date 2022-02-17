@@ -4,6 +4,7 @@ using Grpc.Core;
 using AutoMapper;
 using ElectronicDigitalSignatire.Models.Classes;
 using Google.Protobuf.WellKnownTypes;
+using Microsoft.Extensions.Logging;
 
 namespace UsersRegistrationService.GrpcServices
 {
@@ -12,12 +13,15 @@ namespace UsersRegistrationService.GrpcServices
         IDbStore _store;
         MapperConfiguration mapperConfiguration;
         Mapper mapper;
+        ILogger<RegistrationService> _logger;
 
-        public RegistrationService(IDbStore store)
+        public RegistrationService(IDbStore store,
+                                   ILogger<RegistrationService> logger)
         {
             _store = store;
             mapperConfiguration = new MapperConfiguration(cfg => cfg.CreateMap<User, UserDTO>());
             mapper = new Mapper(mapperConfiguration);
+            _logger = logger;
         }
 
         public override async Task<UserResponse> RegisterUser(UserRequest request, ServerCallContext context)
@@ -49,6 +53,7 @@ namespace UsersRegistrationService.GrpcServices
 
         public override async Task<RegisteredUsersResponse> GetRegisteredUsers(Empty request, ServerCallContext context)
         {
+            _logger.LogInformation("Time to send users liiiiiist!");
             var response = new RegisteredUsersResponse();
             var registeredUsers = await _store.GetUsers();
             foreach (var user in registeredUsers)

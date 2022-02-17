@@ -56,7 +56,7 @@ namespace ElectronicDigitalSignatire.Services.Classes
         public async Task<User> GetUserByID(int id)
         {
             await CheckDatabase();
-            var subject = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<User>("SELECT * FROM Subjects WHERE ID=@ID", new { ID = id });
+            var subject = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<User>("SELECT * FROM Users WHERE ID=@ID", new { ID = id });
             if (subject == null) return null;            
             subject.CertificateList = await GetCertificates(subject.ID);
             return subject;

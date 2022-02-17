@@ -12,7 +12,7 @@ namespace UsersRegistrationService
     {
         private readonly ILogger<Worker> _logger;
 
-        private const int _port = 5049;
+        private const int _port = 5004;
         private const string _host = "localhost";
 
         Server _server;
@@ -45,11 +45,7 @@ namespace UsersRegistrationService
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(1000, stoppingToken);
-            }
+            
         }
 
         public override async Task StopAsync(CancellationToken cancellationToken)
