@@ -1,5 +1,4 @@
 ﻿using Grpc.Core;
-using AutoMapper;
 using Grpc.Net.Client;
 using Microsoft.Extensions.Logging;
 using ElectronicDigitalSignatire.Models.Classes;
@@ -13,8 +12,61 @@ namespace WebApi.GrpcServices
         Channel _channel;
         CertificateUsersRegistrationService.CertificateUsersRegistrationServiceClient _client;
         ILogger<UsersRegistrationServiceCommunicator> _logger;
-        Mapper _mapper;
-        MapperConfiguration _mapperConfiguration;
+
+        #region -= Converters =-
+
+        private CertificateDTO ConvertCertificateToDTO(Certificate certificate)
+        {
+            var certificateDTO = new CertificateDTO();
+            certificateDTO.Algorithm = certificate.Algorithm;
+            certificateDTO.CertificateHash = certificate.CertificateHash;
+            certificateDTO.Id = certificate.ID;
+            certificateDTO.StartDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(certificate.StartDate);
+            certificateDTO.EndDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(certificate.EndDate);
+            return certificateDTO;
+        }
+
+        private UserDTO ConvertUserToDTO(User user)
+        {
+            var userDTO = new UserDTO();
+            userDTO.UserName = user.UserName;
+            userDTO.Id = user.ID;
+            userDTO.UserPhone = user.UserPhone;
+            userDTO.UserComment = user.UserComment;
+            foreach (var item in user.CertificateList)
+            {
+                userDTO.CertificatesList.Add(ConvertCertificateToDTO(item));
+            }
+            return userDTO;
+        }
+
+        private Certificate ConvertCertificateFromDTO(CertificateDTO certificate)
+        {
+            var convertedCertificate = new Certificate();
+            convertedCertificate.StartDate = certificate.StartDate.ToDateTime();
+            convertedCertificate.EndDate = certificate.EndDate.ToDateTime();
+            convertedCertificate.CertificateHash = certificate.CertificateHash;
+            convertedCertificate.Algorithm = certificate.Algorithm;
+            convertedCertificate.ID = certificate.Id;
+            return convertedCertificate;
+        }
+
+        private User ConvertUserFromDTO(UserDTO user)
+        {
+            var convertedUser = new User();
+            convertedUser.UserName = user.UserName;
+            convertedUser.UserComment = user.UserComment;
+            convertedUser.UserPhone = user.UserPhone;
+            convertedUser.ID = user.Id;
+            foreach (var item in user.CertificatesList)
+            {
+                convertedUser.CertificateList.Add(ConvertCertificateFromDTO(item));
+            }
+            return convertedUser;
+
+        }
+
+        #endregion
 
         public UsersRegistrationServiceCommunicator(ILogger<UsersRegistrationServiceCommunicator> logger)
         {
@@ -22,29 +74,31 @@ namespace WebApi.GrpcServices
             //_channel = GrpcChannel.ForAddress("https://localhost:5004");
             _channel = new Channel("localhost:5004", ChannelCredentials.Insecure);
             _client = new CertificateUsersRegistrationService.CertificateUsersRegistrationServiceClient(_channel);
-            _mapperConfiguration = new MapperConfiguration(cfg => cfg.CreateMap<User, UserDTO>());
-            _mapper = new Mapper(_mapperConfiguration);
         }
 
         public async Task<IEnumerable<User>> GetUsersAsync()
         {
             _logger.LogInformation("Sending GET USERS request to localhost:5004");
             var response = await _client.GetRegisteredUsersAsync(new Google.Protobuf.WellKnownTypes.Empty());
-            var users = _mapper.Map<List<User>>(response.Users);
+            var users = new List<User>();
+            foreach (var user in response.Users)
+            {
+                users.Add(ConvertUserFromDTO(user));
+            }
             return users;
         }
 
         public async Task RegisterUser(User user)
         {
             var request = new UserRequest();
-            request.User = _mapper.Map<UserDTO>(user);
+            request.User = ConvertUserToDTO(user);
             var response = await _client.RegisterUserAsync(request);
         }
 
         public async Task UnregisterUser(User user)
         {
             var request = new UserRequest();
-            request.User = _mapper.Map<UserDTO>(user);
+            request.User = ConvertUserToDTO(user);
             var response = await _client.UnregisterUserAsync(request);
         }
     }
