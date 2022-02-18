@@ -31,8 +31,8 @@ namespace UsersRegistrationService.GrpcServices
             var userDTO = new UserDTO();
             userDTO.UserName = user.UserName;
             userDTO.Id = user.ID;
-            userDTO.UserPhone = user.UserPhone;
-            userDTO.UserComment = user.UserComment;
+            userDTO.UserPhone = user.UserPhone == null ? "" : user.UserPhone;
+            userDTO.UserComment = user.UserComment == null ? "" : user.UserComment;
             foreach (var item in user.CertificateList)
             {
                 userDTO.CertificatesList.Add(ConvertCertificateToDTO(item));
@@ -55,8 +55,8 @@ namespace UsersRegistrationService.GrpcServices
         {
             var convertedUser = new User();
             convertedUser.UserName = user.UserName;
-            convertedUser.UserComment = user.UserComment;
-            convertedUser.UserPhone = user.UserPhone;
+            convertedUser.UserComment = user.UserComment == null ? "" : user.UserComment;
+            convertedUser.UserPhone = user.UserPhone == null ? "" : user.UserPhone;
             convertedUser.ID = user.Id;
             foreach (var item in user.CertificatesList)
             {
@@ -159,7 +159,8 @@ namespace UsersRegistrationService.GrpcServices
             try
             {
                 var user = await _store.GetUserByID(request.Id);
-                response.User = ConvertUserToDTO(user);
+                if (user == null) response.User = null;
+                else response.User = ConvertUserToDTO(user);
                 _logger.LogInformation("User found.");
             }
             catch (Exception ex)

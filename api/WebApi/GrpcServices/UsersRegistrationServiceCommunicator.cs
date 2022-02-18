@@ -31,8 +31,8 @@ namespace WebApi.GrpcServices
             var userDTO = new UserDTO();
             userDTO.UserName = user.UserName;
             userDTO.Id = user.ID;
-            userDTO.UserPhone = user.UserPhone;
-            userDTO.UserComment = user.UserComment;
+            userDTO.UserPhone = user.UserPhone == null ? "" : user.UserPhone;
+            userDTO.UserComment = user.UserComment == null ? "" : user.UserComment;
             foreach (var item in user.CertificateList)
             {
                 userDTO.CertificatesList.Add(ConvertCertificateToDTO(item));
@@ -55,8 +55,8 @@ namespace WebApi.GrpcServices
         {
             var convertedUser = new User();
             convertedUser.UserName = user.UserName;
-            convertedUser.UserComment = user.UserComment;
-            convertedUser.UserPhone = user.UserPhone;
+            convertedUser.UserComment = user.UserComment == null ? "" : user.UserComment; 
+            convertedUser.UserPhone = user.UserPhone == null ? "" : user.UserPhone;
             convertedUser.ID = user.Id;
             foreach (var item in user.CertificatesList)
             {
@@ -92,6 +92,7 @@ namespace WebApi.GrpcServices
             var request = new UserByIDRequest();
             request.Id = id;
             var response = await _client.GetRegisteredUserByIDAsync(request);
+            if (response.User == null) return null;
             var user = ConvertUserFromDTO(response.User);
             return user;
         }
@@ -108,6 +109,13 @@ namespace WebApi.GrpcServices
             var request = new UserRequest();
             request.User = ConvertUserToDTO(user);
             var response = await _client.UnregisterUserAsync(request);
+        }
+
+        public async Task UpdateUserAsync(User user)
+        {
+            var request = new UserRequest();
+            request.User = ConvertUserToDTO(user);
+            var response = await _client.UpdateUserAsync(request);
         }
     }
 }

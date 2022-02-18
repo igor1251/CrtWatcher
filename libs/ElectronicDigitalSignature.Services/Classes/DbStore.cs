@@ -33,10 +33,10 @@ namespace ElectronicDigitalSignatire.Services.Classes
             await _dbContext.DbConnection.QueryAsync(_queryStore.DeleteCertificate, new { ID = certificateID });
         }
 
-        public async Task DeleteUser(int subjectID)
+        public async Task DeleteUser(int userID)
         {
             await CheckDatabase();
-            await _dbContext.DbConnection.QueryAsync(_queryStore.DeleteUser, new { ID = subjectID });
+            await _dbContext.DbConnection.QueryAsync(_queryStore.DeleteUser, new { ID = userID });
         }
 
         public async Task<List<Certificate>> GetCertificates(int subjectID)
@@ -49,25 +49,25 @@ namespace ElectronicDigitalSignatire.Services.Classes
         public async Task<List<User>> GetUsers()
         {
             await CheckDatabase();
-            var subjects = (await _dbContext.DbConnection.QueryAsync<User>(_queryStore.GetUsers)).AsList();
-            return subjects;
+            var users = (await _dbContext.DbConnection.QueryAsync<User>(_queryStore.GetUsers)).AsList();
+            return users;
         }
 
         public async Task<User> GetUserByID(int id)
         {
             await CheckDatabase();
-            var subject = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<User>("SELECT * FROM Users WHERE ID=@ID", new { ID = id });
-            if (subject == null) return null;            
-            subject.CertificateList = await GetCertificates(subject.ID);
-            return subject;
+            var user = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<User>("SELECT * FROM Users WHERE ID=@ID", new { ID = id });
+            if (user == null) return null;            
+            user.CertificateList = await GetCertificates(user.ID);
+            return user;
         }
 
-        public async Task InsertCertificate(Certificate certificate, int subjectID)
+        public async Task InsertCertificate(Certificate certificate, int userID)
         {
             await CheckDatabase();
             await _dbContext.DbConnection.QueryAsync(_queryStore.InsertCertificate, new 
             { 
-                SubjectID = subjectID, 
+                UserID = userID, 
                 CertificateHash = certificate.CertificateHash, 
                 Algorithm = certificate.Algorithm, 
                 StartDate = certificate.StartDate, 
@@ -75,14 +75,14 @@ namespace ElectronicDigitalSignatire.Services.Classes
             });
         }
 
-        public async Task InsertUser(User subject)
+        public async Task InsertUser(User user)
         {
             await CheckDatabase();
-            await _dbContext.DbConnection.ExecuteAsync(_queryStore.InsertUser, subject);
-            int subjectID = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<int>("SELECT ID FROM Subjects WHERE SubjectName=@Name", new { Name = subject.UserName });
-            foreach (var item in subject.CertificateList)
+            await _dbContext.DbConnection.ExecuteAsync(_queryStore.InsertUser, user);
+            int userID = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<int>("SELECT ID FROM Users WHERE UserName=@Name", new { Name = user.UserName });
+            foreach (var item in user.CertificateList)
             {
-                await InsertCertificate(item, subjectID);
+                await InsertCertificate(item, userID);
             }
         }
 
@@ -96,10 +96,10 @@ namespace ElectronicDigitalSignatire.Services.Classes
             await _dbContext.DbConnection.CloseAsync();
         }
 
-        public async Task UpdateUser(User subject)
+        public async Task UpdateUser(User user)
         {
             await CheckDatabase();
-            await _dbContext.DbConnection.QueryAsync(_queryStore.UpdateUser, subject);
+            await _dbContext.DbConnection.QueryAsync(_queryStore.UpdateUser, user);
         }
     }
 }

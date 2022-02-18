@@ -29,29 +29,96 @@ namespace WebApi.Controllers
         [Route("db")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsersFromDbAsync()
         {
-            _logger.LogInformation("Loading subjects list from database");
-            var users = await _usersRegistrationServiceCommunicator.GetUsersAsync();
-
-            if (users == null)
+            _logger.LogInformation("Trying to load a list of registered users....");
+            try
             {
-                _logger.LogInformation("Subjects list is empty");
-                return NotFound();
-            }
+                var users = await _usersRegistrationServiceCommunicator.GetUsersAsync();
 
-            _logger.LogInformation("Loaded");
-            return Ok(users);
+                if (users == null)
+                {
+                    _logger.LogWarning("The database is empty.");
+                    return NotFound();
+                }
+
+                _logger.LogInformation("The list of users has been uploaded successfully.");
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest();
+            }
         }
 
         [HttpGet]
         [Route("{id}")]
         public async Task<ActionResult<User>> GetUserByIDAsync(int id)
         {
-            var user = await _usersRegistrationServiceCommunicator.GetUserByIDAsync(id);
-            if (user == null)
+            _logger.LogInformation("Trying to download user information with ID = {0}....", id);
+            try
             {
-                return NotFound();
+                var user = await _usersRegistrationServiceCommunicator.GetUserByIDAsync(id);
+                if (user == null)
+                {
+                    _logger.LogWarning("The user with the specified ID does not exist.");
+                    return NotFound();
+                }
+                _logger.LogInformation("The user with the specified ID was found.");
+                return Ok(user);
             }
-            return Ok(user);
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest();
+            }
+        }
+
+        #endregion
+
+        #region -= PUT =-
+
+        [HttpPut]
+        public async Task<ActionResult> UpdateUserAsync(User user)
+        {
+            _logger.LogInformation("Trying to update user information with ID = {0}", user.ID);
+            try
+            {
+                await _usersRegistrationServiceCommunicator.UpdateUserAsync(user);
+                _logger.LogInformation("Information about the user with ID = {0} successfully updated", user.ID);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest();
+            }
+        }
+
+        #endregion
+
+        #region -= DELETE =-
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteUserAsync(int id)
+        {
+            _logger.LogInformation("Trying to delete a user with ID = {0}", id);
+            try
+            {
+                var user = await _usersRegistrationServiceCommunicator.GetUserByIDAsync(id);
+                if (user == null)
+                {
+                    _logger.LogWarning("The user with the specified ID does not exist.");
+                    return NotFound();
+                }
+                await _usersRegistrationServiceCommunicator.UnregisterUserAsync(user);
+                _logger.LogInformation("User with ID = {0} successfully deleted.", id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest();
+            }
         }
 
         #endregion

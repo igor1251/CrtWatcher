@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HostsRegistrationService.Models.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,14 @@ namespace WebApi.Controllers
 
         #region -= GET =-
 
-
+        [HttpGet]
+        [Route("db")]
+        public async Task<ActionResult<IEnumerable<IClientHost>>> GetClientHostsAsync()
+        {
+            var hosts = await _hostsRegistrationServiceCommunicator.GetRegisteredClientHostsAsync();
+            if (hosts == null) return NotFound();
+            return Ok(hosts);
+        }
 
         #endregion
     }

@@ -22,6 +22,7 @@ namespace HostsRegistrationService
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHostedService<Worker>();
+                    services.AddSingleton<IQueryStore, QueryStore>();
                     services.AddSingleton<IDbContext, DbContext>();
                     services.AddSingleton<IHostStore, HostStore>();
                     services.AddSingleton<RegistrationService>();

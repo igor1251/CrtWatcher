@@ -9,6 +9,11 @@ namespace HostsRegistrationService.Services.Classes
         private readonly static string _dbPath = Environment.CurrentDirectory + "\\hostsdb.sqlite", _connectionString = "Data Source=" + _dbPath;
         private SQLiteConnection _connection;
 
+        public string DbPath
+        {
+            get => _dbPath;
+        }
+
         public SQLiteConnection DbConnection
         {
             get

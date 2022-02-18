@@ -43,7 +43,7 @@ namespace WebApi.GrpcServices
             _client = new ClientHostsRegistrationService.ClientHostsRegistrationServiceClient(_channel);
         }
 
-        public async Task<IEnumerable<IClientHost>> GetRegisteredClientHosts()
+        public async Task<IEnumerable<IClientHost>> GetRegisteredClientHostsAsync()
         {
             var response = await _client.GetRegisteredClientHostsAsync(new Google.Protobuf.WellKnownTypes.Empty());
             var clientHosts = new List<ClientHost>();
@@ -53,7 +53,5 @@ namespace WebApi.GrpcServices
             }
             return clientHosts;
         }
-
-
     }
 }

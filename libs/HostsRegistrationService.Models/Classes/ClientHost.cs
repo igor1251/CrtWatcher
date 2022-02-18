@@ -8,6 +8,12 @@ namespace HostsRegistrationService.Models.Classes
         private string _hostName, _ip;
         private int _connectionPort;
 
+        public ClientHost()
+        {
+            _hostName = _ip = "";
+            _connectionPort = 0;
+        }
+
         public string HostName
         {
             get => string.IsNullOrEmpty(_hostName) ? "" : _hostName;

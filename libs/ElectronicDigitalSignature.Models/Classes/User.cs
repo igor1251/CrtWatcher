@@ -9,7 +9,7 @@ namespace ElectronicDigitalSignatire.Models.Classes
     public class User : IUser
     {
         int _id;
-        string _userName, _userPhone = string.Empty, _userComment = string.Empty;
+        string _userName = string.Empty, _userPhone = string.Empty, _userComment = string.Empty;
 
         const string PHONE_TEMPLATE_REGULAR_EXPRESSION = @"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$";
 
