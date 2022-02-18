@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "ClientHostCertificateService.Services/1.0.0": {
+        "dependencies": {
+          "ClientHostCertificateService.Models": "1.0.0"
+        },
+        "runtime": {
+          "ClientHostCertificateService.Services.dll": {}
+        }
+      },
+      "ClientHostCertificateService.Models/1.0.0": {
+        "runtime": {
+          "ClientHostCertificateService.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ClientHostCertificateService.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ClientHostCertificateService.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -16,4 +16,13 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\ClientHostCertificateService.Models\ClientHostCertificateService.Models.csproj" />
+    <ProjectReference Include="..\..\libs\ClientHostCertificateService.Services\ClientHostCertificateService.Services.csproj" />
+    <ProjectReference Include="..\..\libs\ElectronicDigitalSignature.Models\ElectronicDigitalSignature.Models.csproj" />
+    <ProjectReference Include="..\..\libs\ElectronicDigitalSignature.Services\ElectronicDigitalSignature.Services.csproj" />
+    <ProjectReference Include="..\..\libs\HostsRegistrationService.Models\HostsRegistrationService.Models.csproj" />
+    <ProjectReference Include="..\..\libs\HostsRegistrationService.Services\HostsRegistrationService.Services.csproj" />
+  </ItemGroup>
 </Project>
