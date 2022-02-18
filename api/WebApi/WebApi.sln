@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi.csproj", "{67E74AB3-B914-4CD5-BC78-C90BF3036B8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi.csproj", "{67E74AB3-B914-4CD5-BC78-C90BF3036B8B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectronicDigitalSignature.Models", "..\..\libs\ElectronicDigitalSignature.Models\ElectronicDigitalSignature.Models.csproj", "{59B3459F-52EF-4210-9301-7606109EEEE2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectronicDigitalSignature.Services", "..\..\libs\ElectronicDigitalSignature.Services\ElectronicDigitalSignature.Services.csproj", "{D1EA57BB-8B78-4DCE-828A-5CAE5302FA11}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostsRegistrationService.Models", "..\..\libs\HostsRegistrationService.Models\HostsRegistrationService.Models.csproj", "{8CBAD265-4627-484F-BD06-250C8F9CD277}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostsRegistrationService.Services", "..\..\libs\HostsRegistrationService.Services\HostsRegistrationService.Services.csproj", "{D940E549-8760-4695-BE15-EF1FEE786171}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{D1EA57BB-8B78-4DCE-828A-5CAE5302FA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1EA57BB-8B78-4DCE-828A-5CAE5302FA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1EA57BB-8B78-4DCE-828A-5CAE5302FA11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CBAD265-4627-484F-BD06-250C8F9CD277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CBAD265-4627-484F-BD06-250C8F9CD277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CBAD265-4627-484F-BD06-250C8F9CD277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CBAD265-4627-484F-BD06-250C8F9CD277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D940E549-8760-4695-BE15-EF1FEE786171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D940E549-8760-4695-BE15-EF1FEE786171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D940E549-8760-4695-BE15-EF1FEE786171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D940E549-8760-4695-BE15-EF1FEE786171}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

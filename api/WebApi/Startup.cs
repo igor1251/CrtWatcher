@@ -27,6 +27,7 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<UsersRegistrationServiceCommunicator>();
+            services.AddSingleton<HostsRegistrationServiceCommunicator>();
             services.AddControllers();
         }
 

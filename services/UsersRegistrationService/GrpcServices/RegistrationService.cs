@@ -4,6 +4,7 @@ using Grpc.Core;
 using ElectronicDigitalSignatire.Models.Classes;
 using Google.Protobuf.WellKnownTypes;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace UsersRegistrationService.GrpcServices
 {
@@ -76,50 +77,95 @@ namespace UsersRegistrationService.GrpcServices
 
         public override async Task<UserResponse> RegisterUser(UserRequest request, ServerCallContext context)
         {
+            _logger.LogInformation("Trying to register new user....\nusername: {0}\nphone: {1}\ncomment: {2}", request.User.UserName, request.User.UserPhone, request.User.UserComment);
             var response = new UserResponse();
-            var user = ConvertUserFromDTO(request.User);
-            await _store.InsertUser(user);
-            response.Result = UserOperationResult.Accepted;
+            try
+            {
+                var user = ConvertUserFromDTO(request.User);
+                await _store.InsertUser(user);
+                response.Result = UserOperationResult.Accepted;
+                _logger.LogInformation("The user has been successfully registered.");
+            }
+            catch (Exception ex)
+            {
+                response.Result = UserOperationResult.Declined;
+                _logger.LogError(ex.Message);
+            }
             return response;
         }
 
         public override async Task<UserResponse> UnregisterUser(UserRequest request, ServerCallContext context)
         {
+            _logger.LogInformation("Trying to unregister user....\nusername: {0}\nphone: {1}\ncomment: {2}", request.User.UserName, request.User.UserPhone, request.User.UserComment);
             var response = new UserResponse();
-            var user = ConvertUserFromDTO(request.User);
-            await _store.DeleteUser(user.ID);
-            response.Result = UserOperationResult.Accepted;
+            try
+            {
+                var user = ConvertUserFromDTO(request.User);
+                await _store.DeleteUser(user.ID);
+                response.Result = UserOperationResult.Accepted;
+                _logger.LogInformation("The user has been successfully unregistered.");
+            }
+            catch (Exception ex)
+            {
+                response.Result = UserOperationResult.Declined;
+                _logger.LogError(ex.Message);
+            }
             return response;
         }
 
         public override async Task<UserResponse> UpdateUser(UserRequest request, ServerCallContext context)
         {
+            _logger.LogInformation("Trying to update user....\nusername: {0}\nphone: {1}\ncomment: {2}", request.User.UserName, request.User.UserPhone, request.User.UserComment);
             var response = new UserResponse();
-            var user = ConvertUserFromDTO(request.User);
-            await _store.UpdateUser(user);
-            response.Result = UserOperationResult.Accepted;
+            try
+            {
+                var user = ConvertUserFromDTO(request.User);
+                await _store.UpdateUser(user);
+                response.Result = UserOperationResult.Accepted;
+                _logger.LogInformation("The user has been successfully updated.");
+            }
+            catch (Exception ex)
+            {
+                response.Result = UserOperationResult.Declined;
+                _logger.LogError(ex.Message);
+            }
             return response;
         }
 
         public override async Task<RegisteredUsersResponse> GetRegisteredUsers(Empty request, ServerCallContext context)
         {
-            _logger.LogInformation("Time to send users liiiiiist!");
+            _logger.LogInformation("Trying to get a list of registered users....");
             var response = new RegisteredUsersResponse();
-            var registeredUsers = await _store.GetUsers();
-            foreach (var user in registeredUsers)
+            try
             {
-                response.Users.Add(ConvertUserToDTO(user));
+                var registeredUsers = await _store.GetUsers();
+                foreach (var user in registeredUsers)
+                {
+                    response.Users.Add(ConvertUserToDTO(user));
+                }
+                _logger.LogInformation("The list of users has been uploaded successfully.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
             }
             return response;
         }
 
         public override async Task<UserByIDResponse> GetRegisteredUserByID(UserByIDRequest request, ServerCallContext context)
         {
-            _logger.LogInformation("Time to get wanted user .....");
+            _logger.LogInformation("Trying to get a user under ID = {0}....", request.Id);
             var response = new UserByIDResponse();
-            var user = await _store.GetUserByID(request.Id);
-            _logger.LogInformation("Founded");
-            response.User = ConvertUserToDTO(user);
+            try
+            {
+                var user = await _store.GetUserByID(request.Id);
+                response.User = ConvertUserToDTO(user);
+                _logger.LogInformation("User found.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
             return response;
         }
     }

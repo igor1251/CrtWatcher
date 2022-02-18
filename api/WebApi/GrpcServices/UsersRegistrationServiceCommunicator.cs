@@ -71,7 +71,6 @@ namespace WebApi.GrpcServices
         public UsersRegistrationServiceCommunicator(ILogger<UsersRegistrationServiceCommunicator> logger)
         {
             _logger = logger;
-            //_channel = GrpcChannel.ForAddress("https://localhost:5004");
             _channel = new Channel("localhost:5004", ChannelCredentials.Insecure);
             _client = new CertificateUsersRegistrationService.CertificateUsersRegistrationServiceClient(_channel);
         }

@@ -55,3 +55,7 @@ D:\Libraries\Documents\GitHub\CrtWatcher\api\WebApi\obj\Debug\net5.0\WebApi.pdb
 D:\Libraries\Documents\GitHub\CrtWatcher\api\WebApi\obj\Debug\net5.0\WebApi.genruntimeconfig.cache
 D:\Libraries\Documents\GitHub\CrtWatcher\api\WebApi\obj\Debug\net5.0\ref\WebApi.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\api\WebApi\bin\Debug\net5.0\AutoMapper.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\api\WebApi\bin\Debug\net5.0\HostsRegistrationService.Models.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\api\WebApi\bin\Debug\net5.0\HostsRegistrationService.Services.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\api\WebApi\bin\Debug\net5.0\HostsRegistrationService.Models.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\api\WebApi\bin\Debug\net5.0\HostsRegistrationService.Services.pdb

@@ -14,7 +14,7 @@ namespace HostsRegistrationService
     {
         private readonly ILogger<Worker> _logger;
 
-        private const int _port = 5050;
+        private const int _port = 5005;
         private const string _host = "localhost";
 
         Server _server;
@@ -31,27 +31,22 @@ namespace HostsRegistrationService
             };
         }
 
-        public override async Task StartAsync(CancellationToken cancellationToken)
+        public override Task StartAsync(CancellationToken cancellationToken)
         {
             try
             {
                 _server.Start();
-                _logger.LogInformation("Registration service successfully started. Listening on {0}:{1}", "localhost", _port);
+                _logger.LogInformation("Hosts registration service successfully started. Listening on {0}:{1}", _host, _port);
+                return Task.FromResult(0);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
+                return Task.FromResult(1);
             }
         }
 
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-        {
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(1000, stoppingToken);
-            }
-        }
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken) { }
 
         public override async Task StopAsync(CancellationToken stoppingToken)
         {
