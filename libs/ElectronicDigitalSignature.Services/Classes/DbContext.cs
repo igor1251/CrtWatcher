@@ -4,7 +4,7 @@ using ElectronicDigitalSignatire.Services.Interfaces;
 
 namespace ElectronicDigitalSignatire.Services.Classes
 {
-    public class DbContext : IDbContext
+    public class DbContext : IUsersDbContext
     {
         SQLiteConnection _dbConnection;
         string _dbPath = Environment.CurrentDirectory + "\\keysdb.sqlite";

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2U4tL7fd3ugRC0YSRLQ02bQAYOJWUW90OBD+2uJ5zSXbQe0Z4LZOsdU6L5Y/KShAE3rjh9J1Lzz5/waNVmwFmw==",
+  "dgSpecHash": "ykAj7krnCEfnhsg7es0n/qwRDaGoZelcRsw5+bWdWZFBzJZJITkYQRTOcox95i3IA3U37v3YZ9J9hy3Ehmkl1Q==",
   "success": true,
-  "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Services\\HostsRegistration.Services.csproj",
+  "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Services\\HostsRegistrationService.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Igor\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

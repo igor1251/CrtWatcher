@@ -1,6 +1,6 @@
-﻿using HostsRegistration.Services.Interfaces;
+﻿using HostsRegistrationService.Services.Interfaces;
 
-namespace HostsRegistration.Services.Classes
+namespace HostsRegistrationService.Services.Classes
 {
     public class QueryStore : IQueryStore
     {

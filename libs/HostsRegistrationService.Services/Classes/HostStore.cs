@@ -1,20 +1,20 @@
-﻿using HostsRegistration.Models.Classes;
-using HostsRegistration.Models.Interfaces;
-using HostsRegistration.Services.Interfaces;
+﻿using HostsRegistrationService.Models.Classes;
+using HostsRegistrationService.Models.Interfaces;
+using HostsRegistrationService.Services.Interfaces;
 using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dapper;
 
-namespace HostsRegistration.Services.Classes
+namespace HostsRegistrationService.Services.Classes
 {
     public class HostStore : IHostStore
     {
-        IDbContext _dbContext;
+        IHostsDbContext _dbContext;
         IQueryStore _queryStore;
 
-        public HostStore(IDbContext dbContext, IQueryStore queryStore)
+        public HostStore(IHostsDbContext dbContext, IQueryStore queryStore)
         {
             _queryStore = queryStore;
             _dbContext = dbContext;
@@ -28,20 +28,20 @@ namespace HostsRegistration.Services.Classes
             }
         }
 
-        public async Task<IEnumerable<IClientHost>> GetHosts()
+        public async Task<IEnumerable<IClientHost>> GetClientHosts()
         {
             await CheckDatabase();
             var hosts = await _dbContext.DbConnection.QueryAsync<ClientHost>(_queryStore.GetClientHostsQuery);
             return hosts;
         }
 
-        public async Task AddHost(ClientHost host)
+        public async Task AddClientHost(ClientHost host)
         {
             await CheckDatabase();
             await _dbContext.DbConnection.ExecuteAsync(_queryStore.AddClientHostQuery, host);
         }
 
-        public async Task DeleteHost(ClientHost host)
+        public async Task DeleteClientHost(ClientHost host)
         {
             await CheckDatabase();
             await _dbContext.DbConnection.ExecuteAsync(_queryStore.DeleteClientHostQuery, new { IP = host.IP });

@@ -341,14 +341,14 @@
           }
         }
       },
-      "HostsRegistration.Models/1.0.0": {
+      "HostsRegistrationService.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
-          "bin/placeholder/HostsRegistration.Models.dll": {}
+          "bin/placeholder/HostsRegistrationService.Models.dll": {}
         },
         "runtime": {
-          "bin/placeholder/HostsRegistration.Models.dll": {}
+          "bin/placeholder/HostsRegistrationService.Models.dll": {}
         }
       }
     }
@@ -1187,16 +1187,16 @@
         "version.txt"
       ]
     },
-    "HostsRegistration.Models/1.0.0": {
+    "HostsRegistrationService.Models/1.0.0": {
       "type": "project",
-      "path": "../HostsRegistrationService.Models/HostsRegistration.Models.csproj",
-      "msbuildProject": "../HostsRegistrationService.Models/HostsRegistration.Models.csproj"
+      "path": "../HostsRegistrationService.Models/HostsRegistrationService.Models.csproj",
+      "msbuildProject": "../HostsRegistrationService.Models/HostsRegistrationService.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Dapper >= 2.0.123",
-      "HostsRegistration.Models >= 1.0.0",
+      "HostsRegistrationService.Models >= 1.0.0",
       "System.Data.SQLite >= 1.0.115.5"
     ]
   },
@@ -1207,9 +1207,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Services\\HostsRegistration.Services.csproj",
-      "projectName": "HostsRegistration.Services",
-      "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Services\\HostsRegistration.Services.csproj",
+      "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Services\\HostsRegistrationService.Services.csproj",
+      "projectName": "HostsRegistrationService.Services",
+      "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Services\\HostsRegistrationService.Services.csproj",
       "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
       "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Services\\obj\\",
       "projectStyle": "PackageReference",
@@ -1232,8 +1232,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistration.Models.csproj": {
-              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistration.Models.csproj"
+            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistrationService.Models.csproj": {
+              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistrationService.Models.csproj"
             }
           }
         }

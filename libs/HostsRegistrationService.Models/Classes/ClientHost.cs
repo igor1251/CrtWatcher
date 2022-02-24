@@ -1,7 +1,7 @@
-﻿using HostsRegistration.Models.Interfaces;
+﻿using HostsRegistrationService.Models.Interfaces;
 using System;
 
-namespace HostsRegistration.Models.Classes
+namespace HostsRegistrationService.Models.Classes
 {
     public class ClientHost : IClientHost
     {

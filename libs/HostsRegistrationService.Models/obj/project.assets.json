@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistration.Models.csproj",
-      "projectName": "HostsRegistration.Models",
-      "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistration.Models.csproj",
+      "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistrationService.Models.csproj",
+      "projectName": "HostsRegistrationService.Models",
+      "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistrationService.Models.csproj",
       "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
       "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\obj\\",
       "projectStyle": "PackageReference",

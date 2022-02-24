@@ -11,9 +11,9 @@ namespace ElectronicDigitalSignatire.Services.Classes
     public class DbStore : IDbStore
     {
         IQueryStore _queryStore;
-        IDbContext _dbContext;
+        IUsersDbContext _dbContext;
 
-        public DbStore(IQueryStore queryStore, IDbContext dbContext)
+        public DbStore(IQueryStore queryStore, IUsersDbContext dbContext)
         {
             _queryStore = queryStore;
             _dbContext = dbContext;
