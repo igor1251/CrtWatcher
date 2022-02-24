@@ -4,7 +4,7 @@ using System.Data.SQLite;
 
 namespace HostsRegistrationService.Services.Classes
 {
-    public class HostsDbContext : IHostsDbContext
+    public class DbContext : IDbContext
     {
         private readonly static string _dbPath = Environment.CurrentDirectory + "\\hostsdb.sqlite", _connectionString = "Data Source=" + _dbPath;
         private SQLiteConnection _connection;

@@ -11,10 +11,10 @@ namespace HostsRegistrationService.Services.Classes
 {
     public class HostStore : IHostStore
     {
-        IHostsDbContext _dbContext;
+        IDbContext _dbContext;
         IQueryStore _queryStore;
 
-        public HostStore(IHostsDbContext dbContext, IQueryStore queryStore)
+        public HostStore(IDbContext dbContext, IQueryStore queryStore)
         {
             _queryStore = queryStore;
             _dbContext = dbContext;

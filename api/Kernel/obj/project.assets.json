@@ -602,6 +602,31 @@
         "runtime": {
           "bin/placeholder/ElectronicDigitalSignature.Services.dll": {}
         }
+      },
+      "HostsRegistrationService.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/HostsRegistrationService.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HostsRegistrationService.Models.dll": {}
+        }
+      },
+      "HostsRegistrationService.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Dapper": "2.0.123",
+          "HostsRegistrationService.Models": "1.0.0",
+          "System.Data.SQLite": "1.0.115.5"
+        },
+        "compile": {
+          "bin/placeholder/HostsRegistrationService.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HostsRegistrationService.Services.dll": {}
+        }
       }
     }
   },
@@ -1847,13 +1872,25 @@
       "type": "project",
       "path": "../../libs/ElectronicDigitalSignature.Services/ElectronicDigitalSignature.Services.csproj",
       "msbuildProject": "../../libs/ElectronicDigitalSignature.Services/ElectronicDigitalSignature.Services.csproj"
+    },
+    "HostsRegistrationService.Models/1.0.0": {
+      "type": "project",
+      "path": "../../libs/HostsRegistrationService.Models/HostsRegistrationService.Models.csproj",
+      "msbuildProject": "../../libs/HostsRegistrationService.Models/HostsRegistrationService.Models.csproj"
+    },
+    "HostsRegistrationService.Services/1.0.0": {
+      "type": "project",
+      "path": "../../libs/HostsRegistrationService.Services/HostsRegistrationService.Services.csproj",
+      "msbuildProject": "../../libs/HostsRegistrationService.Services/HostsRegistrationService.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "ElectronicDigitalSignature.Models >= 1.0.0",
       "ElectronicDigitalSignature.Services >= 1.0.0",
-      "Grpc.AspNetCore >= 2.42.0"
+      "Grpc.AspNetCore >= 2.42.0",
+      "HostsRegistrationService.Models >= 1.0.0",
+      "HostsRegistrationService.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1893,6 +1930,12 @@
             },
             "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj": {
               "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj"
+            },
+            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistrationService.Models.csproj": {
+              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistrationService.Models.csproj"
+            },
+            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Services\\HostsRegistrationService.Services.csproj": {
+              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Services\\HostsRegistrationService.Services.csproj"
             }
           }
         }

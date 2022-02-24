@@ -2,7 +2,7 @@
 
 namespace HostsRegistrationService.Services.Interfaces
 {
-    public interface IHostsDbContext
+    public interface IDbContext
     {
         string DbPath { get; }
         SQLiteConnection DbConnection { get; }

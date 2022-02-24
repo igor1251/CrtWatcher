@@ -7,7 +7,7 @@ using System.Data.SQLite;
 
 namespace ElectronicDigitalSignatire.Services.Interfaces
 {
-    public interface IUsersDbContext
+    public interface IDbContext
     {
         string DbPath { get; }
         SQLiteConnection DbConnection { get; }
