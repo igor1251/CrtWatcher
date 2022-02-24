@@ -1,6 +1,6 @@
 ﻿using System.Data.SQLite;
 
-namespace HostsRegistrationService.Services.Interfaces
+namespace HostsRegistration.Services.Interfaces
 {
     public interface IDbContext
     {

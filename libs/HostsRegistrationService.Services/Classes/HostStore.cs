@@ -1,13 +1,13 @@
-﻿using HostsRegistrationService.Models.Classes;
-using HostsRegistrationService.Models.Interfaces;
-using HostsRegistrationService.Services.Interfaces;
+﻿using HostsRegistration.Models.Classes;
+using HostsRegistration.Models.Interfaces;
+using HostsRegistration.Services.Interfaces;
 using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dapper;
 
-namespace HostsRegistrationService.Services.Classes
+namespace HostsRegistration.Services.Classes
 {
     public class HostStore : IHostStore
     {
@@ -28,20 +28,20 @@ namespace HostsRegistrationService.Services.Classes
             }
         }
 
-        public async Task<IEnumerable<IClientHost>> GetClientHosts()
+        public async Task<IEnumerable<IClientHost>> GetHosts()
         {
             await CheckDatabase();
             var hosts = await _dbContext.DbConnection.QueryAsync<ClientHost>(_queryStore.GetClientHostsQuery);
             return hosts;
         }
 
-        public async Task AddClientHost(ClientHost host)
+        public async Task AddHost(ClientHost host)
         {
             await CheckDatabase();
             await _dbContext.DbConnection.ExecuteAsync(_queryStore.AddClientHostQuery, host);
         }
 
-        public async Task DeleteClientHost(ClientHost host)
+        public async Task DeleteHost(ClientHost host)
         {
             await CheckDatabase();
             await _dbContext.DbConnection.ExecuteAsync(_queryStore.DeleteClientHostQuery, new { IP = host.IP });

@@ -1,15 +1,15 @@
-﻿using HostsRegistrationService.Models.Classes;
-using HostsRegistrationService.Models.Interfaces;
+﻿using HostsRegistration.Models.Classes;
+using HostsRegistration.Models.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace HostsRegistrationService.Services.Interfaces
+namespace HostsRegistration.Services.Interfaces
 {
     public interface IHostStore
     {
-        Task<IEnumerable<IClientHost>> GetClientHosts();
-        Task AddClientHost(ClientHost clientHost);
-        Task DeleteClientHost(ClientHost clientHost);
+        Task<IEnumerable<IClientHost>> GetHosts();
+        Task AddHost(ClientHost clientHost);
+        Task DeleteHost(ClientHost clientHost);
         Task UpdateClientHost(ClientHost clientHost);
     }
 }

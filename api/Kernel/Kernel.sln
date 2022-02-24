@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kernel", "Kernel.csproj", "{9E680155-9EAF-4390-B2F2-20C69351DB30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostsRegistration.Models", "..\..\libs\HostsRegistrationService.Models\HostsRegistration.Models.csproj", "{2F5BD40F-B8C7-471C-A184-8CE170DE1CC3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostsRegistration.Services", "..\..\libs\HostsRegistrationService.Services\HostsRegistration.Services.csproj", "{202D2942-5E19-490F-964C-664B21A83608}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectronicDigitalSignature.Models", "..\..\libs\ElectronicDigitalSignature.Models\ElectronicDigitalSignature.Models.csproj", "{407E070C-4708-4A33-8325-AA94083F2613}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectronicDigitalSignature.Services", "..\..\libs\ElectronicDigitalSignature.Services\ElectronicDigitalSignature.Services.csproj", "{4EF3DC05-1B09-485E-B4BC-6BF361179348}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E680155-9EAF-4390-B2F2-20C69351DB30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E680155-9EAF-4390-B2F2-20C69351DB30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E680155-9EAF-4390-B2F2-20C69351DB30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E680155-9EAF-4390-B2F2-20C69351DB30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F5BD40F-B8C7-471C-A184-8CE170DE1CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F5BD40F-B8C7-471C-A184-8CE170DE1CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F5BD40F-B8C7-471C-A184-8CE170DE1CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F5BD40F-B8C7-471C-A184-8CE170DE1CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{202D2942-5E19-490F-964C-664B21A83608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{202D2942-5E19-490F-964C-664B21A83608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{202D2942-5E19-490F-964C-664B21A83608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{202D2942-5E19-490F-964C-664B21A83608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{407E070C-4708-4A33-8325-AA94083F2613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{407E070C-4708-4A33-8325-AA94083F2613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{407E070C-4708-4A33-8325-AA94083F2613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{407E070C-4708-4A33-8325-AA94083F2613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EF3DC05-1B09-485E-B4BC-6BF361179348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EF3DC05-1B09-485E-B4BC-6BF361179348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EF3DC05-1B09-485E-B4BC-6BF361179348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EF3DC05-1B09-485E-B4BC-6BF361179348}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57ED3F24-30DE-4477-BCF9-D3E931F3DB4E}
+	EndGlobalSection
+EndGlobal

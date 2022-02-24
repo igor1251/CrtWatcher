@@ -1,4 +1,4 @@
-﻿namespace HostsRegistrationService.Services.Interfaces
+﻿namespace HostsRegistration.Services.Interfaces
 {
     public interface IQueryStore
     {

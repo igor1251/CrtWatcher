@@ -1,4 +1,4 @@
-﻿namespace HostsRegistrationService.Models.Interfaces
+﻿namespace HostsRegistration.Models.Interfaces
 {
     public interface IClientHost
     {

@@ -1,8 +1,8 @@
-﻿using HostsRegistrationService.Services.Interfaces;
+﻿using HostsRegistration.Services.Interfaces;
 using System;
 using System.Data.SQLite;
 
-namespace HostsRegistrationService.Services.Classes
+namespace HostsRegistration.Services.Classes
 {
     public class DbContext : IDbContext
     {

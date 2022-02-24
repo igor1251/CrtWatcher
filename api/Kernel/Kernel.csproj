@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.42.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<Protobuf Include="Protos\HostsRegistrationProtocol.proto" GrpcServices="Server" />
+	<Protobuf Include="Protos\UsersRegistrationProtocol.proto" GrpcServices="Server" />
+	<Protobuf Include="Protos\SettingsExchangeProtocol.proto" GrpcServices="Server" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\ElectronicDigitalSignature.Models\ElectronicDigitalSignature.Models.csproj" />
+    <ProjectReference Include="..\..\libs\ElectronicDigitalSignature.Services\ElectronicDigitalSignature.Services.csproj" />
+    <ProjectReference Include="..\..\libs\HostsRegistrationService.Models\HostsRegistration.Models.csproj" />
+    <ProjectReference Include="..\..\libs\HostsRegistrationService.Services\HostsRegistration.Services.csproj" />
+  </ItemGroup>
+
+</Project>
