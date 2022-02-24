@@ -1,4 +1,4 @@
-﻿using HostsRegistrationService.Services.Interfaces;
+﻿using StoreServices.Services.Interfaces;
 using System;
 using System.Data.SQLite;
 

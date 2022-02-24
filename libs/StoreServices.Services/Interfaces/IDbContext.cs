@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 
-namespace ElectronicDigitalSignatire.Services.Interfaces
+namespace StoreServices.Services.Interfaces
 {
     public interface IDbContext
     {

@@ -4,16 +4,16 @@ using Dapper;
 using System.IO;
 using ElectronicDigitalSignatire.Services.Interfaces;
 using ElectronicDigitalSignatire.Models.Classes;
-using ElectronicDigitalSignatire.Models.Interfaces;
+using StoreServices.Services.Interfaces;
 
 namespace ElectronicDigitalSignatire.Services.Classes
 {
-    public class DbStore : IDbStore
+    public class UsersStore : IUsersStore
     {
         IQueryStore _queryStore;
         IDbContext _dbContext;
 
-        public DbStore(IQueryStore queryStore, IDbContext dbContext)
+        public UsersStore(IQueryStore queryStore, IDbContext dbContext)
         {
             _queryStore = queryStore;
             _dbContext = dbContext;

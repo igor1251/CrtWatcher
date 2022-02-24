@@ -1,3 +1,4 @@
+using Kernel.gRPCServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,7 +26,7 @@ namespace Kernel
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddGrpc();
             services.AddControllers();
         }
 
@@ -45,6 +46,7 @@ namespace Kernel
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapGrpcService<DataExchangeService>();
                 endpoints.MapControllers();
             });
         }

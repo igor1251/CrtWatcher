@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HostsRegistrationService.Models\HostsRegistrationService.Models.csproj" />
+    <ProjectReference Include="..\StoreServices.Services\StoreServices.Services.csproj" />
   </ItemGroup>
 
 </Project>

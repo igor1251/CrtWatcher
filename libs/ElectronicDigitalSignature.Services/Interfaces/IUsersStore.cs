@@ -4,7 +4,7 @@ using ElectronicDigitalSignatire.Models.Classes;
 
 namespace ElectronicDigitalSignatire.Services.Interfaces
 {
-    public interface IDbStore
+    public interface IUsersStore
     {
         Task<List<User>> GetUsers();
         Task<User> GetUserByID(int id);

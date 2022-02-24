@@ -594,6 +594,7 @@
         "dependencies": {
           "Dapper": "2.0.123",
           "ElectronicDigitalSignature.Models": "1.0.0",
+          "StoreServices.Services": "1.0.0",
           "System.Data.SQLite": "1.0.115.5"
         },
         "compile": {
@@ -619,6 +620,7 @@
         "dependencies": {
           "Dapper": "2.0.123",
           "HostsRegistrationService.Models": "1.0.0",
+          "StoreServices.Services": "1.0.0",
           "System.Data.SQLite": "1.0.115.5"
         },
         "compile": {
@@ -626,6 +628,19 @@
         },
         "runtime": {
           "bin/placeholder/HostsRegistrationService.Services.dll": {}
+        }
+      },
+      "StoreServices.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "System.Data.SQLite": "1.0.115.5"
+        },
+        "compile": {
+          "bin/placeholder/StoreServices.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreServices.Services.dll": {}
         }
       }
     }
@@ -1882,6 +1897,11 @@
       "type": "project",
       "path": "../../libs/HostsRegistrationService.Services/HostsRegistrationService.Services.csproj",
       "msbuildProject": "../../libs/HostsRegistrationService.Services/HostsRegistrationService.Services.csproj"
+    },
+    "StoreServices.Services/1.0.0": {
+      "type": "project",
+      "path": "../../libs/StoreServices.Services/StoreServices.Services.csproj",
+      "msbuildProject": "../../libs/StoreServices.Services/StoreServices.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {

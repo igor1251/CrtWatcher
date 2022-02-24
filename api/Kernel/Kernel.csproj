@@ -9,6 +9,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\libs\ElectronicDigitalSignature.Models\ElectronicDigitalSignature.Models.csproj" />
+    <ProjectReference Include="..\..\libs\ElectronicDigitalSignature.Services\ElectronicDigitalSignature.Services.csproj" />
+    <ProjectReference Include="..\..\libs\HostsRegistrationService.Models\HostsRegistrationService.Models.csproj" />
+    <ProjectReference Include="..\..\libs\HostsRegistrationService.Services\HostsRegistrationService.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
 	  <Protobuf Include="Prototypes\DataExchangeProtocol.proto" GrpcServices="Server" />
   </ItemGroup>
 	

@@ -350,6 +350,19 @@
         "runtime": {
           "bin/placeholder/HostsRegistrationService.Models.dll": {}
         }
+      },
+      "StoreServices.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "System.Data.SQLite": "1.0.115.5"
+        },
+        "compile": {
+          "bin/placeholder/StoreServices.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoreServices.Services.dll": {}
+        }
       }
     }
   },
@@ -1191,12 +1204,18 @@
       "type": "project",
       "path": "../HostsRegistrationService.Models/HostsRegistrationService.Models.csproj",
       "msbuildProject": "../HostsRegistrationService.Models/HostsRegistrationService.Models.csproj"
+    },
+    "StoreServices.Services/1.0.0": {
+      "type": "project",
+      "path": "../StoreServices.Services/StoreServices.Services.csproj",
+      "msbuildProject": "../StoreServices.Services/StoreServices.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Dapper >= 2.0.123",
       "HostsRegistrationService.Models >= 1.0.0",
+      "StoreServices.Services >= 1.0.0",
       "System.Data.SQLite >= 1.0.115.5"
     ]
   },
@@ -1234,6 +1253,9 @@
           "projectReferences": {
             "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistrationService.Models.csproj": {
               "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistrationService.Models.csproj"
+            },
+            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\StoreServices.Services\\StoreServices.Services.csproj": {
+              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\StoreServices.Services\\StoreServices.Services.csproj"
             }
           }
         }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data.SQLite;
-using ElectronicDigitalSignatire.Services.Interfaces;
+using StoreServices.Services.Interfaces;
 
 namespace ElectronicDigitalSignatire.Services.Classes
 {
