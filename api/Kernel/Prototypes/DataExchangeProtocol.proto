@@ -52,9 +52,6 @@ message HostRequest {
 	HostDTO host = 1;
 }
 
-message SettingsRequest {
-	SettingsDTO settings = 1;
-}
 
 message Response {
 	ExchangeResult result = 1;
@@ -69,5 +66,5 @@ service ExchangeService {
 	rpc RegisterSingleUser (SingleUserRequest) returns (Response);
 	rpc RegisterMultipleUsers (MultipleUsersRequest) returns (Response);
 	rpc RegisterHost (HostRequest) returns (Response);
-	rpc GetSettings (SettingsRequest) returns (SettingsResponse);
+	rpc GetSettings (google.protobuf.Empty) returns (SettingsResponse);
 }

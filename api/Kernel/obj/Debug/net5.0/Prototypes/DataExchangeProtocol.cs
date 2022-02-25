@@ -41,22 +41,20 @@ namespace Kernel {
             "LkRhdGFFeGNoYW5nZVByb3RvY29sLlVzZXJEVE8iRAoUTXVsdGlwbGVVc2Vy",
             "c1JlcXVlc3QSLAoFdXNlcnMYASADKAsyHS5EYXRhRXhjaGFuZ2VQcm90b2Nv",
             "bC5Vc2VyRFRPIjoKC0hvc3RSZXF1ZXN0EisKBGhvc3QYASABKAsyHS5EYXRh",
-            "RXhjaGFuZ2VQcm90b2NvbC5Ib3N0RFRPIkYKD1NldHRpbmdzUmVxdWVzdBIz",
-            "CghzZXR0aW5ncxgBIAEoCzIhLkRhdGFFeGNoYW5nZVByb3RvY29sLlNldHRp",
-            "bmdzRFRPIlEKCFJlc3BvbnNlEjQKBnJlc3VsdBgBIAEoDjIkLkRhdGFFeGNo",
-            "YW5nZVByb3RvY29sLkV4Y2hhbmdlUmVzdWx0Eg8KB2NvbW1lbnQYAiABKAki",
-            "RwoQU2V0dGluZ3NSZXNwb25zZRIzCghzZXR0aW5ncxgBIAEoCzIhLkRhdGFF",
-            "eGNoYW5nZVByb3RvY29sLlNldHRpbmdzRFRPKjMKDkV4Y2hhbmdlUmVzdWx0",
-            "EggKBE5PTkUQABILCgdTVUNDRVNTEAESCgoGRkFJTEVEEAIyhgMKD0V4Y2hh",
-            "bmdlU2VydmljZRJdChJSZWdpc3RlclNpbmdsZVVzZXISJy5EYXRhRXhjaGFu",
-            "Z2VQcm90b2NvbC5TaW5nbGVVc2VyUmVxdWVzdBoeLkRhdGFFeGNoYW5nZVBy",
-            "b3RvY29sLlJlc3BvbnNlEmMKFVJlZ2lzdGVyTXVsdGlwbGVVc2VycxIqLkRh",
-            "dGFFeGNoYW5nZVByb3RvY29sLk11bHRpcGxlVXNlcnNSZXF1ZXN0Gh4uRGF0",
-            "YUV4Y2hhbmdlUHJvdG9jb2wuUmVzcG9uc2USUQoMUmVnaXN0ZXJIb3N0EiEu",
-            "RGF0YUV4Y2hhbmdlUHJvdG9jb2wuSG9zdFJlcXVlc3QaHi5EYXRhRXhjaGFu",
-            "Z2VQcm90b2NvbC5SZXNwb25zZRJcCgtHZXRTZXR0aW5ncxIlLkRhdGFFeGNo",
-            "YW5nZVByb3RvY29sLlNldHRpbmdzUmVxdWVzdBomLkRhdGFFeGNoYW5nZVBy",
-            "b3RvY29sLlNldHRpbmdzUmVzcG9uc2VCCaoCBktlcm5lbGIGcHJvdG8z"));
+            "RXhjaGFuZ2VQcm90b2NvbC5Ib3N0RFRPIlEKCFJlc3BvbnNlEjQKBnJlc3Vs",
+            "dBgBIAEoDjIkLkRhdGFFeGNoYW5nZVByb3RvY29sLkV4Y2hhbmdlUmVzdWx0",
+            "Eg8KB2NvbW1lbnQYAiABKAkiRwoQU2V0dGluZ3NSZXNwb25zZRIzCghzZXR0",
+            "aW5ncxgBIAEoCzIhLkRhdGFFeGNoYW5nZVByb3RvY29sLlNldHRpbmdzRFRP",
+            "KjMKDkV4Y2hhbmdlUmVzdWx0EggKBE5PTkUQABILCgdTVUNDRVNTEAESCgoG",
+            "RkFJTEVEEAIy9wIKD0V4Y2hhbmdlU2VydmljZRJdChJSZWdpc3RlclNpbmds",
+            "ZVVzZXISJy5EYXRhRXhjaGFuZ2VQcm90b2NvbC5TaW5nbGVVc2VyUmVxdWVz",
+            "dBoeLkRhdGFFeGNoYW5nZVByb3RvY29sLlJlc3BvbnNlEmMKFVJlZ2lzdGVy",
+            "TXVsdGlwbGVVc2VycxIqLkRhdGFFeGNoYW5nZVByb3RvY29sLk11bHRpcGxl",
+            "VXNlcnNSZXF1ZXN0Gh4uRGF0YUV4Y2hhbmdlUHJvdG9jb2wuUmVzcG9uc2US",
+            "UQoMUmVnaXN0ZXJIb3N0EiEuRGF0YUV4Y2hhbmdlUHJvdG9jb2wuSG9zdFJl",
+            "cXVlc3QaHi5EYXRhRXhjaGFuZ2VQcm90b2NvbC5SZXNwb25zZRJNCgtHZXRT",
+            "ZXR0aW5ncxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRomLkRhdGFFeGNoYW5n",
+            "ZVByb3RvY29sLlNldHRpbmdzUmVzcG9uc2VCCaoCBktlcm5lbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Kernel.ExchangeResult), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -67,7 +65,6 @@ namespace Kernel {
             new pbr::GeneratedClrTypeInfo(typeof(global::Kernel.SingleUserRequest), global::Kernel.SingleUserRequest.Parser, new[]{ "User" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Kernel.MultipleUsersRequest), global::Kernel.MultipleUsersRequest.Parser, new[]{ "Users" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Kernel.HostRequest), global::Kernel.HostRequest.Parser, new[]{ "Host" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Kernel.SettingsRequest), global::Kernel.SettingsRequest.Parser, new[]{ "Settings" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Kernel.Response), global::Kernel.Response.Parser, new[]{ "Result", "Comment" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Kernel.SettingsResponse), global::Kernel.SettingsResponse.Parser, new[]{ "Settings" }, null, null, null, null)
           }));
@@ -1866,204 +1863,6 @@ namespace Kernel {
 
   }
 
-  public sealed partial class SettingsRequest : pb::IMessage<SettingsRequest>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<SettingsRequest> _parser = new pb::MessageParser<SettingsRequest>(() => new SettingsRequest());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<SettingsRequest> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Kernel.DataExchangeProtocolReflection.Descriptor.MessageTypes[7]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public SettingsRequest() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public SettingsRequest(SettingsRequest other) : this() {
-      settings_ = other.settings_ != null ? other.settings_.Clone() : null;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public SettingsRequest Clone() {
-      return new SettingsRequest(this);
-    }
-
-    /// <summary>Field number for the "settings" field.</summary>
-    public const int SettingsFieldNumber = 1;
-    private global::Kernel.SettingsDTO settings_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Kernel.SettingsDTO Settings {
-      get { return settings_; }
-      set {
-        settings_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as SettingsRequest);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(SettingsRequest other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!object.Equals(Settings, other.Settings)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (settings_ != null) hash ^= Settings.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (settings_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Settings);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (settings_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Settings);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (settings_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Settings);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(SettingsRequest other) {
-      if (other == null) {
-        return;
-      }
-      if (other.settings_ != null) {
-        if (settings_ == null) {
-          Settings = new global::Kernel.SettingsDTO();
-        }
-        Settings.MergeFrom(other.Settings);
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            if (settings_ == null) {
-              Settings = new global::Kernel.SettingsDTO();
-            }
-            input.ReadMessage(Settings);
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            if (settings_ == null) {
-              Settings = new global::Kernel.SettingsDTO();
-            }
-            input.ReadMessage(Settings);
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
   public sealed partial class Response : pb::IMessage<Response>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2078,7 +1877,7 @@ namespace Kernel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Kernel.DataExchangeProtocolReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Kernel.DataExchangeProtocolReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2304,7 +2103,7 @@ namespace Kernel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Kernel.DataExchangeProtocolReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Kernel.DataExchangeProtocolReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -116,7 +116,7 @@ namespace Kernel.gRPCServices
             _settingsStore = settingsStore;
         }
 
-        public override async Task<SettingsResponse> GetSettings(SettingsRequest request, ServerCallContext context)
+        public override async Task<SettingsResponse> GetSettings(Empty request, ServerCallContext context)
         {
             _logger.LogInformation("Trying to load the settings....");
             var response = new SettingsResponse();
@@ -130,7 +130,7 @@ namespace Kernel.gRPCServices
                 response.Settings = ConvertSettingsToDTO(new Settings());
                 _logger.LogError(ex.Message);
             }
-            
+
             return response;
         }
 

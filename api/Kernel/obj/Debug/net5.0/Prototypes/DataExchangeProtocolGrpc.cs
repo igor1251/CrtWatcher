@@ -54,7 +54,7 @@ namespace Kernel {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Kernel.HostRequest> __Marshaller_DataExchangeProtocol_HostRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Kernel.HostRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Kernel.SettingsRequest> __Marshaller_DataExchangeProtocol_SettingsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Kernel.SettingsRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Kernel.SettingsResponse> __Marshaller_DataExchangeProtocol_SettingsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Kernel.SettingsResponse.Parser));
 
@@ -83,11 +83,11 @@ namespace Kernel {
         __Marshaller_DataExchangeProtocol_Response);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Kernel.SettingsRequest, global::Kernel.SettingsResponse> __Method_GetSettings = new grpc::Method<global::Kernel.SettingsRequest, global::Kernel.SettingsResponse>(
+    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Kernel.SettingsResponse> __Method_GetSettings = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Kernel.SettingsResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetSettings",
-        __Marshaller_DataExchangeProtocol_SettingsRequest,
+        __Marshaller_google_protobuf_Empty,
         __Marshaller_DataExchangeProtocol_SettingsResponse);
 
     /// <summary>Service descriptor</summary>
@@ -119,7 +119,7 @@ namespace Kernel {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Kernel.SettingsResponse> GetSettings(global::Kernel.SettingsRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Kernel.SettingsResponse> GetSettings(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -148,7 +148,7 @@ namespace Kernel {
       serviceBinder.AddMethod(__Method_RegisterSingleUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Kernel.SingleUserRequest, global::Kernel.Response>(serviceImpl.RegisterSingleUser));
       serviceBinder.AddMethod(__Method_RegisterMultipleUsers, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Kernel.MultipleUsersRequest, global::Kernel.Response>(serviceImpl.RegisterMultipleUsers));
       serviceBinder.AddMethod(__Method_RegisterHost, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Kernel.HostRequest, global::Kernel.Response>(serviceImpl.RegisterHost));
-      serviceBinder.AddMethod(__Method_GetSettings, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Kernel.SettingsRequest, global::Kernel.SettingsResponse>(serviceImpl.GetSettings));
+      serviceBinder.AddMethod(__Method_GetSettings, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::Kernel.SettingsResponse>(serviceImpl.GetSettings));
     }
 
   }
