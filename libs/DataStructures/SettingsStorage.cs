@@ -12,10 +12,16 @@ namespace DataStructures
         public Task<Settings> LoadSettingsFromFile()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Settings));
+            var settings = new Settings();
             using (FileStream fs = new FileStream(_settingsPath, FileMode.OpenOrCreate, FileAccess.Read))
             {
-                if (fs.Length == 0) return Task.FromResult(new Settings());
-                var settings = serializer.Deserialize(fs) as Settings;
+                if (fs.Length == 0)
+                {
+                    fs.Close();
+                    SaveSettingsToFile(settings);
+                    return Task.FromResult(settings);
+                }
+                settings = serializer.Deserialize(fs) as Settings;
                 return Task.FromResult(settings);
             }
         }
