@@ -13,17 +13,16 @@ namespace DataStructures
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Settings));
             var settings = new Settings();
-            using (FileStream fs = new FileStream(_settingsPath, FileMode.OpenOrCreate, FileAccess.Read))
+            FileStream fs = new FileStream(_settingsPath, FileMode.OpenOrCreate, FileAccess.Read);
+            if (fs.Length == 0)
             {
-                if (fs.Length == 0)
-                {
-                    fs.Close();
-                    SaveSettingsToFile(settings);
-                    return Task.FromResult(settings);
-                }
-                settings = serializer.Deserialize(fs) as Settings;
+                fs.Close();
+                SaveSettingsToFile(settings);
                 return Task.FromResult(settings);
             }
+            settings = serializer.Deserialize(fs) as Settings;
+            fs.Close();
+            return Task.FromResult(settings);
         }
 
         public Task SaveSettingsToFile(Settings settings)
