@@ -578,69 +578,18 @@
           }
         }
       },
-      "ElectronicDigitalSignature.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/ElectronicDigitalSignature.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ElectronicDigitalSignature.Models.dll": {}
-        }
-      },
-      "ElectronicDigitalSignature.Services/1.0.0": {
+      "DataStructures/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Dapper": "2.0.123",
-          "ElectronicDigitalSignature.Models": "1.0.0",
-          "StoreServices.Services": "1.0.0",
           "System.Data.SQLite": "1.0.115.5"
         },
         "compile": {
-          "bin/placeholder/ElectronicDigitalSignature.Services.dll": {}
+          "bin/placeholder/DataStructures.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ElectronicDigitalSignature.Services.dll": {}
-        }
-      },
-      "HostsRegistrationService.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/HostsRegistrationService.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/HostsRegistrationService.Models.dll": {}
-        }
-      },
-      "HostsRegistrationService.Services/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Dapper": "2.0.123",
-          "HostsRegistrationService.Models": "1.0.0",
-          "StoreServices.Services": "1.0.0",
-          "System.Data.SQLite": "1.0.115.5"
-        },
-        "compile": {
-          "bin/placeholder/HostsRegistrationService.Services.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/HostsRegistrationService.Services.dll": {}
-        }
-      },
-      "StoreServices.Services/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "System.Data.SQLite": "1.0.115.5"
-        },
-        "compile": {
-          "bin/placeholder/StoreServices.Services.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/StoreServices.Services.dll": {}
+          "bin/placeholder/DataStructures.dll": {}
         }
       }
     }
@@ -1878,39 +1827,16 @@
         "version.txt"
       ]
     },
-    "ElectronicDigitalSignature.Models/1.0.0": {
+    "DataStructures/1.0.0": {
       "type": "project",
-      "path": "../../libs/ElectronicDigitalSignature.Models/ElectronicDigitalSignature.Models.csproj",
-      "msbuildProject": "../../libs/ElectronicDigitalSignature.Models/ElectronicDigitalSignature.Models.csproj"
-    },
-    "ElectronicDigitalSignature.Services/1.0.0": {
-      "type": "project",
-      "path": "../../libs/ElectronicDigitalSignature.Services/ElectronicDigitalSignature.Services.csproj",
-      "msbuildProject": "../../libs/ElectronicDigitalSignature.Services/ElectronicDigitalSignature.Services.csproj"
-    },
-    "HostsRegistrationService.Models/1.0.0": {
-      "type": "project",
-      "path": "../../libs/HostsRegistrationService.Models/HostsRegistrationService.Models.csproj",
-      "msbuildProject": "../../libs/HostsRegistrationService.Models/HostsRegistrationService.Models.csproj"
-    },
-    "HostsRegistrationService.Services/1.0.0": {
-      "type": "project",
-      "path": "../../libs/HostsRegistrationService.Services/HostsRegistrationService.Services.csproj",
-      "msbuildProject": "../../libs/HostsRegistrationService.Services/HostsRegistrationService.Services.csproj"
-    },
-    "StoreServices.Services/1.0.0": {
-      "type": "project",
-      "path": "../../libs/StoreServices.Services/StoreServices.Services.csproj",
-      "msbuildProject": "../../libs/StoreServices.Services/StoreServices.Services.csproj"
+      "path": "../../libs/DataStructures/DataStructures.csproj",
+      "msbuildProject": "../../libs/DataStructures/DataStructures.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "ElectronicDigitalSignature.Models >= 1.0.0",
-      "ElectronicDigitalSignature.Services >= 1.0.0",
-      "Grpc.AspNetCore >= 2.42.0",
-      "HostsRegistrationService.Models >= 1.0.0",
-      "HostsRegistrationService.Services >= 1.0.0"
+      "DataStructures >= 1.0.0",
+      "Grpc.AspNetCore >= 2.42.0"
     ]
   },
   "packageFolders": {
@@ -1945,17 +1871,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj": {
-              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\ElectronicDigitalSignature.Models\\ElectronicDigitalSignature.Models.csproj"
-            },
-            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj": {
-              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\ElectronicDigitalSignature.Services\\ElectronicDigitalSignature.Services.csproj"
-            },
-            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistrationService.Models.csproj": {
-              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Models\\HostsRegistrationService.Models.csproj"
-            },
-            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Services\\HostsRegistrationService.Services.csproj": {
-              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\HostsRegistrationService.Services\\HostsRegistrationService.Services.csproj"
+            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\DataStructures\\DataStructures.csproj": {
+              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\DataStructures\\DataStructures.csproj"
             }
           }
         }

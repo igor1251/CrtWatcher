@@ -61,9 +61,13 @@ message Response {
 	string comment = 2;
 }
 
+message SettingsResponse {
+	SettingsDTO settings = 1;
+}
+
 service ExchangeService {
 	rpc RegisterSingleUser (SingleUserRequest) returns (Response);
 	rpc RegisterMultipleUsers (MultipleUsersRequest) returns (Response);
 	rpc RegisterHost (HostRequest) returns (Response);
-	rpc GetSettings (SettingsRequest) returns (Response);
+	rpc GetSettings (SettingsRequest) returns (SettingsResponse);
 }

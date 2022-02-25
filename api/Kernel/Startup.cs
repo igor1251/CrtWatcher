@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataStructures;
 
 namespace Kernel
 {
@@ -26,6 +27,13 @@ namespace Kernel
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IDbContext, UsersDbContext>();
+            services.AddSingleton<IDbContext, HostsDbContext>();
+            services.AddSingleton<IUsersStorageQueries, UsersStorageQueries>();
+            services.AddSingleton<IHostsStorageQueries, HostsStorageQueries>();
+            services.AddSingleton<IUsersStorage, UsersStorage>();
+            services.AddSingleton<IHostsStorage, HostsStorage>();
+            services.AddSingleton<ISettingsStorage, SettingsStorage>();
             services.AddGrpc();
             services.AddControllers();
         }
