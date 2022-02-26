@@ -27,6 +27,7 @@ namespace Observer
                     services.AddSingleton<IUsersStorage, UsersStorage>();
                     services.AddSingleton<IHostsStorage, HostsStorage>();
                     services.AddSingleton<ISettingsStorage, SettingsStorage>();
+                    services.AddSingleton<ObserverConditionLoader>();
                     services.AddHostedService<Worker>();
                 });
     }

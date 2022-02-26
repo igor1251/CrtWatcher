@@ -6,8 +6,8 @@ namespace DataStructures
 {
     public class Settings : ISettings
     {
-        private int _verificationFrequency = 1, _mainServerPort = 1;
-        private string _mainServerIP = "127.0.0.1";
+        private int _verificationFrequency = 10, _mainServerPort = 5000;
+        private string _mainServerIP = "localhost";
 
         private const string SERVER_IP_REGULAR_EXPRESSION = @"(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"
 ;

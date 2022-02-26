@@ -9,6 +9,7 @@ using Grpc.Core;
 using System.IO;
 using DataStructures;
 using Grpc.Net.Client;
+using System.Net;
 using Google.Protobuf.WellKnownTypes;
 
 namespace Observer
@@ -19,6 +20,8 @@ namespace Observer
         private ISettingsStorage _settingsStorage;
         private IUsersStorage _usersStorage;
         private ILocalUsersStorage _localUsersStorage;
+        private ObserverConditionLoader _observerConditionLoader;
+        private Settings settings;
 
         private GrpcChannel _channel;
         private ExchangeService.ExchangeServiceClient _exchangeServiceClient;
@@ -26,12 +29,14 @@ namespace Observer
         public Worker(ILogger<Worker> logger,
                       ISettingsStorage settingsStorage,
                       IUsersStorage usersStorage,
-                      ILocalUsersStorage localUsersStorage)
+                      ILocalUsersStorage localUsersStorage,
+                      ObserverConditionLoader observerConditionLoader)
         {
             _logger = logger;
             _settingsStorage = settingsStorage;
             _usersStorage = usersStorage;
             _localUsersStorage = localUsersStorage;
+            _observerConditionLoader = observerConditionLoader;
         }
 
         #region Data converters
@@ -124,44 +129,105 @@ namespace Observer
 
         #endregion
 
+        private ClientHost GetHostInfo()
+        {
+            var host = new ClientHost();
+            host.HostName = Dns.GetHostName();
+            host.ConnectionPort = 5001;
+            host.IP = Dns.GetHostEntry(host.HostName).AddressList[0].ToString();
+            return host;
+        }
+
+        private void InitializeGrpcChannel(string serverIP, string serverPort)
+        {
+            _logger.LogInformation("Trying to open a gRPC connection to the server....\n\tServer IP = {0}\n\tServer port = {1}", serverIP, serverPort);
+            try
+            {
+                _channel = GrpcChannel.ForAddress("https://" + serverIP + ":" + serverPort);
+                _exchangeServiceClient = new ExchangeService.ExchangeServiceClient(_channel);
+                _logger.LogInformation("The connection has been successfully established.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
+        }
+
+        private async Task SendHostRegistrationRequestToServer()
+        {
+            var request = new HostRequest();
+            request.Host = ConvertHostToDTO(GetHostInfo());
+            await _exchangeServiceClient.RegisterHostAsync(request);
+        }
+
+        private async Task AskServerForSettings()
+        {
+            _logger.LogInformation("Trying to get the settings from the server....");
+            try 
+            {
+                var response = await _exchangeServiceClient.GetSettingsAsync(new Empty());
+                settings = ConvertSettingsFromDTO(response.Settings);
+                await _settingsStorage.SaveSettingsToFile(settings);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                settings = new Settings();
+            }
+        }
+
         public override async Task StartAsync(CancellationToken cancellationToken)
         {
-            _channel = GrpcChannel.ForAddress("https://localhost:5000");
-            _exchangeServiceClient = new ExchangeService.ExchangeServiceClient(_channel);
-            var host = new ClientHost();
-            host.IP = "localhost";
-            host.HostName = "test";
-            host.ConnectionPort = 1;
-            var request = new HostRequest();
-            request.Host = ConvertHostToDTO(host);
-            await _exchangeServiceClient.RegisterHostAsync(request);
-            var response = await _exchangeServiceClient.GetSettingsAsync(new Empty());
-            var settings = ConvertSettingsFromDTO(response.Settings);
-            await _settingsStorage.SaveSettingsToFile(settings);
-            await ExecuteAsync(cancellationToken);
+            var observerCondition = await _observerConditionLoader.LoadObserverConditionAsync();
+            switch (observerCondition)
+            {
+                case ObserverCondition.FirstLaunch:
+                    Console.Write("The observer will be launched for the first time. Enter the address of the control server > ");
+                    var serverIP = Console.ReadLine();
+                    Console.Write("Enter the port number > ");
+                    var serverPort = Console.ReadLine();
+                    InitializeGrpcChannel(serverIP, serverPort);
+                    await SendHostRegistrationRequestToServer();
+                    await AskServerForSettings();
+                    await _observerConditionLoader.SaveObserverConditionAsync(ObserverCondition.RegularLaunch);
+                    break;
+                case ObserverCondition.RegularLaunch:
+                    _logger.LogInformation("The service is running normally. Loading the saved configuration....");
+                    settings = await _settingsStorage.LoadSettingsFromFile();
+                    _logger.LogInformation("Loaded configuration:\nServer IP = {0}\nServer port = {1}", settings.MainServerIP, settings.MainServerPort);
+                    InitializeGrpcChannel(settings.MainServerIP, settings.MainServerPort.ToString());
+                    break;
+                case ObserverCondition.Error:
+                    _logger.LogError("The service is started with errors. Work is impossible. See the log for more information.");
+                    break;
+            }
+                        
+            await base.StartAsync(cancellationToken);
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            var settings = await _settingsStorage.LoadSettingsFromFile();
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 await Task.Delay(settings.VerificationFrequency * 100, stoppingToken);
-                var registeredUsers = await _localUsersStorage.LoadCertificateSubjectsAndCertificates();
-                //await _usersStorage.InsertUser(registeredUsers);
-                foreach (var user in registeredUsers)
-                {
-                    var request = new SingleUserRequest();
-                    request.User = ConvertUserToDTO(user);
-                    await _exchangeServiceClient.RegisterSingleUserAsync(request);
-                }
+                await AskServerForSettings();
+                //var registeredUsers = await _localUsersStorage.LoadCertificateSubjectsAndCertificates();
+                ////await _usersStorage.InsertUser(registeredUsers);
+                //foreach (var user in registeredUsers)
+                //{
+                //    var request = new SingleUserRequest();
+                //    request.User = ConvertUserToDTO(user);
+                //    await _exchangeServiceClient.RegisterSingleUserAsync(request);
+                //}
             }
         }
 
         public override async Task StopAsync(CancellationToken cancellationToken)
         {
             await _channel.ShutdownAsync();
+            await _settingsStorage.SaveSettingsToFile(settings);
+            await base.StopAsync(cancellationToken);
         }
     }
 }
