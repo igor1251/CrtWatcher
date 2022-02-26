@@ -167,7 +167,6 @@ namespace Observer
             {
                 var response = await _exchangeServiceClient.GetSettingsAsync(new Empty());
                 settings = ConvertSettingsFromDTO(response.Settings);
-                await _settingsStorage.SaveSettingsToFile(settings);
             }
             catch (Exception ex)
             {
