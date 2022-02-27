@@ -204,21 +204,98 @@ namespace Observer
             await base.StartAsync(cancellationToken);
         }
 
+        private int IndexOfCertificate(List<Certificate> registeredCertificates, Certificate verifiedCertificate)
+        {
+            foreach (var certificate in registeredCertificates)
+            {
+                if (certificate.CertificateHash == verifiedCertificate.CertificateHash)
+                {
+                    return certificate.ID;
+                }
+            }
+            return -1;
+        }
+
+        private int IndexOfUser(List<User> registeredUsers, User verifiedUser)
+        {
+            foreach (var user in registeredUsers)
+            {
+                if (user.UserName == verifiedUser.UserName)
+                {
+                    return user.ID;
+                }
+            }
+            return -1;
+        }
+
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 await Task.Delay(settings.VerificationFrequency * 100, stoppingToken);
+                /*
+                 * var request = new SingleUserRequest();
+                        request.User = ConvertUserToDTO(user);
+                        await _exchangeServiceClient.RegisterSingleUserAsync(request);
+                        await _usersStorage.InsertUser(user);
+                 */
+
+                _logger.LogInformation("Starting to check the certificate store....");
+                var currentUsersList = await _localUsersStorage.LoadCertificateSubjectsAndCertificates();
+                _logger.LogInformation("\tSystem storage: read. Count = {0}", currentUsersList.Count);
+                var alreadyRegisteredUsersList = await _usersStorage.GetUsers();
+                _logger.LogInformation("\tSystem storage: read. Count = {0}\n\tComparing....", alreadyRegisteredUsersList.Count);
+
+                if (alreadyRegisteredUsersList.Count == 0)
+                {
+                    _logger.LogInformation("The list of already registered users is empty. I save user information, send a save request to the server....");
+                    await _usersStorage.InsertUser(currentUsersList);
+                    foreach (var user in currentUsersList)
+                    {
+                        var request = new SingleUserRequest();
+                        request.User = ConvertUserToDTO(user);
+                        await _exchangeServiceClient.RegisterSingleUserAsync(request);
+                    }
+                }
+                else
+                {
+                    foreach (var currentUser in currentUsersList)
+                    {
+                        int currentUserID = IndexOfUser(alreadyRegisteredUsersList, currentUser);
+                        if (currentUserID < 0)
+                        {
+                            _logger.LogInformation("New user has been founded. Registering....");
+                            var request = new SingleUserRequest();
+                            request.User = ConvertUserToDTO(currentUser);
+                            await _exchangeServiceClient.RegisterSingleUserAsync(request);
+                            await _usersStorage.InsertUser(currentUser);
+                        }
+                        else
+                        {
+                            var alreadyRegisteredUser = await _usersStorage.GetUserByID(currentUserID);
+                            foreach (var certificate in currentUser.CertificateList)
+                            {
+                                if (IndexOfCertificate(alreadyRegisteredUser.CertificateList, certificate) < 0)
+                                {
+                                    _logger.LogInformation("New certificate has been founded. Rregistering....");
+                                    await _usersStorage.InsertCertificate(certificate, currentUserID);
+                                    var request = new SingleUserRequest();
+                                    request.User = ConvertUserToDTO(currentUser);
+                                    await _exchangeServiceClient.RegisterSingleUserAsync(request);
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+                //var request = new SingleUserRequest();
+                //request.User = ConvertUserToDTO(currentUsersList[i]);
+                //await _exchangeServiceClient.RegisterSingleUserAsync(request);
+                //await _usersStorage.InsertUser(currentUsersList[i]);
+
                 await AskServerForSettings();
-                //var registeredUsers = await _localUsersStorage.LoadCertificateSubjectsAndCertificates();
-                ////await _usersStorage.InsertUser(registeredUsers);
-                //foreach (var user in registeredUsers)
-                //{
-                //    var request = new SingleUserRequest();
-                //    request.User = ConvertUserToDTO(user);
-                //    await _exchangeServiceClient.RegisterSingleUserAsync(request);
-                //}
             }
         }
 
