@@ -1,8 +1,29 @@
-﻿@{
+﻿@model UsersViewModel
+@{
     ViewData["Title"] = "Users";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <fieldset>
+        <legend>Registered users</legend>
+        <table class="table table-hover table-sm table-stripped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in @Model.AvailableUsers)
+                {
+                    <tr>
+                        <td>@user.UserName</td>
+                        <td>@user.UserPhone</td>
+                        <td>@user.UserComment</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </fieldset>
 </div>

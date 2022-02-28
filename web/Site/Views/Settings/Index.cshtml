@@ -1,8 +1,32 @@
-﻿@{
+﻿@model SettingsViewModel
+@{
     ViewData["Title"] = "Settings";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <fieldset>
+        <legend>Service settings</legend>
+        <table class="table table-sm table-stripped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Main server IP</td>
+                    <td>@Model.ServiceSettings.MainServerIP</td>
+                </tr>
+                <tr>
+                    <td>Port</td>
+                    <td>@Model.ServiceSettings.MainServerPort</td>
+                </tr>
+                <tr>
+                    <td>Seconds before the warning</td>
+                    <td>@Model.ServiceSettings.VerificationFrequency</td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
 </div>

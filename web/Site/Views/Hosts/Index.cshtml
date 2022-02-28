@@ -1,8 +1,29 @@
-﻿@{
+﻿@model HostsViewModel
+@{
     ViewData["Title"] = "Hosts";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <fieldset>
+        <legend>Registered hosts</legend>
+        <table class="table table-hover table-sm table-stripped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>IP</th>
+                    <th>Hostname</th>
+                    <th>Port</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var host in @Model.AvailableHosts)
+                {
+                    <tr>
+                        <td>@host.IP</td>
+                        <td>@host.HostName</td>
+                        <td>@host.ConnectionPort</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </fieldset>
 </div>

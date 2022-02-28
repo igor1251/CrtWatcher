@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using System.Text;
 using System;
+using DataStructures;
+using Site.Models;
 
 namespace Site.Controllers
 {
@@ -19,7 +21,7 @@ namespace Site.Controllers
                                IHttpClientFactory httpClientFactory)
         {
             _logger = logger;
-            _httpClient = httpClientFactory.CreateClient("UsersHttpClient");
+            _httpClient = httpClientFactory.CreateClient("ApiHttpClient");
         }
 
         private async Task<T> LoadInfo<T>(string request) where T : new()
@@ -48,9 +50,10 @@ namespace Site.Controllers
             return result;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var users = await LoadInfo<List<User>>(RequestLinks.GetUsersFromDbLink);
+            return View(new UsersViewModel(users));
         }
     }
 }
