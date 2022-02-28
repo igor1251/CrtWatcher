@@ -129,12 +129,22 @@ namespace Observer
 
         #endregion
 
+        [Obsolete]
         private ClientHost GetHostInfo()
         {
             var host = new ClientHost();
             host.HostName = Dns.GetHostName();
             host.ConnectionPort = 5001;
-            host.IP = Dns.GetHostEntry(host.HostName).AddressList[0].ToString();
+
+            foreach (IPAddress ip in Dns.GetHostAddresses(host.HostName))
+            {
+                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    host.IP = ip.ToString();
+                    break;
+                }
+            }
+
             return host;
         }
 

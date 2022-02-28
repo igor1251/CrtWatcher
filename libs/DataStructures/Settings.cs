@@ -14,39 +14,29 @@ namespace DataStructures
 
         [Required]
         [JsonPropertyName("verificationFrequency")]
+        [Range(1, 999, ErrorMessage = "The check frequency must be greater than 0")]
         public int VerificationFrequency
         {
             get => _verificationFrequency;
-            set
-            {
-                if (value <= 0) throw new ArgumentException("The check frequency must be greater than 0");
-                _verificationFrequency = value;
-            }
+            set => _verificationFrequency = value;
         }
 
         [Required]
         [JsonPropertyName("mainServerPort")]
-        [Range(1, 65535)]
+        [Range(1, 65535, ErrorMessage = "The port number should be in the range from 1 to 65535")]
         public int MainServerPort
         {
             get => _mainServerPort;
-            set
-            {
-                if (value <= 0) throw new ArgumentException("The port number should be in the range from 1 to 65535");
-                _mainServerPort = value;
-            }
+            set => _mainServerPort = value;
         }
 
         [Required]
         [JsonPropertyName("mainServerIP")]
-        [RegularExpression(SERVER_IP_REGULAR_EXPRESSION, ErrorMessage = "Invalid server IP address")]
+        //[RegularExpression(SERVER_IP_REGULAR_EXPRESSION, ErrorMessage = "Invalid server IP address")]
         public string MainServerIP
         {
             get => _mainServerIP;
-            set
-            {
-                if (string.IsNullOrEmpty(value)) throw new ArgumentException("The server address cannot be empty");
-            }
+            set => _mainServerIP = value;
         }
     }
 }

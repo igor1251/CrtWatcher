@@ -382,3 +382,4 @@ D:\Libraries\Documents\GitHub\CrtWatcher\web\Site\bin\Debug\net5.0\Polly.Extensi
 D:\Libraries\Documents\GitHub\CrtWatcher\web\Site\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\web\Site\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\web\Site\obj\Debug\net5.0\Razor\Views\Certificates\Index.cshtml.g.cs
+D:\Libraries\Documents\GitHub\CrtWatcher\web\Site\obj\Debug\net5.0\Razor\Views\Users\Details.cshtml.g.cs

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace DataStructures
 {
@@ -13,6 +15,8 @@ namespace DataStructures
             _connectionPort = 0;
         }
 
+        [Required]
+        [JsonPropertyName("hostName")]
         public string HostName
         {
             get => string.IsNullOrEmpty(_hostName) ? "" : _hostName;
@@ -26,6 +30,8 @@ namespace DataStructures
             }
         }
 
+        [Required]
+        [JsonPropertyName("ip")]
         public string IP
         {
             get => string.IsNullOrEmpty(_ip) ? "" : _ip;
@@ -39,6 +45,8 @@ namespace DataStructures
             }
         }
 
+        [Required]
+        [JsonPropertyName("connectionPort")]
         public int ConnectionPort
         {
             get => _connectionPort;

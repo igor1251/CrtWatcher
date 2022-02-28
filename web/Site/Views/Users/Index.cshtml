@@ -12,6 +12,7 @@
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Comment</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +22,9 @@
                         <td>@user.UserName</td>
                         <td>@user.UserPhone</td>
                         <td>@user.UserComment</td>
+                        <td>
+                            <a asp-controller="Users" asp-action="Details" asp-route-id=@user.ID>Details</a>
+                        </td>
                     </tr>
                 }
             </tbody>

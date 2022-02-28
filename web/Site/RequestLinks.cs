@@ -10,6 +10,7 @@
                                       GetUsersFromSystemStoreLink = "https://" + IPAddr + ":" + Port + "/api/users/system",
                                       CertificatesResponseLink = "https://" + IPAddr + ":" + Port + "/api/certificates/",
                                       GetHostsFromDb = "https://" + IPAddr + ":" + Port + "/api/hosts/db",
-                                      GetSettings = "https://" + IPAddr + ":" + Port + "/api/settings";
+                                      GetSettings = "https://" + IPAddr + ":" + Port + "/api/settings/db",
+                                      SettingsResponseLink = "https://" + IPAddr + ":" + Port + "/api/settings/";
     }
 }

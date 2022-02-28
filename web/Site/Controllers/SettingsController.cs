@@ -53,7 +53,38 @@ namespace Site.Controllers
         public async Task<IActionResult> Index()
         {
             var settings = await LoadInfo<Settings>(RequestLinks.GetSettings);
+            _logger.LogInformation("Loaded settings is:\nServerIP = {0}\nServerPort = {1}\nWarnSecondsCount = {2}", settings.MainServerIP, settings.MainServerPort, settings.VerificationFrequency);
             return View(new SettingsViewModel(settings));
+        }
+
+        public async Task<IActionResult> SettingsEdit(string ip, int port, int freq)
+        {
+            var settings = new Settings();
+            settings.VerificationFrequency = freq;
+            settings.MainServerIP = ip;
+            settings.MainServerPort = port;
+
+            _logger.LogInformation("New settings is:\nServerIP = {0}\nServerPort = {1}\nWarnSecondsCount = {2}", settings.MainServerIP, settings.MainServerPort, settings.VerificationFrequency);
+
+            if (!ModelState.IsValid)
+            {
+                _logger.LogInformation("Settings model is invalid.");
+                return RedirectToAction("Index");
+            }
+
+            var updatedSettings = JsonSerializer.Serialize<Settings>(settings);
+            using (var requestContent = new StringContent(updatedSettings, Encoding.UTF8, "application/json"))
+            {
+                using (var response = await _httpClient.PutAsync(RequestLinks.SettingsResponseLink, requestContent))
+                {
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        _logger.LogWarning(response.StatusCode.ToString() + " " + response.ReasonPhrase);
+                    }
+                }
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

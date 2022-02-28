@@ -4,29 +4,39 @@
 }
 
 <div>
+    <div class="validation" asp-validation-summary="All" />
     <fieldset>
         <legend>Service settings</legend>
-        <table class="table table-sm table-stripped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Parameter</th>
-                    <th>Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Main server IP</td>
-                    <td>@Model.ServiceSettings.MainServerIP</td>
-                </tr>
-                <tr>
-                    <td>Port</td>
-                    <td>@Model.ServiceSettings.MainServerPort</td>
-                </tr>
-                <tr>
-                    <td>Seconds before the warning</td>
-                    <td>@Model.ServiceSettings.VerificationFrequency</td>
-                </tr>
-            </tbody>
-        </table>
+        <form asp-controller="Settings" asp-action="SettingsEdit">
+            <table class="table table-sm table-stripped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Main server IP</td>
+                        <td>
+                            <input value=@Model.ServiceSettings.MainServerIP name="ip" readonly="readonly" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Port</td>
+                        <td>
+                            <input type="number" value=@Model.ServiceSettings.MainServerPort name="port" readonly="readonly" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Seconds before the warning</td>
+                        <td>
+                            <input type="number" value=@Model.ServiceSettings.VerificationFrequency name="freq" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" class="btn btn-primary" value="Save" />
+        </form>
     </fieldset>
 </div>

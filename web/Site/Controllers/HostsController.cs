@@ -53,6 +53,10 @@ namespace Site.Controllers
         public async Task<IActionResult> Index()
         {
             var hosts = await LoadInfo<List<ClientHost>>(RequestLinks.GetHostsFromDb);
+            foreach (var item in hosts)
+            {
+                _logger.LogInformation("hostname = {0}, ip = {1}, port = {2}", item.HostName, item.IP, item.ConnectionPort);
+            }
             return View(new HostsViewModel(hosts));
         }
     }

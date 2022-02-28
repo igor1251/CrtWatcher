@@ -50,10 +50,44 @@ namespace Site.Controllers
             return result;
         }
 
+        private async Task<User> LoadUserInfo(int id)
+        {
+            return await LoadInfo<User>(RequestLinks.UsersResponseLink + id); ;
+        }
+
         public async Task<IActionResult> Index()
         {
             var users = await LoadInfo<List<User>>(RequestLinks.GetUsersFromDbLink);
             return View(new UsersViewModel(users));
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var userDetailsViewModel = new UserDetailsViewModel(await LoadUserInfo(id));
+            return View(userDetailsViewModel);
+        }
+
+        public async Task<IActionResult> UserEdit(User user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Details", user.ID);
+            }
+
+            var updatedUser = JsonSerializer.Serialize<User>(user);
+
+            using (var requestContent = new StringContent(updatedUser, Encoding.UTF8, "application/json"))
+            {
+                using (var response = await _httpClient.PutAsync(RequestLinks.UsersResponseLink, requestContent))
+                {
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        _logger.LogWarning(response.StatusCode.ToString() + " " + response.ReasonPhrase);
+                    }
+                }
+            }
+
+            return RedirectToAction("Details", new { id = user.ID });
         }
     }
 }

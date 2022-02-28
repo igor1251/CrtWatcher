@@ -21,6 +21,7 @@ namespace Kernel.Controllers
         }
 
         [HttpGet]
+        [Route("db")]
         public async Task<ActionResult<Settings>> GetSettings()
         {
             _logger.LogInformation("Trying to load information about the settings....");
