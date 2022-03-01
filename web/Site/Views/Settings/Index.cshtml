@@ -19,19 +19,19 @@
                     <tr>
                         <td>Main server IP</td>
                         <td>
-                            <input value=@Model.ServiceSettings.MainServerIP name="ip" readonly="readonly" />
+                            <input asp-for="Settings.MainServerIP" readonly="readonly" />
                         </td>
                     </tr>
                     <tr>
                         <td>Port</td>
                         <td>
-                            <input type="number" value=@Model.ServiceSettings.MainServerPort name="port" readonly="readonly" />
+                            <input asp-for="Settings.MainServerPort" readonly="readonly" />
                         </td>
                     </tr>
                     <tr>
                         <td>Seconds before the warning</td>
                         <td>
-                            <input type="number" value=@Model.ServiceSettings.VerificationFrequency name="freq" />
+                            <input asp-for="Settings.VerificationFrequency" />
                         </td>
                     </tr>
                 </tbody>

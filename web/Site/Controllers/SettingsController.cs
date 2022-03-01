@@ -57,13 +57,8 @@ namespace Site.Controllers
             return View(new SettingsViewModel(settings));
         }
 
-        public async Task<IActionResult> SettingsEdit(string ip, int port, int freq)
+        public async Task<IActionResult> SettingsEdit(Settings settings)
         {
-            var settings = new Settings();
-            settings.VerificationFrequency = freq;
-            settings.MainServerIP = ip;
-            settings.MainServerPort = port;
-
             _logger.LogInformation("New settings is:\nServerIP = {0}\nServerPort = {1}\nWarnSecondsCount = {2}", settings.MainServerIP, settings.MainServerPort, settings.VerificationFrequency);
 
             if (!ModelState.IsValid)

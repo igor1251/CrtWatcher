@@ -4,11 +4,11 @@ namespace Site.Models
 {
     public class SettingsViewModel
     {
-        public Settings ServiceSettings { get; set; }
+        public Settings Settings { get; set; }
 
         public SettingsViewModel(Settings settings)
         {
-            ServiceSettings = settings;
+            Settings = settings;
         }
     }
 }
