@@ -63,7 +63,6 @@ namespace Site.Controllers
 
             if (!ModelState.IsValid)
             {
-                _logger.LogInformation("Settings model is invalid.");
                 return RedirectToAction("Index");
             }
 

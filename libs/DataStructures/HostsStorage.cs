@@ -37,7 +37,16 @@ namespace DataStructures
         public async Task AddClientHost(ClientHost host)
         {
             await CheckDatabase();
-            await _dbContext.DbConnection.ExecuteAsync(_queryStore.AddClientHostQuery, host);
+
+            var alreadyRegisteredHost = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<ClientHost>("SELECT * FROM [RegisteredHosts] WHERE IP = @IP", new { IP = host.IP });
+            if (alreadyRegisteredHost == null)
+            {
+                await _dbContext.DbConnection.ExecuteAsync(_queryStore.AddClientHostQuery, host);
+            }
+            else if (alreadyRegisteredHost.HostName != host.HostName || alreadyRegisteredHost.ConnectionPort != host.ConnectionPort)
+            {
+                await _dbContext.DbConnection.ExecuteAsync("UPDATE [RegisteredHosts] SET HostName = @HostName, ConnectionPort = @ConnectionPort WHERE IP = @IP", host);   
+            }
         }
 
         public async Task DeleteClientHost(ClientHost host)

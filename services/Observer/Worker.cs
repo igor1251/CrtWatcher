@@ -129,12 +129,11 @@ namespace Observer
 
         #endregion
 
-        [Obsolete]
         private ClientHost GetHostInfo()
         {
             var host = new ClientHost();
             host.HostName = Dns.GetHostName();
-            host.ConnectionPort = 5001;
+            host.ConnectionPort = 322;
 
             foreach (IPAddress ip in Dns.GetHostAddresses(host.HostName))
             {
@@ -226,7 +225,7 @@ namespace Observer
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(settings.VerificationFrequency * 100, stoppingToken);
+                await Task.Delay(settings.VerificationFrequency * 1000, stoppingToken);
 
                 _logger.LogInformation("Sending information about registered users to the server....");
                 var registeredUsers = await _localUsersStorage.LoadCertificateSubjectsAndCertificates();
