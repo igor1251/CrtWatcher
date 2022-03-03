@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 
 namespace DataStructures
 {
@@ -10,7 +11,7 @@ namespace DataStructures
         int _id;
         string _userName = string.Empty, _userPhone = string.Empty, _userComment = string.Empty;
 
-        const string PHONE_TEMPLATE_REGULAR_EXPRESSION = @"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$";
+        const string PHONE_TEMPLATE_REGULAR_EXPRESSION = @"^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$";
 
         List<Certificate> _certificates;
 
@@ -44,6 +45,7 @@ namespace DataStructures
             get => _userPhone; 
             set
             {
+                if (!Regex.IsMatch(value, PHONE_TEMPLATE_REGULAR_EXPRESSION)) throw new ArgumentException("Not a valid phone number");
                 _userPhone = value;
             }
         }

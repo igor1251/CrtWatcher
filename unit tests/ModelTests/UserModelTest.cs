@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using DataStructures;
 
 namespace ModelTests
@@ -7,23 +8,60 @@ namespace ModelTests
     public class UserModelTest
     {
         User user;
-        Settings settings;
-        Certificate certificate;
-        ClientHost host;
 
         [SetUp]
         public void Setup()
         {
             user = new User();
-            settings = new Settings();
-            certificate = new Certificate();
-            host = new ClientHost();
         }
 
         [Test]
-        public void Test1()
+        public void FieldsTest()
         {
-            Assert.Pass();
+            Assert.Throws<ArgumentException>(() =>
+            {
+                user.ID = -1;
+            });
+            Assert.DoesNotThrow(() =>
+            {
+                user.ID = 10;
+            });
+            Assert.Throws<ArgumentException>(() =>
+            {
+                user.UserPhone = "erwuvybweurv";
+            });
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                user.UserPhone = null;
+            });
+            Assert.DoesNotThrow(() =>
+            {
+                user.UserPhone = "8(961)003-71-51";
+            });
+            Assert.DoesNotThrow(() =>
+            {
+                user.UserPhone = "+7(961)003-71-51";
+            });
+            Assert.DoesNotThrow(() =>
+            {
+                user.UserPhone = "+79610037151";
+            });
+            Assert.DoesNotThrow(() =>
+            {
+                user.UserPhone = "89610037151";
+            });
+            Assert.DoesNotThrow(() =>
+            {
+                user.UserPhone = "+7 961 003 71 51";
+            });
+            Assert.DoesNotThrow(() =>
+            {
+                user.UserPhone = "8 961 003 71 51";
+            });
+            Assert.Throws<ArgumentException>(() =>
+            {
+                user.UserPhone = "898989898";
+            });
         }
     }
 }
