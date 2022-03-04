@@ -30,10 +30,18 @@ namespace ModelTests
             {
                 user.UserPhone = "erwuvybweurv";
             });
-            Assert.Throws<ArgumentNullException>(() =>
+            Assert.DoesNotThrow(() =>
             {
                 user.UserPhone = null;
             });
+            Assert.DoesNotThrow(() =>
+            {
+                user.UserPhone = "";
+            });
+            //Assert.DoesNotThrow(() =>
+            //{
+            //    user.UserPhone = " ";
+            //});
             Assert.DoesNotThrow(() =>
             {
                 user.UserPhone = "8(961)003-71-51";

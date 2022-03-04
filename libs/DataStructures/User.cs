@@ -38,15 +38,19 @@ namespace DataStructures
             }
         }
 
-        [RegularExpression(PHONE_TEMPLATE_REGULAR_EXPRESSION, ErrorMessage = "Not a valid phone number")]
+        //[RegularExpression(PHONE_TEMPLATE_REGULAR_EXPRESSION, ErrorMessage = "Not a valid phone number")]
         [JsonPropertyName("userPhone")]
         public string UserPhone 
         { 
             get => _userPhone; 
             set
             {
-                if (!Regex.IsMatch(value, PHONE_TEMPLATE_REGULAR_EXPRESSION)) throw new ArgumentException("Not a valid phone number");
-                _userPhone = value;
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                {
+                    _userPhone = "";
+                }
+                else if (Regex.IsMatch(value, PHONE_TEMPLATE_REGULAR_EXPRESSION)) _userPhone = value;
+                else throw new ArgumentException("Not a valid phone number");
             }
         }
 

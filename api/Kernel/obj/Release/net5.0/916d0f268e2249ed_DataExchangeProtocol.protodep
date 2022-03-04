@@ -1,0 +1,4 @@
+obj\Release\net5.0\Prototypes/DataExchangeProtocol.cs \
+obj\Release\net5.0\Prototypes/DataExchangeProtocolGrpc.cs: C:/Users/Igor/.nuget/packages/grpc.tools/2.42.0/build/native/include/google/protobuf/timestamp.proto\
+ C:/Users/Igor/.nuget/packages/grpc.tools/2.42.0/build/native/include/google/protobuf/empty.proto\
+ Prototypes/DataExchangeProtocol.proto
