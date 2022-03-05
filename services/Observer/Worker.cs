@@ -164,9 +164,18 @@ namespace Observer
 
         private async Task SendHostRegistrationRequestToServer()
         {
-            var request = new HostRequest();
-            request.Host = ConvertHostToDTO(GetHostInfo());
-            await _exchangeServiceClient.RegisterHostAsync(request);
+            try
+            {
+                _logger.LogInformation("Trying to register this host on server....");
+                var request = new HostRequest();
+                request.Host = ConvertHostToDTO(GetHostInfo());
+                await _exchangeServiceClient.RegisterHostAsync(request);
+                _logger.LogInformation("Request has been successfully delivered.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
         }
 
         private async Task AskServerForSettings()
@@ -215,9 +224,18 @@ namespace Observer
 
         private async Task SendUserInfoToServer(User user)
         {
-            var request = new SingleUserRequest();
-            request.User = ConvertUserToDTO(user);
-            await _exchangeServiceClient.RegisterSingleUserAsync(request);
+            try
+            {
+                _logger.LogInformation("Sending information about registered users to the server....");
+                var request = new SingleUserRequest();
+                request.User = ConvertUserToDTO(user);
+                await _exchangeServiceClient.RegisterSingleUserAsync(request);
+                _logger.LogInformation("Infoormation has been successfully delivered.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -227,7 +245,6 @@ namespace Observer
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 await Task.Delay(settings.VerificationFrequency * 1000, stoppingToken);
 
-                _logger.LogInformation("Sending information about registered users to the server....");
                 var registeredUsers = await _localUsersStorage.LoadCertificateSubjectsAndCertificates();
                 foreach (var registeredUser in registeredUsers)
                 {
