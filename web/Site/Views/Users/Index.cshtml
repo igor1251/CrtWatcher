@@ -1,17 +1,17 @@
 ﻿@model UsersViewModel
 @{
-    ViewData["Title"] = "Users";
+    ViewData["Title"] = "Пользователи";
 }
 
 <div>
     <fieldset>
-        <legend>Registered users</legend>
+        <legend>Зарегистрированные пользователи</legend>
         <table class="table table-hover table-sm table-stripped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Comment</th>
+                    <th>Имя</th>
+                    <th>Номер телефона</th>
+                    <th>Комментарий</th>
                     <th></th>
                 </tr>
             </thead>
@@ -23,7 +23,8 @@
                         <td>@user.UserPhone</td>
                         <td>@user.UserComment</td>
                         <td>
-                            <a asp-controller="Users" asp-action="Details" asp-route-id=@user.ID>Details</a>
+                            <a asp-controller="Users" asp-action="Details" asp-route-id=@user.ID>Смотреть</a> | 
+                            <a asp-controller="Users" asp-action="Delete" asp-route-id=@user.ID>Удалить</a>
                         </td>
                     </tr>
                 }

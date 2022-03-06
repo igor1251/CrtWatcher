@@ -5,14 +5,14 @@
 
 <div>
     <fieldset>
-        <legend>User details</legend>
-        <form method="post" asp-controller="Users" asp-action="UserEdit">
+        <legend>Данные пользователя</legend>
+        <form method="post" asp-controller="Users" asp-action="Edit">
             <table class="table table-hover table-sm table-stripped">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Name</th>
-                        <th>Phone</th>
-                        <th>Comment</th>
+                        <th>Имя</th>
+                        <th>Номер телефона</th>
+                        <th>Комментарий</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +30,7 @@
                     </tr>
                 </tbody>
             </table>
-            <input type="submit" class="btn btn-primary" value="Save" />
+            <input type="submit" class="btn btn-primary" value="Сохранить" />
         </form>
 
         <br />
@@ -38,10 +38,11 @@
         <table class="table table-hover table-sm table-stripped">
              <thead class="thead-dark">
                  <tr>
-                     <th>Hash</th>
-                     <th>Algorithm</th>
-                     <th>Start date</th>
-                     <th>End date</th>
+                     <th>Хеш</th>
+                     <th>Алгоритм</th>
+                     <th>Дата начала</th>
+                     <th>Дата окончания</th>
+                     <th></th>
                  </tr>
              </thead>
              <tbody>
@@ -52,6 +53,9 @@
                         <td>@item.Algorithm</td>
                         <td>@item.StartDate</td>
                         <td>@item.EndDate</td>
+                        <td>
+                            <a asp-controller="Users" asp-action="RemoveCertificate" asp-route-certID=@item.ID asp-route-userID=@Model.User.ID>Удалить</a>
+                        </td>
                     </tr>
                 }
             </tbody>

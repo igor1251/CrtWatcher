@@ -1,6 +1,6 @@
 ﻿@model SettingsViewModel
 @{
-    ViewData["Title"] = "Settings";
+    ViewData["Title"] = "Настройки";
 }
 
 <div>
@@ -11,32 +11,32 @@
             <table class="table table-sm table-stripped">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Parameter</th>
-                        <th>Value</th>
+                        <th>Параметр</th>
+                        <th>Значение</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Main server IP</td>
+                        <td>IP сервера</td>
                         <td>
                             <input asp-for="Settings.MainServerIP" readonly="readonly" />
                         </td>
                     </tr>
                     <tr>
-                        <td>Port</td>
+                        <td>Порт</td>
                         <td>
                             <input asp-for="Settings.MainServerPort" readonly="readonly" />
                         </td>
                     </tr>
                     <tr>
-                        <td>Seconds before the warning</td>
+                        <td>Интервал синхронизации (сек)</td>
                         <td>
                             <input asp-for="Settings.VerificationFrequency" />
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <input type="submit" class="btn btn-primary" value="Save" />
+            <input type="submit" class="btn btn-primary" value="Сохранить" />
         </form>
     </fieldset>
 </div>

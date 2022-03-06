@@ -67,7 +67,7 @@ namespace Site.Controllers
             return View(userDetailsViewModel);
         }
 
-        public async Task<IActionResult> UserEdit(User user)
+        public async Task<IActionResult> Edit(User user)
         {
             if (!ModelState.IsValid)
             {
@@ -88,6 +88,32 @@ namespace Site.Controllers
             }
 
             return RedirectToAction("Details", new { id = user.ID });
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            using (var response = await _httpClient.DeleteAsync(RequestLinks.UsersResponseLink + id))
+            {
+                if (!response.IsSuccessStatusCode)
+                {
+                    _logger.LogWarning(response?.StatusCode.ToString() + " " + response.ReasonPhrase);
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> RemoveCertificate(int certID, int userID)
+        {
+            using (var response = await _httpClient.DeleteAsync(RequestLinks.CertificatesResponseLink + certID))
+            {
+                if (!response.IsSuccessStatusCode)
+                {
+                    _logger.LogWarning(response?.StatusCode.ToString() + " " + response.ReasonPhrase);
+                }
+            }
+
+            return RedirectToAction("Details", new { id = userID });
         }
     }
 }
