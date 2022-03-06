@@ -2,5 +2,5 @@
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <VerificationFrequency>10</VerificationFrequency>
   <MainServerPort>5000</MainServerPort>
-  <MainServerIP>localhost</MainServerIP>
+  <MainServerIP>192.168.55.104</MainServerIP>
 </Settings>

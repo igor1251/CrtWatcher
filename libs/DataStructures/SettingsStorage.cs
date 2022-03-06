@@ -2,12 +2,31 @@
 using System.IO;
 using System.Xml.Serialization;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace DataStructures
 {
     public class SettingsStorage : ISettingsStorage
     {
         private readonly string _settingsPath = Environment.CurrentDirectory + "\\settings.xml";
+
+        private ClientHost GetHostInfo()
+        {
+            var host = new ClientHost();
+            host.HostName = Dns.GetHostName();
+            host.ConnectionPort = 5000;
+
+            foreach (IPAddress ip in Dns.GetHostAddresses(host.HostName))
+            {
+                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    host.IP = ip.ToString();
+                    break;
+                }
+            }
+
+            return host;
+        }
 
         public Task<Settings> LoadSettingsFromFile()
         {
@@ -17,6 +36,8 @@ namespace DataStructures
             if (fs.Length == 0)
             {
                 fs.Close();
+                settings.MainServerIP = GetHostInfo().IP;
+                settings.MainServerPort = 5000;
                 SaveSettingsToFile(settings);
                 return Task.FromResult(settings);
             }

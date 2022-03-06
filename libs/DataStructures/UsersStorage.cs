@@ -65,25 +65,27 @@ namespace DataStructures
         public async Task InsertCertificate(Certificate certificate, int userID)
         {
             await CheckDatabase();
-            await _dbContext.DbConnection.QueryAsync(_queryStore.InsertCertificate, new 
-            { 
-                UserID = userID, 
-                CertificateHash = certificate.CertificateHash, 
-                Algorithm = certificate.Algorithm, 
-                StartDate = certificate.StartDate, 
-                EndDate = certificate.EndDate
-            });
+            if (!await CertificateExists(certificate))
+            {
+                await _dbContext.DbConnection.QueryAsync(_queryStore.InsertCertificate, new
+                {
+                    UserID = userID,
+                    CertificateHash = certificate.CertificateHash,
+                    Algorithm = certificate.Algorithm,
+                    StartDate = certificate.StartDate,
+                    EndDate = certificate.EndDate
+                });
+            }
         }
 
-        private bool CertificateExists(Certificate certificate, List<Certificate> alreadyRegisteredCertificates)
+        private async Task<bool> CertificateExists(Certificate certificate)
         {
-            foreach (var item in alreadyRegisteredCertificates)
+            var alreadyRegisteredCertificate = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<Certificate>("SELECT * FROM [Certificates] WHERE CertificateHash = @CertificateHash", new
             {
-                if (item.CertificateHash == certificate.CertificateHash)
-                {
-                    return true;
-                }
-            }
+                CertificateHash = certificate.CertificateHash,
+            });
+
+            if (alreadyRegisteredCertificate != null) return true;
             return false;
         }
 
@@ -95,21 +97,11 @@ namespace DataStructures
             if (alreadyRegisteredUser == null)
             {
                 await _dbContext.DbConnection.ExecuteAsync(_queryStore.InsertUser, user);
-                int userID = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<int>("SELECT ID FROM Users WHERE UserName=@Name", new { Name = user.UserName });
-                foreach (var item in user.CertificateList)
-                {
-                    await InsertCertificate(item, userID);
-                }
             }
-            else
+            int userID = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<int>("SELECT ID FROM Users WHERE UserName=@Name", new { Name = user.UserName });
+            foreach (var item in user.CertificateList)
             {
-                foreach (var certificate in user.CertificateList)
-                {
-                    if (!CertificateExists(certificate, alreadyRegisteredUser.CertificateList))
-                    {
-                        await InsertCertificate(certificate, alreadyRegisteredUser.ID);
-                    }
-                }
+                await InsertCertificate(item, userID);
             }
         }
 

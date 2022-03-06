@@ -258,7 +258,7 @@ namespace Observer
                     var serverIP = Console.ReadLine();
                     Console.Write("Enter the port number > ");
                     var serverPort = Console.ReadLine();
-                    InitializeGrpcChannel(serverIP, serverPort);
+                    //InitializeGrpcChannel(serverIP, serverPort);
                     await SendHostRegistrationRequestToServer();
                     await AskServerForSettings();
                     await _observerConditionLoader.SaveObserverConditionAsync(ObserverCondition.RegularLaunch);
@@ -267,7 +267,7 @@ namespace Observer
                     _logger.LogInformation("The service is running normally. Loading the saved configuration....");
                     settings = await _settingsStorage.LoadSettingsFromFile();
                     _logger.LogInformation("Loaded configuration:\nServer IP = {0}\nServer port = {1}", settings.MainServerIP, settings.MainServerPort);
-                    InitializeGrpcChannel(settings.MainServerIP, settings.MainServerPort.ToString());
+                    //InitializeGrpcChannel(settings.MainServerIP, settings.MainServerPort.ToString());
                     break;
                 case ObserverCondition.Error:
                     _logger.LogError("The service is started with errors. Work is impossible. See the log for more information.");
@@ -324,7 +324,7 @@ namespace Observer
 
         public override async Task StopAsync(CancellationToken cancellationToken)
         {
-            await _channel.ShutdownAsync();
+            //await _channel.ShutdownAsync();
             await _settingsStorage.SaveSettingsToFile(settings);
             await base.StopAsync(cancellationToken);
         }

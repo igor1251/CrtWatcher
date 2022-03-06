@@ -2,9 +2,9 @@
 {
     public class RequestLinks
     {
-        private readonly static string IPAddr = "crt-server",
-                                       Port = "80",
-                                       Proto = "https";
+        private readonly static string IPAddr = "192.168.55.104",
+                                       Port = "5000",
+                                       Proto = "http";
 
         public readonly static string UsersResponseLink = Proto + "://" + IPAddr + ":" + Port + "/api/users/",
                                       GetUsersFromDbLink = Proto + "://" + IPAddr + ":" + Port + "/api/users/db",
