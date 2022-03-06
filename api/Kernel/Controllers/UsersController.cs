@@ -69,6 +69,23 @@ namespace Kernel.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<ActionResult> AddUser(User user)
+        {
+            _logger.LogInformation("Trying to register new user....\nusername: {0}\nphone: {1}\ncomment: {2}", user.UserName, user.UserPhone, user.UserComment);
+            try
+            {
+                await _usersStorage.InsertUser(user);
+                _logger.LogInformation("The user has been successfully registered.");
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPut]
         public async Task<ActionResult> UpdateUser(User user)
         {

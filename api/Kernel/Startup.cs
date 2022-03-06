@@ -52,6 +52,8 @@ namespace Kernel
 
             app.UseAuthorization();
 
+            app.UseGrpcWeb();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<DataExchangeService>();

@@ -42,7 +42,24 @@ namespace Kernel.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                return BadRequest();
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> AddHost(ClientHost host)
+        {
+            _logger.LogInformation("Trying to register a client host....\nhostname: {0}\nip: {1}\nport: {2}", host.HostName, host.IP, host.ConnectionPort);
+            try
+            {
+                await _hostsStorage.AddClientHost(host);
+                _logger.LogInformation("The host has been successfully registered.");
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
             }
         }
 
@@ -59,7 +76,7 @@ namespace Kernel.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
 
@@ -76,7 +93,7 @@ namespace Kernel.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
     }

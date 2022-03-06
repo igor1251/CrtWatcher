@@ -11,6 +11,7 @@ D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\obj\Release\net5.0\PubTmp\Ou
 D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\obj\Release\net5.0\PubTmp\Out\Google.Protobuf.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\obj\Release\net5.0\PubTmp\Out\Grpc.AspNetCore.Server.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\obj\Release\net5.0\PubTmp\Out\Grpc.AspNetCore.Server.ClientFactory.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\obj\Release\net5.0\PubTmp\Out\Grpc.AspNetCore.Web.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\obj\Release\net5.0\PubTmp\Out\Grpc.Core.Api.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\obj\Release\net5.0\PubTmp\Out\Grpc.Net.Client.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\obj\Release\net5.0\PubTmp\Out\Grpc.Net.ClientFactory.dll

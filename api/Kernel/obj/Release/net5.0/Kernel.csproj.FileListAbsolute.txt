@@ -49,3 +49,4 @@ D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\obj\Release\net5.0\refint\Ke
 D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\obj\Release\net5.0\Kernel.pdb
 D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\obj\Release\net5.0\Kernel.genruntimeconfig.cache
 D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\obj\Release\net5.0\ref\Kernel.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\api\Kernel\bin\Release\net5.0\Grpc.AspNetCore.Web.dll

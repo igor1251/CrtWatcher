@@ -4,7 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Polly;
+using Polly.Extensions.Http;
 using DataStructures;
+using System.Net.Http;
 
 namespace Observer
 {
@@ -15,10 +18,19 @@ namespace Observer
             CreateHostBuilder(args).Build().Run();
         }
 
+        private static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
+        {
+            return HttpPolicyExtensions
+                .HandleTransientHttpError()
+                .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.NotFound)
+                .WaitAndRetryAsync(6, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
+        }
+
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
+                    services.AddHttpClient("ApiHttpClient").AddPolicyHandler(GetRetryPolicy());
                     services.AddSingleton<IDbContext, UsersDbContext>();
                     services.AddSingleton<IDbContext, HostsDbContext>();
                     services.AddSingleton<IUsersStorageQueries, UsersStorageQueries>();

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jgh6Kq/WWIRtKqtbPgljPBATZneNi5ZTquFAAEGFfB3Ay2xERRAPMwZGt6IHKWd18Cd7zskdCHb/uAIntV/Ewg==",
+  "dgSpecHash": "t8m9Ot3BiCsnyqCHtkuV2AzjLBlBM8vUhN80M1/1gqMHpujrJLkpyGBxxhjb8K9yXTakZLnfA7sMRzi3qJB97Q==",
   "success": true,
   "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\api\\Kernel\\Kernel.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Igor\\.nuget\\packages\\grpc.aspnetcore\\2.42.0\\grpc.aspnetcore.2.42.0.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\grpc.aspnetcore.server\\2.42.0\\grpc.aspnetcore.server.2.42.0.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\grpc.aspnetcore.server.clientfactory\\2.42.0\\grpc.aspnetcore.server.clientfactory.2.42.0.nupkg.sha512",
+    "C:\\Users\\Igor\\.nuget\\packages\\grpc.aspnetcore.web\\2.43.0\\grpc.aspnetcore.web.2.43.0.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\grpc.core.api\\2.42.0\\grpc.core.api.2.42.0.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\grpc.net.client\\2.42.0\\grpc.net.client.2.42.0.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\grpc.net.clientfactory\\2.42.0\\grpc.net.clientfactory.2.42.0.nupkg.sha512",

@@ -1,10 +1,10 @@
 ﻿namespace Site
 {
-    public class RequestLinks
+    public static class RequestLinks
     {
-        private readonly static string IPAddr = "crt-server",
-                                       Port = "80",
-                                       Proto = "https";
+        private readonly static string IPAddr = "192.168.55.104",
+                                       Port = "5000",
+                                       Proto = "http";
 
         public readonly static string UsersResponseLink = Proto + "://" + IPAddr + ":" + Port + "/api/users/",
                                       GetUsersFromDbLink = Proto + "://" + IPAddr + ":" + Port + "/api/users/db",
@@ -12,6 +12,7 @@
                                       CertificatesResponseLink = Proto + "://" + IPAddr + ":" + Port + "/api/certificates/",
                                       GetHostsFromDb = Proto + "://" + IPAddr + ":" + Port + "/api/hosts/db",
                                       GetSettings = Proto + "://" + IPAddr + ":" + Port + "/api/settings/db",
-                                      SettingsResponseLink = Proto + "://" + IPAddr + ":" + Port + "/api/settings/";
+                                      SettingsResponseLink = Proto + "://" + IPAddr + ":" + Port + "/api/settings/",
+                                      HostResponseLink = Proto + "://" + IPAddr + ":" + Port + "/api/hosts/";
     }
 }

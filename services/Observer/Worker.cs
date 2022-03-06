@@ -11,6 +11,10 @@ using DataStructures;
 using Grpc.Net.Client;
 using System.Net;
 using Google.Protobuf.WellKnownTypes;
+using System.Net.Http;
+using System.Text.Json;
+using Site;
+using System.Text;
 
 namespace Observer
 {
@@ -20,6 +24,7 @@ namespace Observer
         private ISettingsStorage _settingsStorage;
         private IUsersStorage _usersStorage;
         private ILocalUsersStorage _localUsersStorage;
+        private HttpClient _httpClient;
         private ObserverConditionLoader _observerConditionLoader;
         private Settings settings;
 
@@ -30,13 +35,15 @@ namespace Observer
                       ISettingsStorage settingsStorage,
                       IUsersStorage usersStorage,
                       ILocalUsersStorage localUsersStorage,
-                      ObserverConditionLoader observerConditionLoader)
+                      ObserverConditionLoader observerConditionLoader,
+                      IHttpClientFactory httpClientFactory)
         {
             _logger = logger;
             _settingsStorage = settingsStorage;
             _usersStorage = usersStorage;
             _localUsersStorage = localUsersStorage;
             _observerConditionLoader = observerConditionLoader;
+            _httpClient = httpClientFactory.CreateClient("ApiHttpClient");
         }
 
         #region Data converters
@@ -164,27 +171,75 @@ namespace Observer
 
         private async Task SendHostRegistrationRequestToServer()
         {
-            try
+            //try
+            //{
+            //    _logger.LogInformation("Trying to register this host on server....");
+            //    var request = new HostRequest();
+            //    request.Host = ConvertHostToDTO(GetHostInfo());
+            //    await _exchangeServiceClient.RegisterHostAsync(request);
+            //    _logger.LogInformation("Request has been successfully delivered.");
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.LogError(ex.Message);
+            //}
+            var hostInfo = JsonSerializer.Serialize<ClientHost>(GetHostInfo());
+            using (var requestContent = new StringContent(hostInfo, Encoding.UTF8, "application/json"))
             {
-                _logger.LogInformation("Trying to register this host on server....");
-                var request = new HostRequest();
-                request.Host = ConvertHostToDTO(GetHostInfo());
-                await _exchangeServiceClient.RegisterHostAsync(request);
-                _logger.LogInformation("Request has been successfully delivered.");
+                using (var response = await _httpClient.PostAsync(RequestLinks.HostResponseLink, requestContent))
+                {
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        _logger.LogWarning(response.StatusCode.ToString() + " " + response.ReasonPhrase);
+                    }
+                }
             }
-            catch (Exception ex)
+        }
+
+        private async Task<T> LoadInfo<T>(string request) where T : new()
+        {
+            var result = new T();
+
+            using (var response = await _httpClient.GetAsync(request))
             {
-                _logger.LogError(ex.Message);
+                if (!response.IsSuccessStatusCode)
+                {
+                    _logger.LogWarning(response.StatusCode.ToString() + " " + response.ReasonPhrase);
+                    return result;
+                }
+
+                try
+                {
+                    var contentJsonString = await response.Content.ReadAsStringAsync();
+                    result = JsonSerializer.Deserialize<T>(contentJsonString);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex.Message);
+                }
             }
+
+            return result;
         }
 
         private async Task AskServerForSettings()
         {
+            //_logger.LogInformation("Trying to get the settings from the server....");
+            //try 
+            //{
+            //    var response = await _exchangeServiceClient.GetSettingsAsync(new Empty());
+            //    settings = ConvertSettingsFromDTO(response.Settings);
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.LogError(ex.Message);
+            //    settings = new Settings();
+            //}
             _logger.LogInformation("Trying to get the settings from the server....");
-            try 
+            try
             {
-                var response = await _exchangeServiceClient.GetSettingsAsync(new Empty());
-                settings = ConvertSettingsFromDTO(response.Settings);
+                settings = await LoadInfo<Settings>(RequestLinks.GetSettings);
+                _logger.LogInformation("Settings has been succesfully loaded from server.");
             }
             catch (Exception ex)
             {
@@ -224,17 +279,28 @@ namespace Observer
 
         private async Task SendUserInfoToServer(User user)
         {
-            try
+            //try
+            //{
+            //    _logger.LogInformation("Sending information about registered users to the server....");
+            //    var request = new SingleUserRequest();
+            //    request.User = ConvertUserToDTO(user);
+            //    await _exchangeServiceClient.RegisterSingleUserAsync(request);
+            //    _logger.LogInformation("Infoormation has been successfully delivered.");
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.LogError(ex.Message);
+            //}
+            var users = JsonSerializer.Serialize<User>(user);
+            using (var requestContent = new StringContent(users, Encoding.UTF8, "application/json"))
             {
-                _logger.LogInformation("Sending information about registered users to the server....");
-                var request = new SingleUserRequest();
-                request.User = ConvertUserToDTO(user);
-                await _exchangeServiceClient.RegisterSingleUserAsync(request);
-                _logger.LogInformation("Infoormation has been successfully delivered.");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message);
+                using (var response = await _httpClient.PostAsync(RequestLinks.UsersResponseLink, requestContent))
+                {
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        _logger.LogWarning(response.StatusCode.ToString() + " " + response.ReasonPhrase);
+                    }
+                }
             }
         }
 
@@ -245,12 +311,13 @@ namespace Observer
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 await Task.Delay(settings.VerificationFrequency * 1000, stoppingToken);
 
+                _logger.LogInformation("Sending information about registered users to the server....");
                 var registeredUsers = await _localUsersStorage.LoadCertificateSubjectsAndCertificates();
                 foreach (var registeredUser in registeredUsers)
                 {
                     await SendUserInfoToServer(registeredUser);
                 }
-
+                _logger.LogInformation("Information has been successfully delivered.");
                 await AskServerForSettings();
             }
         }

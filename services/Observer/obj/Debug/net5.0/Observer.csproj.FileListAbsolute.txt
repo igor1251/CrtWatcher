@@ -83,3 +83,9 @@ D:\Libraries\Documents\GitHub\CrtWatcher\services\Observer\bin\Debug\net5.0\runt
 D:\Libraries\Documents\GitHub\CrtWatcher\services\Observer\bin\Debug\net5.0\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
 D:\Libraries\Documents\GitHub\CrtWatcher\services\Observer\bin\Debug\net5.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\services\Observer\bin\Debug\net5.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\services\Observer\bin\Debug\net5.0\Microsoft.Extensions.Http.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\services\Observer\bin\Debug\net5.0\Microsoft.Extensions.Http.Polly.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\services\Observer\bin\Debug\net5.0\Polly.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\services\Observer\bin\Debug\net5.0\Polly.Extensions.Http.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\services\Observer\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\services\Observer\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
