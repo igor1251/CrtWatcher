@@ -27,6 +27,13 @@ namespace DataStructures
         //    return host;
         //}
 
+        public SettingsStorage(IDbContext dbContext,
+                               IBaseStorageQueries queryStore)
+        {
+            _dbContext = dbContext;
+            _queryStore = queryStore;
+        }
+
         private async Task CheckDatabase()
         {
             if (!File.Exists(_dbContext.DbPath))

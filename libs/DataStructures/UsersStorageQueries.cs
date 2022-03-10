@@ -9,7 +9,7 @@
             _deleteUser = "DELETE FROM Users WHERE ID=@ID",
             _updateUsers = "UPDATE Users SET UserName=@UserName, UserPhone=@UserPhone, UserComment=@UserComment WHERE ID=@ID",
             _insertCertificate = "INSERT INTO Certificates (UserID, CertificateHash, Algorithm, StartDate, EndDate) VALUES (@UserID, @CertificateHash, @Algorithm, @StartDate, @EndDate)",
-            _insertUser = "INSERT INTO Users (UserName, UserPhone, UserComment) VALUES (@UserName, @UserPhone, @UserComment)",
+            _insertUser = "INSERT INTO Users (UserName, UserPhone, UserComment) VALUES (@UserName, @UserPhone, @UserComment)";
 
         public string GetCertificates => _getCertificates;
         public string GetUsers => _getUsers;

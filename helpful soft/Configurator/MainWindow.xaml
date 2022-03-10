@@ -1,0 +1,33 @@
+﻿<Window x:Class="Configurator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Configurator"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow"
+        SizeToContent="WidthAndHeight"
+        Title="Конфигуратор">
+    <Grid VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180" />
+            <ColumnDefinition Width="180" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+        <TextBox x:Name="mainServerIPTextBox" Grid.Row="0" Grid.Column="1" Margin="5 5 5 5" VerticalContentAlignment="Center" />
+        <TextBox x:Name="mainServerPortTextBox" Grid.Row="1" Grid.Column="1" Margin="5 5 5 5" VerticalContentAlignment="Center" />
+        <TextBox x:Name="verificationFrequencyTextBox" Grid.Row="2" Grid.Column="1" Margin="5 5 5 5" VerticalContentAlignment="Center" />
+        <Label Content="IP сервера" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" />
+        <Label Content="Порт подключения" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" />
+        <Label Content="Частота опроса хранилища" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" />
+        <Button x:Name="cancelButton" Content="Выход" Grid.Row="3" Grid.Column="0" Margin="5 5 5 5" Click="cancelButton_Click" />
+        <Button x:Name="acceptButton" Content="Применить" Grid.Row="3" Grid.Column="1" Margin="5 5 5 5" Click="acceptButton_Click" />
+    </Grid>
+</Window>
