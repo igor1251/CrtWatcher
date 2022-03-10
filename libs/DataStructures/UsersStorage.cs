@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Dapper;
 using System;
-using System.Linq;
 using System.IO;
 
 namespace DataStructures
@@ -12,11 +11,11 @@ namespace DataStructures
         IUsersStorageQueries _queryStore;
         IDbContext _dbContext;
 
-        public UsersStorage(IUsersStorageQueries queryStore, IEnumerable<IDbContext> registeredDbContexts)
+        public UsersStorage(IUsersStorageQueries queryStore, IDbContext dbContext)
         {
             _queryStore = queryStore;
-            _dbContext = registeredDbContexts.FirstOrDefault(dbContext => dbContext.GetType() == typeof(UsersDbContext));
-            if (_dbContext == null) throw new Exception("Implementation of 'UsersDbContext' not registered");
+            _dbContext = dbContext;
+            if (_dbContext == null) throw new Exception("Implementation of 'DbContext' not registered");
         }
 
         private async Task CheckDatabase()

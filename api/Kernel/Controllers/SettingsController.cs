@@ -27,7 +27,7 @@ namespace Kernel.Controllers
             _logger.LogInformation("Trying to load information about the settings....");
             try
             {
-                var settings = await _settingsStorage.LoadSettingsFromFile();
+                var settings = await _settingsStorage.LoadSettings();
                 _logger.LogInformation("Settings loaded successfully.");
                 return Ok(settings);
             }
@@ -44,7 +44,7 @@ namespace Kernel.Controllers
             _logger.LogInformation("Trying to update the settings....");
             try
             {
-                await _settingsStorage.SaveSettingsToFile(settings);
+                await _settingsStorage.UpdateSettings(settings);
                 _logger.LogInformation("Settings have been updated successfully.");
                 return Ok();
             }

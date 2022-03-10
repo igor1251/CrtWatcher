@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dapper;
 using System;
-using System.Linq;
 
 namespace DataStructures
 {
@@ -12,18 +11,18 @@ namespace DataStructures
         IDbContext _dbContext;
         IHostsStorageQueries _queryStore;
 
-        public HostsStorage(IEnumerable<IDbContext> registeredDbContexts, IHostsStorageQueries queryStore)
+        public HostsStorage(IDbContext dbContext, IHostsStorageQueries queryStore)
         {
             _queryStore = queryStore;
-            _dbContext = registeredDbContexts.FirstOrDefault(dbContext => dbContext.GetType() == typeof(HostsDbContext));
-            if (_dbContext == null) throw new Exception("Implementation of 'HostsDbContext' not registered");
+            _dbContext = dbContext;
+            if (_dbContext == null) throw new Exception("Implementation of 'DbContext' not registered");
         }
 
         private async Task CheckDatabase()
         {
             if (!File.Exists(_dbContext.DbPath))
             {
-                await _dbContext.DbConnection.ExecuteAsync(_queryStore.CreateTablesQuery);
+                await _dbContext.DbConnection.ExecuteAsync(_queryStore.CreateTables);
             }
         }
 

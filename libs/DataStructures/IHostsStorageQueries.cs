@@ -1,8 +1,7 @@
 ﻿namespace DataStructures
 {
-    public interface IHostsStorageQueries
+    public interface IHostsStorageQueries : IBaseStorageQueries
     {
-        string CreateTablesQuery { get; }
         string GetClientHostsQuery { get; }
         string AddClientHostQuery { get; }
         string UpdateClientHostQuery { get; }

@@ -122,7 +122,7 @@ namespace Kernel.gRPCServices
             var response = new SettingsResponse();
             try
             {
-                response.Settings = ConvertSettingsToDTO(await _settingsStore.LoadSettingsFromFile());
+                response.Settings = ConvertSettingsToDTO(await _settingsStore.LoadSettings());
                 _logger.LogInformation("The settings are loaded and ready to be sent.");
             }
             catch (Exception ex)

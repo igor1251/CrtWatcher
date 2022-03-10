@@ -3,12 +3,12 @@ using System.Data.SQLite;
 
 namespace DataStructures
 {
-    public class UsersDbContext : IDbContext
+    public class DbContext : IDbContext
     {
         SQLiteConnection _dbConnection;
-        string _dbPath = Environment.CurrentDirectory + "\\usersdb.sqlite";
+        string _dbPath = Environment.CurrentDirectory + "\\db.sqlite";
 
-        public UsersDbContext()
+        public DbContext()
         {
             _dbConnection = new SQLiteConnection("Data Source=" + _dbPath);
         }

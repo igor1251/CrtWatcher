@@ -1,59 +1,51 @@
-﻿using System;
-using System.IO;
-using System.Xml.Serialization;
+﻿using Dapper;
 using System.Threading.Tasks;
-using System.Net;
+using System.IO;
 
 namespace DataStructures
 {
     public class SettingsStorage : ISettingsStorage
     {
-        private readonly string _settingsPath = Environment.CurrentDirectory + "\\settings.xml";
+        IDbContext _dbContext;
+        IBaseStorageQueries _queryStore;
 
-        private ClientHost GetHostInfo()
+        //private ClientHost GetHostInfo()
+        //{
+        //    var host = new ClientHost();
+        //    host.HostName = Dns.GetHostName();
+        //    host.ConnectionPort = 5000;
+
+        //    foreach (IPAddress ip in Dns.GetHostAddresses(host.HostName))
+        //    {
+        //        if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+        //        {
+        //            host.IP = ip.ToString();
+        //            break;
+        //        }
+        //    }
+
+        //    return host;
+        //}
+
+        private async Task CheckDatabase()
         {
-            var host = new ClientHost();
-            host.HostName = Dns.GetHostName();
-            host.ConnectionPort = 5000;
-
-            foreach (IPAddress ip in Dns.GetHostAddresses(host.HostName))
+            if (!File.Exists(_dbContext.DbPath))
             {
-                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-                {
-                    host.IP = ip.ToString();
-                    break;
-                }
+                await _dbContext.DbConnection.ExecuteAsync(_queryStore.CreateTables);
             }
-
-            return host;
         }
 
-        public Task<Settings> LoadSettingsFromFile()
+        public async Task<Settings> LoadSettings()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(Settings));
-            var settings = new Settings();
-            FileStream fs = new FileStream(_settingsPath, FileMode.OpenOrCreate, FileAccess.Read);
-            if (fs.Length == 0)
-            {
-                fs.Close();
-                settings.MainServerIP = GetHostInfo().IP;
-                settings.MainServerPort = 5000;
-                SaveSettingsToFile(settings);
-                return Task.FromResult(settings);
-            }
-            settings = serializer.Deserialize(fs) as Settings;
-            fs.Close();
-            return Task.FromResult(settings);
+            await CheckDatabase();
+            var settings = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<Settings>("SELECT * FROM [Settings]");
+            return settings;
         }
 
-        public Task SaveSettingsToFile(Settings settings)
+        public async Task UpdateSettings(Settings settings)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(Settings));
-            using (FileStream fs = new FileStream(_settingsPath, FileMode.OpenOrCreate, FileAccess.Write))
-            {
-                serializer.Serialize(fs, settings);
-                return Task.FromResult(0);
-            }
+            await CheckDatabase();
+            await _dbContext.DbConnection.ExecuteAsync("UPDATE [Settings] SET VerificationFrequency = @VerificationFrequency, MainServerPort = @MainServerPort, MainServerIP = @MainServerIP", settings);
         }
     }
 }

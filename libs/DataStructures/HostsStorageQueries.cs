@@ -1,13 +1,11 @@
 ﻿namespace DataStructures
 {
-    public class HostsStorageQueries : IHostsStorageQueries
+    public class HostsStorageQueries : BaseStorageQueries, IHostsStorageQueries
     {
-        private readonly static string _createTablesQuery = "CREATE TABLE RegisteredHosts (HostName VARCHAR(50) NOT NULL, IP VARCHAR(30) NOT NULL, ConnectionPort INTEGER NOT NULL);",
-            _getClientsHostQuery = "SELECT * FROM [RegisteredHosts]",
-            _addClientHostQuery = "INSERT INTO [RegisteredHosts] (HostName, IP, ConnectionPort) VALUES (@HostName, @IP, @ConnectionPort)",
-            _updateClientHostQuery = "UPDATE [RegisteredHosts] SET ConnectionPort = @ConnectionPort",
-            _deleteClientHostQuery = "DELETE FROM [RegisteredHosts] WHERE IP = @IP";
-        public string CreateTablesQuery => _createTablesQuery;
+        private readonly static string _getClientsHostQuery = "SELECT * FROM [RegisteredHosts]",
+                                       _addClientHostQuery = "INSERT INTO [RegisteredHosts] (HostName, IP, ConnectionPort) VALUES (@HostName, @IP, @ConnectionPort)",
+                                       _updateClientHostQuery = "UPDATE [RegisteredHosts] SET ConnectionPort = @ConnectionPort",
+                                       _deleteClientHostQuery = "DELETE FROM [RegisteredHosts] WHERE IP = @IP";
 
         public string GetClientHostsQuery => _getClientsHostQuery;
 

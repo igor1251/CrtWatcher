@@ -1,6 +1,6 @@
 ﻿namespace DataStructures
 {
-    public interface IUsersStorageQueries
+    public interface IUsersStorageQueries : IBaseStorageQueries
     {
         string DeleteCertificate { get; }
         string DeleteUser { get; }
@@ -9,6 +9,5 @@
         string InsertUser { get; }
         string GetCertificates { get; }
         string GetUsers { get; }
-        string CreateTables { get; }
     }
 }
