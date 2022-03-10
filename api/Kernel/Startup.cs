@@ -28,12 +28,12 @@ namespace Kernel
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IDbContext, DbContext>();
-            services.AddSingleton<IDbContext, HostsDbContext>();
             services.AddSingleton<IUsersStorageQueries, UsersStorageQueries>();
             services.AddSingleton<IHostsStorageQueries, HostsStorageQueries>();
             services.AddSingleton<IUsersStorage, UsersStorage>();
             services.AddSingleton<IHostsStorage, HostsStorage>();
             services.AddSingleton<ISettingsStorage, SettingsStorage>();
+            services.AddSingleton<IBaseStorageQueries, BaseStorageQueries>();
             services.AddGrpc();
             services.AddControllers();
         }
@@ -46,7 +46,7 @@ namespace Kernel
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
