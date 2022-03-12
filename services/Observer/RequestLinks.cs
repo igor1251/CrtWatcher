@@ -2,7 +2,7 @@
 {
     public static class RequestLinks
     {
-        private readonly static string IPAddr = "192.168.55.104",
+        private readonly static string IPAddr = "192.168.55.101",
                                        Port = "5000",
                                        Proto = "http";
 

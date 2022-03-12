@@ -265,7 +265,7 @@ namespace Observer
                     break;
                 case ObserverCondition.RegularLaunch:
                     _logger.LogInformation("The service is running normally. Loading the saved configuration....");
-                    settings = await _settingsStorage.LoadSettingsFromFile();
+                    settings = await _settingsStorage.LoadSettings();
                     _logger.LogInformation("Loaded configuration:\nServer IP = {0}\nServer port = {1}", settings.MainServerIP, settings.MainServerPort);
                     //InitializeGrpcChannel(settings.MainServerIP, settings.MainServerPort.ToString());
                     break;
@@ -325,7 +325,7 @@ namespace Observer
         public override async Task StopAsync(CancellationToken cancellationToken)
         {
             //await _channel.ShutdownAsync();
-            await _settingsStorage.SaveSettingsToFile(settings);
+            await _settingsStorage.UpdateSettings(settings);
             await base.StopAsync(cancellationToken);
         }
     }

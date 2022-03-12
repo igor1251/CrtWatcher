@@ -28,6 +28,11 @@ namespace DataStructures
         {
             await CheckDatabase();
             var settings = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<Settings>("SELECT * FROM [Settings]");
+            if (settings == null)
+            {
+                await UpdateSettings(settings);
+                return new Settings();
+            }
             return settings;
         }
 

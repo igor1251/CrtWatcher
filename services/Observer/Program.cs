@@ -31,13 +31,13 @@ namespace Observer
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHttpClient("ApiHttpClient").AddPolicyHandler(GetRetryPolicy());
-                    services.AddSingleton<IDbContext, UsersDbContext>();
-                    services.AddSingleton<IDbContext, HostsDbContext>();
+                    services.AddSingleton<IDbContext, DbContext>();
                     services.AddSingleton<IUsersStorageQueries, UsersStorageQueries>();
                     services.AddSingleton<ILocalUsersStorage, LocalUsersStorage>();
                     services.AddSingleton<IHostsStorageQueries, HostsStorageQueries>();
                     services.AddSingleton<IUsersStorage, UsersStorage>();
                     services.AddSingleton<IHostsStorage, HostsStorage>();
+                    services.AddSingleton<IBaseStorageQueries, BaseStorageQueries>();
                     services.AddSingleton<ISettingsStorage, SettingsStorage>();
                     services.AddSingleton<ObserverConditionLoader>();
                     services.AddHostedService<Worker>();
