@@ -9,24 +9,6 @@ namespace DataStructures
         IDbContext _dbContext;
         IBaseStorageQueries _queryStore;
 
-        //private ClientHost GetHostInfo()
-        //{
-        //    var host = new ClientHost();
-        //    host.HostName = Dns.GetHostName();
-        //    host.ConnectionPort = 5000;
-
-        //    foreach (IPAddress ip in Dns.GetHostAddresses(host.HostName))
-        //    {
-        //        if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-        //        {
-        //            host.IP = ip.ToString();
-        //            break;
-        //        }
-        //    }
-
-        //    return host;
-        //}
-
         public SettingsStorage(IDbContext dbContext,
                                IBaseStorageQueries queryStore)
         {
@@ -46,13 +28,24 @@ namespace DataStructures
         {
             await CheckDatabase();
             var settings = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<Settings>("SELECT * FROM [Settings]");
+            if (settings == null)
+            {
+                await UpdateSettings(settings);
+                return new Settings();
+            }
             return settings;
         }
 
         public async Task UpdateSettings(Settings settings)
         {
             await CheckDatabase();
-            await _dbContext.DbConnection.ExecuteAsync("UPDATE [Settings] SET VerificationFrequency = @VerificationFrequency, MainServerPort = @MainServerPort, MainServerIP = @MainServerIP", settings);
+            await _dbContext.DbConnection.ExecuteAsync("DELETE FROM [Settings]");
+            await _dbContext.DbConnection.ExecuteAsync("INSERT INTO [Settings] (VerificationFrequency, MainServerPort, MainServerIP) VALUES (@VerificationFrequency, @MainServerPort, @MainServerIP);", new
+            {
+                VerificationFrequency = settings.VerificationFrequency,
+                MainServerPort = settings.MainServerPort,
+                MainServerIP = settings.MainServerIP
+            });
         }
     }
 }

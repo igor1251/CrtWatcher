@@ -42,7 +42,7 @@ namespace Kernel.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
 
@@ -65,7 +65,7 @@ namespace Kernel.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
 
@@ -124,6 +124,13 @@ namespace Kernel.Controllers
                 _logger.LogError(ex.Message);
                 return BadRequest();
             }
+        }
+
+        [HttpGet]
+        [Route("report")]
+        public async Task<FileContentResult> GetInactiveCertificates()
+        {
+            return null;
         }
     }
 }

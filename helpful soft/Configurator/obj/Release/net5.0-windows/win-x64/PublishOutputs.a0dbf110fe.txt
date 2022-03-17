@@ -1,0 +1,14 @@
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\Configurator.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\clrcompression.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\clrjit.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\coreclr.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\mscordaccore.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\D3DCompiler_47_cor3.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\PenImc_cor3.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\PresentationNative_cor3.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\vcruntime140_cor3.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\wpfgfx_cor3.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\sni.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\SQLite.Interop.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\DataStructures.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\helpful soft\Configurator\bin\Release\net5.0-windows\publish\win-x64\Configurator.exe
