@@ -35,6 +35,7 @@ namespace Kernel
             services.AddSingleton<ISettingsStorage, SettingsStorage>();
             services.AddSingleton<IBaseStorageQueries, BaseStorageQueries>();
             services.AddGrpc();
+            services.AddCors();
             services.AddControllers();
         }
 
@@ -46,17 +47,22 @@ namespace Kernel
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseHttpsRedirection();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials());
 
-            app.UseGrpcWeb();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<DataExchangeService>();
+                //endpoints.MapGrpcService<DataExchangeService>();
                 endpoints.MapControllers();
             });
         }

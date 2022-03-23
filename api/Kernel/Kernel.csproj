@@ -11,6 +11,7 @@
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.42.0" />
     <PackageReference Include="Grpc.AspNetCore.Web" Version="2.43.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.7" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.115.5" />
   </ItemGroup>
@@ -18,5 +19,7 @@
   <ItemGroup>
 	  <Protobuf Include="Prototypes\DataExchangeProtocol.proto" GrpcServices="Server" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 	
 </Project>
