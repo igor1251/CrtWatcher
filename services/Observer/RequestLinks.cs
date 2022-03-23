@@ -2,8 +2,8 @@
 {
     public static class RequestLinks
     {
-        private readonly static string IPAddr = "192.168.55.101",
-                                       Port = "5000",
+        private readonly static string IPAddr = "192.168.128.206",
+                                       Port = "8080",
                                        Proto = "http";
 
         public readonly static string UsersResponseLink = Proto + "://" + IPAddr + ":" + Port + "/api/users/",
