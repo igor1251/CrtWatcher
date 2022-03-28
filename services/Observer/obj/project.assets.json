@@ -2723,7 +2723,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Senior_Pomidor\\.nuget\\packages\\": {},
+    "C:\\Users\\Igor\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -2732,14 +2732,14 @@
       "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\services\\Observer\\Observer.csproj",
       "projectName": "Observer",
       "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\services\\Observer\\Observer.csproj",
-      "packagesPath": "C:\\Users\\Senior_Pomidor\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
       "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\services\\Observer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Senior_Pomidor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2748,7 +2748,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2813,7 +2812,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

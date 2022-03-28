@@ -254,10 +254,10 @@ namespace Observer
             switch (observerCondition)
             {
                 case ObserverCondition.FirstLaunch:
-                    Console.Write("The observer will be launched for the first time. Enter the address of the control server > ");
-                    var serverIP = Console.ReadLine();
-                    Console.Write("Enter the port number > ");
-                    var serverPort = Console.ReadLine();
+                    //Console.Write("The observer will be launched for the first time. Enter the address of the control server > ");
+                    //var serverIP = Console.ReadLine();
+                    //Console.Write("Enter the port number > ");
+                    //var serverPort = Console.ReadLine();
                     //InitializeGrpcChannel(serverIP, serverPort);
                     await SendHostRegistrationRequestToServer();
                     await AskServerForSettings();
