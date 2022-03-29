@@ -36,6 +36,10 @@ namespace DataStructures
         {
             await CheckDatabase();
             await _dbContext.DbConnection.QueryAsync(_queryStore.DeleteUser, new { ID = userID });
+            foreach (var certificate in await GetCertificates(userID))
+            {
+                await DeleteCertificate(certificate.ID);
+            }
         }
 
         public async Task<List<Certificate>> GetCertificates(int subjectID)
