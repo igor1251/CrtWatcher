@@ -11,13 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("dotnet-Observer-A8EED867-4D3C-4D2C-8BA6-06CE1637A0EA")]
-[assembly: System.Reflection.AssemblyCompanyAttribute("Observer")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("X509Observer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Observer")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Observer")]
+[assembly: System.Reflection.AssemblyProductAttribute("X509Observer")]
+[assembly: System.Reflection.AssemblyTitleAttribute("X509Observer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.

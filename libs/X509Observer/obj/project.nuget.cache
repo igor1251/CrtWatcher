@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VLhHkhUNYQK+syHRxAd+Kd/C7f5JRmKdZX//gORGtTv/FZGgs1R7+W66HEQOWruMoUSOu1VJpFlJzb7EOH8s0w==",
+  "dgSpecHash": "JLiCccKTKyYjk5g2+tWv2XqKdc8yobWKnbx7mOThHbf/YhT9huiuFvcSooPrBub7GWcC1i/6uhNSQW2MTB4lBA==",
   "success": true,
-  "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\DataStructures\\DataStructures.csproj",
+  "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\X509Observer\\X509Observer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Igor\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

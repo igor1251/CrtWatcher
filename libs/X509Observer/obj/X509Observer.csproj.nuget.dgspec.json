@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\DataStructures\\DataStructures.csproj": {}
+    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\X509Observer\\X509Observer.csproj": {}
   },
   "projects": {
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\DataStructures\\DataStructures.csproj": {
+    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\X509Observer\\X509Observer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\DataStructures\\DataStructures.csproj",
-        "projectName": "DataStructures",
-        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\DataStructures\\DataStructures.csproj",
+        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\X509Observer\\X509Observer.csproj",
+        "projectName": "X509Observer",
+        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\X509Observer\\X509Observer.csproj",
         "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
-        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\DataStructures\\obj\\",
+        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\libs\\X509Observer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
