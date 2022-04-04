@@ -2,7 +2,7 @@
 
 namespace X509Observer.Primitives.Base
 {
-    public interface IX509CertificateInfo
+    public interface IDigitalFingerprint
     {
         int ID { get; }
         string Hash { get; }

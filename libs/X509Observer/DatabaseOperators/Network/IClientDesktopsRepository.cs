@@ -4,7 +4,7 @@ using X509Observer.Primitives.Network;
 
 namespace X509Observer.DatabaseOperators.Network
 {
-    public interface IClientDesktopRepository
+    public interface IClientDesktopsRepository
     {
         Task<IEnumerable<ClientDesktop>> GetClientDesktopsAsync();
         Task<ClientDesktop> GetClientDesktopByIDAsync(int ID);
@@ -13,5 +13,7 @@ namespace X509Observer.DatabaseOperators.Network
         Task AddClientDesktopAsync(ClientDesktop clientDesktop);
         Task RemoveClientDesktopAsync(ClientDesktop clientDesktop);
         Task RemoveClientDesktopByIDAsync(int ID);
+        Task RemoveClientDesktopByIPAsync(string IP);
+        Task RemoveClientDesktopByNameAsync(string name);
     }
 }

@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace X509Observer.Primitives.Base
 {
-    public class X509CertificateInfo : IX509CertificateInfo
+    public class DigitalFingerprint : IDigitalFingerprint
     {
         private int _ID;
         private string _Hash = string.Empty;

@@ -6,11 +6,11 @@ using System.Text.RegularExpressions;
 
 namespace X509Observer.Primitives.Base
 {
-    public class X509Subject : IX509Subject
+    public class Subject : ISubject
     {
         private int _ID;
         private string _Name = string.Empty, _Phone = string.Empty;
-        private IEnumerable<IX509CertificateInfo> _Certificates;
+        private IEnumerable<DigitalFingerprint> _Fingerprints;
 
         const string PHONE_TEMPLATE_REGULAR_EXPRESSION = @"^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$";
 
@@ -48,13 +48,13 @@ namespace X509Observer.Primitives.Base
         }
 
         [Required]
-        [JsonPropertyName("certificates")]
-        public IEnumerable<IX509CertificateInfo> Certificates
+        [JsonPropertyName("fingerprints")]
+        public IEnumerable<DigitalFingerprint> Fingerprints
         {
-            get { return _Certificates; }
+            get { return _Fingerprints; }
             set
             {
-                _Certificates = value;
+                _Fingerprints = value;
             }
         }
     }

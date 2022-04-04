@@ -2,11 +2,11 @@
 
 namespace X509Observer.Primitives.Base
 {
-    public interface IX509Subject
+    public interface ISubject
     {
         int ID { get; }
         string Name { get; }
         string Phone { get; set; }
-        IEnumerable<IX509CertificateInfo> Certificates { get; set; }
+        IEnumerable<DigitalFingerprint> Fingerprints { get; set; }
     }
 }
