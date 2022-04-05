@@ -9,7 +9,7 @@ namespace X509Observer.DatabaseOperators.Basic
         Task<List<Subject>> GetSubjectsFromSystemStorageAsync();
         Task<List<Subject>> GetSubjectsAsync();
         Task<Subject> GetSubjectByIDAsync(int ID);
-        Task<List<DigitalFingerprint>> GetDigitalFingerprintsAsync();
+        Task<List<DigitalFingerprint>> GetDigitalFingerprintsBySubjectIDAsync(int subjectID);
         Task AddSubjectAsync(Subject subject);
         Task AddSubjectAsync(List<Subject> subjects);
         Task AddDigitalFingerprintAsync(DigitalFingerprint certificateInfo, int subjectID);

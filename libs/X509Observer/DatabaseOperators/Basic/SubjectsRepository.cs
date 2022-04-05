@@ -18,21 +18,28 @@ namespace X509Observer.DatabaseOperators.Basic
             _dbContext = dbContext;
         }
 
-        public async Task AddDigitalFingerprintAsync(DigitalFingerprint digitalFingerprint, int subjectID)
+        private async Task<bool> DigitalFingerprintExists(string hash)
         {
-            await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.ADD_DIGITAL_FINGERPRINT, digitalFingerprint);
+            var fingerprint = await _dbContext.DbConnection.QueryFirstOrDefault(SubjectsRepositoryQueries.GET_DIGITAL_FINGERPRINT_BY_HASH, new { Hash = hash });
+            if (fingerprint == null) return false;
+            return true;
         }
 
-        public async Task<List<DigitalFingerprint>> GetDigitalFingerprintsAsync()
+        public async Task AddDigitalFingerprintAsync(DigitalFingerprint digitalFingerprint, int subjectID)
         {
-            var digitalFingerprints = (await _dbContext.DbConnection.QueryAsync<DigitalFingerprint>(SubjectsRepositoryQueries.GET_DIGITAL_FINGERPRINTS)).ToList();
+            if (!await DigitalFingerprintExists(digitalFingerprint.Hash))
+                await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.ADD_DIGITAL_FINGERPRINT, new { SubjectID = subjectID, Hash = digitalFingerprint.Hash, Start = digitalFingerprint.Start, End = digitalFingerprint.End });
+        }
+
+        public async Task<List<DigitalFingerprint>> GetDigitalFingerprintsBySubjectIDAsync(int subjectID)
+        {
+            var digitalFingerprints = (await _dbContext.DbConnection.QueryAsync<DigitalFingerprint>(SubjectsRepositoryQueries.GET_DIGITAL_FINGERPRINTS_BY_SUBJECT_ID, new { SubjectID = subjectID })).ToList();
             return digitalFingerprints;
         }
 
-        #region ADD SUBJECT/S
         private async Task<int> IndexOfSubject(Subject subject)
         {
-            int subjectIDInDatabase = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<int>(SubjectsRepositoryQueries.GET_SUBJECT_ID);
+            int subjectIDInDatabase = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<int>(SubjectsRepositoryQueries.GET_SUBJECT_ID, new { Name = subject.Name });
             return subjectIDInDatabase;
         }
 
@@ -41,7 +48,7 @@ namespace X509Observer.DatabaseOperators.Basic
             var subjectIDInDatabase = await IndexOfSubject(subject);
             if (subjectIDInDatabase <= 0)
             {
-                await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.ADD_SUBJECT, subject);
+                await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.ADD_SUBJECT, new { Name = subject.Name, Phone = subject.Phone });
                 subjectIDInDatabase = await IndexOfSubject(subject);
             }
             foreach (var fingerprint in subject.Fingerprints)
@@ -58,19 +65,20 @@ namespace X509Observer.DatabaseOperators.Basic
             }
         }
 
-        #endregion
-
-        #region GET SUBJECT/S
-
         public async Task<Subject> GetSubjectByIDAsync(int ID)
         {
             var subject = await _dbContext.DbConnection.QueryFirstOrDefaultAsync(SubjectsRepositoryQueries.GET_SUBJECT_BY_ID, ID);
+            subject.Fingerprints = await GetDigitalFingerprintsBySubjectIDAsync(subject.ID);
             return subject;
         }
 
         public async Task<List<Subject>> GetSubjectsAsync()
         {
             var subjects = (await _dbContext.DbConnection.QueryAsync<Subject>(SubjectsRepositoryQueries.GET_SUBJECTS)).ToList();
+            foreach (var item in subjects)
+            {
+                item.Fingerprints = await GetDigitalFingerprintsBySubjectIDAsync(item.ID);
+            }
             return subjects;
         }
 
@@ -125,8 +133,6 @@ namespace X509Observer.DatabaseOperators.Basic
             certificatesCollection.Clear();
             return subjects;
         }
-
-        #endregion
 
         public async Task RemoveDigitalFingerptintByIDAsync(int ID)
         {
