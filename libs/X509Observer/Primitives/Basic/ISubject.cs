@@ -7,6 +7,6 @@ namespace X509Observer.Primitives.Basic
         int ID { get; }
         string Name { get; }
         string Phone { get; set; }
-        IEnumerable<DigitalFingerprint> Fingerprints { get; set; }
+        List<DigitalFingerprint> Fingerprints { get; set; }
     }
 }

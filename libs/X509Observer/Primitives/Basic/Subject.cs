@@ -8,14 +8,14 @@ namespace X509Observer.Primitives.Basic
 {
     public class Subject : ISubject
     {
-        private int _ID;
+        private int _ID = 0;
         private string _Name = string.Empty, _Phone = string.Empty;
-        private IEnumerable<DigitalFingerprint> _Fingerprints;
+        private List<DigitalFingerprint> _Fingerprints = new List<DigitalFingerprint>();
 
-        public Subject()
+        public Subject(int ID, string name)
         {
-            _ID = 0;
-            _Fingerprints = new List<DigitalFingerprint>();
+            _ID = ID;
+            _Name = name;
         }
 
         const string PHONE_TEMPLATE_REGULAR_EXPRESSION = @"^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$";
@@ -55,7 +55,7 @@ namespace X509Observer.Primitives.Basic
 
         [Required]
         [JsonPropertyName("fingerprints")]
-        public IEnumerable<DigitalFingerprint> Fingerprints
+        public List<DigitalFingerprint> Fingerprints
         {
             get { return _Fingerprints; }
             set

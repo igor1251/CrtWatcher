@@ -13,12 +13,12 @@ namespace X509Observer.Primitives.Database
 
         public DbContext()
         {
+            _DbConnection = new SQLiteConnection("Data Source=" + _DbPath);
+
             if (!File.Exists(_DbPath))
             {
                 _DbConnection.Execute(CommonRepositoriesQueries.CREATE_DATABASE);
-            }
-
-            _DbConnection = new SQLiteConnection("Data Source=" + _DbPath);
+            }            
         }
 
         public string DbPath

@@ -1,0 +1,15 @@
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\obj\Debug\net5.0\X509Observer.csproj.AssemblyReference.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\obj\Debug\net5.0\X509Observer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\obj\Debug\net5.0\X509Observer.AssemblyInfoInputs.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\obj\Debug\net5.0\X509Observer.AssemblyInfo.cs
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\obj\Debug\net5.0\X509Observer.csproj.CoreCompileInputs.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\bin\Debug\net5.0\X509Observer.deps.json
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\bin\Debug\net5.0\X509Observer.runtimeconfig.json
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\bin\Debug\net5.0\X509Observer.runtimeconfig.dev.json
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\bin\Debug\net5.0\X509Observer.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\bin\Debug\net5.0\X509Observer.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\obj\Debug\net5.0\X509Observer.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\obj\Debug\net5.0\refint\X509Observer.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\obj\Debug\net5.0\X509Observer.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\obj\Debug\net5.0\X509Observer.genruntimeconfig.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\libs\X509Observer\obj\Debug\net5.0\ref\X509Observer.dll

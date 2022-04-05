@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using Dapper;
+using System.Linq;
 using System.Threading.Tasks;
 using X509Observer.Primitives.Basic;
 using X509Observer.Primitives.Database;
+using System.Security.Cryptography.X509Certificates;
 using X509Observer.MagicStrings.DatabaseQueries;
 
 namespace X509Observer.DatabaseOperators.Basic
@@ -26,7 +28,7 @@ namespace X509Observer.DatabaseOperators.Basic
             await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.ADD_SUBJECT, subject);
         }
 
-        public async Task AddSubjectAsync(IEnumerable<Subject> subjects)
+        public async Task AddSubjectAsync(List<Subject> subjects)
         {
             foreach (var subject in subjects)
             {
@@ -34,9 +36,9 @@ namespace X509Observer.DatabaseOperators.Basic
             }
         }
 
-        public async Task<IEnumerable<DigitalFingerprint>> GetDigitalFingerprintsAsync()
+        public async Task<List<DigitalFingerprint>> GetDigitalFingerprintsAsync()
         {
-            var digitalFingerprints = await _dbContext.DbConnection.QueryAsync<DigitalFingerprint>(SubjectsRepositoryQueries.GET_DIGITAL_FINGERPRINTS);
+            var digitalFingerprints = (await _dbContext.DbConnection.QueryAsync<DigitalFingerprint>(SubjectsRepositoryQueries.GET_DIGITAL_FINGERPRINTS)).ToList();
             return digitalFingerprints;
         }
 
@@ -46,9 +48,61 @@ namespace X509Observer.DatabaseOperators.Basic
             return subject;
         }
 
-        public async Task<IEnumerable<Subject>> GetSubjectsAsync()
+        public async Task<List<Subject>> GetSubjectsAsync()
         {
-            var subjects = await _dbContext.DbConnection.QueryAsync<Subject>(SubjectsRepositoryQueries.GET_SUBJECTS);
+            var subjects = (await _dbContext.DbConnection.QueryAsync<Subject>(SubjectsRepositoryQueries.GET_SUBJECTS)).ToList();
+            return subjects;
+        }
+
+        private Task<int> FindSubject(List<Subject> subjects, string subjectName)
+        {
+            for (int i = 0; i < subjects.Count; i++)
+            {
+                if (subjects[i].Name == subjectName)
+                {
+                    return Task.FromResult(i);
+                }
+            }
+            return Task.FromResult(-1);
+        }
+
+        public async Task<List<Subject>> GetSubjectsFromSystemStorageAsync()
+        {
+            X509Store store = new X509Store("MY", StoreLocation.CurrentUser);
+            List<Subject> subjects = new List<Subject>();
+            store.Open(OpenFlags.ReadOnly);
+            X509Certificate2Collection certificatesCollection = store.Certificates;
+            foreach (X509Certificate x509Certificate in certificatesCollection)
+            {
+                using (X509Certificate2 x509 = new X509Certificate2(x509Certificate.GetRawCertData()))
+                {
+                    DigitalFingerprint digitalFingerprint = new DigitalFingerprint(0, x509.GetCertHashString(), x509.NotBefore, x509.NotAfter);
+
+                    string subjectName = "";
+                    foreach (var item in x509.Subject.Split(','))
+                    {
+                        if (item.IndexOf("CN") > -1)
+                        {
+                            subjectName = item.Remove(0, 3);                                    // немного волшебства
+                            if (subjectName.IndexOf('=') > -1)                                  //
+                                subjectName = subjectName.Remove(subjectName.IndexOf('='), 1);  //
+                        }
+                    }
+
+                    int subjectIndex = await FindSubject(subjects, subjectName);
+                    if (subjectIndex > -1)
+                    {
+                        subjects[subjectIndex].Fingerprints.Add(digitalFingerprint);
+                    }
+                    else
+                    {
+                        Subject subject = new Subject(0, subjectName);
+                        subject.Fingerprints.Add(digitalFingerprint);
+                        subjects.Add(subject);
+                    }
+                }
+            }
+            certificatesCollection.Clear();
             return subjects;
         }
 

@@ -6,11 +6,12 @@ namespace X509Observer.DatabaseOperators.Basic
 {
     public interface ISubjectsRepository
     {
-        Task<IEnumerable<Subject>> GetSubjectsAsync();
+        Task<List<Subject>> GetSubjectsFromSystemStorageAsync();
+        Task<List<Subject>> GetSubjectsAsync();
         Task<Subject> GetSubjectByIDAsync(int ID);
-        Task<IEnumerable<DigitalFingerprint>> GetDigitalFingerprintsAsync();
+        Task<List<DigitalFingerprint>> GetDigitalFingerprintsAsync();
         Task AddSubjectAsync(Subject subject);
-        Task AddSubjectAsync(IEnumerable<Subject> subjects);
+        Task AddSubjectAsync(List<Subject> subjects);
         Task AddDigitalFingerprintAsync(DigitalFingerprint certificateInfo);
         Task UpdateSubjectAsync(Subject subject);
         Task RemoveDigitalFingerptintByIDAsync(int ID);
