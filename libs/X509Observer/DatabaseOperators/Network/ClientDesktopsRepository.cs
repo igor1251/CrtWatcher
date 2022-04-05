@@ -1,57 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using Dapper;
 using System.Threading.Tasks;
+using X509Observer.Primitives.Database;
 using X509Observer.Primitives.Network;
+using X509Observer.MagicStrings.DatabaseQueries;
 
 namespace X509Observer.DatabaseOperators.Network
 {
     public class ClientDesktopsRepository : IClientDesktopsRepository
     {
-        public Task AddClientDesktopAsync(ClientDesktop clientDesktop)
+        private IDbContext _dbContext;
+
+        public ClientDesktopsRepository(IDbContext dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
         }
 
-        public Task<ClientDesktop> GetClientDesktopByIDAsync(int ID)
+        public async Task AddClientDesktopAsync(ClientDesktop clientDesktop)
         {
-            throw new NotImplementedException();
+            await _dbContext.DbConnection.ExecuteAsync(ClientDesktopsRepositoryQueries.ADD_CLIENT_DESKTOP, clientDesktop);
         }
 
-        public Task<ClientDesktop> GetClientDesktopByIPAsync(string IP)
+        public async Task<ClientDesktop> GetClientDesktopByIDAsync(int ID)
         {
-            throw new NotImplementedException();
+            var clientDesktop = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<ClientDesktop>(ClientDesktopsRepositoryQueries.GET_CLIENT_DESKTOP_BY_ID, ID);
+            return clientDesktop;
         }
 
-        public Task<ClientDesktop> GetClientDesktopByNameAsync(string name)
+        public async Task<ClientDesktop> GetClientDesktopByIPAsync(string IP)
         {
-            throw new NotImplementedException();
+            var clientDesktop = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<ClientDesktop>(ClientDesktopsRepositoryQueries.GET_CLIENT_DESKTOP_BY_IP, IP);
+            return clientDesktop;
         }
 
-        public Task<IEnumerable<ClientDesktop>> GetClientDesktopsAsync()
+        public async Task<ClientDesktop> GetClientDesktopByNameAsync(string name)
         {
-            throw new NotImplementedException();
+            var clientDesktop = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<ClientDesktop>(ClientDesktopsRepositoryQueries.GET_CLIENT_DESKTOP_BY_NAME, new { NAME = name });
+            return clientDesktop;
         }
 
-        public Task RemoveClientDesktopAsync(ClientDesktop clientDesktop)
+        public async Task<IEnumerable<ClientDesktop>> GetClientDesktopsAsync()
         {
-            throw new NotImplementedException();
+            var clientDesktops = await _dbContext.DbConnection.QueryAsync<ClientDesktop>(ClientDesktopsRepositoryQueries.GET_CLIENT_DESKTOPS);
+            return clientDesktops;
         }
 
-        public Task RemoveClientDesktopByIDAsync(int ID)
+        public async Task RemoveClientDesktopAsync(ClientDesktop clientDesktop)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task RemoveClientDesktopByIPAsync(string IP)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task RemoveClientDesktopByNameAsync(string name)
-        {
-            throw new NotImplementedException();
+            await _dbContext.DbConnection.ExecuteAsync(ClientDesktopsRepositoryQueries.REMOVE_CLIENT_DESKTOP_BY_IP, new { IP = clientDesktop.IP });
         }
     }
 }

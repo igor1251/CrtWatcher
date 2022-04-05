@@ -7,6 +7,5 @@ namespace X509Observer.DatabaseOperators.Service
     {
         Task<ObserverServiceConfiguration> LoadObserverServiceConfiguration();
         Task SaveObserverServiceConfiguration(ObserverServiceConfiguration configuration);
-        Task UpdateObserverServiceConfiguration(ObserverServiceConfiguration configuration);
     }
 }

@@ -12,8 +12,5 @@ namespace X509Observer.DatabaseOperators.Network
         Task<ClientDesktop> GetClientDesktopByIPAsync(string IP);
         Task AddClientDesktopAsync(ClientDesktop clientDesktop);
         Task RemoveClientDesktopAsync(ClientDesktop clientDesktop);
-        Task RemoveClientDesktopByIDAsync(int ID);
-        Task RemoveClientDesktopByIPAsync(string IP);
-        Task RemoveClientDesktopByNameAsync(string name);
     }
 }

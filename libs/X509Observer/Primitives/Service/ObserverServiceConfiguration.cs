@@ -9,6 +9,12 @@ namespace X509Observer.Primitives.Service
         private ObserverServiceCondition _Condition;
         private ConnectionInfo _ConnectionInfo;
 
+        public ObserverServiceConfiguration()
+        {
+            _Condition = ObserverServiceCondition.None;
+            _ConnectionInfo = new ConnectionInfo();
+        }
+
         [Required]
         [JsonPropertyName("condition")]
         public ObserverServiceCondition Condition

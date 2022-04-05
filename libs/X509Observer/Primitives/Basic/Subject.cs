@@ -4,13 +4,19 @@ using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
-namespace X509Observer.Primitives.Base
+namespace X509Observer.Primitives.Basic
 {
     public class Subject : ISubject
     {
         private int _ID;
         private string _Name = string.Empty, _Phone = string.Empty;
         private IEnumerable<DigitalFingerprint> _Fingerprints;
+
+        public Subject()
+        {
+            _ID = 0;
+            _Fingerprints = new List<DigitalFingerprint>();
+        }
 
         const string PHONE_TEMPLATE_REGULAR_EXPRESSION = @"^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$";
 

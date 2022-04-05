@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace X509Observer.Primitives.Base
+namespace X509Observer.Primitives.Basic
 {
     public interface IDigitalFingerprint
     {
