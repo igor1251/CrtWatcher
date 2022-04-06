@@ -3,28 +3,22 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
+using X509Observer.MagicStrings.RegularExpressions;
 
 namespace X509Observer.Primitives.Basic
 {
-    public class Subject : ISubject
+    public class Subject
     {
         private int _ID = 0;
         private string _Name = string.Empty, _Phone = string.Empty;
         private List<DigitalFingerprint> _Fingerprints = new List<DigitalFingerprint>();
-
-        public Subject(int ID, string name)
-        {
-            _ID = ID;
-            _Name = name;
-        }
-
-        const string PHONE_TEMPLATE_REGULAR_EXPRESSION = @"^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$";
 
         [Required]
         [JsonPropertyName("id")]
         public int ID
         {
             get { return _ID; }
+            init { _ID = value; }
         }
 
         [Required]
@@ -32,6 +26,7 @@ namespace X509Observer.Primitives.Basic
         public string Name
         {
             get { return _Name; }
+            init { _Name = value; }
         }
 
         [Required]
@@ -45,7 +40,7 @@ namespace X509Observer.Primitives.Basic
                 {
                     _Phone = string.Empty;
                 }
-                else if (!Regex.IsMatch(value, PHONE_TEMPLATE_REGULAR_EXPRESSION))
+                else if (!Regex.IsMatch(value, PhoneNumbersValidationStrings.PHONE_TEMPLATE_REGULAR_EXPRESSION))
                 {
                     throw new ArgumentException("The entered phone number does not meet the requirements.");
                 }

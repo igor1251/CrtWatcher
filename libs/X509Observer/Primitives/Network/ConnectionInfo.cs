@@ -6,7 +6,7 @@ using X509Observer.MagicStrings.RegularExpressions;
 
 namespace X509Observer.Primitives.Network
 {
-    public class ConnectionInfo : IConnectionInfo
+    public class ConnectionInfo
     {
         string _ServerIP = string.Empty, _ServerPort = string.Empty, _Protocol = string.Empty;
 

@@ -3,12 +3,13 @@ using System.IO;
 using Dapper;
 using System.Data.SQLite;
 using X509Observer.MagicStrings.DatabaseQueries;
+using X509Observer.MagicStrings.MaintananceFilesNames;
 
 namespace X509Observer.Primitives.Database
 {
     public class DbContext : IDbContext
     {
-        private string _DbPath = Environment.CurrentDirectory + "\\db.sqlite";
+        private string _DbPath = Environment.CurrentDirectory + "\\" + FileNames.MAIN_DATABASE_FILE_NAME;
         private SQLiteConnection _DbConnection;
 
         public DbContext()

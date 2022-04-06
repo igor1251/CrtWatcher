@@ -6,7 +6,7 @@ using X509Observer.MagicStrings.RegularExpressions;
 
 namespace X509Observer.Primitives.Network
 {
-    public class ClientDesktop : IClientDesktop
+    public class ClientDesktop
     {
         private string _IP;
         private string _Name = string.Empty, _Comment = string.Empty;

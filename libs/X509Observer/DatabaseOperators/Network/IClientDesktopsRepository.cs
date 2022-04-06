@@ -6,7 +6,7 @@ namespace X509Observer.DatabaseOperators.Network
 {
     public interface IClientDesktopsRepository
     {
-        Task<IEnumerable<ClientDesktop>> GetClientDesktopsAsync();
+        Task<List<ClientDesktop>> GetClientDesktopsAsync();
         Task<ClientDesktop> GetClientDesktopByIDAsync(int ID);
         Task<ClientDesktop> GetClientDesktopByNameAsync(string name);
         Task<ClientDesktop> GetClientDesktopByIPAsync(string IP);
