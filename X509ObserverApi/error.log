@@ -1,0 +1,7 @@
+07.04.2022 14:06:06
+	Error in module: GetSubjectByIDAsync(int ID)
+	Exception message is: "unknown error
+Insufficient parameters supplied to the command"
+07.04.2022 14:09:53
+	Error in module: GetSubjectByIDAsync(int subjectID)
+	Exception message is: "Cannot implicitly convert type 'object' to 'X509Observer.Primitives.Basic.Subject'. An explicit conversion exists (are you missing a cast?)"

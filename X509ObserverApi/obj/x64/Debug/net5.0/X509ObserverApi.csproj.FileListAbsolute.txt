@@ -1,0 +1,6 @@
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\obj\x64\Debug\net5.0\X509ObserverApi.csproj.AssemblyReference.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\obj\x64\Debug\net5.0\X509ObserverApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\obj\x64\Debug\net5.0\X509ObserverApi.AssemblyInfoInputs.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\obj\x64\Debug\net5.0\X509ObserverApi.AssemblyInfo.cs
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\obj\x64\Debug\net5.0\X509ObserverApi.csproj.CoreCompileInputs.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\obj\x64\Debug\net5.0\X509ObserverApi.MvcApplicationPartsAssemblyInfo.cache

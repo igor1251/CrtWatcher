@@ -104,17 +104,17 @@ namespace X509Observer.DatabaseOperators.Basic
             }
         }
 
-        public async Task<Subject> GetSubjectByIDAsync(int ID)
+        public async Task<Subject> GetSubjectByIDAsync(int subjectID)
         {
             var subject = new Subject();
             try
             {
-                subject = await _dbContext.DbConnection.QueryFirstOrDefaultAsync(SubjectsRepositoryQueries.GET_SUBJECT_BY_ID, ID);
+                subject = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<Subject>(SubjectsRepositoryQueries.GET_SUBJECT_BY_ID, new { ID = subjectID });
                 subject.Fingerprints = await GetDigitalFingerprintsBySubjectIDAsync(subject.ID);
             }
             catch (Exception ex)
             {
-                await ErrorReporter.MakeReport("GetSubjectByIDAsync(int ID)", ex);
+                await ErrorReporter.MakeReport("GetSubjectByIDAsync(int subjectID)", ex);
             }
             return subject;
         }
@@ -195,28 +195,28 @@ namespace X509Observer.DatabaseOperators.Basic
             return subjects;
         }
 
-        public async Task RemoveDigitalFingerptintByIDAsync(int ID)
+        public async Task RemoveDigitalFingerptintByIDAsync(int fingerprintID)
         {
             try
             {
-                await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.REMOVE_DIGITAL_FINGERPRINT_BY_ID, ID);
+                await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.REMOVE_DIGITAL_FINGERPRINT_BY_ID, new { ID = fingerprintID });
             }
             catch (Exception ex)
             {
-                await ErrorReporter.MakeReport("RemoveDigitalFingerptintByIDAsync(int ID)", ex);
+                await ErrorReporter.MakeReport("RemoveDigitalFingerptintByIDAsync(int fingerprintID)", ex);
             }
         }
 
-        public async Task RemoveSubjectByIDAsync(int ID)
+        public async Task RemoveSubjectByIDAsync(int subjectID)
         {
             try
             {
-                await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.REMOVE_SUBJECT_BY_ID, ID);
-                await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.REMOVE_DIGITAL_FINGERPRINTS_BY_SUBJECT_ID, ID);
+                await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.REMOVE_SUBJECT_BY_ID, new { ID = subjectID });
+                await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.REMOVE_DIGITAL_FINGERPRINTS_BY_SUBJECT_ID, new { ID = subjectID });
             }
             catch (Exception ex)
             {
-                await ErrorReporter.MakeReport("RemoveSubjectByIDAsync(int ID)", ex);
+                await ErrorReporter.MakeReport("RemoveSubjectByIDAsync(int subjectID)", ex);
             }
         }
 
@@ -224,7 +224,12 @@ namespace X509Observer.DatabaseOperators.Basic
         {
             try
             {
-                await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.UPDATE_SUBJECT, subject);
+                await _dbContext.DbConnection.ExecuteAsync(SubjectsRepositoryQueries.UPDATE_SUBJECT, new
+                {
+                    Name = subject.Name,
+                    Phone = subject.Phone,
+                    ID = subject.ID
+                });
             }
             catch (Exception ex)
             {
