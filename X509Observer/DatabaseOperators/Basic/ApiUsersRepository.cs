@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Dapper;
 using System.Threading.Tasks;
-using X509Observer.Primitives.Basic;
 using X509Observer.Primitives.Database;
 using X509Observer.Reporters;
 using X509Observer.MagicStrings.DatabaseQueries;
+using X509Observer.Primitives.Network;
 
 namespace X509Observer.DatabaseOperators.Basic
 {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Pa2mQ2L4dGSNBW0kPTWe8vuq/hIAmUU7VM+4ZdAz1mat073rPzjFzk+WXuGbVMyhDBPXY+Mistbkrrw1vDIeRg==",
+  "dgSpecHash": "9uRB7TDxPWXjJPGNs7CBN0V1ymJnih0zO6Gv/WBDxSYjUs18qtFPnSGzv3Ozd1MtEcrukk7Lbx8R6E0mjGkKfg==",
   "success": true,
   "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509ObserverApi\\X509ObserverApi.csproj",
   "expectedPackageFiles": [
@@ -33,8 +33,7 @@
     "C:\\Users\\Igor\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.7.0\\system.security.cryptography.protecteddata.4.7.0.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\Igor\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\Igor\\.nuget\\packages\\x509observer\\1.0.0\\x509observer.1.0.0.nupkg.sha512"
+    "C:\\Users\\Igor\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -23,6 +23,12 @@
                                                         "CREATE TABLE ApiUsers (" +
                                                         "ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                                                         "UserName VARCHAR(120) NOT NULL, " +
-                                                        "PasswordHash VARCHAR(256) NOT NULL);";
+                                                        "PasswordHash VARCHAR(256) NOT NULL," + 
+                                                        "ApiKeyID INTEGER);" + 
+                                                        "" + 
+                                                        "CREATE TABLE ApiKeys (" +
+                                                        "ApiUserID INTEGER NOT NULL," + 
+                                                        "Value VARCHAR(256) NOT NULL," +
+                                                        "ExpirationTime DATETIME NOT NULL);";
     }
 }

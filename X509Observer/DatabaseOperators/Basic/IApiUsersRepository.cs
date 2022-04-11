@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using X509Observer.Primitives.Basic;
+using X509Observer.Primitives.Network;
 
 namespace X509Observer.DatabaseOperators.Basic
 {
