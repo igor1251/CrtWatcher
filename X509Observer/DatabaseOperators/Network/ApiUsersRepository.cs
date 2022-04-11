@@ -8,7 +8,7 @@ using X509Observer.Reporters;
 using X509Observer.MagicStrings.DatabaseQueries;
 using X509Observer.Primitives.Network;
 
-namespace X509Observer.DatabaseOperators.Basic
+namespace X509Observer.DatabaseOperators.Network
 {
     public class ApiUsersRepository : IApiUsersRepository
     {
@@ -23,11 +23,19 @@ namespace X509Observer.DatabaseOperators.Basic
         {
             try
             {
-                await _dbContext.DbConnection.ExecuteAsync(ApiUsersRepositoryQueries.ADD_API_USER, new
+                var apiKey = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<ApiUser>("SELECT * FROM [ApiUsers] WHERE UserName=@UserName AND PasswordHash=@PasswordHash", new
                 {
                     UserName = user.UserName,
                     PasswordHash = user.PasswordHash
                 });
+                if (apiKey == null)
+                {
+                    await _dbContext.DbConnection.ExecuteAsync(ApiUsersRepositoryQueries.ADD_API_USER, new
+                    {
+                        UserName = user.UserName,
+                        PasswordHash = user.PasswordHash
+                    });
+                }
             }
             catch (Exception ex)
             {

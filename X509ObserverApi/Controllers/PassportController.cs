@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using X509Observer.DatabaseOperators.Basic;
+using X509Observer.DatabaseOperators.Network;
 using X509Observer.Primitives.Network;
 using X509Observer.Reporters;
 
@@ -13,8 +13,14 @@ namespace X509ObserverApi.Controllers
     [Route("[controller]")]
     public class PassportController : ControllerBase
     {
-        private ILogger<PassportController> _logger;
-        private IApiUsersRepository _apiUsersRepository;
+        private readonly ILogger<PassportController> _logger;
+        private readonly IApiUsersRepository _apiUsersRepository;
+
+        public PassportController(ILogger<PassportController> logger, IApiUsersRepository apiUsersRepository)
+        {
+            _logger = logger;
+            _apiUsersRepository = apiUsersRepository;
+        }
 
         [HttpPost]
         [Route("register")]

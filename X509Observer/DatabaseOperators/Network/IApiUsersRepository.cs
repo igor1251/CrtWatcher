@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using X509Observer.Primitives.Network;
 
-namespace X509Observer.DatabaseOperators.Basic
+namespace X509Observer.DatabaseOperators.Network
 {
     public interface IApiUsersRepository
     {
