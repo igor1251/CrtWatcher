@@ -18,6 +18,11 @@
                                                         "IP VARCHAR(30) NOT NULL, " +
                                                         "Name VARCHAR(50) NOT NULL, " +
                                                         "Comment VARCHAR(50) NOT NULL, " +
-                                                        "LastResponseTime DATETIME NOT NULL);";
+                                                        "LastResponseTime DATETIME NOT NULL);" +
+                                                        "" +
+                                                        "CREATE TABLE ApiUsers (" +
+                                                        "ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                                                        "UserName VARCHAR(120) NOT NULL, " +
+                                                        "PasswordHash VARCHAR(256));";
     }
 }
