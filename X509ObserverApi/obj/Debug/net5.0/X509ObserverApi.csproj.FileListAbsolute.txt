@@ -42,3 +42,7 @@ D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\obj\Debug\net5.0\X509Ob
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\obj\Debug\net5.0\X509ObserverApi.genruntimeconfig.cache
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\obj\Debug\net5.0\ref\X509ObserverApi.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\bin\Debug\net5.0\X509Observer.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverApi\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
