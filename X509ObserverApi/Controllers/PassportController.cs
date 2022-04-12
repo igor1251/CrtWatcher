@@ -3,8 +3,8 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using X509Observer.DatabaseOperators.Network;
-using X509Observer.Primitives.Network;
+using X509Observer.Identity.Basic;
+using X509Observer.Identity.Database;
 using X509Observer.Reporters;
 
 namespace X509ObserverApi.Controllers

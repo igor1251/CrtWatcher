@@ -11,8 +11,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using X509Observer.DatabaseOperators.Basic;
 using X509Observer.DatabaseOperators.Network;
+using X509Observer.Identity.Network.Middleware;
 using X509Observer.Primitives.Database;
-using X509ObserverApi.Middleware;
 
 namespace X509ObserverApi
 {
