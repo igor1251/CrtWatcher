@@ -3,12 +3,15 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using X509Observer.DatabaseOperators.Basic;
-using X509Observer.Primitives.Basic;
+using X509Observer.Common.Entities;
+using X509Observer.Identity.Entities;
 using X509Observer.Reporters;
+using X509Observer.Server.Repositories;
+using X509ObserverApi.Attributes;
 
-namespace Kernel.Controllers
+namespace X509ObserverApi.Controllers
 {
+    [Authorization(ApiRole.Administrator)]
     [ApiController]
     [Route("api/[controller]")]
     public class SubjectsController : ControllerBase
@@ -17,7 +20,7 @@ namespace Kernel.Controllers
         private ISubjectsRepository _subjectsRepository;
 
         public SubjectsController(ILogger<SubjectsController> logger,
-                               ISubjectsRepository subjectsRepository)
+                                  ISubjectsRepository subjectsRepository)
         {
             _logger = logger;
             _subjectsRepository = subjectsRepository;

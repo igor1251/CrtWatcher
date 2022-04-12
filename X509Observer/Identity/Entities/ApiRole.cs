@@ -8,14 +8,9 @@ using System.Threading.Tasks;
 
 namespace X509Observer.Identity.Entities
 {
-    public class ApiRole
+    public enum ApiRole
     {
-        [Required]
-        [JsonPropertyName("id")]
-        public int ID { get; init; }
-
-        [Required]
-        [JsonPropertyName("name")]
-        public string Name { get; init; }
+        Administrator,
+        User
     }
 }

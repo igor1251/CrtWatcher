@@ -2,8 +2,8 @@
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System;
-using X509Observer.DatabaseOperators.Basic;
 using X509Observer.Reporters;
+using X509Observer.Server.Repositories;
 
 namespace Kernel.Controllers
 {

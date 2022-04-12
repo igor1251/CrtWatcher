@@ -9,10 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using X509Observer.DatabaseOperators.Basic;
-using X509Observer.DatabaseOperators.Network;
-using X509Observer.Identity.Network.Middleware;
-using X509Observer.Primitives.Database;
+using X509Observer.Common.Contexts;
+using X509Observer.Server.Repositories;
+using X509ObserverApi.Middleware;
 
 namespace X509ObserverApi
 {
@@ -28,7 +27,6 @@ namespace X509ObserverApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IClientDesktopsRepository, ClientDesktopsRepository>();
             services.AddSingleton<ISubjectsRepository, SubjectsRepository>();
             services.AddSingleton<IDbContext, DbContext>();
             services.AddCors();

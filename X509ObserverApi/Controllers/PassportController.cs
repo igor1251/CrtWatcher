@@ -1,11 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using X509Observer.Identity.Basic;
-using X509Observer.Identity.Database;
+using X509Observer.Identity.Entities;
+using X509Observer.Identity.Repositories;
 using X509Observer.Reporters;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
 
 namespace X509ObserverApi.Controllers
 {
@@ -15,6 +19,7 @@ namespace X509ObserverApi.Controllers
     {
         private readonly ILogger<PassportController> _logger;
         private readonly IApiUsersRepository _apiUsersRepository;
+        private readonly IConfiguration _configuration;
 
         public PassportController(ILogger<PassportController> logger, IApiUsersRepository apiUsersRepository)
         {
@@ -28,8 +33,12 @@ namespace X509ObserverApi.Controllers
         {
             try
             {
+                user.Role = ApiRole.User;
                 await _apiUsersRepository.AddApiUserAsync(user);
-                var apiKey = "test-api-key";
+                var token = new JwtSecurityTokenHandler();
+                var descriptor = new SecurityTokenDescriptor();
+                descriptor.Subject = new System.Security.Claims.ClaimsIdentity()
+                var apiKey = "";
                 return Ok(apiKey);
             }
             catch (Exception ex)
