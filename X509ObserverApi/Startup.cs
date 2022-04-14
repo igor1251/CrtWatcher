@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using X509Observer.Common.Contexts;
+using X509Observer.Identity.MaintenanceTools;
+using X509Observer.Identity.Repositories;
 using X509Observer.Server.Repositories;
 using X509ObserverApi.Middleware;
 
@@ -28,6 +30,8 @@ namespace X509ObserverApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ISubjectsRepository, SubjectsRepository>();
+            services.AddSingleton<IApiUsersRepository, ApiUsersRepository>();
+            services.AddSingleton<JwtTokensOperator>();
             services.AddSingleton<IDbContext, DbContext>();
             services.AddCors();
             services.AddControllers();

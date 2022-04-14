@@ -37,7 +37,7 @@ namespace X509Observer.Identity.MaintenanceTools
             return Task.FromResult(tokenHandler.WriteToken(token));
         }
 
-        public async Task<ApiUser> Validate(string token, string secret)
+        public async Task<ApiUser> ValidateAsync(string token, string secret)
         {
             try
             {
@@ -52,6 +52,8 @@ namespace X509Observer.Identity.MaintenanceTools
                     ClockSkew = TimeSpan.Zero
                 });
                 var userID = int.Parse(((JwtSecurityToken)validationResult.SecurityToken).Claims.First(x => x.Type == "ID").Value);
+                //var founedUser = await _apiUsersRepository.GetApiUserByIDAsync(userID);
+                //founedUser.Role = "administrator";
                 return await _apiUsersRepository.GetApiUserByIDAsync(userID);
             }
             catch (Exception ex)

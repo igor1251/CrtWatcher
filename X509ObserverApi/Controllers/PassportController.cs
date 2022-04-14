@@ -17,12 +17,17 @@ namespace X509ObserverApi.Controllers
         private readonly ILogger<PassportController> _logger;
         private readonly IApiUsersRepository _apiUsersRepository;
         private readonly JwtTokensOperator _jwtTokenOperator;
+        private readonly IConfiguration _configuration;
 
-        public PassportController(ILogger<PassportController> logger, IApiUsersRepository apiUsersRepository, JwtTokensOperator jwtTokenOperator)
+        public PassportController(ILogger<PassportController> logger, 
+                                  IApiUsersRepository apiUsersRepository, 
+                                  JwtTokensOperator jwtTokenOperator,
+                                  IConfiguration configuration)
         {
             _logger = logger;
             _apiUsersRepository = apiUsersRepository;
             _jwtTokenOperator = jwtTokenOperator;
+            _configuration = configuration;
         }
 
         [HttpPost]
@@ -31,9 +36,10 @@ namespace X509ObserverApi.Controllers
         {
             try
             {
-                user.Role = ApiRole.User;
+                user.Role = "user";
                 await _apiUsersRepository.AddApiUserAsync(user);
-                var apiKey = _jwtTokenOperator.Generate(user, 365, "secret");
+                var createdUser = await _apiUsersRepository.GetApiUserByUserNameAsync(user.UserName);
+                var apiKey = _jwtTokenOperator.Generate(createdUser, int.Parse(_configuration["KeyValidityPeriod"]), _configuration["Secret"]);
                 return Ok(apiKey);
             }
             catch (Exception ex)
@@ -50,8 +56,7 @@ namespace X509ObserverApi.Controllers
         {
             try
             {
-                //логика авторизации. вообще лучше запилить сервис авторизации
-                var apiKey = "test-api-key";
+                var apiKey = _jwtTokenOperator.Generate(user, int.Parse(_configuration["KeyValidityPeriod"]), _configuration["Secret"]);
                 return Ok(apiKey);
             }
             catch (Exception ex)

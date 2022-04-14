@@ -8,6 +8,8 @@ namespace X509Observer.Identity.Repositories
     {
         Task<ApiUser> GetApiUserByIDAsync(int userID);
         Task<List<ApiUser>> GetApiUsersAsync();
+        Task<ApiUser> GetApiUserByUserNameAsync(string username);
+        Task<int> GetApiUserIDAsync(string username);
         Task AddApiUserAsync(ApiUser user);
         Task UpdateApiUserAsync(ApiUser user);
         Task RemoveApiUserAsync(int userID);

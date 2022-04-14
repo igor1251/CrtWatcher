@@ -4,9 +4,12 @@ using System.Threading.Tasks;
 using System;
 using X509Observer.Reporters;
 using X509Observer.Server.Repositories;
+using X509ObserverApi.Attributes;
+using X509Observer.Identity.Entities;
 
 namespace Kernel.Controllers
 {
+    [Authorization("administrator")]
     [ApiController]
     [Route("api/[controller]")]
     public class DigitalFingerprintsController : ControllerBase

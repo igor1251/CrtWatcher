@@ -9,9 +9,9 @@ namespace X509ObserverApi.Attributes
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class AuthorizationAttribute : Attribute, IAuthorizationFilter
     {
-        private ApiRole _apiRole;
+        private string _apiRole;
 
-        public AuthorizationAttribute(ApiRole apiRole)
+        public AuthorizationAttribute(string apiRole)
         {
             _apiRole = apiRole;
         }

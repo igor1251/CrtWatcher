@@ -19,6 +19,6 @@ namespace X509Observer.Identity.Entities
 
         [Required]
         [JsonPropertyName("role")]
-        public ApiRole Role { get; set; }
+        public string Role { get; set; }
     }
 }

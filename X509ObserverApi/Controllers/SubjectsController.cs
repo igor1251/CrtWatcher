@@ -11,7 +11,7 @@ using X509ObserverApi.Attributes;
 
 namespace X509ObserverApi.Controllers
 {
-    [Authorization(ApiRole.Administrator)]
+    [Authorization("administrator")]
     [ApiController]
     [Route("api/[controller]")]
     public class SubjectsController : ControllerBase

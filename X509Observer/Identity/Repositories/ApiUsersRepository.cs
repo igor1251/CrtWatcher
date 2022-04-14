@@ -60,6 +60,40 @@ namespace X509Observer.Identity.Repositories
             return null;
         }
 
+        public async Task<ApiUser> GetApiUserByUserNameAsync(string username)
+        {
+            try
+            {
+                var user = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<ApiUser>(ApiUsersRepositoryQueries.GET_API_USER_BY_USERNAME, new
+                {
+                    UserName = username
+                });
+                return user;
+            }
+            catch (Exception ex)
+            {
+                await ErrorReporter.MakeReport("GetApiUserByUserNameAsync(string username)", ex);
+            }
+            return null;
+        }
+
+        public async Task<int> GetApiUserIDAsync(string username)
+        {
+            try
+            {
+                var userID = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<int>(ApiUsersRepositoryQueries.GET_API_USER_ID, new
+                {
+                    UserName = username
+                });
+                return userID;
+            }
+            catch (Exception ex)
+            {
+                await ErrorReporter.MakeReport("GetApiUserIDAsync(string username)", ex);
+            }
+            return -1;
+        }
+
         public async Task<List<ApiUser>> GetApiUsersAsync()
         {
             try
