@@ -36,7 +36,7 @@ namespace X509ObserverApi.Controllers
         {
             try
             {
-                user.Role = "user";
+                user.Role = ApiRole.USER;
                 await _apiUsersRepository.AddApiUserAsync(user);
                 var createdUser = await _apiUsersRepository.GetApiUserByUserNameAsync(user.UserName);
                 var apiKey = _jwtTokenOperator.Generate(createdUser, int.Parse(_configuration["KeyValidityPeriod"]), _configuration["Secret"]);

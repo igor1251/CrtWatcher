@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-
-namespace X509Observer.Identity.Entities
+﻿namespace X509Observer.Identity.Entities
 {
-    public enum ApiRole
+    public static class ApiRole
     {
-        Administrator,
-        User
+        public const string USER = "user",
+                            ADMINISTRATOR = "administrator";
     }
 }
