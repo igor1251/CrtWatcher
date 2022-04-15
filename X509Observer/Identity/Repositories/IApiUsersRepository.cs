@@ -13,5 +13,6 @@ namespace X509Observer.Identity.Repositories
         Task AddApiUserAsync(ApiUser user);
         Task UpdateApiUserAsync(ApiUser user);
         Task RemoveApiUserAsync(int userID);
+        Task<bool> IsApiUserExistsAsync(ApiUser user);
     }
 }

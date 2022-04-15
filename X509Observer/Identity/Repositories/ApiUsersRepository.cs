@@ -23,23 +23,24 @@ namespace X509Observer.Identity.Repositories
         {
             try
             {
-                var apiKey = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<ApiUser>("SELECT * FROM [ApiUsers] WHERE UserName=@UserName AND PasswordHash=@PasswordHash", new
+                var isApiUserExists = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<bool>(ApiUsersRepositoryQueries.IS_API_USER_EXISTS, new
                 {
                     UserName = user.UserName,
                     PasswordHash = user.PasswordHash
                 });
-                if (apiKey == null)
+                if (!isApiUserExists)
                 {
                     await _dbContext.DbConnection.ExecuteAsync(ApiUsersRepositoryQueries.ADD_API_USER, new
                     {
                         UserName = user.UserName,
-                        PasswordHash = user.PasswordHash
+                        PasswordHash = user.PasswordHash,
+                        Role = user.Role
                     });
                 }
             }
             catch (Exception ex)
             {
-                await ErrorReporter.MakeReport("", ex);
+                await ErrorReporter.MakeReport("AddApiUserAsync(ApiUser user)", ex);
             }
         }
 
@@ -130,13 +131,32 @@ namespace X509Observer.Identity.Repositories
                 await _dbContext.DbConnection.ExecuteAsync(ApiUsersRepositoryQueries.UPDATE_API_USER, new
                 {
                     UserName = user.UserName,
-                    PasswordHash = user.PasswordHash
+                    PasswordHash = user.PasswordHash,
+                    Role = user.Role
                 });
             }
             catch (Exception ex)
             {
                 await ErrorReporter.MakeReport("", ex);
             }
+        }
+
+        public async Task<bool> IsApiUserExistsAsync(ApiUser user)
+        {
+            try
+            {
+                var result = await _dbContext.DbConnection.QueryFirstOrDefaultAsync<bool>(ApiUsersRepositoryQueries.IS_API_USER_EXISTS, new
+                {
+                    UserName = user.UserName,
+                    PasswordHash = user.PasswordHash
+                });
+                return result;
+            }
+            catch (Exception ex)
+            {
+                await ErrorReporter.MakeReport("IsApiUserExistsAsync(ApiUser user)", ex);
+            }
+            return false;
         }
     }
 }

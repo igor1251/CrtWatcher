@@ -14,17 +14,11 @@
                                                         "Name VARCHAR(120) NOT NULL, " +
                                                         "Phone VARCHAR(20));" +
                                                         "" +
-                                                        "CREATE TABLE ClientDesktops (" +
-                                                        "IP VARCHAR(30) NOT NULL, " +
-                                                        "Name VARCHAR(50) NOT NULL, " +
-                                                        "Comment VARCHAR(50) NOT NULL, " +
-                                                        "LastResponseTime DATETIME NOT NULL);" +
-                                                        "" +
                                                         "CREATE TABLE ApiUsers (" +
                                                         "ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                                                         "UserName VARCHAR(120) NOT NULL, " +
                                                         "PasswordHash VARCHAR(256) NOT NULL," + 
-                                                        "ApiKeyID INTEGER);" + 
+                                                        "Role VARCHAR(50));" + 
                                                         "" + 
                                                         "CREATE TABLE ApiKeys (" +
                                                         "ApiUserID INTEGER NOT NULL," + 

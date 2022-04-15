@@ -36,6 +36,11 @@ namespace X509ObserverApi.Controllers
         {
             try
             {
+                var isApiUserExists = await _apiUsersRepository.IsApiUserExistsAsync(user);
+                if (isApiUserExists)
+                {
+                    RedirectToAction("Login", user);
+                }
                 user.Role = ApiRole.USER;
                 await _apiUsersRepository.AddApiUserAsync(user);
                 var createdUser = await _apiUsersRepository.GetApiUserByUserNameAsync(user.UserName);
@@ -56,6 +61,11 @@ namespace X509ObserverApi.Controllers
         {
             try
             {
+                var isApiUserExists = await _apiUsersRepository.IsApiUserExistsAsync(user);
+                if (!isApiUserExists)
+                {
+                    return NotFound("Incorrect login-password pair");
+                }
                 var apiKey = _jwtTokenOperator.Generate(user, int.Parse(_configuration["KeyValidityPeriod"]), _configuration["Secret"]);
                 return Ok(apiKey);
             }

@@ -54,7 +54,8 @@ namespace X509ObserverApi.Middleware
             try
             {
                 var apiUser = await _jwtTokensOperator.ValidateAsync(token, _configuration["Secret"]);
-                context.Items["User"] = await _apiUserRepository.GetApiUserByUserNameAsync(apiUser.UserName);
+                if (apiUser != null)
+                    context.Items["User"] = await _apiUserRepository.GetApiUserByUserNameAsync(apiUser.UserName);
                 //context.Items["User"] = await _jwtTokensOperator.ValidateAsync(token, _configuration["Secret"]);
             }
             catch (Exception ex)

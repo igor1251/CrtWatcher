@@ -52,8 +52,6 @@ namespace X509Observer.Identity.MaintenanceTools
                     ClockSkew = TimeSpan.Zero
                 });
                 var userID = int.Parse(((JwtSecurityToken)validationResult.SecurityToken).Claims.First(x => x.Type == "ID").Value);
-                //var founedUser = await _apiUsersRepository.GetApiUserByIDAsync(userID);
-                //founedUser.Role = "administrator";
                 return await _apiUsersRepository.GetApiUserByIDAsync(userID);
             }
             catch (Exception ex)

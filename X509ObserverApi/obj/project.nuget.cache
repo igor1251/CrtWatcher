@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Z+pP7r9l1EgUSPkKi8Up3AG4GPYFKT3q0t0U+r07WaM+2ZgQfNVSdq6/epHkImUiXX/71YMS3gfN6gAEgVheKw==",
+  "dgSpecHash": "76gRsg3OYlJrOdjhtwEuQKgEHgGqBotsGqWEGcWkw9CiS2U3g/Hx1J2KHhdGUIsONicaIvSRWi0413Zkkbk6Iw==",
   "success": true,
   "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509ObserverApi\\X509ObserverApi.csproj",
   "expectedPackageFiles": [
@@ -41,8 +41,7 @@
     "C:\\Users\\Igor\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
-    "C:\\Users\\Igor\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\Igor\\.nuget\\packages\\x509observer\\1.0.0\\x509observer.1.0.0.nupkg.sha512"
+    "C:\\Users\\Igor\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }
