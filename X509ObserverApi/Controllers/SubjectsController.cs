@@ -1,17 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NetworkOperators.Identity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using X509Observer.Common.Entities;
-using X509Observer.Identity.Entities;
-using X509Observer.Reporters;
-using X509Observer.Server.Repositories;
+using Tools.Reporters;
+using X509KeysVault.Entities;
+using X509KeysVault.Repositories;
 using X509ObserverApi.Attributes;
 
 namespace X509ObserverApi.Controllers
 {
-    [Authorization(ApiRole.ADMINISTRATOR)]
+    [Authorization(Role.ADMINISTRATOR)]
     [ApiController]
     [Route("api/[controller]")]
     public class SubjectsController : ControllerBase

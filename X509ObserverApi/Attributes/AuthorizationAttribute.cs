@@ -2,30 +2,30 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using X509Observer.Identity.Entities;
+using NetworkOperators.Identity.Entities;
 
 namespace X509ObserverApi.Attributes
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class AuthorizationAttribute : Attribute, IAuthorizationFilter
     {
-        private string _apiRole;
+        private string _role;
 
-        public AuthorizationAttribute(string apiRole)
+        public AuthorizationAttribute(string role)
         {
-            _apiRole = apiRole;
+            _role = role;
         }
 
         public void OnAuthorization(AuthorizationFilterContext context)
         {
-            var user = (ApiUser)context.HttpContext.Items["User"];
+            var user = (User)context.HttpContext.Items["User"];
             if (user == null)
             {
                 var authorizationResult = new JsonResult("Invalid credentials");
                 authorizationResult.StatusCode = StatusCodes.Status401Unauthorized;
                 context.Result = authorizationResult;
             }
-            else if (user.Role != _apiRole)
+            else if (user.Role != _role)
             {
                 var authorizationResult = new JsonResult("Insufficient rights to access the resource");
                 authorizationResult.StatusCode = StatusCodes.Status401Unauthorized;

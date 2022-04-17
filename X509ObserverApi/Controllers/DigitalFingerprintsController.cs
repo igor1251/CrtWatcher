@@ -2,12 +2,11 @@
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System;
-using X509Observer.Reporters;
-using X509Observer.Server.Repositories;
 using X509ObserverApi.Attributes;
-using X509Observer.Identity.Entities;
+using X509KeysVault.Repositories;
+using Tools.Reporters;
 
-namespace Kernel.Controllers
+namespace X509ObserverApi.Controllers
 {
     [Authorization("administrator")]
     [ApiController]

@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using X509Observer.Identity.MaintenanceTools;
-using X509Observer.Identity.Repositories;
-using X509Observer.Reporters;
+using NetworkOperators.Identity.MaintananceTools;
+using NetworkOperators.Identity.Repositories;
+using Tools.Reporters;
 
 namespace X509ObserverApi.Middleware
 {
@@ -14,19 +14,19 @@ namespace X509ObserverApi.Middleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger<AuthentificationMiddleware> _logger;
-        private readonly IApiUsersRepository _apiUserRepository;
+        private readonly IUsersRepository _userRepository;
         private readonly JwtTokensOperator _jwtTokensOperator;
         private readonly IConfiguration _configuration;
 
         public AuthentificationMiddleware(RequestDelegate next, 
                                           ILogger<AuthentificationMiddleware> logger,
-                                          IApiUsersRepository apiUsersRepository,
+                                          IUsersRepository usersRepository,
                                           JwtTokensOperator jwtTokensOperator,
                                           IConfiguration configuration)
         {
             _next = next;
             _logger = logger;
-            _apiUserRepository = apiUsersRepository;
+            _userRepository = usersRepository;
             _jwtTokensOperator = jwtTokensOperator;
             _configuration = configuration;
         }
@@ -53,10 +53,9 @@ namespace X509ObserverApi.Middleware
         {
             try
             {
-                var apiUser = await _jwtTokensOperator.ValidateAsync(token, _configuration["Secret"]);
-                if (apiUser != null)
-                    context.Items["User"] = await _apiUserRepository.GetApiUserByUserNameAsync(apiUser.UserName);
-                //context.Items["User"] = await _jwtTokensOperator.ValidateAsync(token, _configuration["Secret"]);
+                var user = await _jwtTokensOperator.ValidateAsync(token, _configuration["Secret"]);
+                if (user != null)
+                    context.Items["User"] = await _userRepository.GetUserByAuthenticationDataAsync(user.UserName, user.PasswordHash);
             }
             catch (Exception ex)
             {
