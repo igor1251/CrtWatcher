@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X509ObserverWorkerService", "X509ObserverWorkerService.csproj", "{9E00B2C6-9A62-40F0-A2BA-CC225E64ED20}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X509KeysVault.Entities", "..\Libs\X509KeysVault.Entities\X509KeysVault.Entities.csproj", "{F6F0088D-A231-464E-9D35-444FF7F1F70B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X509KeysVault.Repositories", "..\Libs\X509KeysVault.Repositories\X509KeysVault.Repositories.csproj", "{51F7A39E-75CA-4706-A11D-4D74C303A6EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkOperators.Identity.DataTransferObjects", "..\Libs\NetworkOperators.Identity.DataTransferObjects\NetworkOperators.Identity.DataTransferObjects.csproj", "{A0D166B3-5A5A-4B35-A423-BF869656EFD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools", "..\Libs\Tools\Tools.csproj", "{AED1C4A5-F5CB-4EC8-A81E-4A498C6275F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E00B2C6-9A62-40F0-A2BA-CC225E64ED20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E00B2C6-9A62-40F0-A2BA-CC225E64ED20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E00B2C6-9A62-40F0-A2BA-CC225E64ED20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E00B2C6-9A62-40F0-A2BA-CC225E64ED20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6F0088D-A231-464E-9D35-444FF7F1F70B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6F0088D-A231-464E-9D35-444FF7F1F70B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6F0088D-A231-464E-9D35-444FF7F1F70B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6F0088D-A231-464E-9D35-444FF7F1F70B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F7A39E-75CA-4706-A11D-4D74C303A6EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F7A39E-75CA-4706-A11D-4D74C303A6EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F7A39E-75CA-4706-A11D-4D74C303A6EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F7A39E-75CA-4706-A11D-4D74C303A6EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D166B3-5A5A-4B35-A423-BF869656EFD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D166B3-5A5A-4B35-A423-BF869656EFD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D166B3-5A5A-4B35-A423-BF869656EFD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D166B3-5A5A-4B35-A423-BF869656EFD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AED1C4A5-F5CB-4EC8-A81E-4A498C6275F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AED1C4A5-F5CB-4EC8-A81E-4A498C6275F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AED1C4A5-F5CB-4EC8-A81E-4A498C6275F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AED1C4A5-F5CB-4EC8-A81E-4A498C6275F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83386A79-B345-4A74-B61D-D3F0F914577B}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>dotnet-X509ObserverWorkerService-C6C9226F-3B0E-44D6-BC60-8313B9269133</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Libs\NetworkOperators.Identity.DataTransferObjects\NetworkOperators.Identity.DataTransferObjects.csproj" />
+    <ProjectReference Include="..\Libs\Tools\Tools.csproj" />
+    <ProjectReference Include="..\Libs\X509KeysVault.Entities\X509KeysVault.Entities.csproj" />
+    <ProjectReference Include="..\Libs\X509KeysVault.Repositories\X509KeysVault.Repositories.csproj" />
+  </ItemGroup>
+</Project>

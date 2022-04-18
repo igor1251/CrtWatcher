@@ -1,0 +1,8 @@
+C:\ServiceRelease\appsettings.Development.json
+C:\ServiceRelease\appsettings.json
+C:\ServiceRelease\X509ObserverWorkerService.pdb
+C:\ServiceRelease\clrcompression.dll
+C:\ServiceRelease\clrjit.dll
+C:\ServiceRelease\coreclr.dll
+C:\ServiceRelease\mscordaccore.dll
+C:\ServiceRelease\X509ObserverWorkerService.exe
