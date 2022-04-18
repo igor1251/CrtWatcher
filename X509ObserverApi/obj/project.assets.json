@@ -539,43 +539,6 @@
         "runtime": {
           "bin/placeholder/X509KeysVault.Repositories.dll": {}
         }
-      },
-      "X509Observer.Additional/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Dapper": "2.0.123",
-          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
-          "System.Data.SQLite": "1.0.115.5",
-          "System.IdentityModel.Tokens.Jwt": "6.17.0",
-          "X509Observer.MaintananceTools": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/X509Observer.Additional.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/X509Observer.Additional.dll": {}
-        }
-      },
-      "X509Observer.Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/X509Observer.Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/X509Observer.Common.dll": {}
-        }
-      },
-      "X509Observer.MaintananceTools/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/X509Observer.MaintananceTools.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/X509Observer.MaintananceTools.dll": {}
-        }
       }
     }
   },
@@ -1734,21 +1697,6 @@
       "type": "project",
       "path": "../Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj",
       "msbuildProject": "../Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj"
-    },
-    "X509Observer.Additional/1.0.0": {
-      "type": "project",
-      "path": "../X509Observer.Additional/X509Observer.Additional.csproj",
-      "msbuildProject": "../X509Observer.Additional/X509Observer.Additional.csproj"
-    },
-    "X509Observer.Common/1.0.0": {
-      "type": "project",
-      "path": "../X509Observer.Common/X509Observer.Common.csproj",
-      "msbuildProject": "../X509Observer.Common/X509Observer.Common.csproj"
-    },
-    "X509Observer.MaintananceTools/1.0.0": {
-      "type": "project",
-      "path": "../X509Observer.MaintananceTools/X509Observer.MaintananceTools.csproj",
-      "msbuildProject": "../X509Observer.MaintananceTools/X509Observer.MaintananceTools.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1761,14 +1709,12 @@
       "System.IdentityModel.Tokens.Jwt >= 6.17.0",
       "Tools >= 1.0.0",
       "X509KeysVault.Entities >= 1.0.0",
-      "X509KeysVault.Repositories >= 1.0.0",
-      "X509Observer.Additional >= 1.0.0",
-      "X509Observer.Common >= 1.0.0",
-      "X509Observer.MaintananceTools >= 1.0.0"
+      "X509KeysVault.Repositories >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Igor\\.nuget\\packages\\": {}
+    "C:\\Users\\Igor\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -1779,8 +1725,12 @@
       "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
       "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509ObserverApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1814,15 +1764,6 @@
             },
             "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Repositories\\X509KeysVault.Repositories.csproj": {
               "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Repositories\\X509KeysVault.Repositories.csproj"
-            },
-            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509Observer.Additional\\X509Observer.Additional.csproj": {
-              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509Observer.Additional\\X509Observer.Additional.csproj"
-            },
-            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509Observer.Common\\X509Observer.Common.csproj": {
-              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509Observer.Common\\X509Observer.Common.csproj"
-            },
-            "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509Observer.MaintananceTools\\X509Observer.MaintananceTools.csproj": {
-              "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509Observer.MaintananceTools\\X509Observer.MaintananceTools.csproj"
             }
           }
         }
@@ -1864,7 +1805,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

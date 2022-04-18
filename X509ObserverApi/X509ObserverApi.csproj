@@ -21,9 +21,6 @@
     <ProjectReference Include="..\Libs\Tools\Tools.csproj" />
     <ProjectReference Include="..\Libs\X509KeysVault.Entities\X509KeysVault.Entities.csproj" />
     <ProjectReference Include="..\Libs\X509KeysVault.Repositories\X509KeysVault.Repositories.csproj" />
-    <ProjectReference Include="..\X509Observer.Additional\X509Observer.Additional.csproj" />
-    <ProjectReference Include="..\X509Observer.Common\X509Observer.Common.csproj" />
-    <ProjectReference Include="..\X509Observer.MaintananceTools\X509Observer.MaintananceTools.csproj" />
   </ItemGroup>
 
 </Project>

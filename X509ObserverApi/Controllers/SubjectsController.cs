@@ -11,7 +11,6 @@ using X509ObserverApi.Attributes;
 
 namespace X509ObserverApi.Controllers
 {
-    [Authorization(Role.ADMINISTRATOR)]
     [ApiController]
     [Route("api/[controller]")]
     public class SubjectsController : ControllerBase
@@ -26,6 +25,7 @@ namespace X509ObserverApi.Controllers
             _subjectsRepository = subjectsRepository;
         }
 
+        [Authorization(Role.ADMINISTRATOR)]
         [HttpGet]
         [Route("db")]
         public async Task<ActionResult<IEnumerable<Subject>>> GetSubjectsAsync()
@@ -47,6 +47,7 @@ namespace X509ObserverApi.Controllers
             }
         }
 
+        [Authorization(Role.ADMINISTRATOR)]
         [HttpGet]
         [Route("{id}")]
         public async Task<ActionResult<Subject>> GetSubjectByID(int id)
@@ -68,6 +69,7 @@ namespace X509ObserverApi.Controllers
             }
         }
 
+        [Authorization(Role.USER)]
         [HttpPost]
         public async Task<ActionResult> AddSubject(Subject subject)
         {
@@ -84,6 +86,7 @@ namespace X509ObserverApi.Controllers
             }
         }
 
+        [Authorization(Role.USER)]
         [HttpPut]
         public async Task<ActionResult> UpdateSubject(Subject subject)
         {
@@ -100,6 +103,7 @@ namespace X509ObserverApi.Controllers
             }
         }
 
+        [Authorization(Role.ADMINISTRATOR)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> RemoveSubject(int id)
         {

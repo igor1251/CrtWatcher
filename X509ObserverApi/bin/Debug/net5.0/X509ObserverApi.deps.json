@@ -42,9 +42,6 @@
           "Tools": "1.0.0",
           "X509KeysVault.Entities": "1.0.0",
           "X509KeysVault.Repositories": "1.0.0",
-          "X509Observer.Additional": "1.0.0",
-          "X509Observer.Common": "1.0.0",
-          "X509Observer.MaintananceTools": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -2421,22 +2418,6 @@
           "WindowsBase.dll": {}
         },
         "compileOnly": true
-      },
-      "X509Observer.Additional/1.0.0": {
-        "dependencies": {
-          "Dapper": "2.0.123",
-          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
-          "System.Data.SQLite": "1.0.115.5",
-          "System.IdentityModel.Tokens.Jwt": "6.17.0",
-          "X509Observer.MaintananceTools": "1.0.0"
-        },
-        "compileOnly": true
-      },
-      "X509Observer.Common/1.0.0": {
-        "compileOnly": true
-      },
-      "X509Observer.MaintananceTools/1.0.0": {
-        "compileOnly": true
       }
     }
   },
@@ -4109,21 +4090,6 @@
     },
     "WindowsBase/4.0.0.0": {
       "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "X509Observer.Additional/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "X509Observer.Common/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "X509Observer.MaintananceTools/1.0.0": {
-      "type": "project",
       "serviceable": false,
       "sha512": ""
     }

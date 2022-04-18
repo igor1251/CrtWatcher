@@ -8,7 +8,6 @@ using Tools.Reporters;
 
 namespace X509ObserverApi.Controllers
 {
-    [Authorization("administrator")]
     [ApiController]
     [Route("api/[controller]")]
     public class DigitalFingerprintsController : ControllerBase
@@ -23,6 +22,7 @@ namespace X509ObserverApi.Controllers
             _subjectsRepository = subjectsRepository;
         }
 
+        [Authorization("administrator")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteDigitalFingerprint(int id)
         {
