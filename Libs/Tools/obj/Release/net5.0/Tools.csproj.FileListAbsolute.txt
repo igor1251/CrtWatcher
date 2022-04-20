@@ -1,0 +1,12 @@
+D:\Libraries\Documents\GitHub\CrtWatcher\Libs\Tools\bin\Release\net5.0\Tools.deps.json
+D:\Libraries\Documents\GitHub\CrtWatcher\Libs\Tools\bin\Release\net5.0\Tools.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\Libs\Tools\bin\Release\net5.0\Tools.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\Libs\Tools\obj\Release\net5.0\Tools.csproj.AssemblyReference.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\Libs\Tools\obj\Release\net5.0\Tools.GeneratedMSBuildEditorConfig.editorconfig
+D:\Libraries\Documents\GitHub\CrtWatcher\Libs\Tools\obj\Release\net5.0\Tools.AssemblyInfoInputs.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\Libs\Tools\obj\Release\net5.0\Tools.AssemblyInfo.cs
+D:\Libraries\Documents\GitHub\CrtWatcher\Libs\Tools\obj\Release\net5.0\Tools.csproj.CoreCompileInputs.cache
+D:\Libraries\Documents\GitHub\CrtWatcher\Libs\Tools\obj\Release\net5.0\Tools.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\Libs\Tools\obj\Release\net5.0\refint\Tools.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\Libs\Tools\obj\Release\net5.0\Tools.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\Libs\Tools\obj\Release\net5.0\ref\Tools.dll
