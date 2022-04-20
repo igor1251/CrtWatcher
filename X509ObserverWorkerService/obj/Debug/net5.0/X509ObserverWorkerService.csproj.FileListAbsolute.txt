@@ -83,3 +83,8 @@ D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\obj\Debug\net
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\obj\Debug\net5.0\X509ObserverWorkerService.pdb
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\obj\Debug\net5.0\X509ObserverWorkerService.genruntimeconfig.cache
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\obj\Debug\net5.0\ref\X509ObserverWorkerService.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\bin\Debug\net5.0\Microsoft.Extensions.Http.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\bin\Debug\net5.0\Microsoft.Extensions.Http.Polly.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\bin\Debug\net5.0\Polly.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\bin\Debug\net5.0\Polly.Extensions.Http.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
