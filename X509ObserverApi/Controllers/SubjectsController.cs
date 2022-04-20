@@ -73,6 +73,7 @@ namespace X509ObserverApi.Controllers
         [HttpPost]
         public async Task<ActionResult> AddSubject(Subject subject)
         {
+            _logger.LogInformation("запрошена операция добавления");
             try
             {
                 await _subjectsRepository.AddSubjectAsync(subject);

@@ -12,21 +12,22 @@ using Tools.Reporters;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text;
+using X509KeysVault.Repositories;
+using X509KeysVault.Entities;
+using System.Security.Cryptography.X509Certificates;
+using System.Net;
 
 namespace X509ObserverWorkerService
 {
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
-        private readonly IConfiguration _configuration;
         private readonly HttpClient _httpClient;
-
+        private ServiceParameters _serviceParameters;
         public Worker(ILogger<Worker> logger, 
-                      IConfiguration configuration, 
                       HttpClient httpClient)
         {
             _logger = logger;
-            _configuration = configuration;
             _httpClient = httpClient;
         }
 
@@ -34,22 +35,22 @@ namespace X509ObserverWorkerService
         {
             var registrationRequest = new UserAuthorizationRequest()
             {
-                UserName = _configuration["RemoteServiceLogin"],
-                Password = _configuration["RemoteServicePassword"]
+                UserName = _serviceParameters.RemoteServiceLogin,
+                Password = _serviceParameters.RemoteServicePassword
             };
 
             var apiKey = string.Empty;
 
             using (var requestContent = new StringContent(JsonSerializer.Serialize(registrationRequest), Encoding.UTF8, "application/json"))
             {
-                using (var response = await _httpClient.PostAsync(_configuration["RemoteRegistrationServiceAddress"], requestContent))
+                using (var response = await _httpClient.PostAsync(_serviceParameters.RemoteRegistrationServiceAddress, requestContent))
                 {
-                    _logger.LogInformation("registration [POST] request => " + _configuration["RemoteRegistrationServiceAddress"] + "\nrequestContent = " + requestContent);
+                    _logger.LogInformation("\nотправка [POST] request => {0}\nrequestContent = {1}\n", _serviceParameters.RemoteRegistrationServiceAddress, requestContent);
                     if (response.IsSuccessStatusCode)
                     {
                         var responseString = await response.Content.ReadAsStringAsync();
                         apiKey = JsonSerializer.Deserialize<UserAuthorizationResponse>(responseString).Token;
-                        _logger.LogInformation("recieved token : {0}", apiKey);
+                        _logger.LogInformation("\nполучен ключ : {0}\n", apiKey);
                     }
                     else
                     {
@@ -62,55 +63,126 @@ namespace X509ObserverWorkerService
             return apiKey;
         }
 
-        public override async Task StartAsync(CancellationToken cancellationToken)
+        private async Task SendX509KeyToServer(X509KeysVault.Entities.Subject subject)
         {
-            if (string.IsNullOrEmpty(_configuration["ApiKey"]))
+            var request = WebRequest.Create(_serviceParameters.RemoteX509VaultStoreService);
+            request.Method = "POST";
+            request.ContentType = "application/json; charset=utf-8";
+            request.Headers.Add("Authorization", "Bearer " + _serviceParameters.ApiKey);
+            var content = JsonSerializer.Serialize(subject);
+
+            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
-                if (!string.IsNullOrEmpty(_configuration["RemoteServiceLogin"]) && 
-                    !string.IsNullOrEmpty(_configuration["RemoteServicePassword"]))
-                {
-                    var apiKey = await TryToRegisterService();
-                    if (!string.IsNullOrEmpty(apiKey))
-                    {
-                        _configuration["ApiKey"] = apiKey;
-                    }
-                    else
-                    {
-                        _logger.LogInformation("ApiKey is empty");
-                        await StopAsync(cancellationToken);
-                    }
-                }
-                else
-                {
-                    await ErrorReporter.MakeReport("StartAsync(CancellationToken cancellationToken)", new Exception("Credentials is not specified"));
-                    await StopAsync(cancellationToken);
-                }
+                streamWriter.Write(subject);
+                streamWriter.Flush();
             }
 
-            _logger.LogInformation("\n\nSettings stored in appsettings.json:\n" +
-                                   "RemoteRegistrationServiceAddress: " + _configuration["RemoteRegistrationServiceAddress"] + "\n" +
-                                   "RemoteAuthenticationServiceAddress: " + _configuration["RemoteAuthenticationServiceAddress"] + "\n" +
-                                   "RemoteX509VaultStoreService: " + _configuration["RemoteX509VaultStoreService"] + "\n" +
-                                   "RemoteServiceLogin: " + _configuration["RemoteServiceLogin"] + "\n" +
-                                   "RemoteServicePassword: " + _configuration["RemoteServicePassword"] + "\n" +
-                                   "ApiKey: " + _configuration["ApiKey"] + "\n" +
-                                   "MonitoringInterval: " + _configuration["MonitoringInterval"] + "\n\n");
+            _logger.LogInformation("\nотправка [POST] => {0}\ncontent = {1}\n", _serviceParameters.RemoteX509VaultStoreService, content);
+            var response = request.GetResponse();
+            _logger.LogInformation("\nотправлен. код = {0}: {1}\n", ((HttpWebResponse)response).StatusCode, ((HttpWebResponse)response).StatusDescription);
+            response.Close();
+        }
 
+        private async Task SendX509KeysVaultReportToServer(List<X509KeysVault.Entities.Subject> subjects)
+        {
+            if (subjects == null) return;
+            if (subjects.Count == 0) return;
+            
+            foreach (var subject in subjects)
+            {
+                await SendX509KeyToServer(subject);
+            }
+        }
+
+        public override async Task StartAsync(CancellationToken cancellationToken)
+        {
+            _serviceParameters = await ServiceParametersLoader.ReadServiceParameters();
+            if (string.IsNullOrEmpty(_serviceParameters.ApiKey))
+            {
+                _logger.LogInformation("\nApiKey пуст. Требуется регистрация сервиса. Регистрируюсь...\n");
+                _serviceParameters.ApiKey = await TryToRegisterService();
+                _logger.LogInformation("\nРегистрация прошла успешно. Получен ApiKey = {0}\n", _serviceParameters.ApiKey);
+            }
+            else
+            {
+                _logger.LogInformation("\nДля доступа к Api будет использоваться ApiKey = {0}\n", _serviceParameters.ApiKey);
+            }
             await base.StartAsync(cancellationToken);
         }
 
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        private Task<int> FindSubject(List<Subject> subjects, string subjectName)
         {
-            //while (!stoppingToken.IsCancellationRequested)
-            //{
-            //    _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-            //    await Task.Delay(1000, stoppingToken);
-            //}
+            for (int i = 0; i < subjects.Count; i++)
+            {
+                if (subjects[i].Name == subjectName)
+                {
+                    return Task.FromResult(i);
+                }
+            }
+            return Task.FromResult(-1);
         }
 
-        public override Task StopAsync(CancellationToken cancellationToken)
+        public async Task<List<Subject>> GetSubjectsFromSystemStorageAsync()
         {
-            return base.StopAsync(cancellationToken);
+            var subjects = new List<Subject>();
+            try
+            {
+                var store = new X509Store("MY", StoreLocation.CurrentUser);
+                store.Open(OpenFlags.ReadOnly);
+                var certificatesCollection = store.Certificates;
+                foreach (var x509Certificate in certificatesCollection)
+                {
+                    using (var x509 = new X509Certificate2(x509Certificate.GetRawCertData()))
+                    {
+                        var digitalFingerprint = new DigitalFingerprint() { Hash = x509.GetCertHashString(), Start = x509.NotBefore, End = x509.NotAfter };
+                        string subjectName = "";
+                        foreach (var item in x509.Subject.Split(','))
+                        {
+                            if (item.IndexOf("CN") > -1)
+                            {
+                                subjectName = item.Remove(0, 3);                                    // немного волшебства
+                                if (subjectName.IndexOf('=') > -1)                                  //
+                                    subjectName = subjectName.Remove(subjectName.IndexOf('='), 1);  //
+                            }
+                        }
+
+                        int subjectIndex = await FindSubject(subjects, subjectName);
+                        if (subjectIndex > -1)
+                        {
+                            subjects[subjectIndex].Fingerprints.Add(digitalFingerprint);
+                        }
+                        else
+                        {
+                            var subject = new Subject() { Name = subjectName, Phone = "89610037151" };
+                            subject.Fingerprints.Add(digitalFingerprint);
+                            subjects.Add(subject);
+                        }
+                    }
+                }
+                certificatesCollection.Clear();
+            }
+            catch (Exception ex)
+            {
+                await ErrorReporter.MakeReport("GetSubjectsFromSystemStorageAsync()", ex);
+            }
+            return subjects;
+        }
+
+
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        {
+            var localX509KeyVaultSnapshot = await GetSubjectsFromSystemStorageAsync();
+            if (localX509KeyVaultSnapshot.Count > 0)
+            {
+                await SendX509KeysVaultReportToServer(localX509KeyVaultSnapshot);
+            }
+            Thread.Sleep(_serviceParameters.MonitoringInterval);
+        }
+
+        public override async Task StopAsync(CancellationToken cancellationToken)
+        {
+            await ServiceParametersLoader.WriteServiceParameters(_serviceParameters);
+            await base.StopAsync(cancellationToken);
         }
     }
 }

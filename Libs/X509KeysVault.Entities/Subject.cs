@@ -30,22 +30,22 @@ namespace X509KeysVault.Entities
             init { _Name = value; }
         }
 
-        [Required]
         [JsonPropertyName("phone")]
         public string Phone
         {
             get { return _Phone; }
             set
             {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                {
-                    _Phone = string.Empty;
-                }
-                else if (!Regex.IsMatch(value, PHONE_TEMPLATE_REGULAR_EXPRESSION))
-                {
-                    throw new ArgumentException("The entered phone number does not meet the requirements.");
-                }
-                else _Phone = value;
+                //if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                //{
+                //    _Phone = string.Empty;
+                //}
+                //else if (!Regex.IsMatch(value, PHONE_TEMPLATE_REGULAR_EXPRESSION))
+                //{
+                //    throw new ArgumentException("The entered phone number does not meet the requirements.");
+                //}
+                //else _Phone = value;
+                _Phone = value;
             }
         }
 

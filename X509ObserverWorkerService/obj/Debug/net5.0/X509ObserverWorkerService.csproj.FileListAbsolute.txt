@@ -88,3 +88,4 @@ D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\bin\Debug\net
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\bin\Debug\net5.0\Polly.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\bin\Debug\net5.0\Polly.Extensions.Http.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverWorkerService\bin\Debug\net5.0\parameters.json

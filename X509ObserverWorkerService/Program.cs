@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Polly;
 using Polly.Extensions.Http;
 using System.Net.Http;
+using X509KeysVault.Repositories;
 
 namespace X509ObserverWorkerService
 {
