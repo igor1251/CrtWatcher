@@ -29,7 +29,7 @@ namespace X509ObserverWorkerService
 
         private async Task<string> TryToRegisterService()
         {
-            var registrationRequest = new UserAuthorizationRequest()
+            var registrationRequestDTO = new UserAuthorizationRequest()
             {
                 UserName = _serviceParameters.RemoteServiceLogin,
                 Password = _serviceParameters.RemoteServicePassword
@@ -37,39 +37,57 @@ namespace X509ObserverWorkerService
 
             var apiKey = string.Empty;
 
-            using (var requestContent = new StringContent(JsonSerializer.Serialize(registrationRequest), Encoding.UTF8, "application/json"))
+            _logger.LogInformation("\nзапущено: процедура регистрации/авторизации\nотправка [POST] => {0}\n", _serviceParameters.RemoteRegistrationServiceAddress);
+            using (var response = await _httpClient.PostAsJsonAsync(_serviceParameters.RemoteRegistrationServiceAddress, registrationRequestDTO))
             {
-                using (var response = await _httpClient.PostAsync(_serviceParameters.RemoteRegistrationServiceAddress, requestContent))
+                if (response.IsSuccessStatusCode)
                 {
-                    _logger.LogInformation("\nотправка [POST] request => {0}\nrequestContent = {1}\n", _serviceParameters.RemoteRegistrationServiceAddress, requestContent);
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var responseString = await response.Content.ReadAsStringAsync();
-                        apiKey = JsonSerializer.Deserialize<UserAuthorizationResponse>(responseString).Token;
-                        _logger.LogInformation("\nполучен ключ : {0}\n", apiKey);
-                    }
-                    else
-                    {
-                        await ErrorReporter.MakeReport("TryToRegisterService()", new Exception("Unable to register service. " + response.ReasonPhrase));
-                        await StopAsync(new CancellationToken());
-                    }
+                    apiKey = JsonSerializer.Deserialize<UserAuthorizationResponse>(await response.Content.ReadAsStringAsync()).Token;
+                    _logger.LogInformation("\n[POST] result: успех\nполучен токен = {0}", apiKey);
+                }
+                else
+                {
+                    _logger.LogError("\n[POST] result: ошибка\nкод: {0}\nсообщение: {1}", response.StatusCode, response.ReasonPhrase);
+                    await ErrorReporter.MakeReport("TryToRegisterService()", new Exception("Unable to register service. " + response.ReasonPhrase));
+                    await StopAsync(new CancellationToken(true));
                 }
             }
+
+            //using (var requestContent = new StringContent(JsonSerializer.Serialize(registrationRequestDTO), Encoding.UTF8, "application/json"))
+            //{
+            //    using (var response = await _httpClient.PostAsync(_serviceParameters.RemoteRegistrationServiceAddress, requestContent))
+            //    {
+            //        _logger.LogInformation("\nотправка [POST] request => {0}\nrequestContent = {1}\n", _serviceParameters.RemoteRegistrationServiceAddress, requestContent);
+            //        if (response.IsSuccessStatusCode)
+            //        {
+            //            var responseString = await response.Content.ReadAsStringAsync();
+            //            apiKey = JsonSerializer.Deserialize<UserAuthorizationResponse>(responseString).Token;
+            //            _logger.LogInformation("\nполучен ключ : {0}\n", apiKey);
+            //        }
+            //        else
+            //        {
+            //            await ErrorReporter.MakeReport("TryToRegisterService()", new Exception("Unable to register service. " + response.ReasonPhrase));
+            //            await StopAsync(new CancellationToken());
+            //        }
+            //    }
+            //}
 
             return apiKey;
         }
 
         private async Task SendX509KeyToServer(Subject subject)
         {
+            _logger.LogInformation("\nотправка [POST] => {0}\n", _serviceParameters.RemoteX509VaultStoreService);
             using (var response = await _httpClient.PostAsJsonAsync(_serviceParameters.RemoteX509VaultStoreService, subject))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    _logger.LogInformation("\nрезультат запроса: успех\n");
+                    _logger.LogInformation("\n[POST] result: успех\n");
                 }
                 else
                 {
-                    _logger.LogWarning("\nрезультат запроса : ошибка \nстатус : {0}\nсообщение : {1}\n", response.StatusCode, response.ReasonPhrase);
+                    _logger.LogError("\n[POST] result: ошибка\nкод: {0}\nсообщение: {1}", response.StatusCode, response.ReasonPhrase);
+                    await ErrorReporter.MakeReport("TryToRegisterService()", new Exception("Unable to register service. " + response.ReasonPhrase));
                 }
             }
         }
@@ -78,7 +96,9 @@ namespace X509ObserverWorkerService
         {
             if (subjects == null) return;
             if (subjects.Count == 0) return;
-            
+
+            _logger.LogInformation("\nзапущено: процедура отправки отчета\n");
+
             foreach (var subject in subjects)
             {
                 await SendX509KeyToServer(subject);
@@ -150,13 +170,11 @@ namespace X509ObserverWorkerService
             _serviceParameters = await ServiceParametersLoader.ReadServiceParameters();
             if (string.IsNullOrEmpty(_serviceParameters.ApiKey))
             {
-                _logger.LogInformation("\nApiKey пуст. Требуется регистрация сервиса. Регистрируюсь...\n");
                 _serviceParameters.ApiKey = await TryToRegisterService();
-                _logger.LogInformation("\nРегистрация прошла успешно. Получен ApiKey = {0}\n", _serviceParameters.ApiKey);
             }
             else
             {
-                _logger.LogInformation("\nДля доступа к Api будет использоваться ApiKey = {0}\n", _serviceParameters.ApiKey);
+                _logger.LogInformation("\napiKey = {0}\n", _serviceParameters.ApiKey);
             }
             _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _serviceParameters.ApiKey);
             await base.StartAsync(cancellationToken);
@@ -166,7 +184,6 @@ namespace X509ObserverWorkerService
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                _logger.LogInformation("\nцикл запущен\n");
                 var localX509KeyVaultSnapshot = await GetSubjectsFromSystemStorageAsync();
                 if (localX509KeyVaultSnapshot.Count > 0)
                 {
