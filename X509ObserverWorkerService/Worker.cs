@@ -1,21 +1,17 @@
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.IO;
 using NetworkOperators.Identity.DataTransferObjects;
 using Tools.Reporters;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text;
-using X509KeysVault.Repositories;
 using X509KeysVault.Entities;
 using System.Security.Cryptography.X509Certificates;
-using System.Net;
+using System.Net.Http.Json;
 
 namespace X509ObserverWorkerService
 {
@@ -63,24 +59,19 @@ namespace X509ObserverWorkerService
             return apiKey;
         }
 
-        private async Task SendX509KeyToServer(X509KeysVault.Entities.Subject subject)
+        private async Task SendX509KeyToServer(Subject subject)
         {
-            var request = WebRequest.Create(_serviceParameters.RemoteX509VaultStoreService);
-            request.Method = "POST";
-            request.ContentType = "application/json; charset=utf-8";
-            request.Headers.Add("Authorization", "Bearer " + _serviceParameters.ApiKey);
-            var content = JsonSerializer.Serialize(subject);
-
-            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+            using (var response = await _httpClient.PostAsJsonAsync(_serviceParameters.RemoteX509VaultStoreService, subject))
             {
-                streamWriter.Write(subject);
-                streamWriter.Flush();
+                if (response.IsSuccessStatusCode)
+                {
+                    _logger.LogInformation("\nрезультат запроса: успех\n");
+                }
+                else
+                {
+                    _logger.LogWarning("\nрезультат запроса : ошибка \nстатус : {0}\nсообщение : {1}\n", response.StatusCode, response.ReasonPhrase);
+                }
             }
-
-            _logger.LogInformation("\nотправка [POST] => {0}\ncontent = {1}\n", _serviceParameters.RemoteX509VaultStoreService, content);
-            var response = request.GetResponse();
-            _logger.LogInformation("\nотправлен. код = {0}: {1}\n", ((HttpWebResponse)response).StatusCode, ((HttpWebResponse)response).StatusDescription);
-            response.Close();
         }
 
         private async Task SendX509KeysVaultReportToServer(List<X509KeysVault.Entities.Subject> subjects)
@@ -92,22 +83,6 @@ namespace X509ObserverWorkerService
             {
                 await SendX509KeyToServer(subject);
             }
-        }
-
-        public override async Task StartAsync(CancellationToken cancellationToken)
-        {
-            _serviceParameters = await ServiceParametersLoader.ReadServiceParameters();
-            if (string.IsNullOrEmpty(_serviceParameters.ApiKey))
-            {
-                _logger.LogInformation("\nApiKey пуст. Требуется регистрация сервиса. Регистрируюсь...\n");
-                _serviceParameters.ApiKey = await TryToRegisterService();
-                _logger.LogInformation("\nРегистрация прошла успешно. Получен ApiKey = {0}\n", _serviceParameters.ApiKey);
-            }
-            else
-            {
-                _logger.LogInformation("\nДля доступа к Api будет использоваться ApiKey = {0}\n", _serviceParameters.ApiKey);
-            }
-            await base.StartAsync(cancellationToken);
         }
 
         private Task<int> FindSubject(List<Subject> subjects, string subjectName)
@@ -153,7 +128,7 @@ namespace X509ObserverWorkerService
                         }
                         else
                         {
-                            var subject = new Subject() { Name = subjectName, Phone = "89610037151" };
+                            var subject = new Subject() { Name = subjectName };
                             subject.Fingerprints.Add(digitalFingerprint);
                             subjects.Add(subject);
                         }
@@ -169,14 +144,36 @@ namespace X509ObserverWorkerService
         }
 
 
+
+        public override async Task StartAsync(CancellationToken cancellationToken)
+        {
+            _serviceParameters = await ServiceParametersLoader.ReadServiceParameters();
+            if (string.IsNullOrEmpty(_serviceParameters.ApiKey))
+            {
+                _logger.LogInformation("\nApiKey пуст. Требуется регистрация сервиса. Регистрируюсь...\n");
+                _serviceParameters.ApiKey = await TryToRegisterService();
+                _logger.LogInformation("\nРегистрация прошла успешно. Получен ApiKey = {0}\n", _serviceParameters.ApiKey);
+            }
+            else
+            {
+                _logger.LogInformation("\nДля доступа к Api будет использоваться ApiKey = {0}\n", _serviceParameters.ApiKey);
+            }
+            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _serviceParameters.ApiKey);
+            await base.StartAsync(cancellationToken);
+        }
+                
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            var localX509KeyVaultSnapshot = await GetSubjectsFromSystemStorageAsync();
-            if (localX509KeyVaultSnapshot.Count > 0)
+            while (!stoppingToken.IsCancellationRequested)
             {
-                await SendX509KeysVaultReportToServer(localX509KeyVaultSnapshot);
+                _logger.LogInformation("\nцикл запущен\n");
+                var localX509KeyVaultSnapshot = await GetSubjectsFromSystemStorageAsync();
+                if (localX509KeyVaultSnapshot.Count > 0)
+                {
+                    await SendX509KeysVaultReportToServer(localX509KeyVaultSnapshot);
+                }
+                Thread.Sleep(_serviceParameters.MonitoringInterval);
             }
-            Thread.Sleep(_serviceParameters.MonitoringInterval);
         }
 
         public override async Task StopAsync(CancellationToken cancellationToken)

@@ -27,7 +27,7 @@ namespace X509ObserverWorkerService
         public string RemoteServicePassword { get; set; } = "service";
         [Required]
         [JsonPropertyName("MonitoringInterval")]
-        public int MonitoringInterval { get; set; } = 10;
+        public int MonitoringInterval { get; set; } = 10000;
         [Required]
         [JsonPropertyName("ApiKey")]
         public string ApiKey { get; set; } = string.Empty;

@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.DataTransferObjects\\NetworkOperators.Identity.DataTransferObjects.csproj",
         "projectName": "NetworkOperators.Identity.DataTransferObjects",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.DataTransferObjects\\NetworkOperators.Identity.DataTransferObjects.csproj",
-        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.DataTransferObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,11 +64,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj",
         "projectName": "Tools",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj",
-        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -118,11 +118,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\X509KeysVault.Entities.csproj",
         "projectName": "X509KeysVault.Entities",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\X509KeysVault.Entities.csproj",
-        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -172,11 +172,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Repositories\\X509KeysVault.Repositories.csproj",
         "projectName": "X509KeysVault.Repositories",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Repositories\\X509KeysVault.Repositories.csproj",
-        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -247,11 +247,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509ObserverWorkerService\\X509ObserverWorkerService.csproj",
         "projectName": "X509ObserverWorkerService",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509ObserverWorkerService\\X509ObserverWorkerService.csproj",
-        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509ObserverWorkerService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
