@@ -51,8 +51,15 @@ namespace NetworkOperators.Identity.MaintananceTools
                     ValidateAudience = false,
                     ClockSkew = TimeSpan.Zero
                 });
-                var userID = int.Parse(((JwtSecurityToken)validationResult.SecurityToken).Claims.First(x => x.Type == "ID").Value);
-                return await _apiUsersRepository.GetUserByIDAsync(userID);
+                if (validationResult != null)
+                {
+                    if (validationResult.IsValid)
+                    {
+                        var userID = int.Parse(((JwtSecurityToken)validationResult.SecurityToken).Claims.First(x => x.Type == "ID").Value);
+                        return await _apiUsersRepository.GetUserByIDAsync(userID);
+                    }
+                }
+                return null;
             }
             catch (Exception ex)
             {
