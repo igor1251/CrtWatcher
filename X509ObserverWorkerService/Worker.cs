@@ -53,25 +53,6 @@ namespace X509ObserverWorkerService
                 }
             }
 
-            //using (var requestContent = new StringContent(JsonSerializer.Serialize(registrationRequestDTO), Encoding.UTF8, "application/json"))
-            //{
-            //    using (var response = await _httpClient.PostAsync(_serviceParameters.RemoteRegistrationServiceAddress, requestContent))
-            //    {
-            //        _logger.LogInformation("\nотправка [POST] request => {0}\nrequestContent = {1}\n", _serviceParameters.RemoteRegistrationServiceAddress, requestContent);
-            //        if (response.IsSuccessStatusCode)
-            //        {
-            //            var responseString = await response.Content.ReadAsStringAsync();
-            //            apiKey = JsonSerializer.Deserialize<UserAuthorizationResponse>(responseString).Token;
-            //            _logger.LogInformation("\nполучен ключ : {0}\n", apiKey);
-            //        }
-            //        else
-            //        {
-            //            await ErrorReporter.MakeReport("TryToRegisterService()", new Exception("Unable to register service. " + response.ReasonPhrase));
-            //            await StopAsync(new CancellationToken());
-            //        }
-            //    }
-            //}
-
             return apiKey;
         }
 
