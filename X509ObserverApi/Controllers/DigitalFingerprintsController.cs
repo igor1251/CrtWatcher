@@ -5,6 +5,7 @@ using System;
 using X509ObserverApi.Attributes;
 using X509KeysVault.Repositories;
 using Tools.Reporters;
+using NetworkOperators.Identity.Entities;
 
 namespace X509ObserverApi.Controllers
 {
@@ -22,7 +23,7 @@ namespace X509ObserverApi.Controllers
             _subjectsRepository = subjectsRepository;
         }
 
-        [Authorization("administrator")]
+        [Authorization(Role.ADMINISTRATOR)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteDigitalFingerprint(int id)
         {
