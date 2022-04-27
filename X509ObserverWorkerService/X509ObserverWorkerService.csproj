@@ -14,9 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Libs\NetworkOperators.Identity.Client\NetworkOperators.Identity.Client.csproj" />
     <ProjectReference Include="..\Libs\NetworkOperators.Identity.DataTransferObjects\NetworkOperators.Identity.DataTransferObjects.csproj" />
     <ProjectReference Include="..\Libs\Tools\Tools.csproj" />
     <ProjectReference Include="..\Libs\X509KeysVault.Entities\X509KeysVault.Entities.csproj" />
-    <ProjectReference Include="..\Libs\X509KeysVault.Repositories\X509KeysVault.Repositories.csproj" />
   </ItemGroup>
 </Project>

@@ -1,13 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Polly;
 using Polly.Extensions.Http;
 using System.Net.Http;
-using X509KeysVault.Repositories;
 
 namespace X509ObserverWorkerService
 {

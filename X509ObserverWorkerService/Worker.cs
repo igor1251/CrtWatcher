@@ -4,13 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using NetworkOperators.Identity.DataTransferObjects;
 using Tools.Reporters;
 using System.Net.Http;
-using System.Text.Json;
 using X509KeysVault.Entities;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Http.Json;
+using NetworkOperators.Identity.Client;
 
 namespace X509ObserverWorkerService
 {
@@ -18,53 +17,21 @@ namespace X509ObserverWorkerService
     {
         private readonly ILogger<Worker> _logger;
         private readonly HttpClient _httpClient;
-        private ServiceParameters _serviceParameters;
+        private ConnectionParameters _connectionParameters;
+        private PassportControl _passportControl;
+
         public Worker(ILogger<Worker> logger, 
                       HttpClient httpClient)
         {
             _logger = logger;
             _httpClient = httpClient;
-        }
-
-        private async Task<string> TryToRegisterService()
-        {
-            var registrationRequestDTO = new UserAuthorizationRequest()
-            {
-                UserName = _serviceParameters.RemoteServiceLogin,
-                Password = _serviceParameters.RemoteServicePassword
-            };
-
-            var apiKey = string.Empty;
-
-            _logger.LogInformation("\n–≈√»—“–. [POST] => {0}\n", _serviceParameters.RemoteRegistrationServiceAddress);
-            using (var response = await _httpClient.PostAsJsonAsync(_serviceParameters.RemoteRegistrationServiceAddress, registrationRequestDTO))
-            {
-                if (response.IsSuccessStatusCode)
-                {
-                    apiKey = JsonSerializer.Deserialize<UserAuthorizationResponse>(await response.Content.ReadAsStringAsync()).Token;
-                    _logger.LogInformation("\n[POST] ”—œ≈’\nœŒÀ.  Àﬁ◊\n[{0}]", apiKey);
-                }
-                else
-                {
-                    _logger.LogError("\n[POST] Œÿ»¡.\n Œƒ: {0}\n—¡Ÿ.: {1}", response.StatusCode, response.ReasonPhrase);
-                    await ErrorReporter.MakeReport("TryToRegisterService()", new Exception("Unable to register service. " + response.ReasonPhrase));
-                    await StopAsync(new CancellationToken(true));
-                }
-            }
-
-            return apiKey;
-        }
-
-        private void ApplyNewApiKey(string apiKey)
-        {
-            _serviceParameters.ApiKey = apiKey;
-            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _serviceParameters.ApiKey);
+            _passportControl = new PassportControl(httpClient);
         }
 
         private async Task SendX509KeyToServer(Subject subject)
         {
-            _logger.LogInformation("\nŒ“œ–. [POST] => {0}\n", _serviceParameters.RemoteX509VaultStoreService);
-            using (var response = await _httpClient.PostAsJsonAsync(_serviceParameters.RemoteX509VaultStoreService, subject))
+            _logger.LogInformation("\nŒ“œ–. [POST] => {0}\n", _connectionParameters.RemoteX509VaultStoreService);
+            using (var response = await _httpClient.PostAsJsonAsync(_connectionParameters.RemoteX509VaultStoreService, subject))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -73,10 +40,10 @@ namespace X509ObserverWorkerService
                 else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                 {
                     _logger.LogInformation("\n Àﬁ◊ Õ≈ ¬¿À. –≈√»—“–.\n");
-                    ApplyNewApiKey(await TryToRegisterService());
-                    if (_serviceParameters.ApiKey != string.Empty)
+                    ApplyNewApiKey(await _passportControl.RegisterClient(_connectionParameters));
+                    if (_connectionParameters.ApiKey != string.Empty)
                     {
-                        _logger.LogInformation("\n”—œ≈’. ÕŒ¬. «Õ. APIKEY\n[{0}]\n", _serviceParameters.ApiKey);
+                        _logger.LogInformation("\n”—œ≈’. ÕŒ¬. «Õ. APIKEY\n[{0}]\n", _connectionParameters.ApiKey);
                     }
                     else
                     {
@@ -162,18 +129,22 @@ namespace X509ObserverWorkerService
             return subjects;
         }
 
-
+        private void ApplyNewApiKey(string apiKey)
+        {
+            _connectionParameters.ApiKey = apiKey;
+            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _connectionParameters.ApiKey);
+        }
 
         public override async Task StartAsync(CancellationToken cancellationToken)
         {
-            _serviceParameters = await ServiceParametersLoader.ReadServiceParameters();
-            if (string.IsNullOrEmpty(_serviceParameters.ApiKey))
+            _connectionParameters = await ConnectionParametersLoader.ReadServiceParameters();
+            if (string.IsNullOrEmpty(_connectionParameters.ApiKey))
             {
-                ApplyNewApiKey(await TryToRegisterService());
+                ApplyNewApiKey(await _passportControl.RegisterClient(_connectionParameters));
             }
             else
             {
-                _logger.LogInformation("\n»—œ.  Àﬁ◊\n[{0}]\n", _serviceParameters.ApiKey);
+                _logger.LogInformation("\n»—œ.  Àﬁ◊\n[{0}]\n", _connectionParameters.ApiKey);
             }
             await base.StartAsync(cancellationToken);
         }
@@ -187,13 +158,13 @@ namespace X509ObserverWorkerService
                 {
                     await SendX509KeysVaultReportToServer(localX509KeyVaultSnapshot);
                 }
-                Thread.Sleep(_serviceParameters.MonitoringInterval);
+                Thread.Sleep(_connectionParameters.MonitoringInterval);
             }
         }
 
         public override async Task StopAsync(CancellationToken cancellationToken)
         {
-            await ServiceParametersLoader.WriteServiceParameters(_serviceParameters);
+            await ConnectionParametersLoader.WriteServiceParameters(_connectionParameters);
             await base.StopAsync(cancellationToken);
         }
     }
