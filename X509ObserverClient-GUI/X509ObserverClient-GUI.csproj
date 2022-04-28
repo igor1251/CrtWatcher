@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>X509ObserverClient_GUI</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Libs\NetworkOperators.Identity.Client\NetworkOperators.Identity.Client.csproj" />
+    <ProjectReference Include="..\Libs\NetworkOperators.Identity.DataTransferObjects\NetworkOperators.Identity.DataTransferObjects.csproj" />
+  </ItemGroup>
+
+</Project>

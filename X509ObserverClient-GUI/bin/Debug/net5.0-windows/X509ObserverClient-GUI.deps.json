@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "X509ObserverClient-GUI/1.0.0": {
+        "dependencies": {
+          "NetworkOperators.Identity.DataTransferObjects": "1.0.0"
+        },
+        "runtime": {
+          "X509ObserverClient-GUI.dll": {}
+        }
+      },
+      "NetworkOperators.Identity.DataTransferObjects/1.0.0": {
+        "runtime": {
+          "NetworkOperators.Identity.DataTransferObjects.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "X509ObserverClient-GUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NetworkOperators.Identity.DataTransferObjects/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
