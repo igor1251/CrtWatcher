@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetworkOperators.Identity.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,26 @@ namespace X509ObserverClient_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ConnectionParameters _connectionParameters = new ConnectionParameters();
+        private PassportControl _passportControl;
+
+        //private BitmapImage[] icons = new BitmapImage[2];
+
         public MainWindow()
         {
             InitializeComponent();
+            //icons[0] = new BitmapImage(new Uri("/icons/offline.png", UriKind.Relative));
+            //icons[1] = new BitmapImage(new Uri("icons/online.png"));
+            //connectionStatusIcon.Source = icons[0];
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            _connectionParameters = await ConnectionParametersLoader.ReadServiceParameters();
+            if (!string.IsNullOrEmpty(_connectionParameters.ApiKey))
+            {
+
+            }
         }
 
         private void loginMenuItem_Click(object sender, RoutedEventArgs e)

@@ -9,8 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="icons\offline.png" />
+    <None Remove="icons\online.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Libs\NetworkOperators.Identity.Client\NetworkOperators.Identity.Client.csproj" />
     <ProjectReference Include="..\Libs\NetworkOperators.Identity.DataTransferObjects\NetworkOperators.Identity.DataTransferObjects.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons\offline.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\online.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

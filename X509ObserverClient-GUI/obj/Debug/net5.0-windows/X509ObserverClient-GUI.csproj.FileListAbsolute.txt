@@ -25,3 +25,7 @@ D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverClient-GUI\obj\Debug\net5.0
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverClient-GUI\bin\Debug\net5.0-windows\NetworkOperators.Identity.DataTransferObjects.dll
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverClient-GUI\bin\Debug\net5.0-windows\NetworkOperators.Identity.DataTransferObjects.pdb
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverClient-GUI\obj\Debug\net5.0-windows\X509ObserverClient-GUI.csproj.CopyComplete
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverClient-GUI\bin\Debug\net5.0-windows\NetworkOperators.Identity.Client.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverClient-GUI\bin\Debug\net5.0-windows\Tools.dll
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverClient-GUI\bin\Debug\net5.0-windows\NetworkOperators.Identity.Client.pdb
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverClient-GUI\bin\Debug\net5.0-windows\Tools.pdb
