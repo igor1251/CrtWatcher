@@ -14,5 +14,6 @@ namespace NetworkOperators.Identity.Repositories
         Task UpdateUserAsync(User user);
         Task RemoveUserAsync(int userID);
         Task<bool> IsUserExistsAsync(User user);
+        Task<User> GetUserByUsernameAsync(string username);
     }
 }

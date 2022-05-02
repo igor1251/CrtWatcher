@@ -28,7 +28,7 @@ namespace NetworkOperators.Identity.MaintananceTools
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim("ID", user.ID.ToString())
+                    new Claim("Username", user.UserName.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddDays(keyValidityPeriod),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -55,8 +55,8 @@ namespace NetworkOperators.Identity.MaintananceTools
                 {
                     if (validationResult.IsValid)
                     {
-                        var userID = int.Parse(((JwtSecurityToken)validationResult.SecurityToken).Claims.First(x => x.Type == "ID").Value);
-                        return await _apiUsersRepository.GetUserByIDAsync(userID);
+                        var username = ((JwtSecurityToken)validationResult.SecurityToken).Claims.First(x => x.Type == "Username").Value;
+                        return await _apiUsersRepository.GetUserByUsernameAsync(username);
                     }
                 }
                 return null;

@@ -41,7 +41,7 @@ namespace X509ObserverApi.Controllers
                 {
                     UserName = request.UserName,
                     PasswordHash = await SHA2HashOperator.Generate(request.Password),
-                    Role = Role.USER
+                    Permissions = (ushort)Role.User
                 };
                 var isApiUserExists = await _usersRepository.IsUserExistsAsync(newUser);
                 if (isApiUserExists)

@@ -40,7 +40,7 @@ namespace NetworkOperators.Identity.Repositories
                     {
                         UserName = user.UserName,
                         PasswordHash = user.PasswordHash,
-                        Role = user.Role
+                        Permissions = user.Permissions
                     });
                 }
             }
@@ -80,7 +80,7 @@ namespace NetworkOperators.Identity.Repositories
             }
             catch (Exception ex)
             {
-                await ErrorReporter.MakeReport("GetApiUserByUserNameAsync(string username)", ex);
+                await ErrorReporter.MakeReport("GetUserByAuthenticationDataAsync(string username)", ex);
             }
             return null;
         }
@@ -139,7 +139,7 @@ namespace NetworkOperators.Identity.Repositories
                 {
                     UserName = user.UserName,
                     PasswordHash = user.PasswordHash,
-                    Role = user.Role
+                    Permissions = user.Permissions
                 });
             }
             catch (Exception ex)
@@ -164,6 +164,23 @@ namespace NetworkOperators.Identity.Repositories
                 await ErrorReporter.MakeReport("IsApiUserExistsAsync(ApiUser user)", ex);
             }
             return false;
+        }
+
+        public async Task<User> GetUserByUsernameAsync(string username)
+        {
+            try
+            {
+                var user = await connection.QueryFirstOrDefaultAsync<User>(Queries.GET_USER_BY_USERNAME, new
+                {
+                    UserName = username,
+                });
+                return user;
+            }
+            catch (Exception ex)
+            {
+                await ErrorReporter.MakeReport("GetUserByUsernameAsync(string username)", ex);
+            }
+            return null;
         }
     }
 }

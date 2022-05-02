@@ -18,7 +18,7 @@ namespace NetworkOperators.Identity.Entities
         public string PasswordHash { get; set; }
 
         [Required]
-        [JsonPropertyName("role")]
-        public string Role { get; set; }
+        [JsonPropertyName("permissions")]
+        public ushort Permissions { get; set; } = 0;
     }
 }

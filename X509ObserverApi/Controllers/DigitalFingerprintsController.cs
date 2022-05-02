@@ -23,7 +23,7 @@ namespace X509ObserverApi.Controllers
             _subjectsRepository = subjectsRepository;
         }
 
-        [Authorization(Role.ADMINISTRATOR)]
+        [Authorization(Role.Administrator)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteDigitalFingerprint(int id)
         {

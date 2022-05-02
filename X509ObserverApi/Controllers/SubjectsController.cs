@@ -25,7 +25,7 @@ namespace X509ObserverApi.Controllers
             _subjectsRepository = subjectsRepository;
         }
 
-        [Authorization(Role.ADMINISTRATOR)]
+        [Authorization(Role.Administrator)]
         [HttpGet]
         [Route("db")]
         public async Task<ActionResult<IEnumerable<Subject>>> GetSubjectsAsync()
@@ -47,7 +47,7 @@ namespace X509ObserverApi.Controllers
             }
         }
 
-        [Authorization(Role.ADMINISTRATOR)]
+        [Authorization(Role.Administrator)]
         [HttpGet]
         [Route("{id}")]
         public async Task<ActionResult<Subject>> GetSubjectByID(int id)
@@ -69,7 +69,7 @@ namespace X509ObserverApi.Controllers
             }
         }
 
-        [Authorization(Role.USER)]
+        [Authorization(Role.Service)]
         [HttpPost]
         public async Task<ActionResult> AddSubject(Subject subject)
         {
@@ -86,7 +86,7 @@ namespace X509ObserverApi.Controllers
             }
         }
 
-        [Authorization(Role.USER)]
+        [Authorization(Role.User)]
         [HttpPut]
         public async Task<ActionResult> UpdateSubject(Subject subject)
         {
@@ -103,7 +103,7 @@ namespace X509ObserverApi.Controllers
             }
         }
 
-        [Authorization(Role.ADMINISTRATOR)]
+        [Authorization(Role.Administrator)]
         [HttpDelete("{id}")]
         public async Task<ActionResult> RemoveSubject(int id)
         {
