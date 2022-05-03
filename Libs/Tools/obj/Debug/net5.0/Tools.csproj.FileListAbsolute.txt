@@ -34,3 +34,15 @@ D:/Libraries/Documents/GitHub/CrtWatcher/Libs/Tools/obj/Debug/net5.0/ref/Tools.d
 /home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/obj/Debug/net5.0/refint/Tools.dll
 /home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/obj/Debug/net5.0/Tools.pdb
 /home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/obj/Debug/net5.0/ref/Tools.dll
+/home/igor/Projects/github/CrtWatcher/Libs/Tools/bin/Debug/net5.0/Tools.deps.json
+/home/igor/Projects/github/CrtWatcher/Libs/Tools/bin/Debug/net5.0/Tools.dll
+/home/igor/Projects/github/CrtWatcher/Libs/Tools/bin/Debug/net5.0/Tools.pdb
+/home/igor/Projects/github/CrtWatcher/Libs/Tools/obj/Debug/net5.0/Tools.csproj.AssemblyReference.cache
+/home/igor/Projects/github/CrtWatcher/Libs/Tools/obj/Debug/net5.0/Tools.GeneratedMSBuildEditorConfig.editorconfig
+/home/igor/Projects/github/CrtWatcher/Libs/Tools/obj/Debug/net5.0/Tools.AssemblyInfoInputs.cache
+/home/igor/Projects/github/CrtWatcher/Libs/Tools/obj/Debug/net5.0/Tools.AssemblyInfo.cs
+/home/igor/Projects/github/CrtWatcher/Libs/Tools/obj/Debug/net5.0/Tools.csproj.CoreCompileInputs.cache
+/home/igor/Projects/github/CrtWatcher/Libs/Tools/obj/Debug/net5.0/Tools.dll
+/home/igor/Projects/github/CrtWatcher/Libs/Tools/obj/Debug/net5.0/refint/Tools.dll
+/home/igor/Projects/github/CrtWatcher/Libs/Tools/obj/Debug/net5.0/Tools.pdb
+/home/igor/Projects/github/CrtWatcher/Libs/Tools/obj/Debug/net5.0/ref/Tools.dll

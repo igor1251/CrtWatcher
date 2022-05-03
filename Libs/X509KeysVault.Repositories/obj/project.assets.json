@@ -1331,11 +1331,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj",
+      "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj",
       "projectName": "X509KeysVault.Repositories",
-      "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj",
+      "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj",
       "packagesPath": "/home/igor/.nuget/packages/",
-      "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/obj/",
+      "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Repositories/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/igor/.nuget/NuGet/NuGet.Config"
@@ -1350,11 +1350,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj": {
-              "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj"
+            "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj": {
+              "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj"
             },
-            "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {
-              "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj"
+            "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {
+              "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj"
             }
           }
         }

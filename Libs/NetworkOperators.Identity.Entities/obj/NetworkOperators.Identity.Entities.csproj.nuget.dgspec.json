@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {}
+    "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {}
   },
   "projects": {
-    "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
+    "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
+        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
         "projectName": "NetworkOperators.Identity.Entities",
-        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
+        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
         "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/",
+        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/igor/.nuget/NuGet/NuGet.Config"

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj",
+      "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj",
       "projectName": "NetworkOperators.Identity.DataTransferObjects",
-      "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj",
+      "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj",
       "packagesPath": "/home/igor/.nuget/packages/",
-      "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/",
+      "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/igor/.nuget/NuGet/NuGet.Config"

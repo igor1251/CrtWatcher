@@ -37,26 +37,27 @@ namespace X509ObserverApi.Controllers
         {
             try
             {
-                var newUser = new User()
+                var isApiUserExists = await _usersRepository.IsUserExistsAsync(request.UserName);
+                if (isApiUserExists)
+                {
+                    _logger.LogInformation("User \"{0}\" already exists. Redirecting to \"Login\" controller", request.UserName);
+                    RedirectToAction("Login", request);
+                }
+
+                await _usersRepository.AddUserAsync(new User() 
                 {
                     UserName = request.UserName,
                     PasswordHash = await SHA2HashOperator.Generate(request.Password),
                     Permissions = (ushort)Role.User
-                };
-                var isApiUserExists = await _usersRepository.IsUserExistsAsync(newUser);
-                if (isApiUserExists)
-                {
-                    RedirectToAction("Login", request);
-                }
-                await _usersRepository.AddUserAsync(newUser);
-                var createdUser = await _usersRepository.GetUserByAuthenticationDataAsync(newUser.UserName, newUser.PasswordHash);
+                });
+                var createdUser = await _usersRepository.GetUserByUsernameAsync(request.UserName);
                 var apiKey = await _jwtTokenOperator.Generate(createdUser, int.Parse(_configuration["KeyValidityPeriod"]), _configuration["Secret"]);
                 return Ok(new UserAuthorizationResponse() { Token = apiKey });
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                await ErrorReporter.MakeReport("Register(ApiUser user)", ex);
+                await ErrorReporter.MakeReport("Register(UserAuthorizationRequest request)", ex);
                 return BadRequest(ex.Message);
             }
         }

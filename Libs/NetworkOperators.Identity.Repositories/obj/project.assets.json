@@ -1331,11 +1331,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj",
+      "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj",
       "projectName": "NetworkOperators.Identity.Repositories",
-      "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj",
+      "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj",
       "packagesPath": "/home/igor/.nuget/packages/",
-      "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/obj/",
+      "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/igor/.nuget/NuGet/NuGet.Config"
@@ -1350,11 +1350,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
-              "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj"
+            "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
+              "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj"
             },
-            "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj": {
-              "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj"
+            "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj": {
+              "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj"
             }
           }
         }

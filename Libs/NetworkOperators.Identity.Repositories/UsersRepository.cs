@@ -148,14 +148,13 @@ namespace NetworkOperators.Identity.Repositories
             }
         }
 
-        public async Task<bool> IsUserExistsAsync(User user)
+        public async Task<bool> IsUserExistsAsync(string username)
         {
             try
             {
                 var result = await connection.QueryFirstOrDefaultAsync<bool>(Queries.IS_USER_EXISTS, new
                 {
-                    UserName = user.UserName,
-                    PasswordHash = user.PasswordHash
+                    UserName = username,
                 });
                 return result;
             }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XzDZu+7JuUZyUxGOQUZIDtPxxF2thoATuyi8t7t/sYnCGMOhWoIVNKoObz3OVgSKv+r0UEpGAla/BceFdDkWZA==",
+  "dgSpecHash": "vpBm2Rl+GpgX7IxqZE19aBglsJOHkqcfvqaEKaBWJ+MtqyWaUlILna344bzGykAYcYeZ48OyIOFRAokcZDKmBg==",
   "success": true,
-  "projectFilePath": "/home/igor/Документы/GitHub/CrtWatcher/X509ObserverApi/X509ObserverApi.csproj",
+  "projectFilePath": "/home/igor/Projects/github/CrtWatcher/X509ObserverApi/X509ObserverApi.csproj",
   "expectedPackageFiles": [
     "/home/igor/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
     "/home/igor/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",

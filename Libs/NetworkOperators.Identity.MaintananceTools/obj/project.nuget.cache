@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nNKSGUygFCUv9GSKa2bdC3WTTI2L7iFPB8gpuo9kzqLScx4PvnuEo6U6VMYEkKmXJ2Z0UjsmhAE2R1qFjP9rDA==",
+  "dgSpecHash": "hVPbjKkEgMcn26vHLdxY3s08UUkV2/cT0xdVUtwwtYjnVj9aOhoCeWtLyoDOpNZ+M2PHICpROSf/dfuW3HTTrg==",
   "success": true,
-  "projectFilePath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj",
+  "projectFilePath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj",
   "expectedPackageFiles": [
     "/home/igor/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
     "/home/igor/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",

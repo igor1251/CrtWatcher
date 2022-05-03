@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qK1fzwr3VkjewF4seeMCZNV+xtMHF+5RIb6IbTATblgxW2fx3rA15gEJuMNs6bWKlv4D0f/7A0sjLhXp7mYAow==",
+  "dgSpecHash": "oSPRp6J/D6fSuS7zlXNIjakgp6UGe5AETKU63ZMaf5BEg4WEfkA773Epxr31/0YCDZz01JvwnWoRLJYEn7EpaA==",
   "success": true,
-  "projectFilePath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj",
+  "projectFilePath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj",
   "expectedPackageFiles": [
     "/home/igor/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
     "/home/igor/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",

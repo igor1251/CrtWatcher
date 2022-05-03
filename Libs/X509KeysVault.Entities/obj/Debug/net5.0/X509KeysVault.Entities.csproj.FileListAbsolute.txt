@@ -34,3 +34,15 @@ D:/Libraries/Documents/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/n
 /home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/net5.0/refint/X509KeysVault.Entities.dll
 /home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/net5.0/X509KeysVault.Entities.pdb
 /home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/net5.0/ref/X509KeysVault.Entities.dll
+/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/bin/Debug/net5.0/X509KeysVault.Entities.deps.json
+/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/bin/Debug/net5.0/X509KeysVault.Entities.dll
+/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/bin/Debug/net5.0/X509KeysVault.Entities.pdb
+/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/net5.0/X509KeysVault.Entities.csproj.AssemblyReference.cache
+/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/net5.0/X509KeysVault.Entities.GeneratedMSBuildEditorConfig.editorconfig
+/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/net5.0/X509KeysVault.Entities.AssemblyInfoInputs.cache
+/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/net5.0/X509KeysVault.Entities.AssemblyInfo.cs
+/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/net5.0/X509KeysVault.Entities.csproj.CoreCompileInputs.cache
+/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/net5.0/X509KeysVault.Entities.dll
+/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/net5.0/refint/X509KeysVault.Entities.dll
+/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/net5.0/X509KeysVault.Entities.pdb
+/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/obj/Debug/net5.0/ref/X509KeysVault.Entities.dll

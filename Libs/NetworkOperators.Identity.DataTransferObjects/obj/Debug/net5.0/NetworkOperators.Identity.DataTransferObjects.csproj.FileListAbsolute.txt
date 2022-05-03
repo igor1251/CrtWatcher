@@ -34,3 +34,15 @@ D:/Libraries/Documents/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTran
 /home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/Debug/net5.0/refint/NetworkOperators.Identity.DataTransferObjects.dll
 /home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/Debug/net5.0/NetworkOperators.Identity.DataTransferObjects.pdb
 /home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/Debug/net5.0/ref/NetworkOperators.Identity.DataTransferObjects.dll
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/bin/Debug/net5.0/NetworkOperators.Identity.DataTransferObjects.deps.json
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/bin/Debug/net5.0/NetworkOperators.Identity.DataTransferObjects.dll
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/bin/Debug/net5.0/NetworkOperators.Identity.DataTransferObjects.pdb
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/Debug/net5.0/NetworkOperators.Identity.DataTransferObjects.csproj.AssemblyReference.cache
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/Debug/net5.0/NetworkOperators.Identity.DataTransferObjects.GeneratedMSBuildEditorConfig.editorconfig
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/Debug/net5.0/NetworkOperators.Identity.DataTransferObjects.AssemblyInfoInputs.cache
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/Debug/net5.0/NetworkOperators.Identity.DataTransferObjects.AssemblyInfo.cs
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/Debug/net5.0/NetworkOperators.Identity.DataTransferObjects.csproj.CoreCompileInputs.cache
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/Debug/net5.0/NetworkOperators.Identity.DataTransferObjects.dll
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/Debug/net5.0/refint/NetworkOperators.Identity.DataTransferObjects.dll
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/Debug/net5.0/NetworkOperators.Identity.DataTransferObjects.pdb
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/Debug/net5.0/ref/NetworkOperators.Identity.DataTransferObjects.dll

@@ -10,7 +10,7 @@
                                       GET_USER_BY_USERNAME = "SELECT* FROM[Users] WHERE UserName = @UserName;",
                                       GET_USER_ID = "SELECT [Users].ID FROM [Users] WHERE UserName=@UserName;",
                                       GET_USERS = "SELECT * FROM [Users];",
-                                      IS_USER_EXISTS = "SELECT EXISTS(SELECT * FROM [Users] WHERE UserName=@UserName AND PasswordHash=@PasswordHash);",
+                                      IS_USER_EXISTS = "SELECT EXISTS(SELECT * FROM [Users] WHERE UserName=@UserName);",
                                       
             
                                       CREATE_TABLES = "CREATE TABLE Users(" +

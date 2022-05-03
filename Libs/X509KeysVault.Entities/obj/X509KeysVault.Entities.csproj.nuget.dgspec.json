@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {}
+    "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {}
   },
   "projects": {
-    "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {
+    "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj",
+        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj",
         "projectName": "X509KeysVault.Entities",
-        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj",
+        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj",
         "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/obj/",
+        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/igor/.nuget/NuGet/NuGet.Config"

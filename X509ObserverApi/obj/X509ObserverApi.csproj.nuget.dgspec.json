@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/igor/Документы/GitHub/CrtWatcher/X509ObserverApi/X509ObserverApi.csproj": {}
+    "/home/igor/Projects/github/CrtWatcher/X509ObserverApi/X509ObserverApi.csproj": {}
   },
   "projects": {
-    "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj": {
+    "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj",
+        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj",
         "projectName": "NetworkOperators.Identity.DataTransferObjects",
-        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj",
+        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj",
         "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/",
+        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/igor/.nuget/NuGet/NuGet.Config"
@@ -56,14 +56,14 @@
         }
       }
     },
-    "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
+    "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
+        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
         "projectName": "NetworkOperators.Identity.Entities",
-        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
+        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
         "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/",
+        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/igor/.nuget/NuGet/NuGet.Config"
@@ -108,14 +108,14 @@
         }
       }
     },
-    "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj": {
+    "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj",
+        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj",
         "projectName": "NetworkOperators.Identity.MaintananceTools",
-        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj",
+        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj",
         "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/obj/",
+        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/igor/.nuget/NuGet/NuGet.Config"
@@ -130,14 +130,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj"
               },
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj"
               },
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj"
               }
             }
           }
@@ -176,14 +176,14 @@
         }
       }
     },
-    "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj": {
+    "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj",
+        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj",
         "projectName": "NetworkOperators.Identity.Repositories",
-        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj",
+        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj",
         "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/obj/",
+        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/igor/.nuget/NuGet/NuGet.Config"
@@ -198,11 +198,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj"
               },
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj"
               }
             }
           }
@@ -249,14 +249,14 @@
         }
       }
     },
-    "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj": {
+    "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj",
+        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj",
         "projectName": "Tools",
-        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj",
+        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj",
         "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/obj/",
+        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/igor/.nuget/NuGet/NuGet.Config"
@@ -301,14 +301,14 @@
         }
       }
     },
-    "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {
+    "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj",
+        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj",
         "projectName": "X509KeysVault.Entities",
-        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj",
+        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj",
         "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/obj/",
+        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/igor/.nuget/NuGet/NuGet.Config"
@@ -353,14 +353,14 @@
         }
       }
     },
-    "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj": {
+    "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj",
+        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj",
         "projectName": "X509KeysVault.Repositories",
-        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj",
+        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj",
         "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/obj/",
+        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Repositories/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/igor/.nuget/NuGet/NuGet.Config"
@@ -375,11 +375,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj"
               },
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj"
               }
             }
           }
@@ -426,14 +426,14 @@
         }
       }
     },
-    "/home/igor/Документы/GitHub/CrtWatcher/X509ObserverApi/X509ObserverApi.csproj": {
+    "/home/igor/Projects/github/CrtWatcher/X509ObserverApi/X509ObserverApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/X509ObserverApi/X509ObserverApi.csproj",
+        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/X509ObserverApi/X509ObserverApi.csproj",
         "projectName": "X509ObserverApi",
-        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/X509ObserverApi/X509ObserverApi.csproj",
+        "projectPath": "/home/igor/Projects/github/CrtWatcher/X509ObserverApi/X509ObserverApi.csproj",
         "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/X509ObserverApi/obj/",
+        "outputPath": "/home/igor/Projects/github/CrtWatcher/X509ObserverApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/igor/.nuget/NuGet/NuGet.Config"
@@ -448,26 +448,26 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj"
               },
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj"
               },
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj"
               },
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj"
               },
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj"
               },
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj"
               },
-              "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj": {
-                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj"
+              "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj": {
+                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj"
               }
             }
           }

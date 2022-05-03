@@ -34,3 +34,15 @@ D:/Libraries/Documents/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities
 /home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/Debug/net5.0/refint/NetworkOperators.Identity.Entities.dll
 /home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/Debug/net5.0/NetworkOperators.Identity.Entities.pdb
 /home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/Debug/net5.0/ref/NetworkOperators.Identity.Entities.dll
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/bin/Debug/net5.0/NetworkOperators.Identity.Entities.deps.json
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/bin/Debug/net5.0/NetworkOperators.Identity.Entities.dll
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/bin/Debug/net5.0/NetworkOperators.Identity.Entities.pdb
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/Debug/net5.0/NetworkOperators.Identity.Entities.csproj.AssemblyReference.cache
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/Debug/net5.0/NetworkOperators.Identity.Entities.GeneratedMSBuildEditorConfig.editorconfig
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/Debug/net5.0/NetworkOperators.Identity.Entities.AssemblyInfoInputs.cache
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/Debug/net5.0/NetworkOperators.Identity.Entities.AssemblyInfo.cs
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/Debug/net5.0/NetworkOperators.Identity.Entities.csproj.CoreCompileInputs.cache
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/Debug/net5.0/NetworkOperators.Identity.Entities.dll
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/Debug/net5.0/refint/NetworkOperators.Identity.Entities.dll
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/Debug/net5.0/NetworkOperators.Identity.Entities.pdb
+/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/Debug/net5.0/ref/NetworkOperators.Identity.Entities.dll

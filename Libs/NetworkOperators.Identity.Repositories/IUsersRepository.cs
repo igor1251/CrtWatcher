@@ -13,7 +13,7 @@ namespace NetworkOperators.Identity.Repositories
         Task AddUserAsync(User user);
         Task UpdateUserAsync(User user);
         Task RemoveUserAsync(int userID);
-        Task<bool> IsUserExistsAsync(User user);
+        Task<bool> IsUserExistsAsync(string username);
         Task<User> GetUserByUsernameAsync(string username);
     }
 }

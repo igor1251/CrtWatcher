@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Bp8f63MgRljpIKPL6caCvO/vINQKxutkuMmigpdv5J6+3EsAtAwl9o7Nx4kMl/3AHX+gtuKGN4IgzvYO9lmeCw==",
+  "dgSpecHash": "pkGw+R6AV7ERtwd+Se6GJISCuSVSorVSZw+k1H6iyrDPhLScGdnhWLn4/Guj1OntJMYWmtR57kf+OJOmQlf29g==",
   "success": true,
-  "projectFilePath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj",
+  "projectFilePath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
