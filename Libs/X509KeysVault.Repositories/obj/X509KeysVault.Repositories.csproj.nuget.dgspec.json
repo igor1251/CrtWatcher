@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Repositories\\X509KeysVault.Repositories.csproj": {}
+    "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj": {}
   },
   "projects": {
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj": {
+    "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj",
+        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj",
         "projectName": "Tools",
-        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj",
-        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
-        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\obj\\",
+        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj",
+        "packagesPath": "/home/igor/.nuget/packages/",
+        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/igor/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -54,28 +52,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\X509KeysVault.Entities.csproj": {
+    "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\X509KeysVault.Entities.csproj",
+        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj",
         "projectName": "X509KeysVault.Entities",
-        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\X509KeysVault.Entities.csproj",
-        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
-        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\obj\\",
+        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj",
+        "packagesPath": "/home/igor/.nuget/packages/",
+        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/igor/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -108,39 +104,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Repositories\\X509KeysVault.Repositories.csproj": {
+    "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Repositories\\X509KeysVault.Repositories.csproj",
+        "projectUniqueName": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj",
         "projectName": "X509KeysVault.Repositories",
-        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Repositories\\X509KeysVault.Repositories.csproj",
-        "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
-        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Repositories\\obj\\",
+        "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/X509KeysVault.Repositories.csproj",
+        "packagesPath": "/home/igor/.nuget/packages/",
+        "outputPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Repositories/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/igor/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj": {
-                "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj"
+              "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj": {
+                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/Tools/Tools.csproj"
               },
-              "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\X509KeysVault.Entities.csproj": {
-                "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\X509KeysVault.Entities.csproj"
+              "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj": {
+                "projectPath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj"
               }
             }
           }
@@ -183,7 +177,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }

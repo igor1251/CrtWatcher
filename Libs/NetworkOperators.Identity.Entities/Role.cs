@@ -4,7 +4,7 @@
     {
         None = 0,
         User = 1,
-        Administrator = 2,
-        Service = 4
+        Service = 2,
+        Administrator = 4,
     }
 }

@@ -3,7 +3,7 @@
     public static class Queries
     {
         public static readonly string ADD_USER = "INSERT INTO [Users] (UserName, PasswordHash, Permissions) VALUES (@UserName, @PasswordHash, @Permissions);",
-                                      UPDATE_USER = "UPDATE [Users] SET PasswordHash=@PasswordHash, Role=@Role;",
+                                      UPDATE_USER = "UPDATE [Users] SET PasswordHash=@PasswordHash, Permissions=@Permissions;",
                                       REMOVE_USER = "DELETE FROM [Users] WHERE ID=@ID;",
                                       GET_USER_BY_ID = "SELECT * FROM [Users] WHERE ID=@ID;",
                                       GET_USER_BY_AUTHENTICATION_DATA = "SELECT * FROM [Users] WHERE UserName=@UserName AND PasswordHash=@PasswordHash;",
@@ -17,6 +17,6 @@
                                                       "ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                                                       "UserName VARCHAR(120) NOT NULL, " +
                                                       "PasswordHash VARCHAR(256) NOT NULL," +
-                                                      "Permissions INTEGER NOT NULL)";
+                                                      "Permissions INTEGER(2) NOT NULL)";
     }
 }

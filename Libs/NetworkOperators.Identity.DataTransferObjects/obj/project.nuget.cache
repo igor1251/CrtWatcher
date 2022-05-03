@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pl9X4yNiugT+0d+dP7LUiTjJicNJIkfRmAp1QqkzRw0UmjQcTORwJbIBgVjgmr0hshPggWO7oeNOOvBoSOxE1g==",
+  "dgSpecHash": "fho0h62Sp41b/9H0XwtiSPPfK/aTK/B8/cRob6eObxpMCKktSG6tRC8hm6JSHa0y5zZpSUNQlMMIKnZWgV1VeA==",
   "success": true,
-  "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.DataTransferObjects\\NetworkOperators.Identity.DataTransferObjects.csproj",
+  "projectFilePath": "/home/igor/Документы/GitHub/CrtWatcher/Libs/NetworkOperators.Identity.DataTransferObjects/NetworkOperators.Identity.DataTransferObjects.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
