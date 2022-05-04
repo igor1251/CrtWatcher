@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj": {}
+    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.MaintananceTools\\NetworkOperators.Identity.MaintananceTools.csproj": {}
   },
   "projects": {
-    "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
+    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
+        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj",
         "projectName": "NetworkOperators.Identity.Entities",
-        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
-        "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/",
+        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj",
+        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/igor/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,40 +54,42 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj": {
+    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.MaintananceTools\\NetworkOperators.Identity.MaintananceTools.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj",
+        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.MaintananceTools\\NetworkOperators.Identity.MaintananceTools.csproj",
         "projectName": "NetworkOperators.Identity.MaintananceTools",
-        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/NetworkOperators.Identity.MaintananceTools.csproj",
-        "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.MaintananceTools/obj/",
+        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.MaintananceTools\\NetworkOperators.Identity.MaintananceTools.csproj",
+        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.MaintananceTools\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/igor/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
-                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj"
+              "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj": {
+                "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj"
               },
-              "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj": {
-                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj"
+              "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Repositories\\NetworkOperators.Identity.Repositories.csproj": {
+                "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Repositories\\NetworkOperators.Identity.Repositories.csproj"
               },
-              "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj": {
-                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj"
+              "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj": {
+                "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj"
               }
             }
           }
@@ -120,37 +124,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj": {
+    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Repositories\\NetworkOperators.Identity.Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj",
+        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Repositories\\NetworkOperators.Identity.Repositories.csproj",
         "projectName": "NetworkOperators.Identity.Repositories",
-        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/NetworkOperators.Identity.Repositories.csproj",
-        "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Repositories/obj/",
+        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Repositories\\NetworkOperators.Identity.Repositories.csproj",
+        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/igor/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
-                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj"
+              "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj": {
+                "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj"
               },
-              "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj": {
-                "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj"
+              "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj": {
+                "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj"
               }
             }
           }
@@ -193,26 +199,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj": {
+    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj",
+        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj",
         "projectName": "Tools",
-        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/Tools.csproj",
-        "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/Tools/obj/",
+        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj",
+        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/igor/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -245,7 +253,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

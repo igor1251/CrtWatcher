@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MKPZnPARk1G7kwdRITg+Aw1BaEWd3N8TL4fw0LhNYlIByZfU5D4ZF11f1SBaVVohn9cCMbtpFcb3Byp0JGV2Eg==",
+  "dgSpecHash": "R8igcO2CZiF9bHgfqdcLxAY0HvSg78yJZtpFyBrKsS9W0fBJnQc8KGED+a7h5aRnTzyggkVVSQ3LtK0h7eYMDA==",
   "success": true,
-  "projectFilePath": "/home/igor/Projects/github/CrtWatcher/Libs/X509KeysVault.Entities/X509KeysVault.Entities.csproj",
+  "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\X509KeysVault.Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {}
+    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj": {}
   },
   "projects": {
-    "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj": {
+    "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
+        "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj",
         "projectName": "NetworkOperators.Identity.Entities",
-        "projectPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
-        "packagesPath": "/home/igor/.nuget/packages/",
-        "outputPath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/obj/",
+        "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj",
+        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/igor/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
