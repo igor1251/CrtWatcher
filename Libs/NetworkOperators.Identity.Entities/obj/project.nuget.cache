@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V2OzdXfjjxqc2oHEGi8CbKmK7WXk8p2kthoHinxj5FKQS/IOOd2WxVhbwAygo/962iOYyF1NjbMoKB8lMkhKeQ==",
+  "dgSpecHash": "19lCvz8uSn+mdb1iAOmDzCY1ylKlJvKBkMUo3i8C1ztwSADwkyi1FFsaX3LaytKz55dc3NyMJarBl1zvAEJvTA==",
   "success": true,
-  "projectFilePath": "/home/igor/Projects/github/CrtWatcher/Libs/NetworkOperators.Identity.Entities/NetworkOperators.Identity.Entities.csproj",
+  "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
