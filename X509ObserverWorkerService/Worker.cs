@@ -30,32 +30,32 @@ namespace X509ObserverWorkerService
 
         private async Task SendX509KeyToServer(Subject subject)
         {
-            _logger.LogInformation("\nŒ“œ–. [POST] => {0}\n", _connectionParameters.RemoteX509VaultStoreService);
+            _logger.LogInformation("\n–û–¢–ü–†. [POST] => {0}\n", _connectionParameters.RemoteX509VaultStoreService);
             using (var response = await _httpClient.PostAsJsonAsync(_connectionParameters.RemoteX509VaultStoreService, subject))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    _logger.LogInformation("\n[POST] ”—œ≈’.\n");
+                    _logger.LogInformation("\n[POST] –£–°–ü–ï–•.\n");
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                 {
-                    _logger.LogInformation("\n Àﬁ◊ Õ≈ ¬¿À. –≈√»—“–.\n");
+                    _logger.LogInformation("\n–ö–õ–Æ–ß –ù–ï –í–ê–õ. –†–ï–ì–ò–°–¢–†.\n");
                     ApplyNewApiKey(await _passportControl.RegisterClient(_connectionParameters));
                     if (_connectionParameters.ApiKey != string.Empty)
                     {
-                        _logger.LogInformation("\n”—œ≈’. ÕŒ¬. «Õ. APIKEY\n[{0}]\n", _connectionParameters.ApiKey);
+                        _logger.LogInformation("\n–£–°–ü–ï–•. –ù–û–í. –ó–ù. APIKEY\n[{0}]\n", _connectionParameters.ApiKey);
                     }
                     else
                     {
-                        _logger.LogError("\nŒÿ»¡.  Àﬁ◊ Õ≈ œŒÀ”◊. «¿¬≈–ÿ.\n");
-                        await ErrorReporter.MakeReport("SendX509KeyToServer(Subject subject)", new Exception("ŒÚÔ‡‚Í‡ ÁÌ‡˜ÂÌËÈ ÌÂ‚ÓÁÏÓÊÌ‡. ApiKey ÌÂ ÔÓÎÛ˜ÂÌ."));
+                        _logger.LogError("\n–û–®–ò–ë. –ö–õ–Æ–ß –ù–ï –ü–û–õ–£–ß. –ó–ê–í–ï–†–®.\n");
+                        await ErrorReporter.MakeReport("SendX509KeyToServer(Subject subject)", new Exception("–û—Ç–ø—Ä–∞–≤–∫–∞ –∑–Ω–∞—á–µ–Ω–∏–π –Ω–µ–≤–æ–∑–º–æ–∂–Ω–∞. ApiKey –Ω–µ –ø–æ–ª—É—á–µ–Ω."));
                         await StopAsync(new CancellationToken(true));
                     }
                 }
                 else
                 {
-                    _logger.LogError("\n[POST] Œÿ»¡.\n Œƒ: {0}\n—¡Ÿ.: {1}", response.StatusCode, response.ReasonPhrase);
-                    await ErrorReporter.MakeReport("TryToRegisterService()", new Exception("–Â„ËÒÚ‡ˆËˇ ÌÂ ÔÓÈ‰ÂÌ‡. " + response.ReasonPhrase));
+                    _logger.LogError("\n[POST] –û–®–ò–ë.\n–ö–û–î: {0}\n–°–ë–©.: {1}", response.StatusCode, response.ReasonPhrase);
+                    await ErrorReporter.MakeReport("TryToRegisterService()", new Exception("–†–µ–≥–∏—Å—Ç—Ä–∞—Ü–∏—è –Ω–µ –ø—Ä–æ–π–¥–µ–Ω–∞. " + response.ReasonPhrase));
                 }
             }
         }
@@ -101,7 +101,7 @@ namespace X509ObserverWorkerService
                         {
                             if (item.IndexOf("CN") > -1)
                             {
-                                subjectName = item.Remove(0, 3);                                    // ÌÂÏÌÓ„Ó ‚ÓÎ¯Â·ÒÚ‚‡
+                                subjectName = item.Remove(0, 3);                                    // –Ω–µ–º–Ω–æ–≥–æ –≤–æ–ª—à–µ–±—Å—Ç–≤–∞
                                 if (subjectName.IndexOf('=') > -1)                                  //
                                     subjectName = subjectName.Remove(subjectName.IndexOf('='), 1);  //
                             }
@@ -144,7 +144,7 @@ namespace X509ObserverWorkerService
             }
             else
             {
-                _logger.LogInformation("\n»—œ.  Àﬁ◊\n[{0}]\n", _connectionParameters.ApiKey);
+                _logger.LogInformation("\n–ò–°–ü. –ö–õ–Æ–ß\n[{0}]\n", _connectionParameters.ApiKey);
             }
             await base.StartAsync(cancellationToken);
         }
