@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "wvzNNhIpW/Ej0Q27fbWXr2Q6lXR2+oR/rNvtTh2tWtx9+loPUnC69EKKsM0hc8XbO4gnUpn5DUXEaRJcE0lEMg==",
+  "dgSpecHash": "mgIL94pH0pc6gtMA2frReZNqZttnSnGwYcev5a22AJrP/kR//WPp84lDB75rfmUoHKbsJ7G6G7rWAPiEOL9uUg==",
   "success": true,
   "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.DataTransferObjects\\NetworkOperators.Identity.DataTransferObjects.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

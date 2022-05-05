@@ -11,11 +11,11 @@ using X509ObserverAdmin.Models;
 namespace X509ObserverAdmin.Controllers
 {
     [Authorize]
-    public class SubjectsController : Controller
+    public class CertificatesController : Controller
     {
-        private readonly ILogger<SubjectsController> _logger;
+        private readonly ILogger<CertificatesController> _logger;
 
-        public SubjectsController(ILogger<SubjectsController> logger)
+        public CertificatesController(ILogger<CertificatesController> logger)
         {
             _logger = logger;
         }

@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "R8igcO2CZiF9bHgfqdcLxAY0HvSg78yJZtpFyBrKsS9W0fBJnQc8KGED+a7h5aRnTzyggkVVSQ3LtK0h7eYMDA==",
+  "dgSpecHash": "o1et9CeYa/EfctxSieVsciENmsNrlKAO5+yhTyZgecCrawgF0reB9is3Qgq3i920fIujv1x/qRMX7ovW5lCEqQ==",
   "success": true,
   "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\X509KeysVault.Entities.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
