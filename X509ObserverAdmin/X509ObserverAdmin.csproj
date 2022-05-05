@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="icons\login.png" />
+    <None Remove="icons\logout.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.15" />
   </ItemGroup>
 
@@ -16,6 +21,11 @@
     <ProjectReference Include="..\Libs\NetworkOperators.Identity.MaintananceTools\NetworkOperators.Identity.MaintananceTools.csproj" />
     <ProjectReference Include="..\Libs\NetworkOperators.Identity.Repositories\NetworkOperators.Identity.Repositories.csproj" />
     <ProjectReference Include="..\Libs\X509KeysVault.Entities\X509KeysVault.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons\login.png" />
+    <Resource Include="icons\logout.png" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

@@ -22,7 +22,14 @@ namespace X509ObserverAdmin.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new SettingsViewModel());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Save(SettingsViewModel model)
+        {
+            return Content("done");
         }
     }
 }

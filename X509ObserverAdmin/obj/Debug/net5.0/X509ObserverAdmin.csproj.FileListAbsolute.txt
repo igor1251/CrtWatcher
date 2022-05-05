@@ -395,3 +395,4 @@ D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverAdmin\obj\Debug\net5.0\ref\
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverAdmin\obj\Debug\net5.0\X509ObserverAdmin.MvcApplicationPartsAssemblyInfo.cs
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverAdmin\obj\Debug\net5.0\Razor\Views\Settings\Index.cshtml.g.cs
 D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverAdmin\obj\Debug\net5.0\Razor\Views\Subjects\Index.cshtml.g.cs
+D:\Libraries\Documents\GitHub\CrtWatcher\X509ObserverAdmin\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs

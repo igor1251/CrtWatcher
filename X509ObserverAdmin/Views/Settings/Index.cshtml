@@ -1,8 +1,42 @@
-﻿@{
+﻿@model SettingsViewModel
+@{
     ViewData["Title"] = "Настройки";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Настройки</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <fieldset>
+        <legend>Настройки</legend>
+        <form asp-action="Save" asp-controller="Settings" asp-anti-forgery="true">
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+            <div>
+                <div class="form-group">
+                    <label asp-for="RemoteRegistrationServiceAddress">Удаленный сервер регистрации</label>
+                    <input class="form-control" type="text" asp-for="RemoteRegistrationServiceAddress" value=@Model.RemoteRegistrationServiceAddress />
+                    <span asp-validation-for="RemoteRegistrationServiceAddress" />
+
+                    <label asp-for="RemoteRegistrationServiceAddress">Удаленный сервер аутентификации</label>
+                    <input class="form-control" type="text" asp-for="RemoteAuthenticationServiceAddress" value=@Model.RemoteAuthenticationServiceAddress />
+                    <span asp-validation-for="RemoteAuthenticationServiceAddress" />
+
+                    <label asp-for="RemoteX509VaultStoreService">Адрес источника базы сертификатов</label>
+                    <input class="form-control" type="text" asp-for="RemoteX509VaultStoreService" value=@Model.RemoteX509VaultStoreService />
+                    <span asp-validation-for="RemoteX509VaultStoreService" />
+
+                    <label asp-for="RemoteServiceLogin">Логин для подключения к серверу</label>
+                    <input class="form-control" type="text" asp-for="RemoteServiceLogin" value=@Model.RemoteServiceLogin />
+                    <span asp-validation-for="RemoteServiceLogin" />
+
+                    <label asp-for="RemoteServicePassword">Пароль для подключения к серверу</label>
+                    <input class="form-control" type="text" asp-for="RemoteServicePassword" value=@Model.RemoteServicePassword />
+                    <span asp-validation-for="RemoteServicePassword" />
+
+                    <label asp-for="ApiKey">Api-ключ</label>
+                    <input class="form-control" type="text" asp-for="ApiKey" value=@Model.ApiKey />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Сохранить" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </fieldset>
 </div>
