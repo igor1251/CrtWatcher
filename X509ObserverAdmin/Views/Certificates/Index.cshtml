@@ -3,7 +3,27 @@
     ViewData["Title"] = "Сертификаты";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Сертификаты</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <fieldset>
+        <legend>Зарегистрированные держатели сертификатов</legend>
+        <table class="table table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ФИО</th>
+                    <th>Номер телефона</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in@Model.Subjects)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Phone</td>
+                        <td style="text-align: right;"><a asp-controller="Certificates" asp-action="Details" asp-route-ID=@item.ID>Просмотр</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </fieldset>
 </div>

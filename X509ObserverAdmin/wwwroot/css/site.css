@@ -84,3 +84,50 @@ body {
     margin: 0 auto;
     margin-top: calc(50% - 300px)
 }
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+    background: white url("/icons/warning.png") right no-repeat;
+}
+
+
+select.input-validation-error {
+    border: 1px solid #b94a48;
+    background: white url("/icons/warning.png") right no-repeat;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-errors li {
+    display: block;
+    position: initial;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 10px 5px 10px 35px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    width: auto;
+    color: #D8000C;
+    list-style-type: none;
+    background: #FFBABA url("/icons/error.png") left no-repeat;
+}
+
+.validation-summary-valid {
+    display: none;
+}
