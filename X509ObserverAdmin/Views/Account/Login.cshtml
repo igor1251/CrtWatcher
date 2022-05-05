@@ -1,22 +1,26 @@
 ﻿@model LoginModel
  
-<a asp-action="Register" asp-controller="Account">Регистрация</a>
- 
-<form asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
-    <div class="validation" asp-validation-summary="ModelOnly"></div>
-    <div>
-        <div class="form-group">
-            <label asp-for="UserName">Введите имя пользователя</label>
-            <input type="text" asp-for="UserName" />
-            <span asp-validation-for="UserName" />
-        </div>
-        <div class="form-group">
-            <label asp-for="Password">Введите пароль</label>
-            <input asp-for="Password" />
-            <span asp-validation-for="Password" />
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Войти" class="btn btn-outline-dark" />
-        </div>
-    </div>
-</form>
+<div class="login-form box-shadow">
+    <fieldset>
+        <legend>Авторизация</legend>
+        <form asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+            <div>
+                <div class="form-group">
+                    <label asp-for="UserName">Введите имя пользователя</label>
+                    <input class="form-control" type="text" asp-for="UserName" />
+                    <span asp-validation-for="UserName" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Введите пароль</label>
+                    <input class="form-control" asp-for="Password" />
+                    <span asp-validation-for="Password" />
+                </div>
+                <div class="form-group">
+                    <!--  <a asp-action="Register" asp-controller="Account">Регистрация</a>  -->
+                    <input type="submit" value="Войти" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </fieldset>
+</div>
