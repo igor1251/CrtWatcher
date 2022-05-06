@@ -23,7 +23,7 @@ namespace NetworkOperators.Identity.Client
         [Required]
         [JsonPropertyName("MonitoringInterval")]
         public int MonitoringInterval { get; set; } = 10000;
-        [Required]
+        
         [JsonPropertyName("ApiKey")]
         public string ApiKey { get; set; } = string.Empty;
     }

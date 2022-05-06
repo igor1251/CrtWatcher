@@ -3,6 +3,8 @@
     ViewData["Title"] = "Настройки";
 }
 
+<div class="validation" asp-validation-summary="ModelOnly"></div>
+
 <div class="container">
     <fieldset>
         <legend>Настройки</legend>
@@ -12,26 +14,34 @@
                 <div class="form-group">
                     <label asp-for="RemoteRegistrationServiceAddress">Удаленный сервер регистрации</label>
                     <input class="form-control" type="text" asp-for="RemoteRegistrationServiceAddress" value=@Model.RemoteRegistrationServiceAddress />
-                    <span asp-validation-for="RemoteRegistrationServiceAddress" />
-
-                    <label asp-for="RemoteRegistrationServiceAddress">Удаленный сервер аутентификации</label>
+                    <span asp-validation-for="RemoteRegistrationServiceAddress"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RemoteAuthenticationServiceAddress">Удаленный сервер аутентификации</label>
                     <input class="form-control" type="text" asp-for="RemoteAuthenticationServiceAddress" value=@Model.RemoteAuthenticationServiceAddress />
-                    <span asp-validation-for="RemoteAuthenticationServiceAddress" />
-
+                    <span asp-validation-for="RemoteAuthenticationServiceAddress"></span>
+                </div>
+                <div class="form-group">
                     <label asp-for="RemoteX509VaultStoreService">Адрес источника базы сертификатов</label>
                     <input class="form-control" type="text" asp-for="RemoteX509VaultStoreService" value=@Model.RemoteX509VaultStoreService />
-                    <span asp-validation-for="RemoteX509VaultStoreService" />
-
+                    <span asp-validation-for="RemoteX509VaultStoreService"></span>
+                </div>
+                <div class="form-group">
                     <label asp-for="RemoteServiceLogin">Логин для подключения к серверу</label>
                     <input class="form-control" type="text" asp-for="RemoteServiceLogin" value=@Model.RemoteServiceLogin />
-                    <span asp-validation-for="RemoteServiceLogin" />
-
+                    <span asp-validation-for="RemoteServiceLogin"></span>
+                </div>
+                <div class="form-group">
                     <label asp-for="RemoteServicePassword">Пароль для подключения к серверу</label>
                     <input class="form-control" type="text" asp-for="RemoteServicePassword" value=@Model.RemoteServicePassword />
-                    <span asp-validation-for="RemoteServicePassword" />
-
+                    <span asp-validation-for="RemoteServicePassword"></span>
+                </div>
+                <div class="form-group">
                     <label asp-for="ApiKey">Api-ключ</label>
                     <input class="form-control" type="text" asp-for="ApiKey" value=@Model.ApiKey />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="hidden" asp-for="MonitoringInterval" value=@Model.MonitoringInterval />
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Сохранить" class="btn btn-primary" />

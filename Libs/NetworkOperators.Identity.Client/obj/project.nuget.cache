@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6T/qBS4JOfyOGGpTPDZ4vFM+iOanwgcdL4DIvPwqit9mS3aCNKz8EA6hOfRwudW0u1FE+otBRnnkcVSgWi1yYw==",
+  "dgSpecHash": "3w/XxKnpv3KLYHRzpcp7ZQ1XYhq6xJSEyYkwtZ6nljJ6p+pUTzp08EJf7+AulqHQQagM/AA6b+b3IjyfI4KU5w==",
   "success": true,
   "projectFilePath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Client\\NetworkOperators.Identity.Client.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

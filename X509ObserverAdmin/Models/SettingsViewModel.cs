@@ -20,6 +20,9 @@ namespace X509ObserverAdmin.Models
         [DataType(DataType.Password)]
         public string RemoteServicePassword { get; set; }
 
+        [Required(ErrorMessage = "Интервал проверки не указан")]
+        public int MonitoringInterval { get; }
+
         public string ApiKey { get; set; }
     }
 }

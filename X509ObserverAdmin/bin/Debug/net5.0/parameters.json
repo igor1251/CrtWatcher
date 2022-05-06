@@ -1,0 +1,1 @@
+{"RemoteRegistrationServiceAddress":"http://localhost:5000/passport/register/","RemoteAuthenticationServiceAddress":"http://localhost:5000/passport/login/","RemoteX509VaultStoreService":"http://localhost:5000/api/subjects/","RemoteServiceLogin":"admin","RemoteServicePassword":"admin","MonitoringInterval":10000,"ApiKey":null}
