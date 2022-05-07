@@ -1713,7 +1713,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\igor\\.nuget\\packages\\": {}
+    "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -1721,11 +1721,11 @@
       "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509ObserverApi\\X509ObserverApi.csproj",
       "projectName": "X509ObserverApi",
       "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509ObserverApi\\X509ObserverApi.csproj",
-      "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\",
       "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509ObserverApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\STARCAPTAIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

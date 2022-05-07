@@ -15,10 +15,13 @@ namespace X509ObserverAdmin.Controllers
     public class SettingsController : Controller
     {
         private readonly ILogger<SettingsController> _logger;
+        private readonly PassportControl _passportControl;
 
-        public SettingsController(ILogger<SettingsController> logger)
+        public SettingsController(ILogger<SettingsController> logger,
+                                  PassportControl passportControl)
         {
             _logger = logger;
+            _passportControl = passportControl;
         }
 
         public async Task<IActionResult> Index()
@@ -37,11 +40,11 @@ namespace X509ObserverAdmin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Save(SettingsViewModel model)
+        public async Task<IActionResult> Apply(SettingsViewModel model, string action)
         {
             if (ModelState.IsValid)
             {
-                await ConnectionParametersLoader.WriteServiceParameters(new ConnectionParameters()
+                var connectionParameters = new ConnectionParameters()
                 {
                     RemoteRegistrationServiceAddress = model.RemoteRegistrationServiceAddress,
                     RemoteAuthenticationServiceAddress = model.RemoteAuthenticationServiceAddress,
@@ -49,11 +52,19 @@ namespace X509ObserverAdmin.Controllers
                     RemoteServiceLogin = model.RemoteServiceLogin,
                     RemoteServicePassword = model.RemoteServicePassword,
                     ApiKey = model.ApiKey
-                });
-            }
-            else
-            {
-                ModelState.AddModelError("", "Некорректные данные");
+                };
+                
+                if (action == "SaveAndConnect")
+                {
+                    connectionParameters.ApiKey = await _passportControl.RegisterClient(connectionParameters);
+                    model.ApiKey = connectionParameters.ApiKey;
+                    if (string.IsNullOrEmpty(connectionParameters.ApiKey))
+                    {
+                        ModelState.AddModelError("", "Некорректные регистрционные данные (логин, пароль или адреса сервисов)");
+                    }
+                }
+
+                await ConnectionParametersLoader.WriteServiceParameters(connectionParameters);
             }
             return View("Index", model);
         }

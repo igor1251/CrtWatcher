@@ -43,6 +43,7 @@ namespace X509ObserverAdmin
                         options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
                     });
             services.AddHttpClient("ApiHttpClient").AddPolicyHandler(GetRetryPolicy());
+            services.AddSingleton<PassportControl>();
             services.AddControllersWithViews();
         }
 

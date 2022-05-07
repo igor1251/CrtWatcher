@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Client\\NetworkOperators.Identity.Client.csproj",
         "projectName": "NetworkOperators.Identity.Client",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Client\\NetworkOperators.Identity.Client.csproj",
-        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\STARCAPTAIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,11 +71,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.DataTransferObjects\\NetworkOperators.Identity.DataTransferObjects.csproj",
         "projectName": "NetworkOperators.Identity.DataTransferObjects",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.DataTransferObjects\\NetworkOperators.Identity.DataTransferObjects.csproj",
-        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.DataTransferObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\STARCAPTAIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -125,11 +125,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj",
         "projectName": "NetworkOperators.Identity.Entities",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\NetworkOperators.Identity.Entities.csproj",
-        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\STARCAPTAIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -179,11 +179,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.MaintananceTools\\NetworkOperators.Identity.MaintananceTools.csproj",
         "projectName": "NetworkOperators.Identity.MaintananceTools",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.MaintananceTools\\NetworkOperators.Identity.MaintananceTools.csproj",
-        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.MaintananceTools\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\STARCAPTAIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -249,11 +249,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Repositories\\NetworkOperators.Identity.Repositories.csproj",
         "projectName": "NetworkOperators.Identity.Repositories",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Repositories\\NetworkOperators.Identity.Repositories.csproj",
-        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\NetworkOperators.Identity.Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\STARCAPTAIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -324,11 +324,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj",
         "projectName": "Tools",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\Tools.csproj",
-        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\Tools\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\STARCAPTAIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -378,11 +378,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\X509KeysVault.Entities.csproj",
         "projectName": "X509KeysVault.Entities",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\X509KeysVault.Entities.csproj",
-        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\Libs\\X509KeysVault.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\STARCAPTAIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -432,11 +432,11 @@
         "projectUniqueName": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509ObserverAdmin\\X509ObserverAdmin.csproj",
         "projectName": "X509ObserverAdmin",
         "projectPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509ObserverAdmin\\X509ObserverAdmin.csproj",
-        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\STARCAPTAIN\\.nuget\\packages\\",
         "outputPath": "D:\\Libraries\\Documents\\GitHub\\CrtWatcher\\X509ObserverAdmin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\STARCAPTAIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
