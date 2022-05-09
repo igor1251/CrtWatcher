@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using X509ObserverAdmin.Models;
 
@@ -16,25 +17,29 @@ namespace X509ObserverAdmin.Controllers
     {
         private readonly ILogger<SettingsController> _logger;
         private readonly PassportControl _passportControl;
+        private ConnectionParameters _connectionParameters;
+        private readonly HttpClient _httpClient;
 
         public SettingsController(ILogger<SettingsController> logger,
-                                  PassportControl passportControl)
+                                  PassportControl passportControl,
+                                  HttpClient httpClient)
         {
             _logger = logger;
             _passportControl = passportControl;
+            _httpClient = httpClient;
         }
 
         public async Task<IActionResult> Index()
         {
-            var connectionParameters = await ConnectionParametersLoader.ReadServiceParameters();
+            _connectionParameters = await ConnectionParametersLoader.ReadServiceParameters();
             return View(new SettingsViewModel()
             {
-                RemoteRegistrationServiceAddress = connectionParameters.RemoteRegistrationServiceAddress,
-                RemoteAuthenticationServiceAddress = connectionParameters.RemoteAuthenticationServiceAddress,
-                RemoteX509VaultStoreService = connectionParameters.RemoteX509VaultStoreService,
-                RemoteServiceLogin = connectionParameters.RemoteServiceLogin,
-                RemoteServicePassword = connectionParameters.RemoteServicePassword,
-                ApiKey = connectionParameters.ApiKey
+                RemoteRegistrationServiceAddress = _connectionParameters.RemoteRegistrationServiceAddress,
+                RemoteAuthenticationServiceAddress = _connectionParameters.RemoteAuthenticationServiceAddress,
+                RemoteX509VaultStoreService = _connectionParameters.RemoteX509VaultStoreService,
+                RemoteServiceLogin = _connectionParameters.RemoteServiceLogin,
+                RemoteServicePassword = _connectionParameters.RemoteServicePassword,
+                ApiKey = _connectionParameters.ApiKey
             });
         }
 
@@ -44,7 +49,7 @@ namespace X509ObserverAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var connectionParameters = new ConnectionParameters()
+                _connectionParameters = new ConnectionParameters()
                 {
                     RemoteRegistrationServiceAddress = model.RemoteRegistrationServiceAddress,
                     RemoteAuthenticationServiceAddress = model.RemoteAuthenticationServiceAddress,
@@ -56,15 +61,19 @@ namespace X509ObserverAdmin.Controllers
                 
                 if (action == "SaveAndConnect")
                 {
-                    connectionParameters.ApiKey = await _passportControl.RegisterClient(connectionParameters);
-                    model.ApiKey = connectionParameters.ApiKey;
-                    if (string.IsNullOrEmpty(connectionParameters.ApiKey))
+                    _connectionParameters.ApiKey = await _passportControl.RegisterClient(_connectionParameters);
+                    
+                    if (string.IsNullOrEmpty(_connectionParameters.ApiKey))
                     {
                         ModelState.AddModelError("", "Некорректные регистрционные данные (логин, пароль или адреса сервисов)");
                     }
+                    else
+                    {
+                        model.ApiKey = _connectionParameters.ApiKey;
+                        _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _connectionParameters.ApiKey);
+                        await ConnectionParametersLoader.WriteServiceParameters(_connectionParameters);
+                    }
                 }
-
-                await ConnectionParametersLoader.WriteServiceParameters(connectionParameters);
             }
             return View("Index", model);
         }
