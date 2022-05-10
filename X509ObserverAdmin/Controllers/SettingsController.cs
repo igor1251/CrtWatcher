@@ -1,12 +1,16 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using NetworkOperators.Identity.Client;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
 using X509ObserverAdmin.Models;
 
@@ -19,14 +23,17 @@ namespace X509ObserverAdmin.Controllers
         private readonly PassportControl _passportControl;
         private ConnectionParameters _connectionParameters;
         private readonly HttpClient _httpClient;
+        private IConfiguration _configuration;
 
         public SettingsController(ILogger<SettingsController> logger,
                                   PassportControl passportControl,
-                                  HttpClient httpClient)
+                                  HttpClient httpClient,
+                                  IConfiguration configuration)
         {
             _logger = logger;
             _passportControl = passportControl;
             _httpClient = httpClient;
+            _configuration = configuration;
         }
 
         public async Task<IActionResult> Index()
@@ -72,6 +79,22 @@ namespace X509ObserverAdmin.Controllers
                         model.ApiKey = _connectionParameters.ApiKey;
                         _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _connectionParameters.ApiKey);
                         await ConnectionParametersLoader.WriteServiceParameters(_connectionParameters);
+
+                        using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\appsettings.json", 
+                                                              FileMode.Open, 
+                                                              FileAccess.ReadWrite, 
+                                                              FileShare.None, 
+                                                              8, 
+                                                              FileOptions.WriteThrough))
+                        {
+                            var config = await JsonSerializer.DeserializeAsync<IDictionary<string, object>>(fs);
+                            fs.Seek(0, SeekOrigin.Begin);
+                            config.Add("ApiKey", model.ApiKey);
+                            await JsonSerializer.SerializeAsync(fs, config, new JsonSerializerOptions()
+                            { 
+                                WriteIndented = true
+                            });
+                        }
                     }
                 }
             }
